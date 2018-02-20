@@ -111,4 +111,6 @@ class DefaultController extends Controller
         return $this->render('DealsBundle:Deals:deal_profile.html.twig',
             array('deal' => $deal));
     }
+###########
 }
+
