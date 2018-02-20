@@ -6,7 +6,6 @@
   <component name="ChangeListManager">
     <list default="true" id="14d820c4-d781-41a3-a50a-905fcccd4471" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/AmirBundle/Resources/views/Etablissement/ajout_restaurant.html.twig" afterPath="$PROJECT_DIR$/src/AmirBundle/Resources/views/Etablissement/ajout_restaurant.html.twig" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -49,7 +48,7 @@
         <entry file="file://$PROJECT_DIR$/src/AmirBundle/Resources/views/Etablissement/ajout_restaurant.html.twig">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="17">
-              <caret line="4" column="4" lean-forward="false" selection-start-line="4" selection-start-column="4" selection-end-line="4" selection-end-column="4" />
+              <caret line="4" column="0" lean-forward="true" selection-start-line="4" selection-start-column="0" selection-end-line="4" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -483,7 +482,7 @@
       <workItem from="1519122289879" duration="148000" />
       <workItem from="1519129298502" duration="770000" />
       <workItem from="1519134601664" duration="10783000" />
-      <workItem from="1519151681165" duration="190000" />
+      <workItem from="1519151681165" duration="228000" />
     </task>
     <task id="LOCAL-00001" summary="12/02">
       <created>1518434491272</created>
@@ -534,11 +533,18 @@
       <option name="project" value="LOCAL" />
       <updated>1519151794548</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="test emir">
+      <created>1519151879452</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1519151879452</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="162160000" />
+    <option name="totallyTimeSpent" value="162198000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
@@ -962,7 +968,7 @@
     <entry file="file://$PROJECT_DIR$/src/AmirBundle/Resources/views/Etablissement/ajout_restaurant.html.twig">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="17">
-          <caret line="4" column="4" lean-forward="false" selection-start-line="4" selection-start-column="4" selection-end-line="4" selection-end-column="4" />
+          <caret line="4" column="0" lean-forward="true" selection-start-line="4" selection-start-column="0" selection-end-line="4" selection-end-column="0" />
           <folding />
         </state>
       </provider>
