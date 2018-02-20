@@ -1,0 +1,22 @@
+<h3>Recherche d'un évenement</h3>
+<form method="post" >
+    Rechercher un évènement par Type:
+    <input type="text" name="type" />
+    <input type="submit" value="Rechercher">
+</form>
+<h3>Liste des évènements</h3>
+<table border="2">
+    <th>Id</th>
+    <th>name</th>
+    <th>type</th>
+    <th>dateEvenement</th>
+
+    {% for event in events %}
+    <tr>
+        <td>{{ event.id }}</td>
+        <td>{{ event.name }}</td>
+        <td>{{ event.type }}</td>
+        <td>{{ event.dateEvenement|date('m-d-y') }}</td>
+
+    </tr>
+{% endfor %}

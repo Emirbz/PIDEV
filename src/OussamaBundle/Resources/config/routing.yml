@@ -1,0 +1,24 @@
+oussama_homepage:
+    path:     /
+    defaults: { _controller: OussamaBundle:Default:index }
+app_bon_plan_ajout_events:
+    path:     /ajout_events
+    defaults: { _controller: OussamaBundle:Default:add }
+app_bon_plan_afficher_events:
+    path:     /afficher_events
+    defaults: { _controller: OussamaBundle:Default:afficher }
+app_bon_plan_modifier_events:
+    path:     /modifier_events{id}
+    defaults: { _controller: OussamaBundle:Default:update }
+app_bon_plan_rechercher_events:
+    path:     /rechercher_events
+    defaults: { _controller: OussamaBundle:Default:recherche }
+app_bon_plan_supprimer_events:
+    path:     /supprimer_events
+    defaults: { _controller: OussamaBundle:Default:delete }
+app_bon_plan_ajout_temoignage:
+    path:     /ajout_temoignage
+    defaults: { _controller: OussamaBundle:Default:ajouter }
+app_bon_plan_recherche_temoignage:
+    path:     /recherche_temoignage
+    defaults: { _controller: OussamaBundle:Default:rechercher }

@@ -1,0 +1,21 @@
+ons_homepage:
+    path:     /
+    defaults: { _controller: OnsBundle:Default:index }
+App_bon_plan_add_article:
+    path:     /add_article
+    defaults: { _controller: OnsBundle:Blog:add }
+App_bon_plan_list_article:
+    path:     /articles
+    defaults: { _controller: OnsBundle:Blog:list }
+App_bon_plan_update_article:
+    path:     /update_article/{id}
+    defaults: { _controller: OnsBundle:Blog:update }
+App_bon_plan_delete_article:
+    path:     /delete_article/{id}
+    defaults: { _controller: OnsBundle:Blog:delete }
+App_bon_plan_details_article:
+    path:     /article/{id}
+    defaults: { _controller: OnsBundle:Blog:details }
+
+
+

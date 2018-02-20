@@ -1,0 +1,87 @@
+{% extends '::base.html.twig' %}
+{% block title %}Deals{% endblock %}
+{% block transparant %}{% endblock %}
+{% block body %}
+    <section class="">
+
+        <div class="container">
+            <div class="row pt-5">
+                <div class="col-12 col-md-12">
+                    <form method="POST">
+                        <div class="lis-relative">
+                            <h5 class="mb-2">What are you looking for?</h5>
+                            <p>Search by Category</p>
+
+                            <div class="row">
+                                <div class="col-12 col-sm-6 col-lg-3">
+                                    <div class="form-group lis-relative">
+                                        <input type="text" name="search" class="form-control border-top-0 border-left-0 border-right-0 rounded-0 pl-4" placeholder="What are you looking for?">
+                                        <div class="lis-search"> <i class="fa fa-search lis-primary lis-left-0"></i> </div>
+                                    </div>
+                                </div>
+                                <div class="col-12 col-sm-6 col-lg-3">
+                                    <div class="form-group lis-relative">
+                                        <select name="cat" class="style-select form-control border-top-0 border-left-0 border-right-0 rounded-0 pl-4">
+                                            <option> All Categories</option>
+                                            {% for a in cat %}
+                                            <option  value="{{ a.nom }}">{{ a.nom }}</option>
+                                            {% endfor %}
+                                        </select>
+                                        <div class="lis-search"> <i class="fa fa-tags lis-primary lis-left-0"></i> </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row my-4">
+                                <div class="col-12 col-md-12"> <input value="Rechercher" class="btn btn-primary btn-default" type="submit" name="submit" > </div>
+                            </div>
+                        </div>
+                    </form>
+
+                    <div class="row">
+                        <div class="col-sm-6 align-self-center">
+                            <p>Resultats 1 - 6</p>
+                        </div>
+                        <div class="col-sm-6">
+                            <div class="float-sm-right shorting">
+                                <div class="form-group lis-relative">
+                                    <select class="form-control border-0 pl-4">
+                                        <option>Default Order</option>
+                                        <option>Newest First</option>
+                                        <option>Oldest First</option>
+                                        <option>Highest Rating</option>
+                                        <option>Lowest Rating</option>
+                                        <option>Random</option>
+                                    </select>
+                                    <div class="lis-search"> <i class="fa fa-sliders lis-primary lis-left-0"></i> </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+            <div class="row">
+                {% for c in search %}
+                    <div class="col-12 col-sm-6 col-xl-3 mb-4 wow fadeInUp">
+                        <div class="card lis-brd-light text-center text-lg-left lis-info lis-relative">
+                            <a href="{{ path('Deals_profile',{'id':c.id }) }}" style="position: relative;">
+                                <div class="lis-grediant grediant-tb-light lis-relative modImage rounded" style="height: 250px;width: 300px">
+                                    <img src="{{ vich_uploader_asset(c, 'devisFile') }}" alt="" class="img-fluid rounded" />
+                                </div>
+                                <strike style="position: absolute;right: 5px;bottom: 0;color: lightslategray">{{ c.oldprix }}D</strike>
+                                <span  style="position: absolute;right: 45px;bottom: 0;color: #ad0002">{{ c.newprix }}D</span >
+                                <div class="lis-absolute lis-left-20 lis-top-20 lis-bg4 lis-icon lis-rounded-circle-50 text-center">
+                                    <div class="text-white mb-0 lis-line-height-2_5 h4"><i>{{ c.promotion }}%</i></div>
+                                </div>
+                            </a>
+                            <div class="hover-text lis-absolute lis-left-20 lis-bottom-20 lis-font-roboto text-white text-left">
+                                <h6 class="text-white mb-0">{{ c.nom }}</h6> <span class="lis-font-roboto">{{ c.description }}</span> </div>
+                        </div>
+                    </div>
+                {% endfor %}
+
+
+            </div>
+
+                </div>
+            </div>
+        </div>
+    </section>
+{% endblock %}

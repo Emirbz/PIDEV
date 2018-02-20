@@ -1,0 +1,78 @@
+{% extends 'base.html.twig' %}
+{% block title %} Etablissement {% endblock %}
+{% block transparant %} {% endblock %}
+{% block body %}
+
+    <!-- Category -->
+    <section>
+        <div class="container pt-5 mt-5">
+            <div class="row justify-content-center">
+                <div class="col-12 col-md-10 text-center">
+                    <div class="heading pb-4">
+
+                        <h2 class="f-weight-500">Ajouter un etablissement</h2> </div>
+                    <h5 class="lis-light">Choisir une categorie</h5>
+                </div>
+            </div>
+            <div class="row">
+
+                <div class="col-12 col-sm-6 col-xl-3 mb-4 wow fadeInUp">
+                    <div class="card lis-brd-light text-center text-lg-left lis-info lis-relative">
+                        <a href="{{ path('App_bon_plan_ajout_restaurant') }}">
+                            <div class="lis-grediant grediant-tb-light lis-relative modImage rounded"> <img src="{{ asset('images/slide1.jpg') }}" alt="" class     ="img-fluid rounded" /> </div>
+                            <div class="lis-absolute lis-left-20 lis-top-20 lis-bg4 lis-icon lis-rounded-circle-50 text-center">
+                                <div class="text-white mb-0 lis-line-height-2_5 h4"><i class="icofont icofont-fast-food"></i></div>
+                            </div>
+                        </a>
+                        <div class="hover-text lis-absolute lis-left-20 lis-bottom-20 lis-font-roboto text-white text-left">
+                            <h6 class="text-white mb-0">Restaurant</h6>  </div>
+                    </div>
+                </div>
+
+
+
+                <div class="col-12 col-sm-6 col-xl-3 mb-4 wow fadeInUp">
+                    <div class="card lis-brd-light text-center text-lg-left lis-info lis-relative">
+                        <a href="#">
+                            <div class="lis-grediant grediant-tb-light lis-relative modImage rounded"> <img src="{{ asset('images/slide4.jpg') }}" alt="" class="img-fluid rounded" /> </div>
+                            <div class="lis-absolute lis-left-20 lis-top-20 lis-bg1 lis-icon lis-rounded-circle-50 text-center">
+                                <div class="text-white mb-0 lis-line-height-2_5 h4"><i class="icofont icofont-hotel-alt"></i></div>
+                            </div>
+                        </a>
+                        <div class="hover-text lis-absolute lis-left-20 lis-bottom-20 lis-font-roboto text-white text-left">
+                            <h6 class="text-white mb-0">Hôtel</h6>  </div>
+                    </div>
+                </div>
+
+
+                <div class="col-12 col-sm-6 col-xl-3 mb-4 mb-sm-0 wow fadeInUp">
+                    <div class="card lis-brd-light text-center text-lg-left lis-info lis-relative">
+                        <a href="#">
+                            <div class="lis-grediant grediant-tb-light lis-relative modImage rounded"> <img src="{{ asset('images/beauté.jpg') }}" alt="" class="img-fluid rounded" /> </div>
+                            <div class="lis-absolute lis-left-20 lis-top-20 lis-bg10 lis-icon lis-rounded-circle-50 text-center">
+                                <div class="text-white mb-0 lis-line-height-2_5 h4"><i class="icofont icofont-sunny"></i></div>
+                            </div>
+                        </a>
+                        <div class="hover-text lis-absolute lis-left-20 lis-bottom-20 lis-font-roboto text-white text-left">
+                            <h6 class="text-white mb-0">Beauté et bien être</h6>  </div>
+                    </div>
+                </div>
+                <div class="col-12 col-sm-6 col-xl-3 mb-4 mb-sm-0 wow fadeInUp">
+                    <div class="card lis-brd-light text-center text-lg-left lis-info lis-relative">
+                        <a href="#">
+                            <div class="lis-grediant grediant-tb-light lis-relative modImage rounded"> <img src="{{ asset('images/culture.jpg') }}" alt="" class="img-fluid rounded" /> </div>
+                            <div class="lis-absolute lis-left-20 lis-top-20 lis-bg11 lis-icon lis-rounded-circle-50 text-center">
+                                <div class="text-white mb-0 lis-line-height-2_5 h4"><i class="icofont icofont-book"></i></div>
+                            </div>
+                        </a>
+                        <div class="hover-text lis-absolute lis-left-20 lis-bottom-20 lis-font-roboto text-white text-left">
+                            <h6 class="text-white mb-0">Culture </h6>  </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+    <!--End Category -->
+
+{% endblock %}

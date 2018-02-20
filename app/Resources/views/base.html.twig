@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title> {% block title %}  {% endblock %} </title>
+    <link rel="shortcut icon" href="{{asset('images/favicon.ico')}}">
+    <!--Plugin CSS-->
+    <link href="{{asset('css/plugins.min.css')}}" rel="stylesheet">
+    <!--main Css-->
+    <link href="{{asset('css/main.min.css')}}" rel="stylesheet">
+
+
+</head>
+
+<body>
+
+<!-- header -->
+<div id="header-fix" class="header fixed-top {% block transparant %} transperant {% endblock %}"{% block styleheader %}{% endblock %}  >
+    <nav class="navbar navbar-toggleable-md navbar-expand-lg navbar-light py-lg-0 py-4">
+        <a class="navbar-brand mr-4 mr-md-5" href="{{ path('homepage') }}"><img src="{{asset('images/logo-v1.png')}}" alt=""></a>
+        <div id="dl-menu" class="dl-menuwrapper d-block d-lg-none float-right">
+            <button>Open Menu</button>
+            <ul class="dl-menu">
+                <li class="nav-item active dropdown">
+                    <a class="nav-link" href="{{ path('homepage')}}">Accueil</a>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link"  data-toggle="dropdown" aria-expanded="false">Catégories</a>
+                    <ul class="dl-submenu">
+                        <li class="dl-back"><a>back</a></li>
+                        <li><a href="{{ path('App_bon_plan_list_restaurant') }}">Restaurants</a></li>
+                        <li><a href="{{ path('App_bon_plan_list_hotels') }}">Hôtels</a></li>
+                    </ul>
+                </li>
+                <li class="nav-item dropdown"> <a class="nav-link" href="" aria-expanded="false">Beauté et bien être </a>
+                <li class="nav-item dropdown"> <a class="nav-link" href="{{ path('App_bon_plan_list_article') }}"  aria-expanded="false">Blog </a>
+                <li class="nav-item dropdown">
+                    <a class="nav-link" href="#" data-toggle="dropdown" aria-expanded="false">Pages</a>
+                    <ul class="dl-submenu">
+                        <li class="dl-back"><a href="#">back</a></li>
+                        <li class="dropdown-submenu"><a tabindex="-1" href="#">Blog</a>
+                            <ul class="dl-submenu">
+                                <li class="dl-back"><a href="#">back</a></li>
+                                <li><a href="blog-grid.html"> Blog Grid</a></li>
+                                <li><a href="blog-listing.html"> Blog Listing</a></li>
+                                <li><a href="blog-single.html"> Single Post</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="{{ path('App_bon_plan_contact') }}"> Contact</a></li>
+                        <li><a href="user-profile.html"> User Profile</a></li>
+                        <li><a href="faq.html"> Faq</a></li>
+                        <li><a href="pricing.html"> Pricing Table</a></li>
+                        <li><a href="coming-soon.html"> Coming Soon</a></li>
+                        <li class="dropdown-submenu"><a tabindex="-1" href="#">404 Error</a>
+                            <ul class="dl-submenu">
+                                <li class="dl-back"><a href="#">back</a></li>
+                                <li><a href="error-dark.html"> 404 Error Dark</a></li>
+                                <li><a href="error-light.html"> 404 Error Light</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </li>
+
+
+            </ul>
+        </div>
+
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item dropdown"> <a class="nav-link" href="{{ path('homepage')}}" onmouseout=" this.style.color='#c9c9c9'" onmouseover="this.style.color='white'">Accueil </a></li>
+                <li class="nav-item dropdown"> <a class="nav-link" href="#" data-toggle="dropdown" aria-expanded="false" onmouseout=" this.style.color='#c9c9c9'" onmouseover="this.style.color='white'">Catégories <i class="fa fa-angle-down"></i></a>
+                    <ul class="dropdown-menu">
+                        <li><a href="{{ path('App_bon_plan_list_restaurant') }}">Restaurants</a></li>
+                        <li><a href="{{ path('App_bon_plan_list_hotels') }}">Hôtels</a></li>
+                    </ul>
+                </li>
+                <li class="nav-item dropdown"> <a class="nav-link" href="{{ path('App_bon_plan_list_beaute_et_bien_etre') }}" aria-expanded="false" onmouseout=" this.style.color='#c9c9c9'" onmouseover="this.style.color='white'">Beauté et bien être </a>
+                <li class="nav-item dropdown"> <a class="nav-link" href="{{ path('App_bon_plan_list_article') }}"  aria-expanded="false" onmouseout=" this.style.color='#c9c9c9'" onmouseover="this.style.color='white'">Blog </a>
+                    {% if is_granted('ROLE_ADMIN') %}
+                <li class="nav-item dropdown"> <a class="nav-link" href="{{ path('App_bon_plan_admin') }}"  aria-expanded="false" onmouseout=" this.style.color='#c9c9c9'" onmouseover="this.style.color='white'">Admin </a>
+                    {% endif %}
+                <li class="nav-item dropdown"> <a class="nav-link" href="#" data-toggle="dropdown" aria-expanded="false" onmouseout=" this.style.color='#c9c9c9'" onmouseover="this.style.color='white'">Pages <i class="fa fa-angle-down"></i></a>
+                    <ul class="dropdown-menu">
+                        <li class="dropdown-submenu"><a tabindex="-1" href="#">Blog</a>
+                            <ul class="dropdown-menu">
+                                <li><a href="blog-grid.html"> Blog Grid</a></li>
+                                <li><a href="blog-listing.html"> Blog Listing</a></li>
+                                <li><a href="blog-single.html"> Single Post</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="{{ path('App_bon_plan_contact') }}"> Contact</a></li>
+                        <li><a href="user-profile.html"> User Profile</a></li>
+                        <li><a href="faq.html"> Faq</a></li>
+                        <li><a href="pricing.html"> Pricing Table</a></li>
+                        <li><a href="coming-soon.html"> Coming Soon</a></li>
+                        <li class="dropdown-submenu"><a tabindex="-1" href="#">404 Error</a>
+                            <ul class="dropdown-menu">
+                                <li><a href="error-dark.html"> 404 Error Dark</a></li>
+                                <li><a href="error-light.html"> 404 Error Light</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+
+            <ul class="list-unstyled my-2 my-lg-0">
+                <li>
+                    <ul class="list-unstyled my-2 my-lg-0">
+                        <li>
+                            {% if not is_granted('IS_AUTHENTICATED_FULLY') %}
+                                <a href="#modal" class="text-white login_form"><i class="fa fa-sign-in pr-2"></i> Inscription | Connexion</a>
+                            {% else %}
+                                <ul class="navbar-nav">
+                                    <li class="nav-item dropdown"><img class="card" src="{{ asset('images/author.jpg') }}" style="border-radius: 50%;width: 50px;height: 50px;">
+                                        <ul class="dropdown-menu">
+                                            <li><a href="{{ path('fos_user_profile_show') }}">Profil</a></li>
+                                        </ul>
+                                    </li>
+                                    <label style="margin: auto"><a href="{{ path('fos_user_profile_show')}}" style="color: #c9c9c9;padding-left: 10px" onmouseout=" this.style.color='#c9c9c9'" onmouseover="this.style.color='white'">{{app.user.username }}</a> | <a style="color:#C9C9C9;" href="{{ path('fos_user_security_logout') }}"  onmouseout=" this.style.color='#c9c9c9'" onmouseover="this.style.color='white'" ><i class="fa fa-sign-in pr-2"></i>{{ 'Déconnexion'|trans({}, 'FOSUserBundle') }}</a></label>
+                                </ul>
+                            {% endif %}
+                        </li>
+                    </ul>
+
+                </li>
+            </ul>
+        </div>
+    </nav>
+</div>
+
+<!--End header -->
+<!-- Page Inner -->
+{% block body %}
+
+    <!--End Page Inner -->
+
+{% endblock %}
+<!-- Footer-->
+<section class="image-bg footer lis-grediant grediant-bt pb-0">
+    <div class="background-image-maker"></div>
+    <div class="holder-image"> <img src="{{asset('images/bg3.jpg')}}" alt="" class="img-fluid d-none"> </div>
+    <div class="container">
+        <div class="row pb-5">
+            <div class="col-12 col-md-8">
+                <div class="row">
+                    <div class="col-12 col-sm-6 col-lg-3 mb-4 mb-lg-0">
+                        <h5 class="footer-head">Useful Links</h5>
+                        <ul class="list-unstyled footer-links lis-line-height-2_5">
+                            <li>
+                                <A href="#"><i class="fa fa-angle-right pr-1"></i> Add Listing</A>
+                            </li>
+                            <li>
+                                <A href="#"><i class="fa fa-angle-right pr-1"></i> Sign In</A>
+                            </li>
+                            <li>
+                                <A href="#"><i class="fa fa-angle-right pr-1"></i> Register</A>
+                            </li>
+                            <li>
+                                <A href="#"><i class="fa fa-angle-right pr-1"></i> Pricing</A>
+                            </li>
+                            <li>
+                                <A href="#"><i class="fa fa-angle-right pr-1"></i> Contact Us</A>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="col-12 col-sm-6 col-lg-3 mb-4 mb-lg-0">
+                        <h5 class="footer-head">My Account</h5>
+                        <ul class="list-unstyled footer-links lis-line-height-2_5">
+                            <li>
+                                <A href="#"><i class="fa fa-angle-right pr-1"></i> Dashboard</A>
+                            </li>
+                            <li>
+                                <A href="#"><i class="fa fa-angle-right pr-1"></i> Profile</A>
+                            </li>
+                            <li>
+                                <A href="#"><i class="fa fa-angle-right pr-1"></i> My Listing</A>
+                            </li>
+                            <li>
+                                <A href="#"><i class="fa fa-angle-right pr-1"></i> Favorites</A>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="col-12 col-sm-6 col-lg-3 mb-4 mb-md-0">
+                        <h5 class="footer-head">Pages</h5>
+                        <ul class="list-unstyled footer-links lis-line-height-2_5">
+                            <li>
+                                <A href="#"><i class="fa fa-angle-right pr-1"></i> Blog</A>
+                            </li>
+                            <li>
+                                <A href="#"><i class="fa fa-angle-right pr-1"></i> Our Partners</A>
+                            </li>
+                            <li>
+                                <A href="#"><i class="fa fa-angle-right pr-1"></i> How It Work</A>
+                            </li>
+                            <li>
+                                <A href="#"><i class="fa fa-angle-right pr-1"></i> Privacy Policy</A>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="col-12 col-sm-6 col-lg-3">
+                        <h5 class="footer-head">Help</h5>
+                        <ul class="list-unstyled footer-links lis-line-height-2_5">
+                            <li>
+                                <A href="#"><i class="fa fa-angle-right pr-1"></i> Add Listing</A>
+                            </li>
+                            <li>
+                                <A href="#"><i class="fa fa-angle-right pr-1"></i> Sign In</A>
+                            </li>
+                            <li>
+                                <A href="#"><i class="fa fa-angle-right pr-1"></i> Register</A>
+                            </li>
+                            <li>
+                                <A href="#"><i class="fa fa-angle-right pr-1"></i> Pricing</A>
+                            </li>
+                            <li>
+                                <A href="#"><i class="fa fa-angle-right pr-1"></i> Contact Us</A>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="col-12 col-md-4">
+                <div class="footer-logo">
+                    <a href="#"><img src="{{asset('images/logo-v1.png')}}" alt="" class="img-fluid" /></a>
+                </div>
+                <p class="my-4"></p> <a href="#" class="text-white"><u>App Download</u></a>
+                <ul class="list-inline mb-0 mt-2">
+                    <li class="list-inline-item">
+                        <A href="#"><img src="{{asset('images/play-store.png')}}" alt="" class="img-fluid" /></a>
+                    </li>
+                    <li class="list-inline-item">
+                        <A href="#"><img src="{{asset('images/google-play.png')}}" alt="" class="img-fluid" /></a>
+                    </li>
+                    <li class="list-inline-item">
+                        <A href="#"><img src="{{asset('images/windows.png')}}" alt="" class="img-fluid" /></a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="footer-bottom mt-5 py-4">
+        <div class="container">
+            <div class="row">
+                <div class="col-12 col-md-6 text-center text-md-left mb-3 mb-md-0"> <span> &copy; 2017 Lister. Powered by Veni Vidi Vici</span> </div>
+                <div class="col-12 col-md-6 text-center text-md-right">
+                    <ul class="list-inline footer-social mb-0">
+                        <li class="list-inline-item pr-3">
+                            <A href="#"><i class="fa fa-facebook"></i></a>
+                        </li>
+                        <li class="list-inline-item pr-3">
+                            <A href="#"><i class="fa fa-twitter"></i></a>
+                        </li>
+                        <li class="list-inline-item pr-3">
+                            <A href="#"><i class="fa fa-linkedin"></i></a>
+                        </li>
+                        <li class="list-inline-item pr-3">
+                            <A href="#"><i class="fa fa-tumblr"></i></a>
+                        </li>
+                        <li class="list-inline-item">
+                            <A href="#"><i class="fa fa-pinterest-p"></i></a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!--End  Footer-->
+<!-- Top To Bottom-->
+<a href="#" class="scrollup text-center lis-bg-primary lis-rounded-circle-50">
+    <div class="text-white mb-0 lis-line-height-1_7 h3"><i class="icofont icofont-long-arrow-up"></i></div>
+</a>
+<!-- End Top To Bottom -->
+
+<div class="container">
+
+
+    <div id="modal" class="popupContainer" style="display: none;">
+        <header class="popupHeader">
+            <span class="header_title">Login</span>
+            <span class="modal_close"><i class="fa fa-times"></i></span>
+        </header>
+
+        <div class="popupBody">
+            <!-- Social Login -->
+
+            <!-- Username & Password Login form -->
+            <div class="user_login">
+                <form action="{{ path("fos_user_security_check") }}" method="post" >
+
+                    <input type="hidden" name="_csrf_token" value="{{ render(controller("AppBundle:Default:getToken")) }}" />
+
+                    <input type="text" class="form-control border-top-0 border-left-0 border-right-0 rounded-0 " id="username" name="_username" placeholder="username or email address" />
+                    <br />
+
+
+                    <input type="password" class="form-control border-top-0 border-left-0 border-right-0 rounded-0 " id="password" name="_password" placeholder="password" />
+                    <br />
+
+                    <div class="checkbox">
+                        <input id="remember" type="checkbox" />
+                        <label for="remember">Remember me on this computer</label>
+                    </div>
+
+                    <div class="action_btns">
+
+                        <a type="submit " >Login</a>
+                        <input type="submit" class="btn btn-primary btn-default mt-3 w-100" id="_submit" name="_submit" value="Se connecter" />
+                    </div>
+                </form>
+
+                <br/>
+                Sign in with your social network<br/>
+                <ul class="list-inline my-0">
+                    <li class="list-inline-item mr-0"><a href="#" class="lis-light lis-social border lis-brd-light text-center lis-line-height-2_3 rounded d-block"><i class="fa fa-facebook"></i></a></li>
+                    <li class="list-inline-item mr-0"><a href="#" class="lis-light lis-social border lis-brd-light text-center lis-line-height-2_3 rounded d-block"><i class="fa fa-twitter"></i></a></li>
+                    <li class="list-inline-item mr-0"><a href="#" class="lis-light lis-social border lis-brd-light text-center lis-line-height-2_3 rounded d-block"><i class="fa fa-linkedin"></i></a></li>
+                    <li class="list-inline-item mr-0"><a href="#" class="lis-light lis-social border lis-brd-light text-center lis-line-height-2_3 rounded d-block"><i class="fa fa-tumblr"></i></a></li>
+                    <li class="list-inline-item mr-0"><a href="#" class="lis-light lis-social border lis-brd-light text-center lis-line-height-2_3 rounded d-block"><i class="fa fa-pinterest-p"></i></a></li>
+                </ul>
+                <hr/>
+                Don't have an account <a href="{{ path('fos_user_registration_register')  }}" >Sign Up</a>
+            </div>
+            <!-- REGISTERRRRRRRR -->
+
+
+        </div>
+    </div>
+</div>
+
+<!-- jQuery -->
+<script src="{{asset('js/plugins.min.js')}}"></script>
+<script src="{{asset('js/common.js')}}"></script>
+
+</body>
+
+</html>

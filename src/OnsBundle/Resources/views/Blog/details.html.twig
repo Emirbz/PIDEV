@@ -1,0 +1,97 @@
+{% extends 'base.html.twig' %}
+{% block title %} {{ title }} {% endblock %}
+{% block transparant %} {% endblock %}
+
+{% block body %}
+    <!-- Page Inner -->
+    <section class="lis-bg-light pb-5">
+        <div class="container pt-5">
+            <div class="row">
+                <div class="col-12 col-sm-6 wow fadeInLeft">
+                    <div class="page-title">
+                        <h2>{{ title }}</h2>
+                    </div>
+                </div>
+                <div class="col-12 col-sm-6 text-left text-sm-right wow fadeInRight">
+                    <ol class="breadcrumb mb-0 pl-0 bg-transparent">
+                        <li class="breadcrumb-item d-inline-block float-none"><a href="{{ path('App_bon_plan_home') }}" class="lis-light">Home</a></li>
+                        <li class="breadcrumb-item d-inline-block float-none active">{{ title }}</li>
+                    </ol>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!--End Page Inner -->
+    <!-- Blog Single -->
+    <section>
+        <div class="container">
+            <div class="row">
+                <div class="col-12 col-lg-9 mb-5 mb-lg-0">
+                    <div class="mb-4 wow fadeInUp">
+                        <div class="card border-0 lis-relative">
+                            <a href="#">
+                                <div class="lis-grediant grediant-tb-light2 lis-relative rounded-top post-image"> <img src="" alt="" class="img-fluid rounded-top w-100" /> </div>
+                            </a>
+                        </div>
+                        <div class="card border-top-0 lis-brd-light lis-bg-light">
+                            <div class="card-body p-4">
+                                <ul class="list-inline comment-info">
+                                    <li class="list-inline-item lis-relative mr-4"><i class="fa fa-user pr-1 lis-dark"></i> By <a href="#" class="lis-primary"></a></li>
+                                    <li class="list-inline-item lis-relative mr-4"><a href="#" class="lis-light"><i class="fa fa-calendar pr-1 lis-dark"></i>  {{ date|date('d/m/Y') }}</a></li>
+                                    <li class="list-inline-item lis-relative"><a href="#" class="lis-light"><i class="fa fa-comments pr-1 lis-dark"></i>  3 Comments</a></li>
+                                </ul>
+                                <p>{{ content | raw}}</p>
+                                <div class="card lis-brd-light">
+                                    <div class="card-body">
+                                        <div class="clearfix">
+                                            <div class="float-none float-sm-left mb-2 mb-sm-0">
+                                                <p class="lis-f-14 mb-0"><span class="lis-dark lis-font-weight-700">TAG : </span> </p>
+                                            </div>
+                                            <div class="float-none float-sm-right">
+                                                <ul class="list-inline mb-0 lis-page-social">
+                                                    <li class="list-inline-item pr-3"><a href="#" class="lis-light"><i class="fa fa-facebook"></i></a></li>
+                                                    <li class="list-inline-item pr-3"><a href="#" class="lis-light"><i class="fa fa-twitter"></i></a></li>
+                                                    <li class="list-inline-item pr-3"><a href="#" class="lis-light"><i class="fa fa-linkedin"></i></a></li>
+                                                    <li class="list-inline-item pr-3"><a href="#" class="lis-light"><i class="fa fa-tumblr"></i></a></li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </div>
+                <div class="col-12 col-lg-3">
+                    <div class="lis-sidebar-right">
+                        <h6>Recent Posts</h6>
+                        <div class="lis-devider my-3"></div>
+                        <div class="media  lis-widget-content mb-4">
+                            <a href="#"><img src="dist/images/bg2.jpg" alt="" class="d-flex img-fluid rounded mr-3" width="90" /></a>
+                            <div class="media-body align-self-center"> <a href="#" class="lis-dark lis-font-poppins lis-font-weight-500">Maecenas tempus tellus eget</a>
+                                <p class="mb-0">30 October 2017</p>
+                            </div>
+                        </div>
+                        <div class="media  lis-widget-content mb-4">
+                            <a href="#"><img src="dist/images/blog2.jpg" alt="" class="d-flex img-fluid rounded mr-3" width="90" /></a>
+                            <div class="media-body align-self-center"> <a href="#" class="lis-dark lis-font-poppins lis-font-weight-500">Nam quam nunc blandit cel luctus</a>
+                                <p class="mb-0">24 October 2017</p>
+                            </div>
+                        </div>
+                        <div class="media lis-widget-content  mb-4">
+                            <a href="#"><img src="dist/images/blog1.jpg" alt="" class="d-flex img-fluid rounded mr-3" width="90" /></a>
+                            <div class="media-body align-self-center"> <a href="#" class="lis-dark lis-font-poppins lis-font-weight-500">Donec vitae sapien ut libero</a>
+                                <p class="mb-0">16 October 2017</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!--End Blog Single -->
+{% endblock %}

@@ -1,0 +1,43 @@
+slim_homepage:
+    path:     /
+    defaults: { _controller: SlimBundle:Default:index }
+App_bon_plan_ajout:
+    path:     /ajout
+    defaults: { _controller: SlimBundle:Categorie:ajoutCategorie }
+App_bon_plan_list:
+    path:     /list
+    defaults: { _controller: SlimBundle:Categorie:listCategorie }
+App_bon_plan_delete:
+    path:     /delete{id}
+    defaults: { _controller: SlimBundle:Categorie:deleteCategorie }
+App_bon_plan_ajout2:
+    path:     /ajoutS
+    defaults: { _controller: SlimBundle:SCategorie:ajoutSCategorie }
+App_bon_plan_list2:
+    path:     /listS
+    defaults: { _controller: SlimBundle:SCategorie:listSCategorie }
+App_bon_plan_delete2:
+    path:     /deleteS{id}
+    defaults: { _controller: SlimBundle:SCategorie:deleteSCategorie }
+App_bon_plan_update:
+    path:     /update{id}
+    defaults: { _controller: SlimBundle:Categorie:update }
+App_bon_plan_update2:
+    path:     /Supdate{id}
+    defaults: { _controller: SlimBundle:SCategorie:Supdate }
+reservation_ajout:
+    path:     /ajoutR
+    defaults: { _controller: SlimBundle:Reservation:ajoutReservation }
+list_reservation:
+    path:     /listR
+    defaults: { _controller: SlimBundle:Reservation:listReservation }
+delete_reservation:
+    path:     /deleteR{id}
+    defaults: { _controller: SlimBundle:Reservation:deleteReservation }
+update_reservation:
+    path:     /updateR{id}
+    defaults: { _controller: SlimBundle:Rervation:updateReservation }
+Mail:
+    path:     /mail
+    defaults: { _controller: SlimBundle:Mail:Maile }
+

@@ -1,0 +1,44 @@
+{% trans_default_domain 'FOSUserBundle' %}
+<style type="text/css">
+    .zina
+    {
+        font-weight: bold;
+        color: white;
+        font-size: 18px;
+    }
+    .lien
+    {
+        font-weight: bold;
+        color:#269abc;
+        font-size: 18px;
+
+    }
+
+
+
+</style>
+<section>
+    <h1 style="color: white">Information Profil</h1>
+    <p class="zina">Bienvenue:</p>
+    {% if is_granted('ROLE_ADMIN') %}
+        <b>Si l'admin</b>
+    {% endif %}
+    {% if is_granted('ROLE_USER') %}
+        <b class="zina">Monsieur le  Client</b>
+    {% endif %}
+    <p class="zina">Vos Informations </p>
+    <ul class="zina">
+        <li class="zina"> ID : {{ app.user.id }}</li>
+        <li class="zina"> Username : {{ app.user.username }}</li>
+        <li class="zina"> Nom : {{ app.user.nom }}</li>
+        <li class="zina"> Prenom: {{ app.user.prenom }}</li>
+        <li class="zina"> Email : {{ app.user.email }}</li>
+
+    </ul>
+
+    <p class="zina"><a href="{{ path('fos_user_security_logout') }}">Se Deconnecter</a> </p>
+
+    <a class="lien" href="{{ path('fos_user_profile_edit') }}"> Modifier mon profil</a> <br>
+
+
+</div>

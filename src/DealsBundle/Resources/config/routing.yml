@@ -1,0 +1,30 @@
+Deals_homepage:
+    path:     /
+    defaults: { _controller: DealsBundle:CatDeal:index }
+Deals_ajout:
+    path:     /ajout
+    defaults: { _controller: DealsBundle:Default:ajout_deal }
+Deals_modifier:
+    path:     /modifier{id}
+    defaults: { _controller: DealsBundle:Default:update }
+Deals_supprimer:
+    path:     /supprimer{id}
+    defaults: { _controller: DealsBundle:Default:delete }
+Deals_list:
+    path:     /list
+    defaults: { _controller: DealsBundle:Default:recherche }
+Deals_supprimerauto:
+    path:     /supprimauto
+    defaults: { _controller: DealsBundle:Default:delauto }
+Deals_ajout_cat:
+    path:     /ajout/categorie
+    defaults: { _controller: DealsBundle:CatDeal:ajout_cat }
+Deals_update_cat:
+    path:     /update/categorie{id}
+    defaults: { _controller: DealsBundle:CatDeal:update_cat }
+Deals_delete_cat:
+    path:     /delete/categorie{id}
+    defaults: { _controller: DealsBundle:CatDeal:delete_cat }
+Deals_profile:
+    path:     /list{id}
+    defaults: { _controller: DealsBundle:Default:profil_deal }

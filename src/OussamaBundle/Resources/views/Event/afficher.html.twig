@@ -1,0 +1,106 @@
+{% extends 'base.html.twig' %}
+{% block title %} afficher {% endblock %}
+{% block transparant %}{% endblock %}
+{% block body %}
+    <!-- Category -->
+    <section>
+    <div class="container pt-5 mt-5">
+    <div class="row justify-content-center">
+        <div class="col-12 col-md-10 text-center">
+            <div class="heading pb-4">
+                <h5 class="lis-light">Vous cherchez un bon plan ?</h5>
+                <h2 class="f-weight-500">Consulter les meilleurs évènements</h2> </div>
+        </div>
+    </div>
+    <section class="">
+
+        <div class="container">
+            <div class="row pt-5">
+
+
+                <div class="col-12 col-md-12">
+                    <form method="POST">
+                        <div class="lis-relative">
+                            <h5 class="mb-2">Qu'est-ce que vous cherchez comme évènements</h5>
+                            <p>Chercher par type d'évènements</p>
+                            <div class="row">
+                                <div class="col-12 col-sm-6 col-lg-3">
+                                    <div class="form-group lis-relative">
+                                        <input type="text" name="name" class="form-control border-top-0 border-left-0 border-right-0 rounded-0 pl-4" placeholder=" nom dévènement">
+                                        <div class="lis-search"> <i class="fa fa-search lis-primary lis-left-0"></i> </div>
+                                    </div>
+                                </div>
+                                <div class="col-12 col-sm-6 col-lg-3">
+                                    <div class="form-group lis-relative">
+                                        <input type="text" name="address" class="form-control border-top-0 border-left-0 border-right-0 rounded-0 pl-4" placeholder="Adresse">
+                                        <div class="lis-search"> <i class="fa fa-map-o lis-primary lis-left-0"></i> </div>
+                                        <div class="lis-search"> <a href="#" class="lis-light"><i class="fa fa-crosshairs lis-left-auto lis-right-0"></i></a> </div>
+                                    </div>
+                                </div>
+                                <div class="col-12 col-sm-6 col-lg-3">
+                                    <div class="form-group lis-relative">
+                                        <select class="style-select form-control border-top-0 border-left-0 border-right-0 rounded-0 pl-4">
+                                            <option> Tous les types </option>
+                                            <option>Sport</option>
+                                            <option>Bal</option>
+                                            <option>Cirque</option>
+                                            <option>Culture</option>
+                                            <option>Développement</option>
+                                            <option>Festival</option>
+                                            <option>Fête privée</option>
+                                            <option>Spectacle</option>
+                                            <option>Sortie</option>
+                                            <option>Visite</option>
+                                            <option>Rassemblement</option>
+
+                                        </select>
+                                        <div class="lis-search"> <i class="fa fa-tags lis-primary lis-left-0"></i> </div>
+                                    </div>
+                                </div>
+                                <div class="col-12 col-sm-6 col-lg-3">
+                                    <div class="form-group lis-relative">
+                                        <p class="pt-2 mb-2">Radius <span id="ex6CurrentSliderValLabel"> <span id="ex6SliderVal">530 </span></span>
+                                        </p>
+                                        <input id="ex6" type="text" data-slider-min="300" data-slider-max="1000" data-slider-step="1" data-slider-value="3" /> </div>
+                                </div>
+                            </div>
+
+                            <div class="col-12 col-md-12">   <input value="Rechercher" class="btn btn-primary btn-default" type="submit" name="submit" > </div>
+                        </div>
+
+                    </form>
+
+
+                    <div class="row">
+                        {% for event in events %}
+                            <div class="col-12 col-sm-6 col-xl-3 mb-4 wow fadeInUp">
+                                <div class="card lis-brd-light text-center text-lg-left lis-info lis-relative">
+                                    <a href="#">
+                                        <div class="lis-grediant grediant-tb-light lis-relative modImage rounded"> <img src="{{ vich_uploader_asset(event, 'devisFile') }}" alt="" class="img-fluid rounded" /> </div>
+                                        <div class="lis-absolute lis-left-20 lis-top-20 lis-bg6 lis-icon lis-rounded-circle-50 text-center">
+                                    <div class="text-white mb-0 lis-line-height-2_5 h4"><i class="icofont icofont-radio-mic"></i></div>
+                                        </div>
+                                    </a>
+                                    <div class="hover-text lis-absolute lis-left-20 lis-bottom-20 lis-font-roboto text-white text-left">
+                                        <h6 class="text-white mb-0"><li><td>{{ event.type }}</td></li></h6> <span class="lis-font-roboto">18 listing</span> </div>
+                                </div>
+
+
+                                <tr>
+
+                                    <ul><li><td>{{ event.name }}</td></li>
+                                        <li><td>{{ event.dateEvenement|date('d-m-y') }}</td></li></ul>
+                                    <td><a href="{{ path('APP_bon_plan_modifier_events',{'id':event.id}) }}">Mettre à jour</a></td>
+                                    <td><a href="{{ path('APP_bon_plan_supprimer_events',{'id':event.id}) }}">delete</a></td>
+
+                                </tr>
+
+
+
+
+                            </div>
+
+                        {% endfor %}
+                    </div></div></div></div>
+    </section>
+{% endblock %}

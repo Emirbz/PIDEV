@@ -1,0 +1,76 @@
+{% extends 'base.html.twig' %}
+{% block title %} Blog {% endblock %}
+{% block transparant %} {% endblock %}
+
+{% block body %}
+    <!-- Page Inner -->
+
+    <section class="">
+
+        <div class="container">
+            <div class="row pt-5">
+                <div class="col-12 col-md-12">
+                    <form method="POST" >
+                    <div class="lis-relative">
+                        <h5 class="mb-2">What are you looking for?</h5>
+                        <p>Search by Title</p>
+                        <div class="row">
+                            <div class="col-12 col-sm-6 col-lg-3">
+                                <div class="form-group lis-relative">
+
+                                    <input type="text" name="title" class="form-control border-top-0 border-left-0 border-right-0 rounded-0 pl-4" placeholder="What are you looking for?">
+                                    <div class="lis-search"> <i class="fa fa-search lis-primary lis-left-0"></i> </div>
+                                </div>
+                            </div>
+
+
+                        </div>
+                        <div class="row my-4">
+                            <div class="col-12 col-md-12"> <input type="submit" class="btn btn-primary btn-default" value="Search"></div>
+                        </div>
+
+                    </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+
+    </section>
+
+    <!--End Page Inner -->
+    <!-- Blog -->
+    <section>
+        <div class="container">
+
+            <div class="row">
+                {% for Article in Article %}
+                <div class="col-12 col-md-6 col-lg-4 wow fadeInUp mb-5">
+                    <div class="card border-0 lis-relative">
+                        <a href="{{ path('App_bon_plan_details_article',{'id':Article.id}) }}">
+                            <div class="modImage lis-grediant grediant-tb-light2 lis-relative rounded"> <img src="{{ vich_uploader_asset(Article,'devisFile') }}" alt="" class="img-fluid rounded" > </div>
+                            <div class="lis-absolute lis-right-20 lis-top-20">
+                                <div class="lis-post-meta border border-white text-white rounded lis-f-14"><a href="{{ path('App_bon_plan_delete_article',{'id':Article.id}) }}" class="text-white "><i class="fa fa-trash">  </i> Delete</a> </div>
+                            </div>
+                            <div class="lis-absolute lis-left-20 lis-top-20">
+                                <div class="lis-post-meta border border-white text-white rounded lis-f-14"><a href="{{ path('App_bon_plan_update_article',{'id':Article.id}) }}" class="text-white"><i class="fa fa-pencil"></i>  Edit</a> </div>
+                            </div>
+
+                        </a>
+                        <div class="pt-4"> <span class="lis-light">{{ Article.date|date('d/m/Y') }}</span> <a href="#" class="lis-dark"><h6 class="mt-2">{{ Article.title }}</h6></a>
+                            <p>{{ Article.content | raw }}</p>
+                        </div>
+
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+    </section>
+
+    <!-- End Blog-->
+
+
+
+
+
+{% endblock %}

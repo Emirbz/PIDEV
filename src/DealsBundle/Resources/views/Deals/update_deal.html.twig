@@ -1,0 +1,142 @@
+{% extends 'base.html.twig' %}
+{% block title %} Modifier un Deal {% endblock %}
+{% block transparant %} {% endblock %}
+{% block body %}
+
+    <!-- Page Inner -->
+    <form method="post" name="fourma" >
+        <section class="lis-bg-light pb-5">
+            <div class="container pt-5">
+                <div class="row wow fadeInUp">
+                    <div class="col-12 col-sm-6">
+                        <div class="page-title">
+                            <h2>Modifier un Deal</h2>
+                            <p class="mb-0">Modifier votre Deal</p>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+        <!--End Page Inner -->
+        <!-- Pricing -->
+        <section>
+            <div class="container">
+                <div class="row justify-content-center">
+                    <div class="col-12 col-lg-9 mb-5 mb-lg-0">
+
+                        <div class="card lis-brd-light wow fadeInUp" style="visibility: visible; animation-name: fadeInUp;">
+                            <hr/>
+                            <div class="row p-4">
+                                <div class="col-12 col-sm-12 mb-3">
+                                    <h6 class="lis-font-weight-500"><i class="fa fa-tag pr-2 lis-f-14"></i> Catégorie</h6>
+
+                                </div>
+                                <div class="col-12 col-sm-12">
+                                    <div class="form-group row">
+                                        <label class="col-12 col-md-2 col-form-label">Catégorie</label>
+                                        <div class="col-12 col-md-10">
+                                            {{ form_errors(form.cat) }}
+                                            {{ form_widget(form.cat, {'attr': {'class': 'form-control border-top-0 border-left-0 border-right-0 rounded-0','placeholder':'Categorie PLEASE !'}}) }}
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <hr/>
+
+                            <div class="row p-4">
+                                <div class="col-12 col-sm-12 mb-3">
+                                    <h6 class="lis-font-weight-500"><i class="fa fa-align-left pr-2 lis-f-14"></i>  Name & Description </h6>
+
+                                </div>
+                                <div class="col-12 col-sm-12">
+                                    <div class="form-group row">
+                                        <label class="col-12 col-md-2 col-form-label">Titre</label>
+                                        <div class="col-12 col-md-10">
+                                            {{ form_errors(form.nom) }}
+                                            {{ form_widget(form.nom, {'attr': {'class': 'form-control border-top-0 border-left-0 border-right-0 rounded-0','placeholder':'NAME PLEASE !'}}) }}
+                                        </div>
+                                    </div>
+                                    <div class="col-12 col-md-10">
+                                    </div>
+                                    <div class="form-group row">
+                                        <label  class="col-12 col-md-2 col-form-label">Description</label>
+                                        <div class="col-12 col-md-10">
+                                            {{ form_errors(form.description) }}
+                                            {{ form_widget(form.description, {'attr': {'class': 'form-control border-top-0 border-left-0 border-right-0 rounded-0','placeholder':'DESCRIPTION PLEASE !'}}) }}
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div>
+                            <div class="row p-4">
+                                <div class="col-12 col-sm-12 mb-3">
+                                    <h6 class="lis-font-weight-500"><i class="fa fa-align-left pr-2 lis-f-14"></i>  Prix </h6>
+
+                                </div>
+                                <div class="col-12 col-sm-12">
+                                    <div class="form-group row">
+                                        <label class="col-12 col-md-2 col-form-label">Prix</label>
+                                        <div class="col-12 col-md-10">
+                                            {{ form_errors(form.oldprix) }}
+                                            {{ form_widget(form.oldprix, {'attr': {'class': 'form-control border-top-0 border-left-0 border-right-0 rounded-0','placeholder':'NAME PLEASE !'}}) }}
+                                        </div>
+                                    </div>
+                                    <div class="col-12 col-md-10">
+                                    </div>
+                                    <div class="form-group row">
+                                        <label  class="col-12 col-md-2 col-form-label">Promotion</label>
+                                        <div class="col-12 col-md-10">
+                                            {{ form_errors(form.promotion) }}
+                                            {{ form_widget(form.promotion, {'attr': {'class': 'form-control border-top-0 border-left-0 border-right-0 rounded-0','placeholder':'DESCRIPTION PLEASE !'}}) }}
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div>
+                            <hr/>
+                            <div class="col-12 col-sm-12">
+                                <div class="form-group row">
+                                    <label class="col-12 col-md-2 col-form-label">Validité</label>
+                                    <div class="col-12 col-md-10">
+                                        {{ form_errors(form.validite) }}
+                                        {{ form_widget(form.validite, {'attr': {'class': 'form-control border-top-0 border-left-0 border-right-0 rounded-0','placeholder':'Categorie PLEASE !'}}) }}
+                                    </div>
+                                </div>
+                            </div>
+                            <hr/>
+                            <div class="row p-4">
+                                <div class="col-12 col-sm-12 mb-3">
+                                    <h6 class="lis-font-weight-500"><i class="fa fa-file-image-o pr-2 lis-f-14"></i> Images </h6>
+
+                                </div>
+                                <div class="col-12 col-sm-12">
+                                    <div class="form-group row">
+                                        <label  class="col-12 col-md-3 col-form-label">Image Principale</label>
+                                        <div class="col-12 col-md-9">
+                                            {{ form_widget(form.devisFile,{'attr': {'class': 'form-control border-0' }}) }}
+                                        </div>
+                                    </div>
+
+
+                                </div>
+
+                            </div>
+                            <hr/>
+                            <div class="row p-4">
+                                <div class="col-12 col-sm-12">
+                                    {{ form_widget(form.Valider, {'attr': {'class': 'btn btn-primary btn-default mt-3' }}) }} </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+        </section>
+    </form>
+
+
+
+
+{% endblock %}

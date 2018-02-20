@@ -1,0 +1,23 @@
+{% extends "base.html.twig" %}
+{% block title %}ListeReservation{% endblock %}
+{% block transparant %}{% endblock %}
+{% block body %}
+    <section>
+        <table >
+            <tr>
+                <th>nom</th>
+
+
+            </tr>
+
+            {% for reservation in reservations  %}
+            <tr>
+                <td>{{ categorie.nom }}</td>
+                <td><a href="{{ path("delete_reservation",{'id':categorie.aunomde})  }}">Supprimer </a></td>
+                <td><a href="{{ path("update_reservation",{'id':categorie.nombre})  }}">Update </a></td>
+                {% endfor %}
+
+            </tr>
+        </table>
+    </section>
+{% endblock %}

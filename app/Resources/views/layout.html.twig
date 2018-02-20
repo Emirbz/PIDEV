@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="en">
+
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title> {% block title %}  {% endblock %} </title>
+    <link rel="shortcut icon" href="{{asset('images/favicon.ico')}}">
+    <!--Plugin CSS-->
+    <link href="{{asset('css/plugins.min.css')}}" rel="stylesheet">
+    <!--main Css-->
+    <link href="{{asset('css/main.min.css')}}" rel="stylesheet">
+
+</head>
+
+<body>
+<!-- header -->
+<div id="header-fix" class="header fixed-top {% block transparant %} transperant {% endblock %}"{% block styleheader %}{% endblock %}  >
+    <nav class="navbar navbar-toggleable-md navbar-expand-lg navbar-light py-lg-0 py-4">
+        <a class="navbar-brand mr-4 mr-md-5" href="{{ 'home ' }}"><img src="{{asset('images/logo-v1.png')}}" alt=""></a>
+
+
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item active dropdown"> <a class="nav-link" href="{{ 'home' }}"  aria-expanded="false">Acceuil </a>
+                    <ul class="dropdown-menu">
+
+                    </ul>
+                </li>
+                <li class="nav-item dropdown"> <a class="nav-link" href="#" data-toggle="dropdown" aria-expanded="false">Guide culinaire <i class="fa fa-angle-down"></i></a>
+                    <ul class="dropdown-menu">
+                        <li><a href="{{ path("App_bon_plan_list_restaurant") }}">Restaurants</a></li>
+                        <li><a href="{{ path("App_bon_plan_list_hotels") }}">Hôtels</a></li>
+
+                    </ul>
+                </li>
+                <li class="nav-item dropdown"> <a class="nav-link" href="{{ path("App_bon_plan_list_beate_et_bien_etre") }}" aria-expanded="false">Beauté et bien être </a>
+                <li class="nav-item dropdown"> <a class="nav-link" href="{{ path("App_bon_plan_blog") }}"  aria-expanded="false">Blog </a>
+
+                </li>
+                <li class="nav-item dropdown"> <a class="nav-link" href="#" data-toggle="dropdown" aria-expanded="false">Espace Culturel <i class="fa fa-angle-down"></i></a>
+                    <ul class="dropdown-menu">
+                        <li class="dropdown-submenu"><a tabindex="-1" href="#">Espace culturel</a>
+
+                        </li>
+                        <li class="dropdown-submenu"><a tabindex="-1" href="#">Listing No Map</a>
+
+                        </li>
+                        <li class="dropdown-submenu"><a tabindex="-1" href="#">Half Screen Map</a>
+
+                        </li>
+                    </ul>
+                </li>
+                <li class="nav-item dropdown"> <a class="nav-link" href="#" data-toggle="dropdown" aria-expanded="false">Pages <i class="fa fa-angle-down"></i></a>
+                    <ul class="dropdown-menu">
+                        <li class="dropdown-submenu"><a tabindex="-1" href="#">Blog</a>
+                            <ul class="dropdown-menu">
+                                <li><a href="blog-grid.html"> Blog Grid</a></li>
+                                <li><a href="blog-listing.html"> Blog Listing</a></li>
+                                <li><a href="blog-single.html"> Single Post</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="{{ path('App_bon_plan_contact') }}"> Contact</a></li>
+                        <li><a href="user-profile.html"> User Profile</a></li>
+                        <li><a href="faq.html"> Faq</a></li>
+                        <li><a href="pricing.html"> Pricing Table</a></li>
+                        <li><a href="coming-soon.html"> Coming Soon</a></li>
+                        <li class="dropdown-submenu"><a tabindex="-1" href="#">404 Error</a>
+                            <ul class="dropdown-menu">
+                                <li><a href="error-dark.html"> 404 Error Dark</a></li>
+                                <li><a href="error-light.html"> 404 Error Light</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+            <ul class="list-unstyled my-2 my-lg-0">
+                <li>
+                    <a href="#modal" class="text-white login_form"><i class="fa fa-sign-in pr-2"></i> Inscription | Connexion</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+</div>
+<!--End header -->
+<!-- Page Inner -->
+{% block body %}
+    <!-- Wrap -->
+
+{% endblock %}
+<!-- Footer-->
+
+<section class="image-bg footer lis-grediant grediant-bt pb-0">
+    <div class="background-image-maker"></div>
+    <div class="holder-image"> <img src="{{asset('images/bg3.jpg')}}" alt="" class="img-fluid d-none"> </div>
+    <div class="container">
+        <div class="row pb-5">
+            <div class="col-12 col-md-8">
+                <div class="row">
+                    <div class="col-12 col-sm-6 col-lg-3 mb-4 mb-lg-0">
+                        <h5 class="footer-head">Lien utiles</h5>
+                        <ul class="list-unstyled footer-links lis-line-height-2_5">
+
+                            <li>
+                                <A href="#"><i class="fa fa-angle-right pr-1"></i> Connexion</A>
+                            </li>
+                            <li>
+                                <A href="#"><i class="fa fa-angle-right pr-1"></i> Inscription</A>
+                            </li>
+
+                            <li>
+                                <A href="#"><i class="fa fa-angle-right pr-1"></i> Contact Us</A>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="col-12 col-sm-6 col-lg-3 mb-4 mb-lg-0">
+                        <h5 class="footer-head">Mon Compte</h5>
+                        <ul class="list-unstyled footer-links lis-line-height-2_5">
+                            <li>
+                                <A href="#"><i class="fa fa-angle-right pr-1"></i> Dashboard</A>
+                            </li>
+                            <li>
+                                <A href="#"><i class="fa fa-angle-right pr-1"></i> Profile</A>
+                            </li>
+                            <li>
+                                <A href="#"><i class="fa fa-angle-right pr-1"></i> My Listing</A>
+                            </li>
+                            <li>
+                                <A href="#"><i class="fa fa-angle-right pr-1"></i> Favorites</A>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="col-12 col-sm-6 col-lg-3 mb-4 mb-md-0">
+                        <h5 class="footer-head">Pages</h5>
+                        <ul class="list-unstyled footer-links lis-line-height-2_5">
+                            <li>
+                                <A href="#"><i class="fa fa-angle-right pr-1"></i> Restaurants</A>
+                            </li>
+                            <li>
+                                <A href="#"><i class="fa fa-angle-right pr-1"></i> Hôtels</A>
+                            </li>
+                            <li>
+                                <A href="#"><i class="fa fa-angle-right pr-1"></i> Evenements</A>
+                            </li>
+                            <li>
+                                <A href="#"><i class="fa fa-angle-right pr-1"></i> Beauté et bien être</A>
+                            </li>
+                            <li>
+                                <A href="#"><i class="fa fa-angle-right pr-1"></i> Blog</A>
+                            <li>
+                                <A href="#"><i class="fa fa-angle-right pr-1"></i> Restaurants</A>
+                            </li>
+
+
+                        </ul>
+                    </div>
+                    <div class="col-12 col-sm-6 col-lg-3">
+                        <h5 class="footer-head">Help</h5>
+                        <ul class="list-unstyled footer-links lis-line-height-2_5">
+                            <li>
+                                <A href="#"><i class="fa fa-angle-right pr-1"></i> Add Listing</A>
+                            </li>
+                            <li>
+                                <A href="#"><i class="fa fa-angle-right pr-1"></i> Sign In</A>
+                            </li>
+                            <li>
+                                <A href="#"><i class="fa fa-angle-right pr-1"></i> Register</A>
+                            </li>
+                            <li>
+                                <A href="#"><i class="fa fa-angle-right pr-1"></i> Pricing</A>
+                            </li>
+                            <li>
+                                <A href="#"><i class="fa fa-angle-right pr-1"></i> Contact Us</A>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="col-12 col-md-4">
+                <div class="footer-logo">
+                    <a href="#"><img src="{{asset('images/logo-v1.png')}}" alt="" class="img-fluid" /></a>
+                </div>
+                <p class="my-4">Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu in felis eu pede mollis enim.</p> <a href="#" class="text-white"><u>App Download</u></a>
+                <ul class="list-inline mb-0 mt-2">
+                    <li class="list-inline-item">
+                        <A href="#"><img src="{{asset('images/play-store.png')}}" alt="" class="img-fluid" /></a>
+                    </li>
+                    <li class="list-inline-item">
+                        <A href="#"><img src="{{asset('images/google-play.png')}}" alt="" class="img-fluid" /></a>
+                    </li>
+                    <li class="list-inline-item">
+                        <A href="#"><img src="{{asset('images/windows.png')}}" alt="" class="img-fluid" /></a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="footer-bottom mt-5 py-4">
+        <div class="container">
+            <div class="row">
+                <div class="col-12 col-md-6 text-center text-md-left mb-3 mb-md-0"> <span> &copy; 2018 BonPlan Powered by Veni Vidi Vici </span> </div>
+                <div class="col-12 col-md-6 text-center text-md-right">
+                    <ul class="list-inline footer-social mb-0">
+                        <li class="list-inline-item pr-3">
+                            <A href="https://www.facebook.com/Chskan"target="_blank"><i class="fa fa-facebook"></i></a>
+                        </li>
+                        <li class="list-inline-item pr-3">
+                            <A href=""><i class="fa fa-twitter"></i></a>
+                        </li>
+                        <li class="list-inline-item pr-3">
+                            <A href="#"><i class="fa fa-linkedin"></i></a>
+                        </li>
+                        <li class="list-inline-item pr-3">
+                            <A href="#"><i class="fa fa-tumblr"></i></a>
+                        </li>
+                        <li class="list-inline-item">
+                            <A href="#"><i class="fa fa-pinterest-p"></i></a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!--End  Footer-->
+<!-- Top To Bottom-->
+<a href="#" class="scrollup text-center lis-bg-primary lis-rounded-circle-50">
+    <div class="text-white mb-0 lis-line-height-1_7 h3"><i class="icofont icofont-long-arrow-up"></i></div>
+</a>
+<!-- End Top To Bottom -->
+<!-- Login /Register Form-->
+<div class="container">
+
+
+    <div id="modal" class="popupContainer" style="display: none;">
+        <header class="popupHeader">
+            <span class="header_title">Login</span>
+            <span class="modal_close"><i class="fa fa-times"></i></span>
+        </header>
+
+        <div class="popupBody">
+            <!-- Social Login -->
+
+            <!-- Username & Password Login form -->
+            <div class="user_login">
+                <form action="{{ path("fos_user_security_check") }}" method="post" >
+
+      <input type="hidden" name="_csrf_token" value="{{ render(controller("AppBundle:BonPlan:getToken")) }}" />
+
+                    <input type="text" class="form-control border-top-0 border-left-0 border-right-0 rounded-0 " id="username" name="_username" placeholder="username or email address" />
+                    <br />
+
+
+                    <input type="password" class="form-control border-top-0 border-left-0 border-right-0 rounded-0 " id="password" name="_password" placeholder="password" />
+                    <br />
+
+                    <div class="checkbox">
+                        <input id="remember" type="checkbox" />
+                        <label for="remember">Remember me on this computer</label>
+                    </div>
+
+                    <div class="action_btns">
+
+                        <a type="submit " >Login</a>
+                        <input type="submit" class="btn btn-primary btn-default mt-3 w-100" id="_submit" name="_submit" value="Se connecter" />
+                    </div>
+                </form>
+
+                <br/>
+                Sign in with your social network<br/>
+                <ul class="list-inline my-0">
+                    <li class="list-inline-item mr-0"><a href="#" class="lis-light lis-social border lis-brd-light text-center lis-line-height-2_3 rounded d-block"><i class="fa fa-facebook"></i></a></li>
+                    <li class="list-inline-item mr-0"><a href="#" class="lis-light lis-social border lis-brd-light text-center lis-line-height-2_3 rounded d-block"><i class="fa fa-twitter"></i></a></li>
+                    <li class="list-inline-item mr-0"><a href="#" class="lis-light lis-social border lis-brd-light text-center lis-line-height-2_3 rounded d-block"><i class="fa fa-linkedin"></i></a></li>
+                    <li class="list-inline-item mr-0"><a href="#" class="lis-light lis-social border lis-brd-light text-center lis-line-height-2_3 rounded d-block"><i class="fa fa-tumblr"></i></a></li>
+                    <li class="list-inline-item mr-0"><a href="#" class="lis-light lis-social border lis-brd-light text-center lis-line-height-2_3 rounded d-block"><i class="fa fa-pinterest-p"></i></a></li>
+                </ul>
+                <hr/>
+                Don't have an account <a href="#" class="register_form">Sign Up</a>
+            </div>
+<!-- REGISTERRRRRRRR -->
+         
+
+
+
+    </div>
+</div>
+
+<!-- End Login /Register Form-->
+<!-- jQuery -->
+<script src="{{asset('js/plugins.min.js')}}"></script>
+<script src="{{asset('js/common.js')}}"></script>
+</body>
+
+
+</html>

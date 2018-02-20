@@ -1,0 +1,22 @@
+<h3>Recherche d'un témoignage</h3>
+<form method="post" >
+    Rechercher un évènement par Type:
+    <input type="text" name="type" />
+    <input type="submit" value="Rechercher">
+</form>
+<h3>Liste des témoignages</h3>
+<table border="2">
+    <th>Id</th>
+    <th>name</th>
+    <th>type</th>
+    <th>dateEvenement</th>
+
+    {% for temoignage in temoignages %}
+    <tr>
+        <td>{{ temoignage.id }}</td>
+        <td>{{ temoignage.name }}</td>
+        <td>{{ temoignage.type }}</td>
+        <td>{{ temoignage.dateEvenement|date('m-d-y') }}</td>
+
+    </tr>
+{% endfor %}

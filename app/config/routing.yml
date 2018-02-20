@@ -1,0 +1,47 @@
+deals:
+    resource: "@DealsBundle/Resources/config/routing.yml"
+    prefix:   /deals
+
+oussama:
+    resource: "@OussamaBundle/Resources/config/routing.yml"
+    prefix:   /oussama
+
+ons:
+    resource: "@OnsBundle/Resources/config/routing.yml"
+    prefix:   /ons
+
+slim:
+    resource: "@SlimBundle/Resources/config/routing.yml"
+    prefix:   /slim
+
+skander:
+    resource: "@SkanderBundle/Resources/config/routing.yml"
+    prefix:   /skander
+
+amir:
+    resource: "@AmirBundle/Resources/config/routing.yml"
+    prefix:   /amir
+
+user:
+    resource: "@UserBundle/Resources/config/routing.yml"
+    prefix:   /a
+app:
+    resource: '@AppBundle/Controller/'
+    type: annotation
+fos_user:
+    resource: "@FOSUserBundle/Resources/config/routing/all.xml"
+App_bon_plan_layout:
+    path:     /layout
+    defaults: { _controller: AppBundle:BonPlan:layout }
+App_bon_plan_home:
+    path:     /home
+    defaults: { _controller: AppBundle:BonPlan:home }
+App_bon_plan_contact:
+    path:     /contact
+    defaults: { _controller: AppBundle:BonPlan:contact }
+App_bon_plan_admin:
+    path:     /admin/
+    defaults: { _controller: AppBundle:BonPlan:admin }
+
+
+

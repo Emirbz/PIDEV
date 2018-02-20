@@ -1,0 +1,33 @@
+{% extends '::base.html.twig' %}
+{% block title %}Deals{% endblock %}
+{% block transparant %}{% endblock %}
+{% block body %}
+    <section>
+        <div class="container pt-5 mt-5">
+            <div class="row justify-content-center">
+                <div class="col-12 col-md-10 text-center">
+                    <div class="heading pb-4">
+                        <h2 class="f-weight-500">Find the best Deals</h2></div>
+                </div>
+            </div>
+            <div class="row">
+                {% for c in cat %}
+                <div class="col-12 col-sm-6 col-xl-3 mb-4 wow fadeInUp">
+                    <div class="card lis-brd-light text-center text-lg-left lis-info lis-relative">
+                        <a href="#">
+                            <div class="lis-grediant grediant-tb-light lis-relative modImage rounded"> <img src="{{asset('images/slide1.jpg')}}" alt="" class="img-fluid rounded" /> </div>
+                            <div class="lis-absolute lis-left-20 lis-top-20 lis-bg4 lis-icon lis-rounded-circle-50 text-center">
+                                <div class="text-white mb-0 lis-line-height-2_5 h4"><i class="icofont icofont-fast-food"></i></div>
+                            </div>
+                        </a>
+                        <div class="hover-text lis-absolute lis-left-20 lis-bottom-20 lis-font-roboto text-white text-left">
+                            <h6 class="text-white mb-0">{{ c.nom}}</h6> <span class="lis-font-roboto"></span> </div>
+                    </div>
+                </div>
+                {% endfor %}
+
+
+            </div>
+        </div>
+    </section>
+{% endblock %}

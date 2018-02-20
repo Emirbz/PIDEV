@@ -1,0 +1,113 @@
+{% extends 'base.html.twig' %}
+{% block title %} Article {% endblock %}
+{% block transparant %}{% endblock %}
+{% block body %}
+    {{  form_start(form) }}
+    <!-- Page Inner -->
+    <section class="lis-bg-light pb-5">
+        <div class="container pt-5">
+            <div class="row wow fadeInUp">
+                <div class="col-12 col-sm-6">
+                    <div class="page-title">
+                        <h2>Update Article</h2>
+                        <p class="mb-0">Update your article</p>
+                    </div>
+                </div>
+                <div class="col-12 col-sm-6 text-left text-sm-right">
+                    <ol class="breadcrumb mb-0 pl-0 bg-transparent">
+                        <li class="breadcrumb-item d-inline-block float-none"><a href="{{ path('homepage') }}" class="lis-light">Home</a></li>
+                        <li class="breadcrumb-item d-inline-block float-none active">Update Article</li>
+                    </ol>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!--End Page Inner -->
+    <!-- Pricing -->
+    <section>
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-12 col-lg-9 mb-5 mb-lg-0">
+                    <div class="card lis-brd-light wow fadeInUp" style="visibility: visible; animation-name: fadeInUp;">
+                        <div class="card-body p-0">
+                            <div class="row p-4">
+                                <div class="col-12 col-sm-12 mb-3">
+                                    <h6 class="lis-font-weight-500"><i class="fa fa-align-left pr-2 lis-f-14"></i>  Title & Content </h6>
+
+                                </div>
+                                <div class="col-12 col-sm-12">
+                                    <div class="form-group row">
+                                        <label for="example-text-input" class="col-12 col-md-2 col-form-label">Article Title * </label>
+                                        <div class="col-12 col-md-10">
+                                            {{ form_widget(form.title, {'attr': {'class': 'form-control border-top-0 border-left-0 border-right-0 rounded-0','placeholder':'Title'}}) }}
+                                        </div>
+                                    </div>
+
+
+
+                                    <div class="form-group row">
+                                        <label for="example-text-input" class="col-12 col-md-2 col-form-label">Content</label>
+                                        <div class="col-12 col-md-10">
+                                            {{ form_widget(form.content, {'attr': {'class': 'form-control border-top-0 border-left-0 border-right-0 rounded-0','placeholder':'Content'}}) }}
+
+                                        </div>
+                                    </div>
+
+
+
+                                </div>
+                            </div>
+
+
+                            <hr/>
+                            <div class="row p-4">
+                                <div class="col-12 col-sm-12 mb-3">
+                                    <h6 class="lis-font-weight-500"><i class="fa fa-file-image-o pr-2 lis-f-14"></i> Images </h6>
+
+                                </div>
+                                <div class="col-12 col-sm-12">
+
+                                    <div class="form-group row">
+                                        <label for="example-text-input" class="col-12 col-md-3 col-form-label">Cover Image</label>
+                                        <div class="col-12 col-md-9">
+                                            {{ form_row(form.image, {'attr': {'class': 'form-control border-0'}}) }}
+
+                                        </div>
+                                    </div>
+
+
+                                </div>
+
+                            </div>
+                            <hr/>
+                            <div class="row p-4">
+                                <div class="col-12 col-sm-12 mb-3">
+                                    <h6 class="lis-font-weight-500"><i class="fa fa-tag pr-2 lis-f-14"></i>Tags</h6>
+
+                                </div>
+                                <div class="col-12 col-sm-12">
+                                    <div class="form-group row">
+                                        <label for="example-text-input" class="col-12 col-md-2 col-form-label">Tags(optional)</label>
+                                        <div class="col-12 col-md-10">
+                                            <input class="form-control border-top-0 border-left-0 border-right-0 rounded-0" placeholder="Add your tags" type="text" value="" id="example-text-input">
+
+
+                                        </div>
+                                    </div>
+
+                                </div>
+
+                                <div class="col-12 col-sm-12"> <input type="submit" class="btn btn-primary btn-default mt-3" value="Save & Preview"> </div>
+                            </div>
+
+
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    {{ form_end(form) }}
+{% endblock %}

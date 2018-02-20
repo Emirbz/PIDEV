@@ -1,0 +1,425 @@
+{% extends 'base.html.twig' %}
+{% block title %} Restaurants {% endblock %}
+{% block transparant %} {% endblock %}
+{% block body %}
+
+
+    <!-- Page Inner -->
+
+    <section class="lis-bg-light pb-5">
+        <div class="container pt-5">
+            <div class="row wow fadeInUp">
+                <div class="col-12 col-sm-6">
+                    <div class="page-title">
+                        <h2>Ajout d'un Hotel</h2>
+                        <p class="mb-0">Ajouter votre Hôtel</p>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+    <!--End Page Inner -->
+    <!-- Pricing -->
+    <section>
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-12 col-lg-9 mb-5 mb-lg-0">
+
+                    <div class="card lis-brd-light wow fadeInUp" style="visibility: visible; animation-name: fadeInUp;">
+                        <hr/>
+                        <div class="row p-4">
+                            <div class="col-12 col-sm-12 mb-3">
+                                <h6 class="lis-font-weight-500"><i class="fa fa-tag pr-2 lis-f-14"></i>  Sous Categorie</h6>
+
+                            </div>
+                            <div class="col-12 col-sm-12">
+                                <div class="form-group row">
+                                    <label for="example-text-input" class="col-12 col-md-2 col-form-label">Sous Categorie</label>
+                                    <div class="col-12 col-md-10">
+                                        {{ form_errors(form.souscategorie) }}
+                                        {{ form_widget(form.souscategorie,{'attr': {'class': 'form-control border-top-0 border-left-0 border-right-0 rounded-0'}})}}
+                                    </div>
+                                </div>
+
+                            </div>
+
+                        </div>
+                        <hr/>
+
+                        <div class="row p-4">
+                            <div class="col-12 col-sm-12 mb-3">
+                                <h6 class="lis-font-weight-500"><i class="fa fa-align-left pr-2 lis-f-14"></i>  Nom & Description </h6>
+
+                            </div>
+                            <div class="col-12 col-sm-12">
+                                <div class="form-group row">
+                                    <label for="example-text-input" class="col-12 col-md-2 col-form-label">Email</label>
+                                    <div class="col-12 col-md-10">
+                                        {{ form_start(form) }}
+                                        {{ form_errors(form.email) }}
+                                        {{ form_widget(form.email,{'attr': {'class': 'form-control border-top-0 border-left-0 border-right-0 rounded-0','placeholder':'Email de l\'etablissement !'}}) }}
+
+                                    </div>
+                                </div>
+                                <div class="form-group row">
+                                    <label for="example-text-input" class="col-12 col-md-2 col-form-label">Libelle</label>
+                                    <div class="col-12 col-md-10">
+                                        {{ form_errors(form.name) }}
+                                        {{ form_widget(form.name, {'attr': {'class': 'form-control border-top-0 border-left-0 border-right-0 rounded-0','placeholder':'Nom de l\'etablissement !'}}) }}
+                                    </div>
+                                </div>
+
+                                <div class="form-group row">
+                                    <label for="example-text-input" class="col-12 col-md-2 col-form-label">Description</label>
+                                    <div class="col-12 col-md-10">
+                                        {{ form_errors(form.description) }}
+                                        {{ form_widget(form.description, {'attr': {'class': 'form-control border-top-0 border-left-0 border-right-0 rounded-0','placeholder':'Description de l\'etablissement '}}) }}
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+
+                        <hr/>
+
+                        <div class="row p-4">
+                            <div class="col-12 col-sm-12 mb-3">
+                                <h6 class="lis-font-weight-500"><i class="fa fa-file-image-o pr-2 lis-f-14"></i> Images </h6>
+
+                            </div>
+                            <div class="col-12 col-sm-12">
+                                <div class="form-group row">
+                                    <label for="example-text-input" class="col-12 col-md-3 col-form-label">Logo</label>
+                                    <div class="col-12 col-md-9">
+
+                                    </div>
+                                </div>
+                                <div class="form-group row">
+                                    <label for="example-text-input" class="col-12 col-md-3 col-form-label">Photo de couverture</label>
+                                    <div class="col-12 col-md-9">
+                                        <input class="form-control border-0" type="file"  id="example-text-input">
+                                    </div>
+                                </div>
+                                <div class="form-group row">
+                                    <label for="example-text-input" class="col-12 col-md-3 col-form-label">Galerie de photo</label>
+                                    <div class="col-12 col-md-9">
+                                        <input class="form-control border-0" type="file"  id="example-text-input">
+                                    </div>
+                                </div>
+
+                            </div>
+
+                        </div>
+                        <hr/>
+
+                        <div class="row p-4">
+                            <div class="col-12 col-sm-12 mb-3">
+                                <h6 class="lis-font-weight-500"><i class="fa fa-info-circle pr-2 lis-f-14"></i> Information de l'etablissement </h6>
+
+                            </div>
+                            <div class="col-12 col-sm-12">
+
+                                <div class="form-group row">
+                                    <label for="example-text-input" class="col-12 col-md-3 col-form-label">Phone number(optional)</label>
+                                    <div class="col-12 col-md-9">
+                                        {{ form_errors(form.phone) }}
+                                        {{ form_widget(form.phone, {'attr': {'class': 'form-control border-top-0 border-left-0 border-right-0 rounded-0','placeholder':' Numero de telephone '}}) }}
+                                    </div>
+
+                                </div>
+                                <div class="form-group row">
+                                    <label for="example-text-input" class="col-12 col-md-3 col-form-label">Nombre D'etoile</label>
+                                    <div class="col-12 col-md-9">
+                                        {{ form_errors(form.etoile) }}
+                                        {{ form_widget(form.etoile, {'attr': {'class': 'form-control border-top-0 border-left-0 border-right-0 rounded-0','placeholder':' Nombre d\'etoile '}}) }}
+                                    </div>
+
+                                </div>
+                                <div class="form-group row">
+                                    <label for="example-text-input" class="col-12 col-md-3 col-form-label">Nombre De chambres</label>
+                                    <div class="col-12 col-md-9">
+                                        {{ form_errors(form.nbrchambre) }}
+                                        {{ form_widget(form.nbrchambre, {'attr': {'class': 'form-control border-top-0 border-left-0 border-right-0 rounded-0','placeholder':' Nombre de chambres'}}) }}
+                                    </div>
+
+                                </div>
+                                <div class="form-group row">
+                                    <label for="example-text-input" class="col-12 col-md-3 col-form-label">Prix Moyenne</label>
+                                    <div class="col-12 col-md-9">
+                                        {{ form_errors(form.prixmoy) }}
+                                        {{ form_widget(form.prixmoy, {'attr': {'class': 'form-control border-top-0 border-left-0 border-right-0 rounded-0','placeholder':' Nombre de chambres'}}) }}
+                                    </div>
+
+                                </div>
+                                <div class="col-12 col-md-4">
+
+                                    <label class="custom-checkbox">LPD
+                                        {{ form_errors(form.lpd) }}
+                                        {{ form_widget(form.lpd) }}
+                                        <span class="checkmark"></span>
+                                    </label>
+                                </div>
+                                <div class="col-12 col-md-4">
+
+                                    <label class="custom-checkbox">Demi Pension
+                                        {{ form_errors(form.dp) }}
+                                        {{ form_widget(form.dp) }}
+                                        <span class="checkmark"></span>
+                                    </label>
+                                </div>
+                                <div class="col-12 col-md-4">
+
+                                    <label class="custom-checkbox">Pension Complete
+                                        {{ form_errors(form.pc) }}
+                                        {{ form_widget(form.pc) }}
+                                        <span class="checkmark"></span>
+                                    </label>
+                                </div>
+                                <div class="col-12 col-md-4">
+
+                                    <label class="custom-checkbox">All Inclusive
+                                        {{ form_errors(form.allinclusive) }}
+                                        {{ form_widget(form.allinclusive) }}
+                                        <span class="checkmark"></span>
+                                    </label>
+                                </div>
+                                <div class="form-group row">
+                                    <label for="example-text-input" class="col-12 col-md-3 col-form-label">Website(optional)</label>
+                                    <div class="col-12 col-md-9">
+                                        {{ form_errors(form.website) }}
+                                        {{ form_widget(form.website, {'attr': {'class': 'form-control border-top-0 border-left-0 border-right-0 rounded-0','placeholder':'Adresse web !'}}) }}
+                                    </div>
+                                </div>
+                                <div class="form-group row">
+                                    <label for="example-text-input" class="col-12 col-md-3 col-form-label">Facebook</label>
+                                    <div class="col-12 col-md-9">
+                                        {{ form_errors(form.facebook) }}
+                                        {{ form_widget(form.facebook, {'attr': {'class': 'form-control border-top-0 border-left-0 border-right-0 rounded-0','placeholder':'Facebook'}}) }}
+                                    </div>
+                                </div>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                    <hr/>
+
+
+
+                    <hr/>
+                    <div class="row p-4">
+                        <div class="col-12 col-sm-12 mb-3">
+                            <h6 class="lis-font-weight-500"><i class="fa fa-clock-o pr-2 lis-f-14"></i>Horaires</h6>
+
+                        </div>
+                        <div class="col-12 col-sm-12">
+                            <div class="form-group row">
+                                <label for="example-text-input" class="col-12 col-md-2 col-form-label">Check-IN</label>
+                                <div class="col-12 col-md-5">
+                                    {{ form_errors(form.checkin) }}
+                                    {{ form_widget(form.checkin,{'attr': {'class': 'form-control border-top-0 border-left-0 border-right-0 rounded-0'}}) }}
+                                </div>
+
+                            </div>
+
+                            <div class="form-group row">
+                                <label for="example-text-input" class="col-12 col-md-2 col-form-label">Check-out</label>
+                                <div class="col-12 col-md-5">
+                                    {{ form_errors(form.checkout) }}
+                                    {{ form_widget(form.checkout,{'attr': {'class': 'form-control border-top-0 border-left-0 border-right-0 rounded-0'}}) }}
+                                </div>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                    <hr/>
+
+                    <div class="row p-4">
+                        <div class="col-12 col-sm-12 mb-3">
+                            <h6 class="lis-font-weight-500"><i class="fa fa-link pr-2 lis-f-14"></i>  Equipement </h6>
+
+                        </div>
+                        <div class="col-12 col-sm-12 social-information">
+                            <div class="form-group row">
+                                <div class="col-12 col-md-4">
+
+                                    <label class="custom-checkbox">Parking
+                                        {{ form_errors(form.parking) }}
+                                        {{ form_widget(form.parking) }}
+                                        <span class="checkmark"></span>
+                                    </label>
+
+                                </div>
+                                <div class="col-12 col-md-4">
+
+                                    <label class="custom-checkbox">Accepte les cartes  des crédits
+                                        {{ form_errors(form.cartecredit) }}
+                                        {{ form_widget(form.cartecredit) }}
+                                        <span class="checkmark"></span>
+                                    </label>
+                                </div>
+                                <div class="col-12 col-md-4">
+
+                                    <label class="custom-checkbox">Chaise roulante
+                                        {{ form_errors(form.chaiseroulante) }}
+                                        {{ form_widget(form.chaiseroulante) }}
+                                        <span class="checkmark"></span>
+                                    </label>
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <div class="col-12 col-md-4">
+
+                                    <label class="custom-checkbox">Autorisation de fumer
+
+                                        {{ form_errors(form.fumer) }}
+                                        {{ form_widget(form.fumer) }}
+                                        <span class="checkmark"></span>
+                                    </label>
+
+                                </div>
+                                <div class="col-12 col-md-4">
+
+                                    <label class="custom-checkbox"> Alcool
+
+                                        {{ form_errors(form.alcool) }}
+                                        {{ form_widget(form.alcool) }}
+                                        <span class="checkmark"></span>
+                                    </label>
+
+                                </div>
+
+                                <div class="col-12 col-md-4">
+                                    <label class="custom-checkbox">Terasse
+                                        {{ form_errors(form.terasse) }}
+                                        {{ form_widget(form.terasse) }}
+                                        <span class="checkmark"></span>
+                                    </label>
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <div class="col-12 col-md-4">
+
+                                    <label class="custom-checkbox">Wifi
+                                        {{ form_errors(form.wifi) }}
+                                        {{ form_widget(form.wifi) }}
+                                        <span class="checkmark"></span>
+                                    </label>
+
+                                </div>
+                                <div class="col-12 col-md-4">
+
+                                    <label class="custom-checkbox">Accepte les animaux
+                                        {{ form_errors(form.animaux) }}
+                                        {{ form_widget(form.animaux) }}
+                                        <span class="checkmark"></span>
+                                    </label>
+
+                                </div>
+
+
+
+                            </div>
+                            <div class="form-group row">
+
+
+                                <div class="col-12 col-md-4">
+
+                                    <label class="custom-checkbox">Accepte les réservations
+                                        {{ form_errors(form.reservations) }}
+                                        {{ form_widget(form.reservations) }}
+                                        <span class="checkmark"></span>
+                                    </label>
+                                </div>
+
+                                <div class="col-12 col-md-4">
+
+                                    <label class="custom-checkbox">Climatisation
+                                        {{ form_errors(form.climatisation) }}
+                                        {{ form_widget(form.climatisation) }}
+                                        <span class="checkmark"></span>
+                                    </label>
+                                </div>
+
+
+
+                            </div>
+
+
+                        </div>
+
+                    </div>
+                    <hr/>
+
+                    <div class="row p-4">
+                        <div class="col-12 col-sm-12 mb-3">
+                            <h6 class="lis-font-weight-500"><i class="fa fa-map-o pr-2 lis-f-14"></i>  Localisation</h6>
+
+                        </div>
+                        <div class="col-12 col-sm-12">
+                            <div class="form-group row">
+                                <label for="example-text-input" class="col-12 col-md-2 col-form-label">Addresse</label>
+                                <div class="col-12 col-md-10">
+                                    {{ form_errors(form.address) }}
+                                    {{ form_widget(form.address, {'attr': {'class': 'form-control border-top-0 border-left-0 border-right-0 rounded-0','placeholder':'Adresse !'}}) }}
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <label for="example-text-input" class="col-12 col-md-2 col-form-label">Coordonnées</label>
+                                <div class="col-12 col-md-5">
+                                    <input class="form-control border-top-0 border-left-0 border-right-0 rounded-0" type="text" placeholder="Latitude" value="" id="us2-lat">
+                                </div>
+                                <div class="col-12 col-md-5">
+                                    <input class="form-control border-top-0 border-left-0 border-right-0 rounded-0" type="text" placeholder="Longitude" value="" id="us2-lon">
+                                </div>
+                            </div>
+
+                        </div>
+
+                        <div class="col-12 col-sm-12">
+                            {{ form_widget(form.Ajouter, {'attr': {'class': 'btn btn-primary btn-default mt-3' }}) }} </div>
+                        {{ form_end(form) }}
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+
+
+    </section>
+    <!--End Pricing -->
+    <!-- Features -->
+    <section class="lis-bg-light">
+        <div class="container">
+            <div class="row">
+                <div class="col-12 col-md-6 col-lg-4 wow fadeInRight mb-4 mb-lg-0 text-center">
+                    <div class="px-3">
+                        <div class="h1 lis-dark"><i class="fa fa-money"></i></div>
+                        <h6 class="lis-f-20 lis-font-weight-500">Money Back Guarantee</h6> In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo. Nullam dictum felis eu pede mollis pretium. Integer tincidunt </div>
+                </div>
+                <div class="col-12 col-md-6 col-lg-4 wow fadeInRight mb-4 mb-lg-0 text-center">
+                    <div class="px-3">
+                        <div class="h1 lis-dark"><i class="fa fa-check-square-o"></i></div>
+                        <h6 class="lis-f-20 lis-font-weight-500">Simple Demo Import</h6> In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo. Nullam dictum felis eu pede mollis pretium. Integer tincidunt </div>
+                </div>
+                <div class="col-12 col-md-6 col-lg-4 wow fadeInRight text-center">
+                    <div class="px-3">
+                        <div class="h1 lis-dark"><i class="fa fa-users"></i></div>
+                        <h6 class="lis-f-20 lis-font-weight-500">Fast Support Team</h6> In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo. Nullam dictum felis eu pede mollis pretium. Integer tincidunt </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+
+
+
+{% endblock %}

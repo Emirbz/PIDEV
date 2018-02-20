@@ -1,0 +1,100 @@
+{% extends 'base.html.twig' %}
+{% block title %} add {% endblock %}
+{% block transparant %} {% endblock %}
+{% block body %}
+<!-- Page Inner -->
+<form method="post" name="fourma" >
+    <section class="lis-bg-light pb-5">
+        <div class="container pt-5">
+            <div class="row wow fadeInUp">
+                <div class="col-12 col-sm-6">
+                    <div class="page-title">
+                        <h2>Ajouter un Témoignage</h2>
+                        <p class="mb-0">Ajouter votre témoignage</p>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+    <!-- Pricing -->
+    {{ form_start(form) }}
+    <section>
+    <div class="container">
+    <div class="row justify-content-center">
+    <div class="col-12 col-lg-9 mb-5 mb-lg-0">
+
+    <div class="card lis-brd-light wow fadeInUp" style="visibility: visible; animation-name: fadeInUp;">
+
+
+    <div class="row p-4">
+        <div class="col-12 col-sm-12 mb-3">
+            <h6 class="lis-font-weight-500"><i class="fa fa-align-left pr-2 lis-f-14"></i>  Name & Description </h6>
+
+        </div>
+    <div class="col-12 col-sm-12">
+    <div class="form-group row">
+        <label class="col-12 col-md-2 col-form-label">Name</label>
+        <div class="col-12 col-md-10">
+            {{ form_errors(form.name) }}
+            {{ form_widget(form.name, {'attr': {'class': 'form-control border-top-0 border-left-0 border-right-0 rounded-0','placeholder':'Donnez votre nom'}}) }}
+        </div>
+    </div>
+    <div class="col-12 col-md-10">
+    </div>
+    <div class="form-group row">
+        <label  class="col-12 col-md-2 col-form-label">Description</label>
+        <div class="col-12 col-md-10">
+            {{ form_errors(form.Description) }}
+            {{ form_widget(form.Description, {'attr': {'class': 'form-control border-top-0 border-left-0 border-right-0 rounded-0','placeholder':'Donnez une description '}}) }}
+        </div>
+    </div>
+        <div class="row p-4">
+            <div class="col-12 col-sm-12 mb-3">
+                <h6 class="lis-font-weight-500"><i class="fa fa-file-image-o pr-2 lis-f-14"></i> Images </h6>
+                <div class="form-group row">
+                    <label  class="col-12 col-md-3 col-form-label">Ajoutez une image </label>
+                    <div class="col-12 col-md-9">
+                        <input class="form-control border-0"  type="file"  id="example-text-input">
+                    </div>
+
+
+                </div>
+            </div>
+        </div>
+        <div class="row p-4">
+            <div class="col-12 col-sm-12 mb-3">
+                <h6 class="lis-font-weight-500"><i class="fa fa-file-image-o pr-2 lis-f-14"></i> Audio </h6>
+                <div class="form-group row">
+                    <label  class="col-12 col-md-3 col-form-label">Ajoutez un audio </label>
+                    <div class="col-12 col-md-9">
+                        <input class="form-control border-0"  type="file"  id="example-text-input">
+                    <audio controls="controls">
+                        <source src="azert.mp3" type="audio/mp3" autoplay="autoplay" />
+                    </audio>
+                </div>
+                </div>
+
+
+            </div>
+        </div>
+                    <div class="col-12 col-md-9">
+        <div class="row p-4">
+            <div class="col-12 col-sm-12">
+                {{ form_widget(form.Ajouter, {'attr': {'class': 'btn btn-primary btn-default mt-3' }}) }} </div>
+        </div>
+    </div>
+
+    </div>
+
+    </div>
+
+    </div>
+
+        {{ form_end(form) }}
+
+    </section>
+</form>
+
+    </section>
+{% endblock %}
