@@ -83,6 +83,38 @@ class User extends BaseUser implements ParticipantInterface
     }
 
     /**
+     * @return string
+     */
+    public function getAddress()
+    {
+        return $this->address;
+    }
+
+    /**
+     * @param string $address
+     */
+    public function setAddress($address)
+    {
+        $this->address = $address;
+    }
+
+    /**
+     * @return string
+     */
+    public function getPhone()
+    {
+        return $this->phone;
+    }
+
+    /**
+     * @param string $phone
+     */
+    public function setPhone($phone)
+    {
+        $this->phone = $phone;
+    }
+
+    /**
      * @param mixed $surname
      */
     public function setSurname($surname)
@@ -90,5 +122,17 @@ class User extends BaseUser implements ParticipantInterface
         $this->surname = $surname;
     }
 
-
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="phone", type="string", length=255,nullable=true)
+     */
+    private $phone;
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="address", type="string", length=255,nullable=true)
+     */
+    private $address;
+    
 }

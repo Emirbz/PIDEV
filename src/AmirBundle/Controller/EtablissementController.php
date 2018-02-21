@@ -12,7 +12,7 @@ namespace AmirBundle\Controller;
 
 
 
-use AmirBundle\Entity\Etab;
+
 use AmirBundle\Entity\Etablissement;
 
 
@@ -37,6 +37,7 @@ class EtablissementController extends Controller
         $form = $this->createForm(RestaurantType::class, $restaurant);
 
 
+
         $form->handleRequest($request);
         if ($form->isSubmitted() && ($form->isValid())) {
 
@@ -59,20 +60,22 @@ class EtablissementController extends Controller
     {
         $em = $this->getDoctrine()->getManager();
         $restaurant = $em->getRepository("AmirBundle:Etablissement")->findBy(array('categorie' => 'Restaurant'));
-
+        $souscat = $em->CreateQuery("SELECT v  From SlimBundle:sous_categorie v where v.idCategorie=4");
+        $soucatresult = $souscat->getResult();
         if ($request->isMethod('POST') and $request->get('name') == '') {
             return $this->redirectToRoute('App_bon_plan_list_restaurant');
         }
 
         if ($request->isMethod('POST')) {
             $name = $request->get('name');
-            $address = $request->get('address');
+            $address = $request->get('address'
+            );
             $this->redirectToRoute('App_bon_plan_list_restaurant');
             $restaurant = $em->getRepository("AmirBundle:Etablissement")
                 ->findBy(array("name" => $name, "address" => $address));
         }
         return $this->render("AmirBundle:Etablissement:list_restaurant.html.twig",
-            array('restaurants' => $restaurant
+            array('restaurants' => $restaurant,'souscat' =>  $soucatresult
             ));
     }
 
