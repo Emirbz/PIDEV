@@ -1,5 +1,5 @@
 {% extends 'base.html.twig' %}
-{% block title %} Modifier Restaurant {% endblock %}
+{% block title %} Ajouter Centre Culturel {% endblock %}
 {% block transparant %} {% endblock %}
 {% block body %}
 
@@ -12,8 +12,8 @@
             <div class="row wow fadeInUp">
                 <div class="col-12 col-sm-6">
                     <div class="page-title">
-                        <h2>Modifier Restaurant</h2>
-                        <p class="mb-0">Modifier vos données</p>
+                        <h2>Ajout d'un Centre Culturel</h2>
+                        <p class="mb-0">Ajouter votre Centre</p>
                     </div>
                 </div>
 
@@ -141,46 +141,15 @@
 
                     </div>
 
-                    <hr/>
 
 
 
-                    <hr/>
+
                     <div class="row p-4">
-                        <div class="col-12 col-sm-12 mb-3">
-                            <h6 class="lis-font-weight-500"><i class="fa fa-clock-o pr-2 lis-f-14"></i>Heures d'ouverture</h6>
-
-                        </div>
-                        <div class="col-12 col-sm-12">
-                            <div class="form-group row">
-                                <label for="example-text-input" class="col-12 col-md-2 col-form-label">Lundi-Samedi</label>
-                                <div class="col-12 col-md-5">
-                                    {{ form_errors(form.lundisamedio) }}
-                                    {{ form_widget(form.lundisamedio, {'attr': {'class': 'form-control border-top-0 border-left-0 border-right-0 rounded-0'}}) }}
-                                </div>
-                                <div class="col-12 col-md-5">
-                                    {{ form_errors(form.lundisamedif) }}
-                                    {{ form_widget(form.lundisamedif, {'attr': {'class': 'form-control border-top-0 border-left-0 border-right-0 rounded-0'}}) }}
-                                </div>
-                            </div>
-
-                            <div class="form-group row">
-                                <label for="example-text-input" class="col-12 col-md-2 col-form-label">Dimanche</label>
-                                <div class="col-12 col-md-5">
-                                    {{ form_errors(form.dimancheo) }}
-                                    {{ form_widget(form.dimancheo, {'attr': {'class': 'form-control border-top-0 border-left-0 border-right-0 rounded-0'}}) }}
-                                </div>
-                                <div class="col-12 col-md-5">
-                                    {{ form_errors(form.dimancheo) }}
-                                    {{ form_widget(form.dimanchef, {'attr': {'class': 'form-control border-top-0 border-left-0 border-right-0 rounded-0'}}) }}
-                                </div>
-                            </div>
-
-                        </div>
 
                     </div>
 
-                    <hr/>
+
 
                     <div class="row p-4">
                         <div class="col-12 col-sm-12 mb-3">
@@ -206,6 +175,7 @@
                                         <span class="checkmark"></span>
                                     </label>
                                 </div>
+
                                 <div class="col-12 col-md-4">
 
                                     <label class="custom-checkbox">Chaise roulante
@@ -227,23 +197,19 @@
 
                                 </div>
                                 <div class="col-12 col-md-4">
-
-                                    <label class="custom-checkbox"> Alcool
-
-                                        {{ form_errors(form.alcool) }}
-                                        {{ form_widget(form.alcool) }}
-                                        <span class="checkmark"></span>
-                                    </label>
-
-                                </div>
-
-                                <div class="col-12 col-md-4">
                                     <label class="custom-checkbox">Terasse
                                         {{ form_errors(form.terasse) }}
                                         {{ form_widget(form.terasse) }}
                                         <span class="checkmark"></span>
                                     </label>
                                 </div>
+                                <div class="col-12 col-md-4">
+
+
+
+                                </div>
+
+
                             </div>
                             <div class="form-group row">
                                 <div class="col-12 col-md-4">
@@ -267,11 +233,7 @@
 
                                 <div class="col-12 col-md-4">
 
-                                    <label class="custom-checkbox">Livraison
-                                        {{ form_errors(form.livraison) }}
-                                        {{ form_widget(form.livraison) }}
-                                        <span class="checkmark"></span>
-                                    </label>
+
 
                                 </div>
 

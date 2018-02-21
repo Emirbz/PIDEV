@@ -1,8 +1,7 @@
 {% extends 'base.html.twig' %}
-{% block title %} Modifier Restaurant {% endblock %}
+{% block title %} Restaurants {% endblock %}
 {% block transparant %} {% endblock %}
 {% block body %}
-
 
 
     <!-- Page Inner -->
@@ -12,8 +11,8 @@
             <div class="row wow fadeInUp">
                 <div class="col-12 col-sm-6">
                     <div class="page-title">
-                        <h2>Modifier Restaurant</h2>
-                        <p class="mb-0">Modifier vos données</p>
+                        <h2>Ajout d'un Hotel</h2>
+                        <p class="mb-0">Ajouter votre Hôtel</p>
                     </div>
                 </div>
 
@@ -58,7 +57,7 @@
                                 <div class="form-group row">
                                     <label for="example-text-input" class="col-12 col-md-2 col-form-label">Email</label>
                                     <div class="col-12 col-md-10">
-
+                                        {{ form_start(form) }}
                                         {{ form_errors(form.email) }}
                                         {{ form_widget(form.email,{'attr': {'class': 'form-control border-top-0 border-left-0 border-right-0 rounded-0','placeholder':'Email de l\'etablissement !'}}) }}
 
@@ -91,12 +90,10 @@
 
                             </div>
                             <div class="col-12 col-sm-12">
-
                                 <div class="form-group row">
-                                    <label for="example-text-input" class="col-12 col-md-3 col-form-label">Photo de couverture</label>
+                                    <label for="example-text-input" class="col-12 col-md-3 col-form-label">Photo Principale</label>
                                     <div class="col-12 col-md-9">
                                         {{ form_widget(form.DevisFile) }}
-
                                     </div>
                                 </div>
 
@@ -119,6 +116,63 @@
                                         {{ form_errors(form.phone) }}
                                         {{ form_widget(form.phone, {'attr': {'class': 'form-control border-top-0 border-left-0 border-right-0 rounded-0','placeholder':' Numero de telephone '}}) }}
                                     </div>
+
+                                </div>
+                                <div class="form-group row">
+                                    <label for="example-text-input" class="col-12 col-md-3 col-form-label">Nombre D'etoile</label>
+                                    <div class="col-12 col-md-9">
+                                        {{ form_errors(form.etoile) }}
+                                        {{ form_widget(form.etoile, {'attr': {'class': 'form-control border-top-0 border-left-0 border-right-0 rounded-0','placeholder':' Nombre d\'etoile '}}) }}
+                                    </div>
+
+                                </div>
+                                <div class="form-group row">
+                                    <label for="example-text-input" class="col-12 col-md-3 col-form-label">Nombre De chambres</label>
+                                    <div class="col-12 col-md-9">
+                                        {{ form_errors(form.nbrchambre) }}
+                                        {{ form_widget(form.nbrchambre, {'attr': {'class': 'form-control border-top-0 border-left-0 border-right-0 rounded-0','placeholder':' Nombre de chambres'}}) }}
+                                    </div>
+
+                                </div>
+                                <div class="form-group row">
+                                    <label for="example-text-input" class="col-12 col-md-3 col-form-label">Prix Moyenne</label>
+                                    <div class="col-12 col-md-9">
+                                        {{ form_errors(form.prixmoy) }}
+                                        {{ form_widget(form.prixmoy, {'attr': {'class': 'form-control border-top-0 border-left-0 border-right-0 rounded-0','placeholder':' Nombre de chambres'}}) }}
+                                    </div>
+
+                                </div>
+                                <div class="col-12 col-md-4">
+
+                                    <label class="custom-checkbox">LPD
+                                        {{ form_errors(form.lpd) }}
+                                        {{ form_widget(form.lpd) }}
+                                        <span class="checkmark"></span>
+                                    </label>
+                                </div>
+                                <div class="col-12 col-md-4">
+
+                                    <label class="custom-checkbox">Demi Pension
+                                        {{ form_errors(form.dp) }}
+                                        {{ form_widget(form.dp) }}
+                                        <span class="checkmark"></span>
+                                    </label>
+                                </div>
+                                <div class="col-12 col-md-4">
+
+                                    <label class="custom-checkbox">Pension Complete
+                                        {{ form_errors(form.pc) }}
+                                        {{ form_widget(form.pc) }}
+                                        <span class="checkmark"></span>
+                                    </label>
+                                </div>
+                                <div class="col-12 col-md-4">
+
+                                    <label class="custom-checkbox">All Inclusive
+                                        {{ form_errors(form.allinclusive) }}
+                                        {{ form_widget(form.allinclusive) }}
+                                        <span class="checkmark"></span>
+                                    </label>
                                 </div>
                                 <div class="form-group row">
                                     <label for="example-text-input" class="col-12 col-md-3 col-form-label">Website(optional)</label>
@@ -148,32 +202,26 @@
                     <hr/>
                     <div class="row p-4">
                         <div class="col-12 col-sm-12 mb-3">
-                            <h6 class="lis-font-weight-500"><i class="fa fa-clock-o pr-2 lis-f-14"></i>Heures d'ouverture</h6>
+                            <h6 class="lis-font-weight-500"><i class="fa fa-clock-o pr-2 lis-f-14"></i>Horaires</h6>
 
                         </div>
                         <div class="col-12 col-sm-12">
                             <div class="form-group row">
-                                <label for="example-text-input" class="col-12 col-md-2 col-form-label">Lundi-Samedi</label>
+                                <label for="example-text-input" class="col-12 col-md-2 col-form-label">Check-IN</label>
                                 <div class="col-12 col-md-5">
-                                    {{ form_errors(form.lundisamedio) }}
-                                    {{ form_widget(form.lundisamedio, {'attr': {'class': 'form-control border-top-0 border-left-0 border-right-0 rounded-0'}}) }}
+                                    {{ form_errors(form.checkin) }}
+                                    {{ form_widget(form.checkin,{'attr': {'class': 'form-control border-top-0 border-left-0 border-right-0 rounded-0'}}) }}
                                 </div>
-                                <div class="col-12 col-md-5">
-                                    {{ form_errors(form.lundisamedif) }}
-                                    {{ form_widget(form.lundisamedif, {'attr': {'class': 'form-control border-top-0 border-left-0 border-right-0 rounded-0'}}) }}
-                                </div>
+
                             </div>
 
                             <div class="form-group row">
-                                <label for="example-text-input" class="col-12 col-md-2 col-form-label">Dimanche</label>
+                                <label for="example-text-input" class="col-12 col-md-2 col-form-label">Check-out</label>
                                 <div class="col-12 col-md-5">
-                                    {{ form_errors(form.dimancheo) }}
-                                    {{ form_widget(form.dimancheo, {'attr': {'class': 'form-control border-top-0 border-left-0 border-right-0 rounded-0'}}) }}
+                                    {{ form_errors(form.checkout) }}
+                                    {{ form_widget(form.checkout,{'attr': {'class': 'form-control border-top-0 border-left-0 border-right-0 rounded-0'}}) }}
                                 </div>
-                                <div class="col-12 col-md-5">
-                                    {{ form_errors(form.dimancheo) }}
-                                    {{ form_widget(form.dimanchef, {'attr': {'class': 'form-control border-top-0 border-left-0 border-right-0 rounded-0'}}) }}
-                                </div>
+
                             </div>
 
                         </div>
@@ -265,15 +313,6 @@
 
                                 </div>
 
-                                <div class="col-12 col-md-4">
-
-                                    <label class="custom-checkbox">Livraison
-                                        {{ form_errors(form.livraison) }}
-                                        {{ form_widget(form.livraison) }}
-                                        <span class="checkmark"></span>
-                                    </label>
-
-                                </div>
 
 
                             </div>

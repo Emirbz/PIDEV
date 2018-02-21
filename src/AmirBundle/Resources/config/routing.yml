@@ -30,4 +30,25 @@ App_bon_plan_ajout_etablissement:
     defaults: { _controller: AmirBundle:Etablissement:ajout_etablissement }
 App_bon_plan_list_beaute_et_bien_etre:
     path:     /list_beaute_et_bien_etre
-    defaults: { _controller: AmirBundle:Etablissement:list_beaute_et_bien_etre }
+    defaults: { _controller: AmirBundle:Etablissement:list_beaute }
+App_bon_plan_ajout_beaute_et_bien_etre:
+    path:     /ajout_beaute
+    defaults: { _controller: AmirBundle:Etablissement:ajout_beaute }
+App_bon_plan_profil_beaute:
+    path:     /profil_beaute/{id}
+    defaults: { _controller: AmirBundle:Etablissement:profil_beaute }
+App_bon_plan_update_beaute:
+    path:     /update_beaute/{id}
+    defaults: { _controller: AmirBundle:Etablissement:updatebeaute }
+App_bon_plan_list_culture:
+    path:     /list_culture
+    defaults: { _controller: AmirBundle:Etablissement:list_culture }
+App_bon_plan_ajout_culture:
+    path:     /ajout_cultre
+    defaults: { _controller: AmirBundle:Etablissement:ajout_culture }
+App_bon_plan_profil_culture:
+    path:     /profil_culture/{id}
+    defaults: { _controller: AmirBundle:Etablissement:profil_culture }
+App_bon_plan_update_culture:
+    path:     /update_culture/{id}
+    defaults: { _controller: AmirBundle:Etablissement:updateculture }

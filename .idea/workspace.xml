@@ -4,8 +4,53 @@
     <bookmark url="file://$PROJECT_DIR$/src/AppBundle/Controller/BonPlanController.php" line="18" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="14d820c4-d781-41a3-a50a-905fcccd4471" name="Default" comment="">
+    <list default="true" id="14d820c4-d781-41a3-a50a-905fcccd4471" name="Default" comment="Barcha CRUDDDDD">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/AmirBundle/Form/BeauteType.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/AmirBundle/Form/CultureType.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/AmirBundle/Resources/views/Beauteetbienetre/ajout_beaute.html.twig" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/AmirBundle/Resources/views/Beauteetbienetre/profil_beaute.html.twig" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/AmirBundle/Resources/views/Beauteetbienetre/update_beaute.twig" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/AmirBundle/Resources/views/Culture/ajout_culture.html.twig" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/AmirBundle/Resources/views/Culture/list_culture.html.twig" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/AmirBundle/Resources/views/Culture/profil_culture.html.twig" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/AmirBundle/Resources/views/Culture/update_culture.html.twig" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/SlimBundle/Repository/Sous_CategorieRepository.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/UserBundle/Entity/Message.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/UserBundle/Entity/MessageMetadata.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/UserBundle/Entity/Thread.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/UserBundle/Entity/ThreadMetadata.php" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/commandlinetools/Composer_04_02_18_16_48_c.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/commandlinetools/Symfony_11_02_18_15_28_s.xml" afterPath="" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/AmirBundle/Resources/views/Hotel/update_hotel.twig" afterPath="$PROJECT_DIR$/src/AmirBundle/Resources/views/Hotel/update_hotel.html.twig" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/PIDEV.iml" afterPath="$PROJECT_DIR$/.idea/PIDEV.iml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/commandlinetools/Composer_11_02_18_15_28_c.xml" afterPath="$PROJECT_DIR$/.idea/commandlinetools/Composer_11_02_18_15_28_c.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/php.xml" afterPath="$PROJECT_DIR$/.idea/php.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/AppKernel.php" afterPath="$PROJECT_DIR$/app/AppKernel.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Resources/views/base.html.twig" afterPath="$PROJECT_DIR$/app/Resources/views/base.html.twig" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/config/config.yml" afterPath="$PROJECT_DIR$/app/config/config.yml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/config/routing.yml" afterPath="$PROJECT_DIR$/app/config/routing.yml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/composer.json" afterPath="$PROJECT_DIR$/composer.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/composer.lock" afterPath="$PROJECT_DIR$/composer.lock" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/AmirBundle/Controller/EtablissementController.php" afterPath="$PROJECT_DIR$/src/AmirBundle/Controller/EtablissementController.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/AmirBundle/Form/HotelType.php" afterPath="$PROJECT_DIR$/src/AmirBundle/Form/HotelType.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/AmirBundle/Form/RestaurantType.php" afterPath="$PROJECT_DIR$/src/AmirBundle/Form/RestaurantType.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/AmirBundle/Repository/EtablissementRepository.php" afterPath="$PROJECT_DIR$/src/AmirBundle/Repository/EtablissementRepository.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/AmirBundle/Resources/config/routing.yml" afterPath="$PROJECT_DIR$/src/AmirBundle/Resources/config/routing.yml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/AmirBundle/Resources/views/Beauteetbienetre/list_beaute_et_bien_etre.html.twig" afterPath="$PROJECT_DIR$/src/AmirBundle/Resources/views/Beauteetbienetre/list_beaute_et_bien_etre.html.twig" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/AmirBundle/Resources/views/Etablissement/Ajout Etablissement.twig" afterPath="$PROJECT_DIR$/src/AmirBundle/Resources/views/Etablissement/Ajout Etablissement.twig" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/AmirBundle/Resources/views/Etablissement/ajout_restaurant.html.twig" afterPath="$PROJECT_DIR$/src/AmirBundle/Resources/views/Etablissement/ajout_restaurant.html.twig" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/AmirBundle/Resources/views/Etablissement/list_restaurant.html.twig" afterPath="$PROJECT_DIR$/src/AmirBundle/Resources/views/Etablissement/list_restaurant.html.twig" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/AmirBundle/Resources/views/Etablissement/profil_restaurant.html.twig" afterPath="$PROJECT_DIR$/src/AmirBundle/Resources/views/Etablissement/profil_restaurant.html.twig" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/AmirBundle/Resources/views/Etablissement/update_restaurant.html.twig" afterPath="$PROJECT_DIR$/src/AmirBundle/Resources/views/Etablissement/update_restaurant.html.twig" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/AmirBundle/Resources/views/Hotel/ajout_hotel.html.twig" afterPath="$PROJECT_DIR$/src/AmirBundle/Resources/views/Hotel/ajout_hotel.html.twig" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/AmirBundle/Resources/views/Hotel/list_hotels.html.twig" afterPath="$PROJECT_DIR$/src/AmirBundle/Resources/views/Hotel/list_hotels.html.twig" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/AmirBundle/Resources/views/Hotel/profil_hotel.html.twig" afterPath="$PROJECT_DIR$/src/AmirBundle/Resources/views/Hotel/profil_hotel.html.twig" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/SlimBundle/Entity/Sous_Categorie.php" afterPath="$PROJECT_DIR$/src/SlimBundle/Entity/Sous_Categorie.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/UserBundle/Entity/User.php" afterPath="$PROJECT_DIR$/src/UserBundle/Entity/User.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/UserBundle/Resources/views/ChangePassword/change_password_content.html.twig" afterPath="$PROJECT_DIR$/src/UserBundle/Resources/views/ChangePassword/change_password_content.html.twig" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/UserBundle/Resources/views/Profile/edit_content.html.twig" afterPath="$PROJECT_DIR$/src/UserBundle/Resources/views/Profile/edit_content.html.twig" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/UserBundle/Resources/views/layout.html.twig" afterPath="$PROJECT_DIR$/src/UserBundle/Resources/views/layout.html.twig" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -20,81 +65,61 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="Etablissement.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/AmirBundle/Entity/Etablissement.php">
+      <file leaf-file-name="profil_beaute.html.twig" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/AmirBundle/Resources/views/Beauteetbienetre/profil_beaute.html.twig">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="187">
-              <caret line="12" column="21" lean-forward="false" selection-start-line="12" selection-start-column="21" selection-end-line="12" selection-end-column="21" />
-              <folding>
-                <element signature="e#37#69#0#PHP" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="RestaurantType.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/AmirBundle/Form/RestaurantType.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1802">
-              <caret line="115" column="28" lean-forward="false" selection-start-line="115" selection-start-column="28" selection-end-line="115" selection-end-column="28" />
-              <folding>
-                <element signature="e#35#84#0#PHP" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="ajout_restaurant.html.twig" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/AmirBundle/Resources/views/Etablissement/ajout_restaurant.html.twig">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="17">
-              <caret line="4" column="0" lean-forward="true" selection-start-line="4" selection-start-column="0" selection-end-line="4" selection-end-column="0" />
+            <state relative-caret-position="184">
+              <caret line="55" column="0" lean-forward="false" selection-start-line="55" selection-start-column="0" selection-end-line="55" selection-end-column="0" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="EtablissementController.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/AmirBundle/Controller/EtablissementController.php">
+      <file leaf-file-name="profil_restaurant.html.twig" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/AmirBundle/Resources/views/Etablissement/profil_restaurant.html.twig">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="374">
-              <caret line="27" column="0" lean-forward="false" selection-start-line="27" selection-start-column="0" selection-end-line="27" selection-end-column="0" />
-              <folding>
-                <marker date="1519145853226" expanded="true" signature="6154:6156" ph="{...}" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="HotelType.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/AmirBundle/Form/HotelType.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+            <state relative-caret-position="184">
+              <caret line="55" column="0" lean-forward="false" selection-start-line="55" selection-start-column="0" selection-end-line="55" selection-end-column="0" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="DefaultController.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/DealsBundle/Controller/DefaultController.php">
+      <file leaf-file-name="profil_hotel.html.twig" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/AmirBundle/Resources/views/Hotel/profil_hotel.html.twig">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="187">
-              <caret line="15" column="42" lean-forward="false" selection-start-line="15" selection-start-column="42" selection-end-line="15" selection-end-column="42" />
-              <folding>
-                <marker date="1519136381908" expanded="true" signature="1207:1243" ph="SELECT d FRO... DealsBundle" />
-                <marker date="1519136381908" expanded="true" signature="2616:2687" ph="DELETE FROM " />
-                <marker date="1519136381908" expanded="true" signature="3365:3417" ph="Select d fro... DealsBundle" />
-              </folding>
+            <state relative-caret-position="184">
+              <caret line="53" column="0" lean-forward="false" selection-start-line="53" selection-start-column="0" selection-end-line="53" selection-end-column="0" />
+              <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Deal.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/DealsBundle/Entity/Deal.php">
+      <file leaf-file-name="base.html.twig" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/Resources/views/base.html.twig">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="4811">
-              <caret line="286" column="4" lean-forward="false" selection-start-line="286" selection-start-column="4" selection-end-line="290" selection-end-column="20" />
+            <state relative-caret-position="-156">
+              <caret line="36" column="77" lean-forward="false" selection-start-line="36" selection-start-column="77" selection-end-line="36" selection-end-column="77" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Ajout Etablissement.twig" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/AmirBundle/Resources/views/Etablissement/Ajout Etablissement.twig">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="218">
+              <caret line="51" column="6" lean-forward="false" selection-start-line="51" selection-start-column="6" selection-end-line="51" selection-end-column="6" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="edit_content.html.twig" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/UserBundle/Resources/views/Profile/edit_content.html.twig">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="125">
+              <caret line="46" column="27" lean-forward="false" selection-start-line="46" selection-start-column="27" selection-end-line="46" selection-end-column="27" />
               <folding />
             </state>
           </provider>
@@ -103,12 +128,41 @@
       <file leaf-file-name="list_restaurant.html.twig" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/AmirBundle/Resources/views/Etablissement/list_restaurant.html.twig">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="2210">
-              <caret line="130" column="0" lean-forward="false" selection-start-line="130" selection-start-column="0" selection-end-line="130" selection-end-column="0" />
+            <state relative-caret-position="175">
+              <caret line="13" column="186" lean-forward="false" selection-start-line="13" selection-start-column="186" selection-end-line="13" selection-end-column="186" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="list_culture.html.twig" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/AmirBundle/Resources/views/Culture/list_culture.html.twig">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="175">
+              <caret line="13" column="105" lean-forward="false" selection-start-line="13" selection-start-column="105" selection-end-line="13" selection-end-column="105" />
               <folding>
-                <marker date="1519142144253" expanded="true" signature="122:11559" ph="{% block body ...%}" />
-                <marker date="1519142144253" expanded="true" signature="8823:9280" ph="{% for x in restaurants ...%}" />
+                <element signature="e#12#26#0#Twig" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="list_beaute_et_bien_etre.html.twig" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/AmirBundle/Resources/views/Beauteetbienetre/list_beaute_et_bien_etre.html.twig">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="184">
+              <caret line="13" column="199" lean-forward="false" selection-start-line="13" selection-start-column="199" selection-end-line="13" selection-end-column="199" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="list_hotels.html.twig" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/AmirBundle/Resources/views/Hotel/list_hotels.html.twig">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="164">
+              <caret line="13" column="195" lean-forward="false" selection-start-line="13" selection-start-column="195" selection-end-line="13" selection-end-column="195" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -119,43 +173,43 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="twigfile" />
-        <option value="twig file" />
         <option value="twig" />
+        <option value="twig file" />
       </list>
     </option>
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>updatedat</find>
-      <find>updated</find>
-      <find>\DateTimeImmutable()</find>
-      <find>upda</find>
-      <find>MediaFile</find>
-      <find>updateat</find>
-      <find>upd</find>
-      <find>vich</find>
-      <find>detail</find>
-      <find>&lt;img</find>
-      <find>idus</find>
-      <find>solo_</find>
-      <find>ajouter</find>
-      <find>APP</find>
-      <find>join</find>
-      <find>blog</find>
-      <find>profil</find>
-      <find>bon_plan_blog</find>
-      <find>profi</find>
-      <find>sousca</find>
-      <find>reche</find>
+      <find>form_end</find>
+      <find>money</find>
+      <find>for ren</find>
+      <find>update_</find>
+      <find>devis</find>
+      <find>ajout ho</find>
+      <find>ajout h</find>
+      <find>livra</find>
       <find>sous</find>
-      <find>class:</find>
-      <find>sc</find>
-      <find>categorie</find>
-      <find>souscat</find>
-      <find>etablissement</find>
-      <find>etablisseme</find>
-      <find>etabl</find>
+      <find>sousca</find>
+      <find>for x in</find>
+      <find>fumer</find>
+      <find>heures</find>
+      <find>list</find>
+      <find>hotel</find>
+      <find>cate</find>
+      <find>pizza</find>
+      <find>profil_b</find>
       <find>update</find>
+      <find>app</find>
+      <find>edit</find>
+      <find>profil</find>
+      <find>ajout</find>
+      <find>profil_cul</find>
+      <find>share</find>
+      <find>ajouter restaurant</find>
+      <find>ajouter</find>
+      <find>Ajouter restaurant</find>
+      <find>beaut</find>
+      <find>culture</find>
     </findStrings>
     <replaceStrings>
       <replace>.')}}</replace>
@@ -163,17 +217,12 @@
       <replace>App_bon_plan_</replace>
       <replace>app</replace>
       <replace>Etablissement</replace>
+      <replace>true</replace>
+      <replace>Ajouter Etablissement</replace>
     </replaceStrings>
   </component>
   <component name="FrameworkCommandLineHistory">
     <commandsHistory>
-      <command text="s cache:clear" />
-      <command text="s doctrine:schema:update" />
-      <command text="s doctrine:schema:update --force" />
-      <command text="s doctrine:generate:entity " />
-      <command text="OnsBundle:Image" />
-      <command text="s doctrine:generate:entity " />
-      <command text="s doctrine:schema:update --force" />
       <command text="s generate:bundle" />
       <command text="s doctrine:schema:update --force" />
       <command text="s cache:clear" />
@@ -192,6 +241,13 @@
       <command text="s doctrine:generate:form AmirBundle:etab" />
       <command text="s doctrine:schema:update --force " />
       <command text="s doctrine:schema:update --force" />
+      <command text="composer require mailer" />
+      <command text="s doctrine:schema:update --force" />
+      <command text="composer require friendsofsymfony/message-bundle" />
+      <command text="s doctrine:schema:update --force" />
+      <command text="s fos:user:promote ROLE_ADMIN emir" />
+      <command text="s fos:user:promote emir ROLE_ADMIN" />
+      <command text="s doctrine:schema:update --force" />
     </commandsHistory>
   </component>
   <component name="Git.Settings">
@@ -202,60 +258,63 @@
       </map>
     </option>
   </component>
+  <component name="HighlightingSettingsPerFile">
+    <setting file="mock:///Dummy.txt" root0="SKIP_INSPECTION" />
+  </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/UserBundle/Resources/views/Profile/show_content.html.twig" />
-        <option value="$PROJECT_DIR$/src/UserBundle/Resources/views/Profile/edit_content.html.twig" />
-        <option value="$PROJECT_DIR$/app/Resources/views/Categories/update_restaurant.html.twig" />
-        <option value="$PROJECT_DIR$/src/AppBundle/Controller/EtablissementController.php" />
-        <option value="$PROJECT_DIR$/app/Resources/views/Categories/list_resto.twig" />
-        <option value="$PROJECT_DIR$/app/Resources/views/Categories/list_restaurant.html.twig" />
-        <option value="$PROJECT_DIR$/src/AmirBundle/Resources/Form.php" />
-        <option value="$PROJECT_DIR$/src/AppBundle/Controller/BonPlanController.php" />
-        <option value="$PROJECT_DIR$/src/AmirBundle/Entity/Restaurant.php" />
-        <option value="$PROJECT_DIR$/src/AppBundle/Controller/DefaultController.php" />
-        <option value="$PROJECT_DIR$/src/AmirBundle/Resources/views/Etablissement/list_hotels.html.twig" />
-        <option value="$PROJECT_DIR$/src/AmirBundle/Controller/DefaultController.php" />
-        <option value="$PROJECT_DIR$/src/OnsBundle/Controller/DefaultController.php" />
-        <option value="$PROJECT_DIR$/src/OnsBundle/Entity/Tag.php" />
-        <option value="$PROJECT_DIR$/src/OnsBundle/ImageUpload.php" />
-        <option value="$PROJECT_DIR$/src/OnsBundle/EventListener/ImageUploadListener.php" />
-        <option value="$PROJECT_DIR$/src/OnsBundle/Resources/config/services.yml" />
-        <option value="$PROJECT_DIR$/app/config/services.yml" />
-        <option value="$PROJECT_DIR$/src/OnsBundle/Resources/views/Blog/updateArticle.html.twig" />
-        <option value="$PROJECT_DIR$/web/css/main.min.css" />
-        <option value="$PROJECT_DIR$/app/AppKernel.php" />
-        <option value="$PROJECT_DIR$/src/OnsBundle/Resources/views/Blog/articles.html.twig" />
-        <option value="$PROJECT_DIR$/src/OnsBundle/Form/ArticleType.php" />
-        <option value="$PROJECT_DIR$/app/config/config.yml" />
-        <option value="$PROJECT_DIR$/src/OnsBundle/Entity/Article.php" />
-        <option value="$PROJECT_DIR$/src/OnsBundle/Resources/views/Blog/addArticle.html.twig" />
-        <option value="$PROJECT_DIR$/src/OnsBundle/Resources/views/Blog/addTheme.html.twig" />
-        <option value="$PROJECT_DIR$/src/OnsBundle/Entity/Image.php" />
-        <option value="$PROJECT_DIR$/src/OnsBundle/Controller/BlogController.php" />
-        <option value="$PROJECT_DIR$/src/OnsBundle/Resources/views/Blog/details.html.twig" />
-        <option value="$PROJECT_DIR$/src/DealsBundle/Entity/Deal.php" />
-        <option value="$PROJECT_DIR$/src/DealsBundle/Controller/DefaultController.php" />
-        <option value="$PROJECT_DIR$/src/SlimBundle/Entity/Categorie.php" />
-        <option value="$PROJECT_DIR$/src/SlimBundle/Entity/Reservation.php" />
-        <option value="$PROJECT_DIR$/src/SlimBundle/Controller/FavorisController.php" />
-        <option value="$PROJECT_DIR$/src/UserBundle/Resources/config/routing.yml" />
-        <option value="$PROJECT_DIR$/src/OnsBundle/Resources/config/routing.yml" />
         <option value="$PROJECT_DIR$/src/SlimBundle/Resources/config/routing.yml" />
-        <option value="$PROJECT_DIR$/src/SlimBundle/Entity/Sous_Categorie.php" />
         <option value="$PROJECT_DIR$/src/SlimBundle/Form/Sous_CategorieType.php" />
         <option value="$PROJECT_DIR$/src/OussamaBundle/Resources/config/routing.yml" />
-        <option value="$PROJECT_DIR$/app/Resources/views/base.html.twig" />
-        <option value="$PROJECT_DIR$/app/config/routing.yml" />
-        <option value="$PROJECT_DIR$/src/AmirBundle/Resources/config/routing.yml" />
-        <option value="$PROJECT_DIR$/src/AmirBundle/Resources/views/Etablissement/list_restaurant.html.twig" />
         <option value="$PROJECT_DIR$/src/AmirBundle/Entity/etab.php" />
         <option value="$PROJECT_DIR$/src/AmirBundle/Form/etabType.php" />
+        <option value="$PROJECT_DIR$/src/UserBundle/Resources/views/layout.html.twig" />
+        <option value="$PROJECT_DIR$/vendor/friendsofsymfony/user-bundle/Form/Type/ChangePasswordFormType.php" />
+        <option value="$PROJECT_DIR$/src/UserBundle/Resources/views/ChangePassword/change_password_content.html.twig" />
+        <option value="$PROJECT_DIR$/app/config/parameters.yml" />
+        <option value="$PROJECT_DIR$/src/UserBundle/Resources/views/Profile/edit_content.html.twig" />
+        <option value="$PROJECT_DIR$/src/UserBundle/Form/RegistrationFormType.php" />
+        <option value="$PROJECT_DIR$/app/AppKernel.php" />
+        <option value="$PROJECT_DIR$/src/UserBundle/Entity/MessageMetaData.php" />
+        <option value="$PROJECT_DIR$/src/UserBundle/Entity/Thread.php" />
+        <option value="$PROJECT_DIR$/src/UserBundle/Entity/ThreadMetadata.php" />
+        <option value="$PROJECT_DIR$/app/config/config.yml" />
+        <option value="$PROJECT_DIR$/src/UserBundle/Entity/Message.php" />
+        <option value="$PROJECT_DIR$/app/config/routing.yml" />
+        <option value="$PROJECT_DIR$/src/UserBundle/Resources/views/Registration/register_content.html.twig" />
+        <option value="$PROJECT_DIR$/src/UserBundle/Entity/User.php" />
+        <option value="$PROJECT_DIR$/src/UserBundle/Resources/views/Profile/show_content.html.twig" />
+        <option value="$PROJECT_DIR$/src/SlimBundle/Repository/Sous_Categorie.php" />
+        <option value="$PROJECT_DIR$/src/AmirBundle/Repository/EtablissementRepository.php" />
+        <option value="$PROJECT_DIR$/src/SlimBundle/Entity/Sous_Categorie.php" />
         <option value="$PROJECT_DIR$/src/AmirBundle/Entity/Etablissement.php" />
+        <option value="$PROJECT_DIR$/src/AmirBundle/Entity/Etab.php" />
         <option value="$PROJECT_DIR$/src/AmirBundle/Form/RestaurantType.php" />
-        <option value="$PROJECT_DIR$/src/AmirBundle/Controller/EtablissementController.php" />
+        <option value="$PROJECT_DIR$/src/AmirBundle/Resources/views/Etablissement/update_restaurant.html.twig" />
+        <option value="$PROJECT_DIR$/src/AmirBundle/Resources/views/Hotel/ajout_hotel.html.twig" />
+        <option value="$PROJECT_DIR$/src/AmirBundle/Resources/views/Hotel/update_hotel.twig" />
+        <option value="$PROJECT_DIR$/src/AmirBundle/Resources/views/Hotel/update_hotel.html.twig" />
+        <option value="$PROJECT_DIR$/src/AmirBundle/Form/HotelType.php" />
+        <option value="$PROJECT_DIR$/src/AmirBundle/Form/BeauteType.php" />
         <option value="$PROJECT_DIR$/src/AmirBundle/Resources/views/Etablissement/ajout_restaurant.html.twig" />
+        <option value="$PROJECT_DIR$/src/AmirBundle/Resources/views/Beauteetbienetre/ajout_beaute.html.twig" />
+        <option value="$PROJECT_DIR$/src/AmirBundle/Resources/views/Beauteetbienetre/update_beaute.twig" />
+        <option value="$PROJECT_DIR$/src/AmirBundle/Resources/views/Culture/ajout_culture.html.twig" />
+        <option value="$PROJECT_DIR$/src/AmirBundle/Form/CultureType.php" />
+        <option value="$PROJECT_DIR$/src/SlimBundle/Repository/Sous_CategorieRepository.php" />
+        <option value="$PROJECT_DIR$/src/AmirBundle/Resources/config/routing.yml" />
+        <option value="$PROJECT_DIR$/src/AmirBundle/Controller/EtablissementController.php" />
+        <option value="$PROJECT_DIR$/src/AmirBundle/Resources/views/Culture/profil_culture.html.twig" />
+        <option value="$PROJECT_DIR$/src/AmirBundle/Resources/views/Beauteetbienetre/profil_beaute.html.twig" />
+        <option value="$PROJECT_DIR$/src/AmirBundle/Resources/views/Etablissement/profil_restaurant.html.twig" />
+        <option value="$PROJECT_DIR$/src/AmirBundle/Resources/views/Hotel/profil_hotel.html.twig" />
+        <option value="$PROJECT_DIR$/app/Resources/views/base.html.twig" />
+        <option value="$PROJECT_DIR$/src/AmirBundle/Resources/views/Etablissement/list_restaurant.html.twig" />
+        <option value="$PROJECT_DIR$/src/AmirBundle/Resources/views/Culture/list_culture.html.twig" />
+        <option value="$PROJECT_DIR$/src/AmirBundle/Resources/views/Beauteetbienetre/list_beaute_et_bien_etre.html.twig" />
+        <option value="$PROJECT_DIR$/src/AmirBundle/Resources/views/Hotel/list_hotels.html.twig" />
+        <option value="$PROJECT_DIR$/src/AmirBundle/Resources/views/Etablissement/Ajout Etablissement.twig" />
       </list>
     </option>
   </component>
@@ -310,6 +369,7 @@
       <path value="$PROJECT_DIR$/vendor/egeloen/json-builder" />
       <path value="$PROJECT_DIR$/vendor/vich/uploader-bundle" />
       <path value="$PROJECT_DIR$/vendor/jms/metadata" />
+      <path value="$PROJECT_DIR$/vendor/friendsofsymfony/message-bundle" />
     </include_path>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
@@ -335,6 +395,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scratches" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -351,7 +412,14 @@
               <item name="PIDEV" type="b2602c69:ProjectViewProjectNode" />
               <item name="PIDEV" type="2a2b976b:PhpTreeStructureProvider$1" />
               <item name="app" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="config" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="Resources" type="2a2b976b:PhpTreeStructureProvider$1" />
+            </path>
+            <path>
+              <item name="PIDEV" type="b2602c69:ProjectViewProjectNode" />
+              <item name="PIDEV" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="app" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="Resources" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="views" type="2a2b976b:PhpTreeStructureProvider$1" />
             </path>
             <path>
               <item name="PIDEV" type="b2602c69:ProjectViewProjectNode" />
@@ -369,34 +437,57 @@
               <item name="PIDEV" type="2a2b976b:PhpTreeStructureProvider$1" />
               <item name="src" type="2a2b976b:PhpTreeStructureProvider$1" />
               <item name="AmirBundle" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="Entity" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="Resources" type="2a2b976b:PhpTreeStructureProvider$1" />
             </path>
             <path>
               <item name="PIDEV" type="b2602c69:ProjectViewProjectNode" />
               <item name="PIDEV" type="2a2b976b:PhpTreeStructureProvider$1" />
               <item name="src" type="2a2b976b:PhpTreeStructureProvider$1" />
               <item name="AmirBundle" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="Form" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="Resources" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="views" type="2a2b976b:PhpTreeStructureProvider$1" />
             </path>
             <path>
               <item name="PIDEV" type="b2602c69:ProjectViewProjectNode" />
               <item name="PIDEV" type="2a2b976b:PhpTreeStructureProvider$1" />
               <item name="src" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="DealsBundle" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="AmirBundle" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="Resources" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="views" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="Beauteetbienetre" type="2a2b976b:PhpTreeStructureProvider$1" />
             </path>
             <path>
               <item name="PIDEV" type="b2602c69:ProjectViewProjectNode" />
               <item name="PIDEV" type="2a2b976b:PhpTreeStructureProvider$1" />
               <item name="src" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="DealsBundle" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="Controller" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="AmirBundle" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="Resources" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="views" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="Culture" type="2a2b976b:PhpTreeStructureProvider$1" />
+            </path>
+            <path>
+              <item name="PIDEV" type="b2602c69:ProjectViewProjectNode" />
+              <item name="PIDEV" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="src" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="AmirBundle" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="Resources" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="views" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="Etablissement" type="2a2b976b:PhpTreeStructureProvider$1" />
+            </path>
+            <path>
+              <item name="PIDEV" type="b2602c69:ProjectViewProjectNode" />
+              <item name="PIDEV" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="src" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="AmirBundle" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="Resources" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="views" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="Hotel" type="2a2b976b:PhpTreeStructureProvider$1" />
             </path>
           </expand>
           <select />
         </subPane>
       </pane>
       <pane id="Scope" />
-      <pane id="Scratches" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -404,6 +495,7 @@
     <property name="settings.editor.selected.configurable" value="reference.webide.settings.project.settings.php.zend.framework.tool" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="full.screen.before.presentation.mode" value="false" />
+    <property name="SearchEverywhereHistoryKey" value="current&#9;null&#9;null" />
   </component>
   <component name="Push.Settings">
     <excluded-roots>
@@ -416,18 +508,18 @@
       <recent name="https://github.com/Emirbz/PIDEV.git" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\wamp64\www\PIDEV\src\AmirBundle\Resources\views\Beauteetbienetre" />
+      <recent name="C:\wamp64\www\PIDEV\src\SlimBundle" />
       <recent name="C:\wamp64\www\PIDEV\src\AmirBundle\Form" />
       <recent name="C:\wamp64\www\PIDEV\src\AmirBundle" />
       <recent name="C:\wamp64\www\PIDEV\src\AmirBundle\Resources\Entity" />
-      <recent name="C:\wamp64\www\PIDEV\src\AmirBundle\Controller" />
-      <recent name="C:\wamp64\www\PIDEV\src\AmirBundle\Resources\views" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\wamp64\www\PIDEV\src\AmirBundle\Resources\views\Culture" />
+      <recent name="C:\wamp64\www\PIDEV\src\SlimBundle\Repository" />
       <recent name="C:\wamp64\www\PIDEV\src\AmirBundle" />
       <recent name="C:\wamp64\www\PIDEV\src\OussamaBundle" />
       <recent name="C:\wamp64\www\PIDEV\src\SlimBundle" />
-      <recent name="C:\wamp64\www\PIDEV\src\DealsBundle" />
-      <recent name="C:\wamp64\www\PIDEV3\src\UserBundle\Resources" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -444,6 +536,9 @@
   </component>
   <component name="ShelveChangesManager" show_recycled="false">
     <option name="remove_strategy" value="false" />
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
   </component>
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
@@ -482,7 +577,8 @@
       <workItem from="1519122289879" duration="148000" />
       <workItem from="1519129298502" duration="770000" />
       <workItem from="1519134601664" duration="10783000" />
-      <workItem from="1519151681165" duration="228000" />
+      <workItem from="1519151681165" duration="11188000" />
+      <workItem from="1519213889013" duration="20479000" />
     </task>
     <task id="LOCAL-00001" summary="12/02">
       <created>1518434491272</created>
@@ -540,34 +636,41 @@
       <option name="project" value="LOCAL" />
       <updated>1519151879452</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="test emir">
+      <created>1519151922787</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1519151922787</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="162198000" />
+    <option name="totallyTimeSpent" value="193637000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.1830161" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3296355" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3448276" sideWeight="0.5058565" order="0" side_tool="true" content_ui="tabs" />
-      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Command Line Tools Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4326466" sideWeight="0.4941435" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3280507" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.1830161" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.30903327" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.24962178" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32840723" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3296355" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
-      <window_info id="Command Line Tools Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4326466" sideWeight="0.4941435" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="3" side_tool="false" content_ui="combo" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.30903327" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
     </layout>
   </component>
@@ -587,7 +690,8 @@
     </ignored-roots>
     <MESSAGE value="12/02" />
     <MESSAGE value="test emir" />
-    <option name="LAST_COMMIT_MESSAGE" value="test emir" />
+    <MESSAGE value="Barcha CRUDDDDD" />
+    <option name="LAST_COMMIT_MESSAGE" value="Barcha CRUDDDDD" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -603,372 +707,453 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/app/config/services.yml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="799">
-          <caret line="47" column="55" lean-forward="false" selection-start-line="47" selection-start-column="55" selection-end-line="47" selection-end-column="55" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/composer.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-376">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/OnsBundle/Resources/config/services.yml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="68">
-          <caret line="4" column="0" lean-forward="false" selection-start-line="4" selection-start-column="0" selection-end-line="4" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/config/parameters.yml">
       <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="204">
+          <caret line="12" column="0" lean-forward="false" selection-start-line="12" selection-start-column="0" selection-end-line="12" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/config/services.yml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="333">
+          <caret line="45" column="46" lean-forward="false" selection-start-line="45" selection-start-column="45" selection-end-line="45" selection-end-column="46" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/UserBundle/Form/RegistrationFormType.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="204">
+          <caret line="12" column="45" lean-forward="false" selection-start-line="12" selection-start-column="45" selection-end-line="12" selection-end-column="45" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/AppKernel.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="459">
+          <caret line="28" column="53" lean-forward="false" selection-start-line="28" selection-start-column="53" selection-end-line="28" selection-end-column="53" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/vendor/friendsofsymfony/message-bundle/FOS/MessageBundle/Controller/MessageController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-765">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/vendor/friendsofsymfony/message-bundle/FOS/MessageBundle/Resources/config/doctrine/Message.mongodb.xml">
+      <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/OnsBundle/Resources/views/Blog/addArticle.html.twig">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="77" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="113" selection-end-column="14" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/OnsBundle/Entity/Theme.php">
+    <entry file="file://$PROJECT_DIR$/vendor/friendsofsymfony/message-bundle/FOS/MessageBundle/Resources/config/config.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/OnsBundle/Resources/views/Blog/addTheme.html.twig">
+    <entry file="file://$PROJECT_DIR$/vendor/friendsofsymfony/message-bundle/FOS/MessageBundle/Resources/config/routing.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1921">
-          <caret line="113" column="14" lean-forward="false" selection-start-line="113" selection-start-column="14" selection-end-line="113" selection-end-column="14" />
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/OnsBundle/Entity/Image.php" />
-    <entry file="file://$PROJECT_DIR$/src/OnsBundle/Resources/views/Blog/articles.html.twig">
+    <entry file="file://$PROJECT_DIR$/src/UserBundle/Entity/Thread.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="184">
-          <caret line="49" column="161" lean-forward="false" selection-start-line="49" selection-start-column="113" selection-end-line="49" selection-end-column="161" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/OnsBundle/Entity/Article.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="17">
-          <caret line="82" column="0" lean-forward="false" selection-start-line="59" selection-start-column="4" selection-end-line="82" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/OnsBundle/Controller/BlogController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="318">
-          <caret line="49" column="45" lean-forward="false" selection-start-line="49" selection-start-column="45" selection-end-line="49" selection-end-column="45" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/OnsBundle/Form/ArticleType.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="476">
-          <caret line="28" column="0" lean-forward="false" selection-start-line="28" selection-start-column="0" selection-end-line="28" selection-end-column="0" />
+        <state relative-caret-position="612">
+          <caret line="38" column="55" lean-forward="false" selection-start-line="38" selection-start-column="55" selection-end-line="38" selection-end-column="55" />
           <folding>
-            <element signature="e#34#74#0#PHP" expanded="true" />
+            <element signature="e#72#104#0#PHP" expanded="false" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/OnsBundle/Resources/views/Blog/details.html.twig">
+    <entry file="file://$PROJECT_DIR$/src/UserBundle/Entity/ThreadMetadata.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="367">
-          <caret line="32" column="124" lean-forward="false" selection-start-line="32" selection-start-column="124" selection-end-line="32" selection-end-column="124" />
+        <state relative-caret-position="561">
+          <caret line="34" column="1" lean-forward="false" selection-start-line="34" selection-start-column="1" selection-end-line="34" selection-end-column="1" />
+          <folding>
+            <element signature="e#80#112#0#PHP" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/DealsBundle/Controller/CatDealController.php">
+    <entry file="file://$PROJECT_DIR$/src/UserBundle/Entity/MessageMetadata.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        <state relative-caret-position="493">
+          <caret line="30" column="58" lean-forward="false" selection-start-line="30" selection-start-column="58" selection-end-line="30" selection-end-column="58" />
+          <folding>
+            <element signature="e#81#113#0#PHP" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/OnsBundle/EventListener/ImageUploadListener.php">
+    <entry file="file://$PROJECT_DIR$/src/UserBundle/Entity/Message.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="119">
-          <caret line="16" column="25" lean-forward="false" selection-start-line="16" selection-start-column="25" selection-end-line="16" selection-end-column="25" />
+        <state relative-caret-position="612">
+          <caret line="38" column="56" lean-forward="false" selection-start-line="38" selection-start-column="56" selection-end-line="38" selection-end-column="56" />
+          <folding>
+            <element signature="e#73#105#0#PHP" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/SlimBundle/Controller/MailController.php">
+    <entry file="file://$PROJECT_DIR$/src/UserBundle/Resources/views/Registration/register_content.html.twig">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        <state relative-caret-position="1292">
+          <caret line="76" column="12" lean-forward="false" selection-start-line="8" selection-start-column="0" selection-end-line="76" selection-end-column="12" />
+          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/SlimBundle/Controller/DefaultController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/SlimBundle/Controller/FavorisController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="187">
-          <caret line="19" column="0" lean-forward="false" selection-start-line="19" selection-start-column="0" selection-end-line="19" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/SlimBundle/Controller/CategorieController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="357">
-          <caret line="29" column="30" lean-forward="false" selection-start-line="29" selection-start-column="30" selection-end-line="29" selection-end-column="30" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/SlimBundle/Resources/views/Slim/AjoutCategorie.html.twig">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/UserBundle/Resources/config/routing.yml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="85">
-          <caret line="5" column="66" lean-forward="false" selection-start-line="3" selection-start-column="0" selection-end-line="5" selection-end-column="66" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/DealsBundle/Resources/config/routing.yml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/SlimBundle/Entity/Categorie.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="153">
-          <caret line="9" column="29" lean-forward="false" selection-start-line="9" selection-start-column="29" selection-end-line="9" selection-end-column="29" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/SlimBundle/Entity/Favoris.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/SlimBundle/Entity/Reservation.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="153">
-          <caret line="9" column="32" lean-forward="false" selection-start-line="9" selection-start-column="32" selection-end-line="9" selection-end-column="32" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/AppBundle/Entity/User.php" />
     <entry file="file://$PROJECT_DIR$/src/UserBundle/Entity/User.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-918">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/SlimBundle/Resources/config/routing.yml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="714">
-          <caret line="42" column="0" lean-forward="false" selection-start-line="42" selection-start-column="0" selection-end-line="42" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/DealsBundle/Form/CatDealType.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/DealsBundle/Form/DealType.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="272">
-          <caret line="23" column="14" lean-forward="false" selection-start-line="20" selection-start-column="28" selection-end-line="23" selection-end-column="14" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/OussamaBundle/Controller/DefaultController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/OussamaBundle/Resources/config/routing.yml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="119">
-          <caret line="7" column="30" lean-forward="false" selection-start-line="7" selection-start-column="15" selection-end-line="7" selection-end-column="30" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/AmirBundle/Controller/DefaultController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        <state relative-caret-position="187">
+          <caret line="19" column="59" lean-forward="false" selection-start-line="19" selection-start-column="59" selection-end-line="19" selection-end-column="59" />
+          <folding>
+            <element signature="e#118#167#0#PHP" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/config/config.yml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="487">
-          <caret line="100" column="0" lean-forward="false" selection-start-line="100" selection-start-column="0" selection-end-line="100" selection-end-column="0" />
+        <state relative-caret-position="0">
+          <caret line="104" column="29" lean-forward="false" selection-start-line="104" selection-start-column="29" selection-end-line="104" selection-end-column="29" />
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/OnsBundle/Resources/config/routing.yml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="102">
-          <caret line="6" column="25" lean-forward="false" selection-start-line="6" selection-start-column="0" selection-end-line="6" selection-end-column="25" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Resources/views/base.html.twig">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="184">
-          <caret line="80" column="107" lean-forward="false" selection-start-line="80" selection-start-column="107" selection-end-line="80" selection-end-column="107" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/config/routing.yml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="34">
-          <caret line="2" column="20" lean-forward="false" selection-start-line="2" selection-start-column="20" selection-end-line="2" selection-end-column="20" />
+        <state relative-caret-position="782">
+          <caret line="46" column="20" lean-forward="false" selection-start-line="46" selection-start-column="20" selection-end-line="46" selection-end-column="20" />
           <folding>
-            <marker date="1519141715117" expanded="true" signature="0:178" ph="oussama: &lt;2 keys&gt;" />
+            <marker date="1519176001980" expanded="true" signature="0:178" ph="oussama: &lt;2 keys&gt;" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/vendor/friendsofsymfony/message-bundle/FOS/MessageBundle/Resources/views/Message/search.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="136">
+          <caret line="8" column="24" lean-forward="false" selection-start-line="8" selection-start-column="24" selection-end-line="8" selection-end-column="24" />
+          <folding>
+            <element signature="e#12#46#0#Twig" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/SlimBundle/Resources/config/routing.yml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-29">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/AmirBundle/Form/EtablissementType.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/SlimBundle/Entity/Sous_Categorie.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="102">
-          <caret line="30" column="4" lean-forward="false" selection-start-line="30" selection-start-column="4" selection-end-line="33" selection-end-column="7" />
+        <state relative-caret-position="-238">
+          <caret line="10" column="52" lean-forward="false" selection-start-line="10" selection-start-column="52" selection-end-line="10" selection-end-column="52" />
+          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/SlimBundle/Form/Sous_CategorieType.php">
+    <entry file="file://$PROJECT_DIR$/src/UserBundle/Resources/views/Profile/show.html.twig">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="289">
-          <caret line="21" column="14" lean-forward="false" selection-start-line="18" selection-start-column="12" selection-end-line="21" selection-end-column="14" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/AmirBundle/Resources/config/routing.yml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="153">
-          <caret line="9" column="30" lean-forward="false" selection-start-line="9" selection-start-column="0" selection-end-line="9" selection-end-column="30" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/AmirBundle/Resources/views/Etablissement/list_restaurant.html.twig">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2210">
-          <caret line="130" column="0" lean-forward="false" selection-start-line="130" selection-start-column="0" selection-end-line="130" selection-end-column="0" />
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <marker date="1519142144253" expanded="true" signature="122:11559" ph="{% block body ...%}" />
-            <marker date="1519142144253" expanded="true" signature="8823:9280" ph="{% for x in restaurants ...%}" />
+            <element signature="e#12#37#0#Twig" expanded="false" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/DealsBundle/Entity/Deal.php">
+    <entry file="file://$PROJECT_DIR$/src/UserBundle/Resources/views/Profile/show_content.html.twig">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="4811">
-          <caret line="286" column="4" lean-forward="false" selection-start-line="286" selection-start-column="4" selection-end-line="290" selection-end-column="20" />
+        <state relative-caret-position="184">
+          <caret line="43" column="97" lean-forward="false" selection-start-line="43" selection-start-column="62" selection-end-line="43" selection-end-column="97" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/AmirBundle/Entity/Etab.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="158">
+          <caret line="11" column="24" lean-forward="false" selection-start-line="11" selection-start-column="24" selection-end-line="11" selection-end-column="24" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/AmirBundle/Resources/views/Etablissement/update_restaurant.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="336">
+          <caret line="341" column="0" lean-forward="false" selection-start-line="341" selection-start-column="0" selection-end-line="341" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/AmirBundle/Repository/SouscategorieRepository.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/AmirBundle/Resources/views/Hotel/update_hotel.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="520">
+          <caret line="386" column="14" lean-forward="false" selection-start-line="386" selection-start-column="14" selection-end-line="386" selection-end-column="14" />
+          <folding>
+            <element signature="e#12#26#0#Twig" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/AmirBundle/Form/HotelType.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/DealsBundle/Resources/views/Deals/list_deal.html.twig">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/AmirBundle/Entity/Etablissement.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="515">
-          <caret line="1125" column="1" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="1127" selection-end-column="0" />
+        <state relative-caret-position="221">
+          <caret line="40" column="73" lean-forward="false" selection-start-line="40" selection-start-column="73" selection-end-line="40" selection-end-column="73" />
           <folding>
-            <element signature="e#37#69#0#PHP" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/AmirBundle/Form/etabType.php" />
-    <entry file="file://$PROJECT_DIR$/src/AmirBundle/Entity/Etablissement.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="187">
-          <caret line="12" column="21" lean-forward="false" selection-start-line="12" selection-start-column="21" selection-end-line="12" selection-end-column="21" />
-          <folding>
-            <element signature="e#37#69#0#PHP" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/DealsBundle/Controller/DefaultController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="187">
-          <caret line="15" column="42" lean-forward="false" selection-start-line="15" selection-start-column="42" selection-end-line="15" selection-end-column="42" />
-          <folding>
-            <marker date="1519136381908" expanded="true" signature="1207:1243" ph="SELECT d FRO... DealsBundle" />
-            <marker date="1519136381908" expanded="true" signature="2616:2687" ph="DELETE FROM " />
-            <marker date="1519136381908" expanded="true" signature="3365:3417" ph="Select d fro... DealsBundle" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/AmirBundle/Form/RestaurantType.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1802">
-          <caret line="115" column="28" lean-forward="false" selection-start-line="115" selection-start-column="28" selection-end-line="115" selection-end-column="28" />
-          <folding>
-            <element signature="e#35#84#0#PHP" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/AmirBundle/Controller/EtablissementController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="374">
-          <caret line="27" column="0" lean-forward="false" selection-start-line="27" selection-start-column="0" selection-end-line="27" selection-end-column="0" />
-          <folding>
-            <marker date="1519145853226" expanded="true" signature="6154:6156" ph="{...}" />
+            <element signature="e#35#85#0#PHP" expanded="false" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/AmirBundle/Resources/views/Etablissement/ajout_restaurant.html.twig">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="17">
-          <caret line="4" column="0" lean-forward="true" selection-start-line="4" selection-start-column="0" selection-end-line="4" selection-end-column="0" />
+        <state relative-caret-position="82">
+          <caret line="40" column="66" lean-forward="false" selection-start-line="40" selection-start-column="66" selection-end-line="40" selection-end-column="66" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/AmirBundle/Repository/EtablissementRepository.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="204">
+          <caret line="12" column="0" lean-forward="false" selection-start-line="12" selection-start-column="0" selection-end-line="12" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/AmirBundle/Resources/views/Hotel/ajout_hotel.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="184">
+          <caret line="146" column="56" lean-forward="false" selection-start-line="146" selection-start-column="54" selection-end-line="146" selection-end-column="56" />
+          <folding>
+            <element signature="e#12#26#0#Twig" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/AmirBundle/Form/RestaurantType.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="340">
+          <caret line="41" column="17" lean-forward="false" selection-start-line="41" selection-start-column="17" selection-end-line="41" selection-end-column="17" />
+          <folding>
+            <element signature="e#35#85#0#PHP" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/AmirBundle/Entity/Etablissement.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="180">
+          <caret line="1111" column="0" lean-forward="false" selection-start-line="1111" selection-start-column="0" selection-end-line="1111" selection-end-column="0" />
+          <folding>
+            <element signature="e#37#69#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/AmirBundle/Resources/views/Beauteetbienetre/update_beaute.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="255">
+          <caret line="15" column="61" lean-forward="false" selection-start-line="15" selection-start-column="61" selection-end-line="15" selection-end-column="61" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/AmirBundle/Form/BeauteType.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="374">
+          <caret line="40" column="74" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="77" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/AmirBundle/Resources/views/Culture/ajout_culture.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="184">
+          <caret line="38" column="41" lean-forward="false" selection-start-line="38" selection-start-column="41" selection-end-line="38" selection-end-column="41" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/AmirBundle/Resources/views/Beauteetbienetre/ajout_beaute.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="218">
+          <caret line="192" column="5" lean-forward="false" selection-start-line="192" selection-start-column="5" selection-end-line="192" selection-end-column="5" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/AmirBundle/Form/CultureType.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="306">
+          <caret line="40" column="74" lean-forward="false" selection-start-line="40" selection-start-column="74" selection-end-line="40" selection-end-column="74" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/SlimBundle/Repository/Sous_CategorieRepository.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="510">
+          <caret line="30" column="61" lean-forward="false" selection-start-line="30" selection-start-column="61" selection-end-line="30" selection-end-column="61" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/AmirBundle/Resources/config/routing.yml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="401">
+          <caret line="50" column="68" lean-forward="false" selection-start-line="50" selection-start-column="54" selection-end-line="50" selection-end-column="68" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/AmirBundle/Controller/EtablissementController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="286">
+          <caret line="322" column="68" lean-forward="false" selection-start-line="322" selection-start-column="68" selection-end-line="322" selection-end-column="68" />
+          <folding>
+            <element signature="e#126#153#0#PHP" expanded="true" />
+            <element signature="e#3009#3035#1#PHP" expanded="true" />
+            <element signature="e#3377#3418#0#PHP" expanded="true" />
+            <element signature="e#6939#6991#0#PHP" expanded="true" />
+            <element signature="e#7714#7740#1#PHP" expanded="true" />
+            <element signature="e#7854#7913#0#PHP" expanded="true" />
+            <element signature="e#8215#8268#0#PHP" expanded="true" />
+            <element signature="e#8516#8542#1#PHP" expanded="true" />
+            <element signature="e#9613#9652#0#PHP" expanded="true" />
+            <element signature="e#10323#10349#1#PHP" expanded="true" />
+            <element signature="e#10463#10501#0#PHP" expanded="true" />
+            <element signature="e#10804#10844#0#PHP" expanded="true" />
+            <element signature="e#11093#11119#1#PHP" expanded="true" />
+            <element signature="e#11464#11502#0#PHP" expanded="true" />
+            <marker date="1519236960326" expanded="true" signature="8320:8326" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/AmirBundle/Resources/views/Culture/profil_culture.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="184">
+          <caret line="55" column="0" lean-forward="false" selection-start-line="55" selection-start-column="0" selection-end-line="55" selection-end-column="0" />
+          <folding>
+            <element signature="e#12#26#0#Twig" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/AmirBundle/Resources/views/Beauteetbienetre/profil_beaute.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="184">
+          <caret line="55" column="0" lean-forward="false" selection-start-line="55" selection-start-column="0" selection-end-line="55" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/AmirBundle/Resources/views/Etablissement/profil_restaurant.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="184">
+          <caret line="55" column="0" lean-forward="false" selection-start-line="55" selection-start-column="0" selection-end-line="55" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/AmirBundle/Resources/views/Hotel/profil_hotel.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="184">
+          <caret line="53" column="0" lean-forward="false" selection-start-line="53" selection-start-column="0" selection-end-line="53" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/AmirBundle/Resources/views/Culture/list_culture.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="175">
+          <caret line="13" column="105" lean-forward="false" selection-start-line="13" selection-start-column="105" selection-end-line="13" selection-end-column="105" />
+          <folding>
+            <element signature="e#12#26#0#Twig" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/AmirBundle/Resources/views/Etablissement/list_restaurant.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="175">
+          <caret line="13" column="186" lean-forward="false" selection-start-line="13" selection-start-column="186" selection-end-line="13" selection-end-column="186" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/AmirBundle/Resources/views/Beauteetbienetre/list_beaute_et_bien_etre.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="184">
+          <caret line="13" column="199" lean-forward="false" selection-start-line="13" selection-start-column="199" selection-end-line="13" selection-end-column="199" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/AmirBundle/Resources/views/Hotel/list_hotels.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="164">
+          <caret line="13" column="195" lean-forward="false" selection-start-line="13" selection-start-column="195" selection-end-line="13" selection-end-column="195" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Resources/views/base.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-156">
+          <caret line="36" column="77" lean-forward="false" selection-start-line="36" selection-start-column="77" selection-end-line="36" selection-end-column="77" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/AmirBundle/Resources/views/Etablissement/Ajout Etablissement.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="218">
+          <caret line="51" column="6" lean-forward="false" selection-start-line="51" selection-start-column="6" selection-end-line="51" selection-end-column="6" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/UserBundle/Resources/views/Profile/edit_content.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="125">
+          <caret line="46" column="27" lean-forward="false" selection-start-line="46" selection-start-column="27" selection-end-line="46" selection-end-column="27" />
           <folding />
         </state>
       </provider>

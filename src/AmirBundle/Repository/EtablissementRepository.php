@@ -10,4 +10,5 @@ namespace AmirBundle\Repository;
  */
 class EtablissementRepository extends \Doctrine\ORM\EntityRepository
 {
+
 }

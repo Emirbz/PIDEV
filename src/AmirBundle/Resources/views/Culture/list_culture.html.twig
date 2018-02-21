@@ -1,5 +1,5 @@
 {% extends 'base.html.twig' %}
-    {% block title %} Beauté {% endblock %}
+    {% block title %} Liste des espace culturel {% endblock %}
     {% block transparant %} {% endblock %}
     {% block body %}
 
@@ -11,7 +11,7 @@
             <div class="container">
                 <div class="row pt-5">
                     <div class="row my-4" style="padding-left: 83%">
-                        <div class="col-12 col-md-12"> <a href="{{ path('App_bon_plan_ajout_etablissement') }}" class="btn btn-primary btn-default"> <i class="fa fa-plus-circle pr-2"></i>Ajouter Etab   </a> </div>
+                        <div class="col-12 col-md-12"> <a href="{{ path('App_bon_plan_ajout_etablissement') }}" class="btn btn-primary btn-default"> <i class="fa fa-plus-circle pr-2"></i>Add Etablissement   </a> </div>
                     </div>
 
                     <div class="col-12 col-md-12">
@@ -123,7 +123,7 @@
 
                                 <div class="col-12 col-md-6 col-lg-6 col-xl-4 mb-4 mb-md-0">
                                     <div class="card lis-brd-light wow fadeInUp text-center text-lg-left">
-                                        <a href="{{ path("App_bon_plan_profil_beaute",{'id':x.id})  }}">
+                                        <a href="{{ path("App_bon_plan_profil_culture",{'id':x.id})  }}">
                                             <div class="lis-grediant grediant-tb-light2 lis-relative modImage rounded-top"> <img src="{{vich_uploader_asset(x,'devisFile')}}" alt="" class="img-fluid rounded-top w-100" /> </div>
                                             <div class="lis-absolute lis-left-20 lis-top-20">
                                                 <div  class="lis-post-meta border border-white text-white rounded lis-f-14"  ><a href="{{ path("App_bon_plan_delete_restaurant",{'id':x.id})  }}" class="text-white" > <i class="fa fa-trash text-white"></i> Delete </a></div>

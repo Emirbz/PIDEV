@@ -8,7 +8,7 @@ use Doctrine\ORM\Mapping as ORM;
  * Sous_Categorie
  *
  * @ORM\Table(name="sous__categorie")
- * @ORM\Entity()
+ * @ORM\Entity(repositoryClass="SlimBundle\Repository\Sous_CategorieRepository")
  */
 class Sous_Categorie
 {

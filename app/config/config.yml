@@ -99,3 +99,7 @@ vich_uploader:
             upload_destination: '%kernel.root_dir%/../web/devis/'
             namer: vich_uploader.namer_uniqid
             delete_on_update: true
+fos_message:
+    db_driver: orm
+    thread_class: UserBundle\Entity\Thread
+    message_class: UserBundle\Entity\Message

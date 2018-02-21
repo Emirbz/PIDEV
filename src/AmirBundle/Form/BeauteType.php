@@ -17,7 +17,7 @@ use Symfony\Component\Form\Extension\Core\Type\SubmitType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
 
-class HotelType extends AbstractType
+class BeauteType extends AbstractType
 {
     /**
      * {@inheritdoc}
@@ -38,11 +38,10 @@ class HotelType extends AbstractType
                 'class'=>'SlimBundle\Entity\Sous_Categorie',
                 'choice_label'=>'nom',
                 'query_builder'=> function(Sous_CategorieRepository $sous_CategorieRepository){
-                    return $sous_CategorieRepository->createaQueryBuilder();
+                    return $sous_CategorieRepository->createaQueryBuilder3();
                 }
-            ))->add('nbrchambre')->add('prixmoy')->add('lpd')
-            ->add('pc')->add('allinclusive')->add('dp')
-            ->add('etoile')
+            ))
+
             ->add('parking')
             ->add('cartecredit')
             ->add('chaiseroulante')
@@ -53,31 +52,7 @@ class HotelType extends AbstractType
 
             ->add('climatisation')
             ->add('animaux')
-            ->add('alcool')
-            ->add('checkin',ChoiceType::class,array('choices'=>array(
-                '10:00'=>'10:00',
-                '11:00'=>'11:00',
-                '12:00'=>'12:00',
-                '13:00'=>'13:00',
-                '14:00'=>'14:00',
-                '15:00'=>'15:00',
-                '16:00'=>'16:00',
-                '17:00'=>'17:00',
 
-
-            )))
-            ->add('checkout',ChoiceType::class,array('choices'=>array(
-                '10:00'=>'10:00',
-                '11:00'=>'11:00',
-                '12:00'=>'12:00',
-                '13:00'=>'13:00',
-                '14:00'=>'14:00',
-                '15:00'=>'15:00',
-                '16:00'=>'16:00',
-                '17:00'=>'17:00',
-
-
-            )))
             ->add('Ajouter',SubmitType::class)
         ;
     }/**
@@ -100,4 +75,3 @@ class HotelType extends AbstractType
 
 
 }
-

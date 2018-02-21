@@ -33,9 +33,11 @@
                         <li class="dl-back"><a>back</a></li>
                         <li><a href="{{ path('App_bon_plan_list_restaurant') }}">Restaurants</a></li>
                         <li><a href="{{ path('App_bon_plan_list_hotels') }}">Hôtels</a></li>
+                        <li><a href="{{ path('App_bon_plan_list_beaute_et_bien_etre') }}">Beaute et bien être</a></li>
+                        <li><a href="{{ path('App_bon_plan_list_culture') }}">Espace Culturel</a></li>
                     </ul>
                 </li>
-                <li class="nav-item dropdown"> <a class="nav-link" href="" aria-expanded="false">Beauté et bien être </a>
+                <li class="nav-item dropdown"> <a class="nav-link" href="" aria-expanded="false">Evenements </a>
                 <li class="nav-item dropdown"> <a class="nav-link" href="{{ path('App_bon_plan_list_article') }}"  aria-expanded="false">Blog </a>
                 <li class="nav-item dropdown">
                     <a class="nav-link" href="#" data-toggle="dropdown" aria-expanded="false">Pages</a>
@@ -75,9 +77,11 @@
                     <ul class="dropdown-menu">
                         <li><a href="{{ path('App_bon_plan_list_restaurant') }}">Restaurants</a></li>
                         <li><a href="{{ path('App_bon_plan_list_hotels') }}">Hôtels</a></li>
+                        <li><a href="{{ path('App_bon_plan_list_hotels') }}">Beauté et bien être</a></li>
+                        <li><a href="{{ path('App_bon_plan_list_hotels') }}">Espace Culturel</a></li>
                     </ul>
                 </li>
-                <li class="nav-item dropdown"> <a class="nav-link" href="{{ path('App_bon_plan_list_beaute_et_bien_etre') }}" aria-expanded="false" onmouseout=" this.style.color='#c9c9c9'" onmouseover="this.style.color='white'">Beauté et bien être </a>
+                <li class="nav-item dropdown"> <a class="nav-link" href="{{ path('App_bon_plan_list_beaute_et_bien_etre') }}" aria-expanded="false" onmouseout=" this.style.color='#c9c9c9'" onmouseover="this.style.color='white'">Evenements </a>
                 <li class="nav-item dropdown"> <a class="nav-link" href="{{ path('App_bon_plan_list_article') }}"  aria-expanded="false" onmouseout=" this.style.color='#c9c9c9'" onmouseover="this.style.color='white'">Blog </a>
                     {% if is_granted('ROLE_ADMIN') %}
                 <li class="nav-item dropdown"> <a class="nav-link" href="{{ path('App_bon_plan_admin') }}"  aria-expanded="false" onmouseout=" this.style.color='#c9c9c9'" onmouseover="this.style.color='white'">Admin </a>
@@ -117,9 +121,16 @@
                                     <li class="nav-item dropdown"><img class="card" src="{{ asset('images/author.jpg') }}" style="border-radius: 50%;width: 50px;height: 50px;">
                                         <ul class="dropdown-menu">
                                             <li><a href="{{ path('fos_user_profile_show') }}">Profil</a></li>
+                                            <li><a href="{{ path('fos_user_change_password') }}">Changer Mot de passe</a></li>
+                                            <li><a href="{{ path('fos_user_profile_edit') }}">Modifier Profil</a></li>
+
+
                                         </ul>
                                     </li>
-                                    <label style="margin: auto"><a href="{{ path('fos_user_profile_show')}}" style="color: #c9c9c9;padding-left: 10px" onmouseout=" this.style.color='#c9c9c9'" onmouseover="this.style.color='white'">{{app.user.username }}</a> | <a style="color:#C9C9C9;" href="{{ path('fos_user_security_logout') }}"  onmouseout=" this.style.color='#c9c9c9'" onmouseover="this.style.color='white'" ><i class="fa fa-sign-in pr-2"></i>{{ 'Déconnexion'|trans({}, 'FOSUserBundle') }}</a></label>
+                                    <label style="margin: auto"><a href="{{ path('fos_user_profile_show')}}" style="color: #c9c9c9;padding-left: 10px" onmouseout=" this.style.color='#c9c9c9'" onmouseover="this.style.color='white'">{{app.user.username }}</a> | <a style="color:#C9C9C9;" href="{{ path('fos_user_security_logout') }}"  onmouseout=" this.style.color='#c9c9c9'" onmouseover="this.style.color='white'" >
+                                            <i class="fa fa-sign-in pr-2"></i>
+                                            {{ 'Déconnexion'|trans({}, 'FOSUserBundle') }}</a></label>
+
                                 </ul>
                             {% endif %}
                         </li>

@@ -42,6 +42,8 @@ App_bon_plan_contact:
 App_bon_plan_admin:
     path:     /admin/
     defaults: { _controller: AppBundle:BonPlan:admin }
-
+fos_message:
+    resource: "@FOSMessageBundle/Resources/config/routing.xml"
+    prefix: /message
 
 

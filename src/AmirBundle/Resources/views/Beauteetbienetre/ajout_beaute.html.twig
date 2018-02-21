@@ -1,7 +1,8 @@
 {% extends 'base.html.twig' %}
-{% block title %} Restaurants {% endblock %}
+{% block title %} Ajouter Centre e beauté {% endblock %}
 {% block transparant %} {% endblock %}
 {% block body %}
+
 
 
     <!-- Page Inner -->
@@ -11,8 +12,8 @@
             <div class="row wow fadeInUp">
                 <div class="col-12 col-sm-6">
                     <div class="page-title">
-                        <h2>Ajout d'un Hotel</h2>
-                        <p class="mb-0">Ajouter votre Hôtel</p>
+                        <h2>Ajout d'un Centre de Beaute</h2>
+                        <p class="mb-0">Ajouter votre Centre</p>
                     </div>
                 </div>
 
@@ -37,8 +38,9 @@
                                 <div class="form-group row">
                                     <label for="example-text-input" class="col-12 col-md-2 col-form-label">Sous Categorie</label>
                                     <div class="col-12 col-md-10">
-                                        {{ form_errors(form.souscategorie) }}
-                                        {{ form_widget(form.souscategorie,{'attr': {'class': 'form-control border-top-0 border-left-0 border-right-0 rounded-0'}})}}
+                                        {{ form_start(form) }}
+                                        {{ form_errors(form.souscat) }}
+                                        {{ form_widget(form.souscat,{'attr': {'class': 'form-control border-top-0 border-left-0 border-right-0 rounded-0'}})}}
                                     </div>
                                 </div>
 
@@ -56,7 +58,7 @@
                                 <div class="form-group row">
                                     <label for="example-text-input" class="col-12 col-md-2 col-form-label">Email</label>
                                     <div class="col-12 col-md-10">
-                                        {{ form_start(form) }}
+
                                         {{ form_errors(form.email) }}
                                         {{ form_widget(form.email,{'attr': {'class': 'form-control border-top-0 border-left-0 border-right-0 rounded-0','placeholder':'Email de l\'etablissement !'}}) }}
 
@@ -89,24 +91,15 @@
 
                             </div>
                             <div class="col-12 col-sm-12">
-                                <div class="form-group row">
-                                    <label for="example-text-input" class="col-12 col-md-3 col-form-label">Logo</label>
-                                    <div class="col-12 col-md-9">
 
-                                    </div>
-                                </div>
                                 <div class="form-group row">
                                     <label for="example-text-input" class="col-12 col-md-3 col-form-label">Photo de couverture</label>
                                     <div class="col-12 col-md-9">
-                                        <input class="form-control border-0" type="file"  id="example-text-input">
+                                        {{ form_widget(form.DevisFile) }}
+
                                     </div>
                                 </div>
-                                <div class="form-group row">
-                                    <label for="example-text-input" class="col-12 col-md-3 col-form-label">Galerie de photo</label>
-                                    <div class="col-12 col-md-9">
-                                        <input class="form-control border-0" type="file"  id="example-text-input">
-                                    </div>
-                                </div>
+
 
                             </div>
 
@@ -126,63 +119,6 @@
                                         {{ form_errors(form.phone) }}
                                         {{ form_widget(form.phone, {'attr': {'class': 'form-control border-top-0 border-left-0 border-right-0 rounded-0','placeholder':' Numero de telephone '}}) }}
                                     </div>
-
-                                </div>
-                                <div class="form-group row">
-                                    <label for="example-text-input" class="col-12 col-md-3 col-form-label">Nombre D'etoile</label>
-                                    <div class="col-12 col-md-9">
-                                        {{ form_errors(form.etoile) }}
-                                        {{ form_widget(form.etoile, {'attr': {'class': 'form-control border-top-0 border-left-0 border-right-0 rounded-0','placeholder':' Nombre d\'etoile '}}) }}
-                                    </div>
-
-                                </div>
-                                <div class="form-group row">
-                                    <label for="example-text-input" class="col-12 col-md-3 col-form-label">Nombre De chambres</label>
-                                    <div class="col-12 col-md-9">
-                                        {{ form_errors(form.nbrchambre) }}
-                                        {{ form_widget(form.nbrchambre, {'attr': {'class': 'form-control border-top-0 border-left-0 border-right-0 rounded-0','placeholder':' Nombre de chambres'}}) }}
-                                    </div>
-
-                                </div>
-                                <div class="form-group row">
-                                    <label for="example-text-input" class="col-12 col-md-3 col-form-label">Prix Moyenne</label>
-                                    <div class="col-12 col-md-9">
-                                        {{ form_errors(form.prixmoy) }}
-                                        {{ form_widget(form.prixmoy, {'attr': {'class': 'form-control border-top-0 border-left-0 border-right-0 rounded-0','placeholder':' Nombre de chambres'}}) }}
-                                    </div>
-
-                                </div>
-                                <div class="col-12 col-md-4">
-
-                                    <label class="custom-checkbox">LPD
-                                        {{ form_errors(form.lpd) }}
-                                        {{ form_widget(form.lpd) }}
-                                        <span class="checkmark"></span>
-                                    </label>
-                                </div>
-                                <div class="col-12 col-md-4">
-
-                                    <label class="custom-checkbox">Demi Pension
-                                        {{ form_errors(form.dp) }}
-                                        {{ form_widget(form.dp) }}
-                                        <span class="checkmark"></span>
-                                    </label>
-                                </div>
-                                <div class="col-12 col-md-4">
-
-                                    <label class="custom-checkbox">Pension Complete
-                                        {{ form_errors(form.pc) }}
-                                        {{ form_widget(form.pc) }}
-                                        <span class="checkmark"></span>
-                                    </label>
-                                </div>
-                                <div class="col-12 col-md-4">
-
-                                    <label class="custom-checkbox">All Inclusive
-                                        {{ form_errors(form.allinclusive) }}
-                                        {{ form_widget(form.allinclusive) }}
-                                        <span class="checkmark"></span>
-                                    </label>
                                 </div>
                                 <div class="form-group row">
                                     <label for="example-text-input" class="col-12 col-md-3 col-form-label">Website(optional)</label>
@@ -205,40 +141,15 @@
 
                     </div>
 
-                    <hr/>
 
 
 
-                    <hr/>
+
                     <div class="row p-4">
-                        <div class="col-12 col-sm-12 mb-3">
-                            <h6 class="lis-font-weight-500"><i class="fa fa-clock-o pr-2 lis-f-14"></i>Horaires</h6>
-
-                        </div>
-                        <div class="col-12 col-sm-12">
-                            <div class="form-group row">
-                                <label for="example-text-input" class="col-12 col-md-2 col-form-label">Check-IN</label>
-                                <div class="col-12 col-md-5">
-                                    {{ form_errors(form.checkin) }}
-                                    {{ form_widget(form.checkin,{'attr': {'class': 'form-control border-top-0 border-left-0 border-right-0 rounded-0'}}) }}
-                                </div>
-
-                            </div>
-
-                            <div class="form-group row">
-                                <label for="example-text-input" class="col-12 col-md-2 col-form-label">Check-out</label>
-                                <div class="col-12 col-md-5">
-                                    {{ form_errors(form.checkout) }}
-                                    {{ form_widget(form.checkout,{'attr': {'class': 'form-control border-top-0 border-left-0 border-right-0 rounded-0'}}) }}
-                                </div>
-
-                            </div>
-
-                        </div>
 
                     </div>
 
-                    <hr/>
+
 
                     <div class="row p-4">
                         <div class="col-12 col-sm-12 mb-3">
@@ -264,6 +175,7 @@
                                         <span class="checkmark"></span>
                                     </label>
                                 </div>
+
                                 <div class="col-12 col-md-4">
 
                                     <label class="custom-checkbox">Chaise roulante
@@ -285,23 +197,19 @@
 
                                 </div>
                                 <div class="col-12 col-md-4">
-
-                                    <label class="custom-checkbox"> Alcool
-
-                                        {{ form_errors(form.alcool) }}
-                                        {{ form_widget(form.alcool) }}
-                                        <span class="checkmark"></span>
-                                    </label>
-
-                                </div>
-
-                                <div class="col-12 col-md-4">
                                     <label class="custom-checkbox">Terasse
                                         {{ form_errors(form.terasse) }}
                                         {{ form_widget(form.terasse) }}
                                         <span class="checkmark"></span>
                                     </label>
                                 </div>
+                                <div class="col-12 col-md-4">
+
+
+
+                                </div>
+
+
                             </div>
                             <div class="form-group row">
                                 <div class="col-12 col-md-4">
@@ -323,6 +231,11 @@
 
                                 </div>
 
+                                <div class="col-12 col-md-4">
+
+
+
+                                </div>
 
 
                             </div>
@@ -370,15 +283,7 @@
                                     {{ form_widget(form.address, {'attr': {'class': 'form-control border-top-0 border-left-0 border-right-0 rounded-0','placeholder':'Adresse !'}}) }}
                                 </div>
                             </div>
-                            <div class="form-group row">
-                                <label for="example-text-input" class="col-12 col-md-2 col-form-label">Coordonnées</label>
-                                <div class="col-12 col-md-5">
-                                    <input class="form-control border-top-0 border-left-0 border-right-0 rounded-0" type="text" placeholder="Latitude" value="" id="us2-lat">
-                                </div>
-                                <div class="col-12 col-md-5">
-                                    <input class="form-control border-top-0 border-left-0 border-right-0 rounded-0" type="text" placeholder="Longitude" value="" id="us2-lon">
-                                </div>
-                            </div>
+
 
                         </div>
 
@@ -396,27 +301,7 @@
     </section>
     <!--End Pricing -->
     <!-- Features -->
-    <section class="lis-bg-light">
-        <div class="container">
-            <div class="row">
-                <div class="col-12 col-md-6 col-lg-4 wow fadeInRight mb-4 mb-lg-0 text-center">
-                    <div class="px-3">
-                        <div class="h1 lis-dark"><i class="fa fa-money"></i></div>
-                        <h6 class="lis-f-20 lis-font-weight-500">Money Back Guarantee</h6> In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo. Nullam dictum felis eu pede mollis pretium. Integer tincidunt </div>
-                </div>
-                <div class="col-12 col-md-6 col-lg-4 wow fadeInRight mb-4 mb-lg-0 text-center">
-                    <div class="px-3">
-                        <div class="h1 lis-dark"><i class="fa fa-check-square-o"></i></div>
-                        <h6 class="lis-f-20 lis-font-weight-500">Simple Demo Import</h6> In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo. Nullam dictum felis eu pede mollis pretium. Integer tincidunt </div>
-                </div>
-                <div class="col-12 col-md-6 col-lg-4 wow fadeInRight text-center">
-                    <div class="px-3">
-                        <div class="h1 lis-dark"><i class="fa fa-users"></i></div>
-                        <h6 class="lis-f-20 lis-font-weight-500">Fast Support Team</h6> In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo. Nullam dictum felis eu pede mollis pretium. Integer tincidunt </div>
-                </div>
-            </div>
-        </div>
-    </section>
+
 
 
 

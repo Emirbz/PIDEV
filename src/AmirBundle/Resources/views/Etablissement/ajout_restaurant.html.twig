@@ -1,5 +1,5 @@
 {% extends 'base.html.twig' %}
-{% block title %} Restaurants {% endblock %}
+{% block title %} Ajouter Restaurants {% endblock %}
 {% block transparant %} {% endblock %}
 {% block body %}
 
@@ -38,6 +38,7 @@
                                     <div class="form-group row">
                                         <label for="example-text-input" class="col-12 col-md-2 col-form-label">Sous Categorie</label>
                                         <div class="col-12 col-md-10">
+                                            {{ form_start(form) }}
                                             {{ form_errors(form.souscat) }}
                                             {{ form_widget(form.souscat,{'attr': {'class': 'form-control border-top-0 border-left-0 border-right-0 rounded-0'}})}}
                                         </div>
@@ -57,7 +58,7 @@
                                     <div class="form-group row">
                                         <label for="example-text-input" class="col-12 col-md-2 col-form-label">Email</label>
                                         <div class="col-12 col-md-10">
-                                            {{ form_start(form) }}
+
                                              {{ form_errors(form.email) }}
                                             {{ form_widget(form.email,{'attr': {'class': 'form-control border-top-0 border-left-0 border-right-0 rounded-0','placeholder':'Email de l\'etablissement !'}}) }}
 
@@ -320,15 +321,7 @@
                                             {{ form_widget(form.address, {'attr': {'class': 'form-control border-top-0 border-left-0 border-right-0 rounded-0','placeholder':'Adresse !'}}) }}
                                         </div>
                                     </div>
-                                    <div class="form-group row">
-                                        <label for="example-text-input" class="col-12 col-md-2 col-form-label">Coordonnées</label>
-                                        <div class="col-12 col-md-5">
-                                            <input class="form-control border-top-0 border-left-0 border-right-0 rounded-0" type="text" placeholder="Latitude" value="" id="us2-lat">
-                                        </div>
-                                        <div class="col-12 col-md-5">
-                                            <input class="form-control border-top-0 border-left-0 border-right-0 rounded-0" type="text" placeholder="Longitude" value="" id="us2-lon">
-                                        </div>
-                                    </div>
+
 
                                 </div>
 
@@ -346,27 +339,7 @@
         </section>
         <!--End Pricing -->
         <!-- Features -->
-        <section class="lis-bg-light">
-            <div class="container">
-                <div class="row">
-                    <div class="col-12 col-md-6 col-lg-4 wow fadeInRight mb-4 mb-lg-0 text-center">
-                        <div class="px-3">
-                            <div class="h1 lis-dark"><i class="fa fa-money"></i></div>
-                            <h6 class="lis-f-20 lis-font-weight-500">Money Back Guarantee</h6> In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo. Nullam dictum felis eu pede mollis pretium. Integer tincidunt </div>
-                    </div>
-                    <div class="col-12 col-md-6 col-lg-4 wow fadeInRight mb-4 mb-lg-0 text-center">
-                        <div class="px-3">
-                            <div class="h1 lis-dark"><i class="fa fa-check-square-o"></i></div>
-                            <h6 class="lis-f-20 lis-font-weight-500">Simple Demo Import</h6> In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo. Nullam dictum felis eu pede mollis pretium. Integer tincidunt </div>
-                    </div>
-                    <div class="col-12 col-md-6 col-lg-4 wow fadeInRight text-center">
-                        <div class="px-3">
-                            <div class="h1 lis-dark"><i class="fa fa-users"></i></div>
-                            <h6 class="lis-f-20 lis-font-weight-500">Fast Support Team</h6> In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo. Nullam dictum felis eu pede mollis pretium. Integer tincidunt </div>
-                    </div>
-                </div>
-            </div>
-        </section>
+
 
 
 

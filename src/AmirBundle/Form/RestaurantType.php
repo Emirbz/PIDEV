@@ -2,6 +2,10 @@
 
 namespace AmirBundle\Form;
 
+use AmirBundle\Repository\EtablissementRepository;
+use AmirBundle\Repository\SouscategorieRepository;
+use Doctrine\ORM\EntityRepository;
+use SlimBundle\Repository\Sous_CategorieRepository;
 use Symfony\Bridge\Doctrine\Form\Type\EntityType;
 use Symfony\Component\Form\AbstractType;
 
@@ -21,7 +25,7 @@ class RestaurantType extends AbstractType
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $builder
-            ->add('DevisFile',FileType::class)->add('DevisName',HiddenType::class)
+           ->add('DevisFile',FileType::class)->add('DevisName',HiddenType::class)
             ->add('name')
             ->add('address')
             ->add('description')
@@ -32,8 +36,10 @@ class RestaurantType extends AbstractType
             ->add('categorie',HiddenType::class)
             ->add('souscat', EntityType::class, array(
                 'class'=>'SlimBundle\Entity\Sous_Categorie',
-                'choice_label'=>'nom'
-
+                'choice_label'=>'nom',
+                'query_builder'=> function(Sous_CategorieRepository $sous_CategorieRepository){
+                    return $sous_CategorieRepository->createaQueryBuilder();
+                }
             ))
             ->add('lundisamedio',ChoiceType::class,array('choices'=>array(
                 '10:00'=>'10:00',
