@@ -54,7 +54,7 @@
                         <li class="list-inline-item py-2 mr-0"><a href="#" class="lis-light rounded-left"><i class="fa fa-envelope-o pr-1"></i> Add review</a> </li>
                         <li class="list-inline-item py-2 mr-0"><a href="#" class="lis-light"><i class="fa fa-heart-o pr-1"></i> Bookmark</a> </li>
 
-                        <li class="list-inline-item py-2 mr-0"><a href="{{ path("App_bon_plan_update_hotel",{'id':x.id})  }}" class="btn btn-primary btn-default"> Edit</a> </li>
+                        <li class="list-inline-item py-2 mr-0"><a href="{{ path("App_bon_plan_update_restaurant",{'id':x.id})  }}" class="btn btn-primary btn-default"> Edit</a> </li>
 
 
                     </ul>
@@ -118,7 +118,7 @@
                             <div class="card-body py-4 px-0">
                                 <div class="center3 slider">
                                     <div>
-                                        <div class="gallery text-center lis-relative"> <img src="{{vich_uploader_asset(x,'devisFile')}}" alt="" class="img-fluid rounded" />
+                                        <div class="gallery text-center lis-relative"> <img src="{{ asset('uploads/images/' ~ x.img1) }}" alt="" class="img-fluid rounded" />
                                             <div class="gallery-fade fade w-100 h-100 rounded">
                                                 <div class="d-table w-100 h-100">
                                                     <div class="d-table-cell align-middle">
@@ -131,46 +131,7 @@
                                         </div>
                                     </div>
                                     <div>
-                                        <div class="gallery text-center lis-relative"> <img src="{{vich_uploader_asset(x,'devisFile')}}" alt="" class="img-fluid rounded" />
-                                            <div class="gallery-fade fade w-100 h-100 rounded">
-                                                <div class="d-table w-100 h-100">
-                                                    <div class="d-table-cell align-middle">
-                                                        <div class="h4">
-                                                            <a data-toggle="lightbox" data-gallery="example-gallery" href="{{vich_uploader_asset(x,'devisFile')}}" class="text-white"> <i class="fa fa-search-plus"></i></a>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div>
-                                        <div class="gallery text-center lis-relative"> <img src="{{vich_uploader_asset(x,'devisFile')}}" alt="" class="img-fluid rounded" />
-                                            <div class="gallery-fade fade w-100 h-100 rounded">
-                                                <div class="d-table w-100 h-100">
-                                                    <div class="d-table-cell align-middle">
-                                                        <div class="h4">
-                                                            <a data-toggle="lightbox" data-gallery="example-gallery" href="{{vich_uploader_asset(x,'devisFile')}}" class="text-white"> <i class="fa fa-search-plus"></i></a>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div>
-                                        <div class="gallery text-center lis-relative"> <img src="{{vich_uploader_asset(x,'devisFile')}}" alt="" class="img-fluid rounded" />
-                                            <div class="gallery-fade fade w-100 h-100 rounded">
-                                                <div class="d-table w-100 h-100">
-                                                    <div class="d-table-cell align-middle">
-                                                        <div class="h4">
-                                                            <a data-toggle="lightbox" data-gallery="example-gallery" href="{{vich_uploader_asset(x,'devisFile')}}" class="text-white"> <i class="fa fa-search-plus"></i></a>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div>
-                                        <div class="gallery text-center lis-relative"> <img src="{{vich_uploader_asset(x,'devisFile')}}" alt="" class="img-fluid rounded" />
+                                        <div class="gallery text-center lis-relative"> <img src="{{ asset('uploads/images/' ~ x.img2) }}" alt="" class="img-fluid rounded" />
                                             <div class="gallery-fade fade w-100 h-100 rounded">
                                                 <div class="d-table w-100 h-100">
                                                     <div class="d-table-cell align-middle">
@@ -183,18 +144,20 @@
                                         </div>
                                     </div>
                                     <div>
-                                        <div class="gallery text-center lis-relative"> <img src="{{vich_uploader_asset(x,'devisFile')}}" alt="" class="img-fluid rounded" />
+                                        <div class="gallery text-center lis-relative"> <img src="{{ asset('uploads/images/' ~ x.img3) }}" alt="" class="img-fluid rounded" />
                                             <div class="gallery-fade fade w-100 h-100 rounded">
                                                 <div class="d-table w-100 h-100">
                                                     <div class="d-table-cell align-middle">
                                                         <div class="h4">
-                                                            <a data-toggle="lightbox" data-gallery="example-gallery" href="{{vich_uploader_asset(x,'devisFile')}}" class="text-white"> <i class="fa fa-search-plus"></i></a>
+                                                            <a data-toggle="lightbox" data-gallery="example-gallery" href="" class="text-white"> <i class="fa fa-search-plus"></i></a>
                                                         </div>
                                                     </div>
                                                 </div>
                                             </div>
                                         </div>
                                     </div>
+
+
                                 </div>
                             </div>
                         </div>
@@ -503,15 +466,12 @@
                             </div>
                         </div>
                         <ul class="list-unstyled my-4 lis-line-height-2">
-                            <li><i class="fa fa-phone pr-2"></i> $PHONE</li>
-                            <li><i class="fa fa-map-o pr-2"></i> $Adresse</li>
+                            <li><i class="fa fa-phone pr-2"></i> {{ app.user.phone }}</li>
+                            <li><i class="fa fa-map-o pr-2"></i> {{ app.user.address }}</li>
                         </ul>
                         <ul class="list-inline my-0">
                             <li class="list-inline-item mr-0"><a href="#" class="lis-light lis-social border lis-brd-light text-center lis-line-height-2_3 rounded d-block"><i class="fa fa-facebook"></i></a></li>
-                            <li class="list-inline-item mr-0"><a href="#" class="lis-light lis-social border lis-brd-light text-center lis-line-height-2_3 rounded d-block"><i class="fa fa-twitter"></i></a></li>
-                            <li class="list-inline-item mr-0"><a href="#" class="lis-light lis-social border lis-brd-light text-center lis-line-height-2_3 rounded d-block"><i class="fa fa-linkedin"></i></a></li>
-                            <li class="list-inline-item mr-0"><a href="#" class="lis-light lis-social border lis-brd-light text-center lis-line-height-2_3 rounded d-block"><i class="fa fa-tumblr"></i></a></li>
-                            <li class="list-inline-item mr-0"><a href="#" class="lis-light lis-social border lis-brd-light text-center lis-line-height-2_3 rounded d-block"><i class="fa fa-pinterest-p"></i></a></li>
+
                         </ul>
                     </div>
                 </div>

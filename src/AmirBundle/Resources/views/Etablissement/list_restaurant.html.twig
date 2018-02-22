@@ -1,5 +1,5 @@
 {% extends 'base.html.twig' %}
-    {% block title %} Hotels {% endblock %}
+    {% block title %} List Resutaurants {% endblock %}
     {% block transparant %} {% endblock %}
     {% block body %}
 
@@ -36,8 +36,11 @@
                             </div>
                             <div class="col-12 col-sm-6 col-lg-3">
                                 <div class="form-group lis-relative">
+
                                     <select name="SC" class="style-select form-control border-top-0 border-left-0 border-right-0 rounded-0 pl-4">
-                                        <option>Choisir une categorie </option>
+                                    {%  for a in souscat %}
+                                        <option value="{{ a.nom }}">{{ a.nom }} </option>
+                                        {% endfor %}
 
 
                                     </select>
@@ -138,6 +141,7 @@
                                         <ul class="list-unstyled my-4 lis-line-height-2">
                                             <li><i class="fa fa-phone pr-2"></i> {{ x.phone }}</li>
                                             <li><i class="fa fa-map-o pr-2"></i> {{ x.address }}</li>
+                                            <li><i class="fa fa-home pr-2"></i> {{ x.souscat.nom }}</li>
                                         </ul>
 
                                     </div>

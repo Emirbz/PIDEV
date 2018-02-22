@@ -5,6 +5,7 @@ namespace AmirBundle\Entity;
 use Doctrine\ORM\Mapping as ORM;
 use Symfony\Component\HttpFoundation\File\File;
 use Vich\UploaderBundle\Mapping\Annotation as Vich;
+use Symfony\Component\Validator\Constraints as Assert;
 
 /**
  * Etablissement
@@ -1122,6 +1123,59 @@ class Etablissement
      * @ORM\JoinColumn(name="souscat",referencedColumnName="id")
      */
     private $souscat;
+    /**
+     * @ORM\Column(type="string",nullable=true)
+
+     * @Assert\File(mimeTypes={ "image/png","image/jpeg","image/jpg","image/gif" },maxSize="40000000"))
+     */
+    private $img1;
+
+    public function getImg1()
+    {
+        return $this->img1;
+    }
+
+    public function setImg1($img1)
+    {
+        $this->img1 = $img1;
+
+        return $this;
+    }
+    /**
+     * @ORM\Column(type="string",nullable=true)
+     * @Assert\File(mimeTypes={ "image/png","image/jpeg","image/jpg","image/gif" },maxSize="40000000")
+     */
+    private $img2;
+
+    public function getimg2()
+    {
+        return $this->img2;
+    }
+
+    public function setimg2($img2)
+    {
+        $this->img2 = $img2;
+
+        return $this;
+    }
+    /**
+     * @ORM\Column(type="string",nullable=true)
+     * @Assert\File(mimeTypes={ "image/png","image/jpeg","image/jpg","image/gif" },maxSize="400000000000"))
+     */
+    private $img3;
+
+    public function getimg3()
+    {
+        return $this->img3;
+    }
+
+    public function setimg3($img3)
+    {
+        $this->img3 = $img3;
+
+        return $this;
+    }
+
 
 }
 

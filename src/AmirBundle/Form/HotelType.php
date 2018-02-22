@@ -26,6 +26,9 @@ class HotelType extends AbstractType
     {
         $builder
             ->add('DevisFile',FileType::class)->add('DevisName',HiddenType::class)
+            ->add('img1', FileType::class,array('data_class' => null))
+            ->add('img2', FileType::class,array('data_class' => null))
+            ->add('img3', FileType::class,array('data_class' => null))
             ->add('name')
             ->add('address')
             ->add('description')
@@ -38,7 +41,7 @@ class HotelType extends AbstractType
                 'class'=>'SlimBundle\Entity\Sous_Categorie',
                 'choice_label'=>'nom',
                 'query_builder'=> function(Sous_CategorieRepository $sous_CategorieRepository){
-                    return $sous_CategorieRepository->createaQueryBuilder();
+                    return $sous_CategorieRepository->createaQueryBuilder2();
                 }
             ))->add('nbrchambre')->add('prixmoy')->add('lpd')
             ->add('pc')->add('allinclusive')->add('dp')
