@@ -96,6 +96,8 @@
 
                 {{ form_errors(form.plainPassword.second) }}
                 {{ form_widget(form.plainPassword.second, {'attr': {'class': 'input_password required', 'id': 'contact_name','placeholder':'Confirmer mot de passe'}}) }}
+                {{ form_errors(form.DevisFile) }}
+                {{ form_widget(form.DevisFile) }}
                 <button id="_submit" name="_submit" type="submit">Inscription</button>
                 <p class="message">Vous possédez déja un compte ? <a href="{{ path('fos_user_security_login') }}">Connexion</a></p>
             </div>

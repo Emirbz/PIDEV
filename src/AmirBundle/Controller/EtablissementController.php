@@ -106,6 +106,7 @@ class EtablissementController extends Controller
             ->find($id);
 
 
+
         $form = $this->createForm(HotelType::class, $restaurant);
         $form->handleRequest($request);
         if ($form->isValid()) {

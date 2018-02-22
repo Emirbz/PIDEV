@@ -121,39 +121,38 @@
                             <!-- affiche -->
                             {% for x in restaurants %}
 
-                                <div class="col-12 col-md-6 col-lg-6 col-xl-4 mb-4 mb-md-0">
-                                    <div class="card lis-brd-light wow fadeInUp text-center text-lg-left">
+                                <div class="post col-12 col-md-6 col-lg-6 col-xl-4  wow fadeInUp mb-4">
+                                    <div class="card lis-brd-light">
                                         <a href="{{ path("App_bon_plan_profil_hotel",{'id':x.id})  }}">
-                                            <div class="lis-grediant grediant-tb-light2 lis-relative modImage rounded-top"> <img src="{{vich_uploader_asset(x,'devisFile')}}" alt="" class="img-fluid rounded-top w-100" /> </div>
-                                            <div class="lis-absolute lis-left-20 lis-top-20">
-                                                <div  class="lis-post-meta border border-white text-white rounded lis-f-14"  ><a href="{{ path("App_bon_plan_delete_restaurant",{'id':x.id})  }}" class="text-white" > <i class="fa fa-trash text-white"></i> Delete </a></div>
+                                            <div class="modImage lis-grediant grediant-tb-light2 lis-relative rounded-top"> <img src="{{vich_uploader_asset(x,'devisFile')}}" alt="" class="img-fluid rounded-top w-100"> </div>
 
-
-                                            </div>
-                                            <div class="lis-absolute lis-right-20 lis-top-20">
-                                                <div  class="lis-post-meta border border-white text-white rounded lis-f-14"  ><a href="{{ path("App_bon_plan_update_hotel",{'id':x.id})  }}" class="text-white" > <i class="fa fa-pencil text-white"></i> Edit </a></div>
-
-
-                                            </div>
                                         </a>
-                                        <div class="card-body pt-0">
-                                            <div class="media d-block d-lg-flex lis-relative"> <img src="{{vich_uploader_asset(x,'devisFile')}}" alt="" class="lis-mt-minus-15 img-fluid d-lg-flex mx-auto mr-lg-3 mb-4 mb-lg-0 border lis-border-width-2 rounded-circle border-white" width="80" />
-                                                <div class="media-body align-self-start mt-2">
-                                                    <h6 class="mb-0 lis-font-weight-600"><A href="#" class="lis-dark">{{ x.name }}</A></h6> </div>
-                                            </div>
-                                            <ul class="list-unstyled my-4 lis-line-height-2">
-                                                <li><i class="fa fa-phone pr-2"></i> {{ x.phone }}</li>
-                                                <li><i class="fa fa-map-o pr-2"></i> {{ x.address }}</li>
+                                        <div class="card-body">
+                                            <h6 class="lis-font-weight-600 mb-2"><a href="#" class="lis-dark">{{ x.name }}</a></h6>
+                                            <ul class="list-unstyled mt-0">
+                                                <li><i class="fa fa-map-o pr-2"></i>{{ x.address }}</li>
+
                                             </ul>
                                             <div class="clearfix">
                                                 <ul class="list-inline mb-0 lis-light-gold font-weight-normal h4">
                                                     {% for i in 1..x.etoile %}
                                                         <li class="list-inline-item"><i class='fa fa-star'></i></li>
                                                     {% endfor %}
-                                                    <li class="list-inline-item"> {{ x.etoile }} Etoiles </li>
+                                                    <li class="list-inline-item">  </li>
                                                 </ul>
                                             </div>
+                                            <div class="media">
+                                                <div class="d-flex">
+                                                    <h5 class="lis-primary mb-0"><span class="lis-f-14 lis-dark">Prix Moyenne:</span> {{ x.prixmoy }} DT </h5> </div>
+                                                <div class="media-body align-self-center text-right"> <a href="#" class="lis-light lis-f-14"><i class="fa fa-heart-o lis-id-info  lis-rounded-circle-50 text-center"></i></a> </div>
+                                            </div>
                                         </div>
+                                        <div class="lis-devider"></div>
+                                        <ul class="list-inline mb-0 text-center lis-property-meta">
+
+                                            <li class="list-inline-item lis-brd-right lis-brd-light lis-meta-block float-left"><i class="fa fa-bed pr-1"></i> {{ x.nbrchambre }} Chambres</li>
+
+                                        </ul>
                                     </div>
                                 </div>
                             {% endfor %}

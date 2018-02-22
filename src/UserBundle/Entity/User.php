@@ -12,10 +12,13 @@ use FOS\MessageBundle\Model\ParticipantInterface;
 use FOS\UserBundle\Model\User as BaseUser;
 use Doctrine\ORM\Mapping as ORM;
 use Symfony\Component\Validator\Constraints as Assert;
+use Vich\UploaderBundle\Mapping\Annotation as Vich;
+use Symfony\Component\HttpFoundation\File\File;
 
 /**
  * @ORM\Entity
  * @ORM\Table(name="user")
+ * @Vich\Uploadable
  */
 class User extends BaseUser implements ParticipantInterface
 {
@@ -134,5 +137,58 @@ class User extends BaseUser implements ParticipantInterface
      * @ORM\Column(name="address", type="string", length=255,nullable=true)
      */
     private $address;
-    
+    /**
+     * @Vich\UploadableField(mapping="devis", fileNameProperty="devisName")
+     *
+     * @var File
+     */
+    private $devisFile;
+
+    /**
+     * @ORM\Column(type="string", length=255)
+     *
+     * @var string
+     */
+    private $devisName;
+
+    /**
+     * @param File|\Symfony\Component\HttpFoundation\File\UploadedFile $devis
+     *
+     * @return Devis
+     */
+    public function setDevisFile(File $devis = null)
+    {
+        $this->devisFile = $devis;
+
+
+
+        return $this;
+    }
+
+    /**
+     * @return File|null
+     */
+    public function getDevisFile()
+    {
+        return $this->devisFile;
+    }
+
+    /**
+     * @param string $devisName
+     *
+     * @return Devis
+     */
+    public function setDevisName($devisName)
+    {
+        $this->devisName = $devisName;
+
+        return $this;
+    }
+    /**
+     * @return string|null
+     */
+    public function getDevisName()
+    {
+        return $this->devisName;
+    }
 }

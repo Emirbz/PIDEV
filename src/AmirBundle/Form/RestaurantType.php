@@ -25,7 +25,7 @@ class RestaurantType extends AbstractType
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $builder
-           ->add('DevisFile',FileType::class)->add('DevisName',HiddenType::class)
+           ->add('DevisFile',File::class)->add('DevisName',HiddenType::class)
             ->add('name')
             ->add('address')
             ->add('description')

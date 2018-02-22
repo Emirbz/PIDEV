@@ -118,7 +118,7 @@
                                 <a href="#modal" class="text-white login_form"><i class="fa fa-sign-in pr-2"></i> Inscription | Connexion</a>
                             {% else %}
                                 <ul class="navbar-nav">
-                                    <li class="nav-item dropdown"><img class="card" src="{{ asset('images/author.jpg') }}" style="border-radius: 50%;width: 50px;height: 50px;">
+                                    <li class="nav-item dropdown"><img class="card"  src="{{vich_uploader_asset(app.user,'devisFile')}}" style="border-radius: 50%;width: 50px;height: 50px;">
                                         <ul class="dropdown-menu">
                                             <li><a href="{{ path('fos_user_profile_show') }}">Profil</a></li>
                                             <li><a href="{{ path('fos_user_change_password') }}">Changer Mot de passe</a></li>

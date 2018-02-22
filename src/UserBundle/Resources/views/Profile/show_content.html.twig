@@ -16,7 +16,7 @@
         <div class="row justify-content-center wow fadeInUp">
             <div class="col-12 col-md-12 mb-4 mb-lg-0">
                 <a href="#" class="text-white">
-                    <div class="media d-block d-sm-flex text-sm-left text-center"> <img src="{{asset('images/profile-4.png')}}" class="img-fluid d-sm-flex mr-0 mr-sm-4 border border-white lis-border-width-4 rounded mb-4 mb-md-0" alt="" />
+                    <div class="media d-block d-sm-flex text-sm-left text-center"> <img  width="250" src="{{vich_uploader_asset(app.user,'devisFile')}}" class="img-fluid d-sm-flex mr-0 mr-sm-4 border border-white lis-border-width-4 rounded mb-4 mb-md-0" alt="" />
                         <div class="media-body align-self-center">
                             <h5 class="text-white lis-font-weight-500 lis-line-height-1">{{ app.user.name }} {{ app.user.surname }}</h5>
                             <p class="mb-0">Membre depuis 2013</p>
@@ -58,7 +58,7 @@
                         <div class="card lis-brd-light wow fadeInUp mb-4">
                             <div class="card-body p-4">
                                 <div class="media d-md-flex d-block text-center text-md-left">
-                                    <a href="#"><img src="{{asset('images/user1.jpg')}}" class="img-fluid d-md-flex mr-0 mr-md-5 rounded " alt="" width="280"></a>
+                                    <a href="#"><img width="250" src="{{vich_uploader_asset(app.user,'devisFile')}}" class="img-fluid d-md-flex mr-0 mr-md-5 rounded " alt="" width="280"></a>
                                     <div class="media-body align-self-center mt-4 mt-md-0">
                                         <h5 class="mb-0 lis-font-weight-500"><a href="#" class="lis-dark">{{ app.user.surname }} {{ app.user.name }}</a></h5>
                                         <p class="mb-0">Member since January, 2013</p>
