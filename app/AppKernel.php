@@ -26,6 +26,8 @@ class AppKernel extends Kernel
             new OussamaBundle\OussamaBundle(),
             new Vich\UploaderBundle\VichUploaderBundle(),
             new DealsBundle\DealsBundle(),
+            new Knp\Bundle\PaginatorBundle\KnpPaginatorBundle(),
+            new Nomaya\SocialBundle\NomayaSocialBundle(),
         ];
 
         if (in_array($this->getEnvironment(), ['dev', 'test'], true)) {

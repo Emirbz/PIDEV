@@ -93,5 +93,51 @@ class Comment
     {
         return $this->date;
     }
+
+    /**
+     * @ORM\ManyToOne(targetEntity="UserBundle\Entity\User")
+     * @ORM\JoinColumn(name="idUser",referencedColumnName="id", onDelete="CASCADE")
+     */
+    private $idUser;
+
+    /**
+     * @return mixed
+     */
+    public function getIdUser()
+    {
+        return $this->idUser;
+    }
+
+    /**
+     * @param mixed $idUser
+     */
+    public function setIdUser($idUser)
+    {
+        $this->idUser = $idUser;
+    }
+
+    /**
+     * @ORM\ManyToOne(targetEntity="OnsBundle\Entity\Article")
+     * @ORM\JoinColumn(name="idArticle",referencedColumnName="id", onDelete="CASCADE")
+     */
+    private $idArticle;
+
+    /**
+     * @return mixed
+     */
+    public function getIdArticle()
+    {
+        return $this->idArticle;
+    }
+
+    /**
+     * @param mixed $idArticle
+     */
+    public function setIdArticle($idArticle)
+    {
+        $this->idArticle = $idArticle;
+    }
+
+
 }
 

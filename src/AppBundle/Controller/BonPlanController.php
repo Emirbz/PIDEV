@@ -10,8 +10,7 @@ namespace AppBundle\Controller;
 
 
 
-use AppBundle\Entity\Restaurant;
-use AppBundle\Form\RestaurantType;
+use OnsBundle\Entity\Article;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\Request;
 
@@ -23,7 +22,9 @@ class BonPlanController extends Controller
     }
     public function homeAction()
     {
-        return $this->render('default/index.html.twig');
+        $em = $this->getDoctrine()->getManager();
+        $Article = $em->getRepository("OnsBundle:Article")->findAll();
+        return $this->render('default/index.html.twig', array("Article" => $Article));
     }
 
 

@@ -554,56 +554,48 @@
     <!-- Blog -->
     <section>
         <div class="container">
-            <div class="row justify-content-center">
-                <div class="col-12 col-md-10 text-center">
-                    <div class="heading pb-4">
-                        <h2>Letest Tips &amp; Blog</h2>
-                        <h5 class="font-weight-normal lis-light">Discover &amp; connect with top-rated local businesses</h5>
-                    </div>
-                </div>
-            </div>
+
+
             <div class="row">
-                <div class="col-12 col-md-6 col-lg-4 wow fadeInUp mb-5 mb-lg-0">
-                    <div class="card border-0 lis-relative">
-                        <a href="#">
-                            <div class="modImage lis-grediant grediant-tb-light2 lis-relative rounded"> <img src="{{asset('images/blog1.jpg')}}" alt="" class="img-fluid rounded"> </div>
-                            <div class="lis-absolute lis-right-20 lis-top-20">
-                                <div class="lis-post-meta border border-white text-white rounded lis-f-14">Bar &amp; Club</div>
+
+
+                    {% for Article in Article %}
+                    <div class="col-12 col-md-6 col-lg-4 wow fadeInUp mb-5">
+
+                        <div class="card border-0 lis-relative">
+
+                            <a href="{{ path('App_bon_plan_details_article',{'id':Article.id}) }}">
+                                <div class="modImage lis-grediant grediant-tb-light2 lis-relative rounded"> <img src="{{ vich_uploader_asset(Article,'devisFile') }}" alt="" style="height: 290px; width: 450px;max-width: 450px;min-width: 450px;max-height: 290px;min-height: 290px;" class="img-fluid rounded" > </div>
+                                <div class="lis-absolute lis-right-20 lis-top-20">
+                                    <div class="lis-post-meta border border-white text-white rounded lis-f-14"><a href="{{ path('App_bon_plan_delete_article',{'id':Article.id}) }}" class="text-white "><i class="fa fa-trash">  </i> Delete</a> </div>
+                                </div>
+                                <div class="lis-absolute lis-left-20 lis-top-20">
+                                    <div class="lis-post-meta border border-white text-white rounded lis-f-14"><a href="{{ path('App_bon_plan_update_article',{'id':Article.id}) }}" class="text-white"><i class="fa fa-pencil"></i>  Edit</a> </div>
+                                </div>
+
+
+                            </a>
+
+
+                            <div class="pt-4"> <span class="lis-light">{{ Article.date|date('d/m/Y') }}</span> <a href="#" class="lis-dark"><h6 class="mt-2">{{ Article.title }}</h6></a>
+
+                                <p>{{ Article.content | raw }}</p>
                             </div>
-                        </a>
-                        <div class="pt-4"> <span class="lis-light">16 October 2017</span> <a href="#" class="lis-dark"><h6 class="mt-2">Donec vitae sapien ut libero></h6></a>
-                            <p>Vestibulum purus quam, scelerisque ut, mollis sed, nonummy id, metus nullam accumsan dui.</p>
+
+
                         </div>
                     </div>
-                </div>
-                <div class="col-12 col-md-6 col-lg-4 wow fadeInUp mb-5 mb-lg-0">
-                    <div class="card border-0 lis-relative">
-                        <a href="#">
-                            <div class="modImage lis-grediant grediant-tb-light2 lis-relative rounded"> <img src="{{asset('images/blog2.jpg')}}" alt="" class="img-fluid rounded"> </div>
-                            <div class="lis-absolute lis-right-20 lis-top-20">
-                                <div class="lis-post-meta border border-white text-white rounded lis-f-14">Bar &amp; Club</div>
-                            </div>
-                        </a>
-                        <div class="pt-4"> <span class="lis-light">24 October 2017</span> <a href="#" class="lis-dark"><h6 class="mt-2">Donec vitae sapien ut libero></h6></a>
-                            <p>Vestibulum purus quam, scelerisque ut, mollis sed, nonummy id, metus nullam accumsan dui.</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-12 col-md-6 col-lg-4 wow fadeInUp">
-                    <div class="card border-0 lis-relative">
-                        <a href="#">
-                            <div class="modImage lis-grediant grediant-tb-light2 lis-relative rounded"> <img src="{{asset('images/bg2.jpg')}}" alt="" class="img-fluid rounded"> </div>
-                            <div class="lis-absolute lis-right-20 lis-top-20">
-                                <div class="lis-post-meta border border-white text-white rounded lis-f-14">Bar &amp; Club</div>
-                            </div>
-                        </a>
-                        <div class="pt-4"> <span class="lis-light">30 October 2017</span> <a href="#" class="lis-dark"><h6 class="mt-2">Donec vitae sapien ut libero></h6></a>
-                            <p>Vestibulum purus quam, scelerisque ut, mollis sed, nonummy id, metus nullam accumsan dui.</p>
-                        </div>
-                    </div>
-                </div>
+                {% endfor %}
+
+
             </div>
+
+
+
+
+
         </div>
+
     </section>
     <!--End Blog -->
 {% endblock %}

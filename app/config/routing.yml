@@ -40,7 +40,7 @@ App_bon_plan_contact:
     path:     /contact
     defaults: { _controller: AppBundle:BonPlan:contact }
 App_bon_plan_admin:
-    path:     /admin/
+    path:     /admin
     defaults: { _controller: AppBundle:BonPlan:admin }
 
 

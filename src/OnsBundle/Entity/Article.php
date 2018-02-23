@@ -47,15 +47,7 @@ class Article
      */
     private $date;
 
-    /**
-     * @var string
-     *
-     * @ORM\Column(name="image", type="string", length=255, nullable=true)
-     *
-     * @Assert\NotBlank(message="Ajouter une image jpg")
-     * @Assert\File(mimeTypes={ "image/jpeg","image/jpeg","image/jpg","image/gif" })
-     */
-    private $image;
+
 
     /**
      * @var File
@@ -75,7 +67,7 @@ class Article
     private $devisName;
 
     /**
-     * @ORM\Column(type="datetime")
+     * @ORM\Column(type="datetime", nullable=true)
      *
      * @var \DateTime
      */
@@ -163,29 +155,7 @@ class Article
         return $this->date;
     }
 
-    /**
-     * Set image
-     *
-     * @param string $image
-     *
-     * @return Article
-     */
-    public function setImage($image)
-    {
-        $this->image = $image;
 
-        return $this;
-    }
-
-    /**
-     * Get image
-     *
-     * @return string
-     */
-    public function getImage()
-    {
-        return $this->image;
-    }
 
     /**
      * @param File|\Symfony\Component\HttpFoundation\File\UploadedFile $devis
@@ -230,8 +200,60 @@ class Article
         return $this->devisName;
     }
 
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="image", type="string", length=255, nullable=true)
+     *
+     * @Assert\NotBlank(message="Ajouter une image jpg")
+     * @Assert\File(mimeTypes={ "image/jpeg","image/jpeg","image/jpg","image/gif" })
+     */
+    private $image;
+    /**
+     * Set image
+     *
+     * @param string $image
+     *
+     * @return Article
+     */
+    public function setImage($image)
+    {
+        $this->image = $image;
 
+        return $this;
+    }
 
+    /**
+     * Get image
+     *
+     * @return string
+     */
+    public function getImage()
+    {
+        return $this->image;
+    }
+
+    /**
+     * @ORM\ManyToOne(targetEntity="OnsBundle\Entity\Theme")
+     * @ORM\JoinColumn(name="idTheme",referencedColumnName="id", onDelete="CASCADE")
+     */
+    private $idTheme;
+
+    /**
+     * @return mixed
+     */
+    public function getIdTheme()
+    {
+        return $this->idTheme;
+    }
+
+    /**
+     * @param mixed $idTheme
+     */
+    public function setIdTheme($idTheme)
+    {
+        $this->idTheme = $idTheme;
+    }
 
 
 

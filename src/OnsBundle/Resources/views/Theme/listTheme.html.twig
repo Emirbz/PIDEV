@@ -1,0 +1,43 @@
+{% extends 'base.html.twig' %}
+{% block transparant %}{% endblock %}
+{% block title %} Themes {% endblock %}
+{% block body %}
+    <section class="">
+
+    <div class="container">
+    <div class="row my-4" style="padding-left: 83%">
+        <div class="col-12 col-md-12"> <a href="{{ path('App_bon_plan_add_theme') }}" class="btn btn-primary btn-default"> <i class="fa fa-plus-circle pr-2"></i>Ajouter Theme</a> </div>
+    </div>
+    </div>
+    </section>
+    <!-- themes -->
+    <section>
+        <div class="container pt-5 mt-5">
+            <div class="row justify-content-center">
+                <div class="col-12 col-md-10 text-center">
+                    <div class="heading pb-4">
+                        <h5 class="lis-light">Themes</h5>
+                        <h2 class="f-weight-500">Find Articles by Theme</h2> </div>
+                </div>
+            </div>
+            <div class="container">
+            <div class="row">
+                {% for theme in Theme %}
+                <div class="col-12 col-sm-6 col-xl-3 mb-4 wow fadeInUp">
+                    <div class="card border-0 lis-relative">
+                        <a href="#">
+                            <div class="lis-grediant grediant-tb-light lis-relative modImage rounded"> <img src="{{ vich_uploader_asset(theme,'devisFile') }}" style=" height: 226.656px; width: 340px;max-width: 340px;min-width: 340px;max-height: 226.656px;min-width: 226.656px; "alt="" class="img-fluid rounded" /> </div>
+
+                        </a>
+                        <div class="hover-text lis-absolute lis-left-20 lis-bottom-20 lis-font-roboto text-white text-left">
+                            <h6 class="text-white mb-0">{{ theme.name }}</h6> <span class="lis-font-roboto">18 listing</span> </div>
+                    </div>
+                </div>
+              {% endfor %}
+        </div>
+            </div>
+        </div>
+    </section>
+    <!--End Themes -->
+
+{% endblock %}

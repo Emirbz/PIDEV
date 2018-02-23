@@ -16,6 +16,14 @@ App_bon_plan_delete_article:
 App_bon_plan_details_article:
     path:     /article/{id}
     defaults: { _controller: OnsBundle:Blog:details }
+App_bon_plan_add_theme:
+    path:     /add_theme
+    defaults: { _controller: OnsBundle:Blog:addTheme }
+App_bon_plan_list_theme:
+    path:     /Themes
+    defaults: { _controller: OnsBundle:Blog:listTheme }
+
+
 
 
 

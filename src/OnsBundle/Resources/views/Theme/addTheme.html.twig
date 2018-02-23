@@ -1,5 +1,5 @@
 {% extends 'base.html.twig' %}
-{% block title %} Article {% endblock %}
+{% block title %} Theme {% endblock %}
 {% block transparant %}{% endblock %}
 {% block body %}
 
@@ -9,14 +9,14 @@
             <div class="row wow fadeInUp">
                 <div class="col-12 col-sm-6">
                     <div class="page-title">
-                        <h2>Add Article</h2>
-                        <p class="mb-0">You  can add your article here</p>
+                        <h2>Add Theme</h2>
+                        <p class="mb-0">You  can add your theme here</p>
                     </div>
                 </div>
                 <div class="col-12 col-sm-6 text-left text-sm-right">
                     <ol class="breadcrumb mb-0 pl-0 bg-transparent">
                         <li class="breadcrumb-item d-inline-block float-none"><a href="{{ path('homepage') }}" class="lis-light">Home</a></li>
-                        <li class="breadcrumb-item d-inline-block float-none active">Add Article</li>
+                        <li class="breadcrumb-item d-inline-block float-none active">Add Theme</li>
                     </ol>
                 </div>
             </div>
@@ -33,27 +33,27 @@
                         <div class="card-body p-0">
                             <div class="row p-4">
                                 <div class="col-12 col-sm-12 mb-3">
-                                    <h6 class="lis-font-weight-500"><i class="fa fa-align-left pr-2 lis-f-14"></i>  Title & Content </h6>
+                                    <h6 class="lis-font-weight-500"><i class="fa fa-align-left pr-2 lis-f-14"></i>  Define Your Theme </h6>
 
                                 </div>
                                 <div class="col-12 col-sm-12">
                                     <div class="form-group row">
-                                        <label for="example-text-input" class="col-12 col-md-2 col-form-label">Article Title</label>
+                                        <label for="example-text-input" class="col-12 col-md-2 col-form-label">Theme Name</label>
                                         <div class="col-12 col-md-10">
-                                            {{ form_widget(form.title, {'attr': {'class': 'form-control border-top-0 border-left-0 border-right-0 rounded-0','placeholder':'Title'}}) }}
+                                            {{ form_widget(form.name, {'attr': {'class': 'form-control border-top-0 border-left-0 border-right-0 rounded-0','placeholder':'Title'}}) }}
                                         </div>
                                     </div>
 
 
-
+                                </div>
+                                <br/>
+                                <div class="col-12 col-sm-12">
                                     <div class="form-group row">
-                                        <label for="example-text-input" class="col-12 col-md-2 col-form-label">Content</label>
+                                        <label for="example-text-input" class="col-12 col-md-2 col-form-label">Theme Description</label>
                                         <div class="col-12 col-md-10">
-                                            {{ form_widget(form.content, {'attr': {'class': 'form-control border-top-0 border-left-0 border-right-0 rounded-0','placeholder':'Content'}}) }}
-
+                                            {{ form_widget(form.description, {'attr': {'class': 'form-control border-top-0 border-left-0 border-right-0 rounded-0','placeholder':'Description'}}) }}
                                         </div>
                                     </div>
-
 
 
                                 </div>
@@ -72,8 +72,8 @@
                                         <label for="example-text-input" class="col-12 col-md-3 col-form-label">Cover Image</label>
                                         <div class="col-12 col-md-9">
 
-                                            {{ form_errors(form.DevisFile) }}
-                                            {{ form_widget(form.DevisFile) }}
+                                            {{ form_errors(form.devisFile) }}
+                                            {{ form_widget(form.devisFile) }}
                                         </div>
 
 
@@ -83,20 +83,10 @@
                                 <hr/>
                                 <div class="row p-4">
                                     <div class="col-12 col-sm-12 mb-3">
-                                        <h6 class="lis-font-weight-500"><i class="fa fa-tag pr-2 lis-f-14"></i>Tags</h6>
+
 
                                     </div>
-                                    <div class="col-12 col-sm-12">
-                                        <div class="form-group row">
-                                            <label for="example-text-input" class="col-12 col-md-2 col-form-label">Tags(optional)</label>
-                                            <div class="col-12 col-md-10">
-                                                <input class="form-control border-top-0 border-left-0 border-right-0 rounded-0" placeholder="Add your tags" type="text" value="" id="example-text-input">
 
-
-                                            </div>
-                                        </div>
-
-                                    </div>
 
                                     <div class="col-12 col-sm-12"> <input type="submit" class="btn btn-primary btn-default mt-3" value="Save & Preview"> </div>
                                 </div>
