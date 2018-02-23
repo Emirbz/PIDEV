@@ -12,7 +12,7 @@ use Vich\UploaderBundle\Mapping\Annotation as Vich;
 /**
  * Deal
  *
- * @ORM\Table(name="deals")
+ * @ORM\Table(name="deal")
  * @ORM\Entity()
  * @Vich\Uploadable
  */

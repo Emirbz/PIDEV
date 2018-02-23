@@ -90,16 +90,32 @@ class DefaultController extends Controller
         $cat=$em->getRepository('DealsBundle:CatDeal')->findAll();
         $s=$request->get('search');
         $c=$request->get('cat');
-        if ($request->isMethod('POST') and $s=='' and $c=='')
-        { return $this->redirectToRoute('Deals_list');}
 
-        if ($request->isMethod('POST') and $s!='')
+
+        if ($request->isMethod('POST') and $s!='' and $c!='0')
         {
                 $this->redirectToRoute('Deals_list');
-                $p=$em->createQuery("Select d from DealsBundle:Deal d WHERE d.nom LIKE :s")->setParameter('s', '%'.$s.'%');
+                $p=$em->createQuery("Select d from DealsBundle:Deal d WHERE d.nom LIKE :s AND d.cat = :c")->setParameter('s', '%'.$s.'%')
+                ->setParameter('c',$c);
                 $search=$p->getResult();
 
         }
+        if ($request->isMethod('POST') and $s!='' and $c=='0')
+        {
+            $this->redirectToRoute('Deals_list');
+            $p=$em->createQuery("Select d from DealsBundle:Deal d WHERE d.nom LIKE :s")->setParameter('s', '%'.$s.'%');
+            $search=$p->getResult();
+
+        }
+        if ($request->isMethod('POST') and $s=='' and $c!='0')
+        {
+            $this->redirectToRoute('Deals_list');
+            $p=$em->createQuery("Select d from DealsBundle:Deal d WHERE  d.cat = :c")->setParameter('c',$c);
+            $search=$p->getResult();
+
+        }
+
+
         return $this->render("DealsBundle:Deals:list_deal.html.twig", array('search' => $search,'cat'=>$cat));
         }
     public function profil_dealAction($id)

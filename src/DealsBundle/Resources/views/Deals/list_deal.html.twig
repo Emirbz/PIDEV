@@ -22,9 +22,9 @@
                                 <div class="col-12 col-sm-6 col-lg-3">
                                     <div class="form-group lis-relative">
                                         <select name="cat" class="style-select form-control border-top-0 border-left-0 border-right-0 rounded-0 pl-4">
-                                            <option> All Categories</option>
+                                            <option value="0"> All Categories</option>
                                             {% for a in cat %}
-                                            <option  value="{{ a.nom }}">{{ a.nom }}</option>
+                                            <option  value="{{ a.id }}">{{ a.nom }}</option>
                                             {% endfor %}
                                         </select>
                                         <div class="lis-search"> <i class="fa fa-tags lis-primary lis-left-0"></i> </div>
