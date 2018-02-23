@@ -336,7 +336,17 @@
                                         <label for="example-text-input" class="col-12 col-md-2 col-form-label">Addresse</label>
                                         <div class="col-12 col-md-10">
                                             {{ form_errors(form.address) }}
-                                            {{ form_widget(form.address, {'attr': {'class': 'form-control border-top-0 border-left-0 border-right-0 rounded-0','placeholder':'Adresse !'}}) }}
+                                            {{ form_widget(form.address, {'attr': {'class': 'form-control border-top-0 border-left-0 border-right-0 rounded-0','placeholder':'Adresse '}}) }}
+                                        </div>
+                                        <label for="example-text-input" class="col-12 col-md-2 col-form-label">Latitude</label>
+                                        <div class="col-12 col-md-10">
+                                            {{ form_errors(form.latitude }}
+                                            {{ form_widget(form.latitude, {'attr': {'class': 'form-control border-top-0 border-left-0 border-right-0 rounded-0','placeholder':'Latitude'}}) }}
+                                        </div>
+                                        <label for="example-text-input" class="col-12 col-md-2 col-form-label">Longitude</label>
+                                        <div class="col-12 col-md-10">
+                                            {{ form_errors(form.longitude) }}
+                                            {{ form_widget(form.longitude, {'attr': {'class': 'form-control border-top-0 border-left-0 border-right-0 rounded-0','placeholder':'Longitude '}}) }}
                                         </div>
                                     </div>
 

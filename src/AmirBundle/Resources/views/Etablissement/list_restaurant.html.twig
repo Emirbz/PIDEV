@@ -38,8 +38,9 @@
                                 <div class="form-group lis-relative">
 
                                     <select name="SC" class="style-select form-control border-top-0 border-left-0 border-right-0 rounded-0 pl-4">
-                                    {%  for a in souscat %}
-                                        <option value="{{ a.nom }}">{{ a.nom }} </option>
+                                    <option value="">All categories</option>
+                                        {%  for a in souscat %}
+                                        <option value="{{ a.id }}">{{ a.nom }} </option>
                                         {% endfor %}
 
 

@@ -111,7 +111,11 @@
                                 </div>
 
                                 <div class="card lis-brd-light wow fadeInUp mb-4">
-
+                                    <h6 class="lis-font-weight-500"><i class="fa fa-map-o pr-2 lis-f-14"></i> Location</h6>
+                                    <div class="card lis-brd-light wow fadeInUp mb-4">
+                                        <div class="card-body p-4">
+                                            <div id="map-canvas" style='height: 350px;'></div>
+                                        </div>
                                 </div>
                                 <h6 class="lis-font-weight-500"><i class="fa fa-photo pr-2 lis-f-14"></i> Gallery</h6>
                                 <div class="card lis-brd-light wow fadeInUp">
@@ -435,8 +439,33 @@
                     </div>
                 </div>
             </div>
-        {% endfor %}
+            </div>
+
         </section>
         <!-- End Profile Content -->
+
         <!-- Footer-->
+            <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAZL72zG-8qoQipgaQ97aC1rxYuxuyDYX0"
+                    type="text/javascript"></script>
+            <script>
+                var myCenter =new google.maps.LatLng({{ x.latitude }},{{ x.longitude }});
+                var marker;
+                function initialize() {
+                    var mapProp= {
+                        center: myCenter,
+                        zoom: 15,
+                        mapTypeId: google.maps.MapTypeId.ROADMAP
+                    };
+
+                    var map = new google.maps.Map(document.getElementById('map-canvas'),
+                        mapProp);
+                    var marker = new google.maps.Marker({
+                        position: myCenter,
+                        animation: google.maps.Animation.BOUNCE
+                    });
+                    marker.setMap(map);
+                }
+                google.maps.event.addDomListner(window,'load',initialize());
+            </script>
+        {% endfor %}
     {% endblock %}

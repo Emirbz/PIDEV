@@ -88,14 +88,21 @@ class EtablissementController extends Controller
         $soucatresult = $souscat->getResult();
         if ($request->isMethod('POST') and $request->get('name') == '') {
             return $this->redirectToRoute('App_bon_plan_list_restaurant');
-        }
+        }$name = $request->get('name');
+        $address = $request->get('address');
+        $sc = $request->get('SC');
 
+        if ($request->isMethod('POST') and $name!='' and $address=='' and $sc=='') {
+
+            $this->redirectToRoute('App_bon_plan_list_restaurant',array('restaurant'));
+            $restaurant = $em->getRepository("AmirBundle:Etablissement")
+                ->findBy(array("name" => $name));
+        }
         if ($request->isMethod('POST')) {
-            $name = $request->get('name');
-            $address = $request->get('SC');
+
             $this->redirectToRoute('App_bon_plan_list_restaurant');
             $restaurant = $em->getRepository("AmirBundle:Etablissement")
-                ->findBy(array("name" => $name, "souscat" => $address));
+                ->findBy(array("name" => $name, "address" => $address,'souscat'=>$sc));
         }
         return $this->render("AmirBundle:Etablissement:list_restaurant.html.twig",
             array('restaurants' => $restaurant,'souscat' =>  $soucatresult
@@ -206,6 +213,8 @@ class EtablissementController extends Controller
     {
         $em = $this->getDoctrine()->getManager();
         $restaurant = $em->getRepository("AmirBundle:Etablissement")->findBy(array('categorie' => 'Hotel'));
+        $souscat = $em->CreateQuery("SELECT v  From SlimBundle:sous_categorie v where v.idCategorie=3");
+        $soucatresult = $souscat->getResult();
 
         if ($request->isMethod('POST') and $request->get('name') == '') {
             return $this->redirectToRoute('App_bon_plan_list_hotels');
@@ -219,7 +228,7 @@ class EtablissementController extends Controller
                 ->findBy(array("name" => $name, "address" => $address));
         }
         return $this->render("@Amir/Hotel/list_hotels.html.twig",
-            array('restaurants' => $restaurant
+            array('restaurants' => $restaurant , 'souscat'=>  $soucatresult
             ));
     }
 

@@ -30,6 +30,8 @@ class HotelType extends AbstractType
             ->add('img2', FileType::class,array('data_class' => null))
             ->add('img3', FileType::class,array('data_class' => null))
             ->add('name')
+            ->add('longitude')
+            ->add('latitude')
             ->add('address')
             ->add('description')
             ->add('phone')

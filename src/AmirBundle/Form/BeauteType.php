@@ -31,7 +31,11 @@ class BeauteType extends AbstractType
             ->add('description')
             ->add('phone')
             ->add('email')
+            ->add('longitude')
+            ->add('latitude')
             ->add('website')
+            ->add('longitude')
+            ->add('latitude')
             ->add('facebook')
             ->add('categorie',HiddenType::class)
             ->add('souscat', EntityType::class, array(

@@ -17,6 +17,7 @@
 
 <body>
 
+
 <!-- header -->
 <div id="header-fix" class="header fixed-top {% block transparant %} transperant {% endblock %}"{% block styleheader %}{% endblock %}  >
     <nav class="navbar navbar-toggleable-md navbar-expand-lg navbar-light py-lg-0 py-4">
@@ -77,8 +78,8 @@
                     <ul class="dropdown-menu">
                         <li><a href="{{ path('App_bon_plan_list_restaurant') }}">Restaurants</a></li>
                         <li><a href="{{ path('App_bon_plan_list_hotels') }}">Hôtels</a></li>
-                        <li><a href="{{ path('App_bon_plan_list_hotels') }}">Beauté et bien être</a></li>
-                        <li><a href="{{ path('App_bon_plan_list_hotels') }}">Espace Culturel</a></li>
+                        <li><a href="{{ path('App_bon_plan_list_beaute_et_bien_etre') }}">Beauté et bien être</a></li>
+                        <li><a href="{{ path('App_bon_plan_list_culture') }}">Espace Culturel</a></li>
                     </ul>
                 </li>
                 <li class="nav-item dropdown"> <a class="nav-link" href="{{ path('App_bon_plan_list_beaute_et_bien_etre') }}" aria-expanded="false" onmouseout=" this.style.color='#c9c9c9'" onmouseover="this.style.color='white'">Evenements </a>
@@ -123,6 +124,7 @@
                                             <li><a href="{{ path('fos_user_profile_show') }}">Profil</a></li>
                                             <li><a href="{{ path('fos_user_change_password') }}">Changer Mot de passe</a></li>
                                             <li><a href="{{ path('fos_user_profile_edit') }}">Modifier Profil</a></li>
+                                            <li><a href="{{ path('fos_message_inbox') }}">Messages</a></li>
 
 
                                         </ul>
@@ -146,7 +148,7 @@
 <!-- Page Inner -->
 {% block body %}
 
-    <!--End Page Inner -->
+{% block fos_message_content %}{% endblock %}
 
 {% endblock %}
 <!-- Footer-->

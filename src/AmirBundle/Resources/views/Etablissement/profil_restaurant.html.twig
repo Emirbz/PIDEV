@@ -110,7 +110,11 @@
                             </div>
                         </div>
 
+                        <h6 class="lis-font-weight-500"><i class="fa fa-map-o pr-2 lis-f-14"></i> Location</h6>
                         <div class="card lis-brd-light wow fadeInUp mb-4">
+                            <div class="card-body p-4">
+                                <div id="map-canvas" style='height: 350px;'></div>
+                            </div>
 
                         </div>
                         <h6 class="lis-font-weight-500"><i class="fa fa-photo pr-2 lis-f-14"></i> Gallery</h6>
@@ -123,7 +127,7 @@
                                                 <div class="d-table w-100 h-100">
                                                     <div class="d-table-cell align-middle">
                                                         <div class="h4">
-                                                            <a data-toggle="lightbox" data-gallery="example-gallery" href="" class="text-white"> <i class="fa fa-search-plus"></i></a>
+                                                            <a data-toggle="lightbox" data-gallery="example-gallery" href="{{ asset('uploads/images/' ~ x.img1) }}" class="text-white"> <i class="fa fa-search-plus"></i></a>
                                                         </div>
                                                     </div>
                                                 </div>
@@ -136,7 +140,7 @@
                                                 <div class="d-table w-100 h-100">
                                                     <div class="d-table-cell align-middle">
                                                         <div class="h4">
-                                                            <a data-toggle="lightbox" data-gallery="example-gallery" href="" class="text-white"> <i class="fa fa-search-plus"></i></a>
+                                                            <a data-toggle="lightbox" data-gallery="example-gallery" href="{{ asset('uploads/images/' ~ x.img2) }}" class="text-white"> <i class="fa fa-search-plus"></i></a>
                                                         </div>
                                                     </div>
                                                 </div>
@@ -149,7 +153,7 @@
                                                 <div class="d-table w-100 h-100">
                                                     <div class="d-table-cell align-middle">
                                                         <div class="h4">
-                                                            <a data-toggle="lightbox" data-gallery="example-gallery" href="" class="text-white"> <i class="fa fa-search-plus"></i></a>
+                                                            <a data-toggle="lightbox" data-gallery="example-gallery" href="{{ asset('uploads/images/' ~ x.img3) }}" class="text-white"> <i class="fa fa-search-plus"></i></a>
                                                         </div>
                                                     </div>
                                                 </div>
@@ -157,11 +161,16 @@
                                         </div>
                                     </div>
 
-
                                 </div>
                             </div>
                         </div>
+
+                        <div>
+
+                        </div>
+
                     </div>
+
                     <div class="tab-pane fade" id="reviews" role="tabpanel" aria-labelledby="reviews">
                         <h6 class="lis-font-weight-500"><i class="fa fa-signal pr-2 lis-f-14"></i> Reviews</h6>
                         <div class="card lis-brd-light wow fadeInUp mb-2">
@@ -421,7 +430,7 @@
                                     </div>
                                     <div class="col-12 col-sm-12">
                                         <div class="form-group lis-relative">
-                                            <textarea class="form-control border-top-0 border-left-0 border-right-0 rounded-0 pl-4" placeholder="Message"></textarea>
+                                            <textarea class="form-control border-top-0 border-left-0 border-right-0 rounded-0 pl-4" placeholder="Commentaire"></textarea>
                                             <div class="lis-search"> <i class="fa fa-pencil lis-primary lis-left-0 lis-top-10"></i> </div>
                                         </div>
                                     </div>
@@ -479,11 +488,11 @@
                 <div class="card lis-brd-light wow fadeInUp">
                     <div class="card-body p-4">
                         <div class="form-group lis-relative">
-                            <input type="text" class="form-control border-top-0 border-left-0 border-right-0 rounded-0 pl-4" placeholder="Your Name">
+                            <input type="text" class="form-control border-top-0 border-left-0 border-right-0 rounded-0 pl-4" placeholder="Qualité">
                             <div class="lis-search"> <i class="fa fa-user lis-primary lis-left-0"></i> </div>
                         </div>
                         <div class="form-group lis-relative">
-                            <input type="text" class="form-control border-top-0 border-left-0 border-right-0 rounded-0 pl-4" placeholder="Email address">
+                            <input type="text" class="form-control border-top-0 border-left-0 border-right-0 rounded-0 pl-4" placeholder="Service">
                             <div class="lis-search"> <i class="fa fa-envelope lis-primary lis-left-0"></i> </div>
                         </div>
                         <div class="form-group lis-relative">
@@ -494,8 +503,31 @@
             </div>
         </div>
     </div>
-{% endfor %}
+
 </section>
+        <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAZL72zG-8qoQipgaQ97aC1rxYuxuyDYX0"
+                type="text/javascript"></script>
+        <script>
+            var myCenter =new google.maps.LatLng({{ x.latitude }},{{ x.longitude }});
+            var marker;
+            function initialize() {
+                var mapProp= {
+                    center: myCenter,
+                    zoom: 15,
+                    mapTypeId: google.maps.MapTypeId.ROADMAP
+                };
+
+                var map = new google.maps.Map(document.getElementById('map-canvas'),
+                    mapProp);
+                var marker = new google.maps.Marker({
+                    position: myCenter,
+                    animation: google.maps.Animation.BOUNCE
+                });
+                marker.setMap(map);
+            }
+            google.maps.event.addDomListner(window,'load',initialize());
+        </script>
+        {% endfor %}
 <!-- End Profile Content -->
 <!-- Footer-->
        {% endblock %}

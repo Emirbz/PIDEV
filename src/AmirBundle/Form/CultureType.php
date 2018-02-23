@@ -28,6 +28,8 @@ class CultureType extends AbstractType
             ->add('DevisFile',FileType::class)->add('DevisName',HiddenType::class)
             ->add('name')
             ->add('address')
+            ->add('longitude')
+            ->add('latitude')
             ->add('description')
             ->add('phone')
             ->add('email')

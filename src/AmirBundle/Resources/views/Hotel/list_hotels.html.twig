@@ -36,21 +36,17 @@
                                     </div>
                                     <div class="col-12 col-sm-6 col-lg-3">
                                         <div class="form-group lis-relative">
-                                            <select class="style-select form-control border-top-0 border-left-0 border-right-0 rounded-0 pl-4">
-                                                <option> All Categories</option>
-                                                <option>1</option>
-                                                <option>2</option>
-                                                <option>3</option>
+                                            <select name="SC" class="style-select form-control border-top-0 border-left-0 border-right-0 rounded-0 pl-4">
+
+                                                <option value="">All categories</option>
+                                                {%  for a in souscat %}
+                                                    <option value="{{ a.id }}">{{ a.nom }} </option>
+                                                {% endfor %}
                                             </select>
                                             <div class="lis-search"> <i class="fa fa-tags lis-primary lis-left-0"></i> </div>
                                         </div>
                                     </div>
-                                    <div class="col-12 col-sm-6 col-lg-3">
-                                        <div class="form-group lis-relative">
-                                            <p class="pt-2 mb-2">Radius <span id="ex6CurrentSliderValLabel"> <span id="ex6SliderVal">530 </span></span>
-                                            </p>
-                                            <input id="ex6" type="text" data-slider-min="300" data-slider-max="1000" data-slider-step="1" data-slider-value="3" /> </div>
-                                    </div>
+
                                 </div>
                                 <button class="filter-btn bg-transparent border-0 lis-dark collapsed" data-toggle="collapse" data-target="#demo"> More Filters </button>
                                 <div id="demo" class="collapse p-3 mt-3 form-wrapper">
