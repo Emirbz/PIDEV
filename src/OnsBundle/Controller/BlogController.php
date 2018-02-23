@@ -38,7 +38,7 @@ class BlogController extends Controller
             {
                 $title = $request->get('title');
                
-                $Article = $em->getRepository("OnsBundle:Article")
+                $pagination = $em->getRepository("OnsBundle:Article")
 
                     ->findBy(array("title" => $title));
                 $this->redirectToRoute('App_bon_plan_list_article');
@@ -73,6 +73,7 @@ class BlogController extends Controller
             $em = $this->getDoctrine()->getManager();
             $em->persist($Comment);
             $em->flush();
+            return $this->redirectToRoute('App_bon_plan_details_article', array("id"=>$id));
         }
         return $this->render("OnsBundle:Blog:details.html.twig"
             ,array(
