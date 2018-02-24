@@ -138,6 +138,29 @@ class Comment
         $this->idArticle = $idArticle;
     }
 
+    /**
+     * @ORM\ManyToOne(targetEntity="OnsBundle\Entity\Comment", cascade={"persist"})
+     * @ORM\JoinColumn(name="idComment",referencedColumnName="id", onDelete="CASCADE", nullable=true)
+     */
+    private $idComment;
+
+    /**
+     * @return mixed
+     */
+    public function getIdComment()
+    {
+        return $this->idComment;
+    }
+
+    /**
+     * @param mixed $idComment
+     */
+    public function setIdComment($idComment)
+    {
+        $this->idComment = $idComment;
+    }
+
+
 
 }
 

@@ -62,5 +62,30 @@ class Tag
     {
         return $this->libelle;
     }
+
+    /**
+     * @ORM\ManyToMany(targetEntity="OnsBundle\Entity\Article", cascade={"persist"})
+     * @ORM\JoinColumn(name="idArticle",referencedColumnName="id", onDelete="CASCADE", nullable=true)
+     *
+     */
+    private $idArticles;
+
+    /**
+     * @return mixed
+     */
+    public function getIdArticles()
+    {
+        return $this->idArticles;
+    }
+
+    /**
+     * @param mixed $idArticles
+     */
+    public function setIdArticles($idArticles)
+    {
+        $this->idArticles = $idArticles;
+    }
+    
 }
+
 

@@ -59,7 +59,9 @@ class BlogController extends Controller
         $title = $Article->getTitle();
         $content = $Article->getContent();
         $date = $Article->getDate();
-        //commentaire
+        $idTheme = $Article->getIdTheme();
+        $theme = $idTheme->getName();
+        //commentaire ajout
         $Comment = new Comment();
 
         $Comment->setIdUser($this->getUser());
@@ -75,14 +77,25 @@ class BlogController extends Controller
             $em->flush();
             return $this->redirectToRoute('App_bon_plan_details_article', array("id"=>$id));
         }
+        //commentaire affichage
+        $dql = "select Comment from OnsBundle:Comment Comment WHERE Comment.idArticle=$id";
+        $query = $em->createQuery($dql);
+        $paginator  = $this->get('knp_paginator');
+        $Commentaires = $paginator->paginate(
+            $query, /* query NOT result */
+            $request->query->getInt('page', 1)/*page number*/,
+            3/*limit per page*/
+        );
         return $this->render("OnsBundle:Blog:details.html.twig"
             ,array(
                 "id"=>$id,
                 "title"=>$title,
                 "content"=>$content,
                 "date"=>$date,
+                "theme"=>$theme,
                 "Article"=>$Article,
-                'form'=>$form->createView()
+                'form'=>$form->createView(),
+                'Commentaires' => $Commentaires
 
             ));
     }

@@ -30,63 +30,118 @@
                     <div class="mb-4 wow fadeInUp">
                         <div class="card border-0 lis-relative">
                             <a href="#">
-
                                 <div class="lis-grediant grediant-tb-light2 lis-relative rounded-top post-image"> <img src="{{ vich_uploader_asset(Article,"devisFile") }}" alt="" class="img-fluid rounded-top w-100" /> </div>
-                                    </a>
+                            </a>
                         </div>
                         <div class="card border-top-0 lis-brd-light lis-bg-light">
-                            <div class="card-body p-4">
+                            <div class="card-body p-4"> <a href="#" class="lis-dark"><h5>{{ title }}</h5></a>
                                 <ul class="list-inline comment-info">
-                                    <li class="list-inline-item lis-relative mr-4"><i class="fa fa-user pr-1 lis-dark"></i> By <a href="#" class="lis-primary"></a></li>
-                                    <li class="list-inline-item lis-relative mr-4"><a href="#" class="lis-light"><i class="fa fa-calendar pr-1 lis-dark"></i>  {{ date|date('d/m/Y') }}</a></li>
-                                    <li class="list-inline-item lis-relative mr-4" ><a href="#" class="lis-light"><i class="fa fa-comments pr-1 lis-dark"></i>  3 Comments</a></li>
-                                    <li class="list-inline-item lis-relative"> {{ socialButtons({'linkedin':false, 'twitter':false, 'googleplus':false, }) }}   </li>
+                                    <li class="list-inline-item lis-relative mr-4"><i class="fa fa-user pr-1 lis-dark"></i> By <a href="#" class="lis-primary">John Deo</a></li>
+                                    <li class="list-inline-item lis-relative mr-4"><a href="#" class="lis-light"><i class="fa fa-calendar pr-1 lis-dark"></i> {{ date|date }}</a></li>
+                                    <li class="list-inline-item lis-relative mr-4"><a href="#" class="lis-light"><i class="fa fa-tags pr-1 lis-dark"></i>  {{ theme }}  </a></li>
+                                    <li class="list-inline-item lis-relative"><a href="#" class="lis-light"><i class="fa fa-comments pr-1 lis-dark"></i>  3 Comments</a></li>
                                 </ul>
-                                <p>{{ content | raw}}</p>
+                                {{ content | raw }}
                                 <div class="card lis-brd-light">
                                     <div class="card-body">
                                         <div class="clearfix">
                                             <div class="float-none float-sm-left mb-2 mb-sm-0">
-                                                <p class="lis-f-14 mb-0"><span class="lis-dark lis-font-weight-700">TAG : </span> </p>
+                                                <p class="lis-f-14 mb-0"><span class="lis-dark lis-font-weight-700">TAG : </span> Tour & Travels, Photography, Lifestyle</p>
                                             </div>
+                                            <div class="float-none float-sm-right">
+                                                <ul class="list-inline mb-0 lis-page-social">
 
+                                                    <li> {{ socialButtons({'linkedin':false, 'twitter':false, 'googleplus':false, }) }} </li>
+
+                                                </ul>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
-
                             </div>
-
                         </div>
-
                     </div>
                     <h6>3 Comments</h6>
                     <div class="card lis-brd-light wow fadeInUp mb-4">
+                     {% for comment in Commentaires %}
                         <div class="card-body p-4">
                             <div class="media d-block d-sm-flex text-center text-sm-left">
-                                <a href="#"><img src="dist/images/author2.jpg" class="img-fluid d-md-flex mr-sm-4 rounded-circle mb-2 mb-sm-0" alt="" width="80"></a>
+                                <a href="#"><img src="{{ asset('images/author2.jpg') }}" class="img-fluid d-md-flex mr-sm-4 rounded-circle mb-2 mb-sm-0" alt="" width="80"></a>
                                 <div class="media-body align-self-center">
                                     <div class="float-sm-right float-none my-2"> <a href="#" class="btn-reply lis-light border lis-brd-light lis-rounded-circle-50"> Reply</a> </div>
-                                    <h6 class="mb-0"><a href="#" class="lis-dark">Abelson Dixon</a></h6>
-                                    <p class="lis-f-14 lis-primary lis-font-weight-500 mb-2">August 22, 2017</p> Nullam nulla eros, ultricies sit amet, nonummy id, imperdiet feugiat, pede. Sed lectus. Donec mollis hendrerit risus. Phasellus nec sem in justo pellentesque facilisis. </div>
+                                    <h6 class="mb-0"><a href="#" class="lis-dark">{{ comment.idUser }}</a></h6>
+                                    <p class="lis-f-14 lis-primary lis-font-weight-500 mb-2">{{ comment.date | date }}</p> {{ comment.content }} </div>
                             </div>
                         </div>
 
                         <div class="lis-devider"></div>
-
+                        {% endfor %}
                     </div>
-                    <h6>Ajouter votre commentaire</h6>
+                    <h6>Ajouter Votre Commentaire</h6>
                     {{ form_start(form) }}
                     <div class="form-group lis-relative">
                         {{ form_widget(form.content,{'attr': {'class': 'form-control border-top-0 border-left-0 border-right-0 rounded-0 pl-4','placeholder':'Review'}}) }}
                         <div class="lis-search"> <i class="fa fa-pencil lis-primary lis-left-0 lis-top-10"></i> </div>
-                    </div> <input type="submit" class="btn btn-primary btn-default mt-3" value="Submit Commentaire"></div>
+                    </div> <input type="submit" class="btn btn-primary btn-sm mt-3" value="Submit Comment">    </div>
                 {{ form_end(form) }}
+
+                <div class="col-12 col-lg-3">
+                    <div class="lis-sidebar-right">
+                        <div class="search-widget">
+                            <div class="form-group lis-relative">
+                                <input type="text" class="form-control" placeholder="Search" />
+                                <div class="lis-absolute lis-right-20 lis-top-10 lis-line-height-2"> <a href="#" class="lis-light"><i class="fa fa-search"></i></a> </div>
+                            </div>
+                        </div>
+                        <h6>Categories</h6>
+                        <div class="lis-devider my-3"></div>
+                        <div class="lis-categories-list">
+                            <ul class="list-unstyled lis-line-height-3">
+                                <li><a href="#" class="lis-light"><i class="fa fa-angle-right pr-2"></i> Entertainment</a></li>
+                                <li><a href="#" class="lis-light"><i class="fa fa-angle-right pr-2"></i> Tour & Travels</a></li>
+                                <li><a href="#" class="lis-light"><i class="fa fa-angle-right pr-2"></i> Bar & Club</a></li>
+                                <li><a href="#" class="lis-light"><i class="fa fa-angle-right pr-2"></i> Lifestyle</a></li>
+                                <li><a href="#" class="lis-light"><i class="fa fa-angle-right pr-2"></i> Technology</a></li>
+                                <li><a href="#" class="lis-light"><i class="fa fa-angle-right pr-2"></i> Restaurant</a></li>
+                                <li><a href="#" class="lis-light"><i class="fa fa-angle-right pr-2"></i> Hotel</a></li>
+                            </ul>
+                        </div>
+                        <h6>Recent Posts</h6>
+                        <div class="lis-devider my-3"></div>
+                        <div class="media  lis-widget-content mb-4">
+                            <a href="#"><img src="dist/images/bg2.jpg" alt="" class="d-flex img-fluid rounded mr-3" width="90" /></a>
+                            <div class="media-body align-self-center"> <a href="#" class="lis-dark lis-font-poppins lis-font-weight-500">Maecenas tempus tellus eget</a>
+                                <p class="mb-0">30 October 2017</p>
+                            </div>
+                        </div>
+                        <div class="media  lis-widget-content mb-4">
+                            <a href="#"><img src="dist/images/blog2.jpg" alt="" class="d-flex img-fluid rounded mr-3" width="90" /></a>
+                            <div class="media-body align-self-center"> <a href="#" class="lis-dark lis-font-poppins lis-font-weight-500">Nam quam nunc blandit cel luctus</a>
+                                <p class="mb-0">24 October 2017</p>
+                            </div>
+                        </div>
+                        <div class="media lis-widget-content  mb-4">
+                            <a href="#"><img src="dist/images/blog1.jpg" alt="" class="d-flex img-fluid rounded mr-3" width="90" /></a>
+                            <div class="media-body align-self-center"> <a href="#" class="lis-dark lis-font-poppins lis-font-weight-500">Donec vitae sapien ut libero</a>
+                                <p class="mb-0">16 October 2017</p>
+                            </div>
+                        </div>
+                        <h6>Archives</h6>
+                        <div class="lis-devider my-3"></div>
+                        <div class="lis-categories-list">
+                            <ul class="list-unstyled lis-line-height-3">
+                                <li><a href="#" class="lis-light"><i class="fa fa-angle-right pr-2"></i> July 2017</a></li>
+                                <li><a href="#" class="lis-light"><i class="fa fa-angle-right pr-2"></i> June 2017</a></li>
+                                <li><a href="#" class="lis-light"><i class="fa fa-angle-right pr-2"></i> May 2017</a></li>
+                                <li><a href="#" class="lis-light"><i class="fa fa-angle-right pr-2"></i> April 2017</a></li>
+                                <li><a href="#" class="lis-light"><i class="fa fa-angle-right pr-2"></i> March 2017</a></li>
+                            </ul>
+                        </div>
+                    </div>
                 </div>
-
-
-
             </div>
         </div>
     </section>
+
     <!--End Blog Single -->
 {% endblock %}
