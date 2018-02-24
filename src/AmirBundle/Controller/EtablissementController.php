@@ -16,11 +16,13 @@ namespace AmirBundle\Controller;
 use AmirBundle\Entity\Etablissement;
 
 
+use AmirBundle\Entity\Review;
 use AmirBundle\Form\BeauteType;
 use AmirBundle\Form\CultureType;
 use AmirBundle\Form\HotelType;
 use AmirBundle\Form\RestaurantType;
 
+use AmirBundle\Form\ReviewType;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\File\File;
 use Symfony\Component\HttpFoundation\Request;
@@ -188,15 +190,61 @@ class EtablissementController extends Controller
     }
 
 
-    public function profil_restaurantAction($id)
+    public function profil_restaurantAction(Request $request,$id)
     {
 
 
         $em = $this->getDoctrine()->getManager();
         $restaurant = $em->getRepository("AmirBundle:Etablissement")->findBy(array('id' => $id));
+
+        $review = new Review();
+        $rest = $restaurant[0];
+        $moy = $em->CreateQuery("SELECT v  From AmirBundle:Review v where v.idetab=$id");
+        $moy1=$moy->getResult();
+        $count=count($moy1);
+        $moyqualite=$rest->getMoyqualite();
+        $moyservice=$rest->getMoyservice();
+
+        $review->setIdetab($rest);
+        $review->setIduser($this->getUser());
+        $review->setDate(new \DateTime('now'));
+        $form = $this->createForm(ReviewType::class, $review);
+        $form->handleRequest($request);
+
+        if ($form->isSubmitted() && ($form->isValid())) {
+            $em = $this->getDoctrine()->getManager();
+            $qualite= $form->get('qualite')->getData();
+            $service= $form->get('service')->getData();
+            if ($count==0)
+            {$rest->setMoyservice($service);
+                $rest->setMoyqualite($qualite);}
+                if ($count>0)
+                {$rest->setMoyservice(($service+$rest->getMoyservice())/2);
+            $rest->setMoyqualite(($qualite+$rest->getMoyqualite())/2);}
+
+
+           $em->persist($review);
+            $em->flush();
+        return $this->redirectToRoute('App_bon_plan_profil_restaurant',array('id'=>$id));
+
+        }
+        $comments = $em->CreateQuery("SELECT v  From AmirBundle:Review v where v.idetab=$id");
+        $commentsresult = $comments->getResult();
+        $count2=count($commentsresult);
+
+
+
         return $this->render('@Amir/Etablissement/profil_restaurant.html.twig',
-            array('restaurants' => $restaurant));
+            array('restaurants' => $restaurant,
+                'form'=>$form->createView(),
+                'comments'=>$commentsresult,
+                'moyqualite'=>$moyqualite,
+                'moyservice'=>$moyservice,
+                'nbruser'=>$count2
+            )
+        );
     }
+
 
     public function profil_hotelAction($id)
     {

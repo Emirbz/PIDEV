@@ -171,41 +171,14 @@
 
                     </div>
 
+
                     <div class="tab-pane fade" id="reviews" role="tabpanel" aria-labelledby="reviews">
                         <h6 class="lis-font-weight-500"><i class="fa fa-signal pr-2 lis-f-14"></i> Reviews</h6>
+                         {% for x in comments %}
                         <div class="card lis-brd-light wow fadeInUp mb-2">
                             <div class="card-body p-4">
                                 <div class="media d-block d-sm-flex text-center text-sm-left">
-                                    <a href="#"><img src="{{ asset('images/author5.jpg') }}" class="img-fluid d-md-flex mr-sm-4 rounded-circle" alt="" width="60" /></a>
-                                    <div class="media-body align-self-center">
-                                        <ul class="list-inline mb-0 lis-light-gold font-weight-normal h5 float-sm-right float-none my-md-0 my-3">
-                                            <li class="list-inline-item"><i class="fa fa-star"></i></li>
-                                            <li class="list-inline-item"><i class="fa fa-star"></i></li>
-                                            <li class="list-inline-item"><i class="fa fa-star"></i></li>
-                                            <li class="list-inline-item"><i class="fa fa-star"></i></li>
-                                            <li class="list-inline-item"><i class="fa fa-star-o"></i></li>
-                                        </ul>
-                                        <h6 class="mb-0"><a href="#" class="lis-dark"></a></h6>
-                                        <p>November 03, 2017</p>
-                                        <h6 class="lis-primary mb-2">Best Place To Eat Breakfast</h6>
-                                        <p>Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Sed aliquam, nisi quis porttitor congue, elit erat euismod orci placerat dolor.</p>
-                                        <div class="review-image my-3">
-                                            <A href="{{ asset('images/review1.jpg') }}" data-toggle="lightbox" data-gallery="example-gallery"><img src="{{ asset('images/review1.jpg') }}" class="img-fluid rounded w-25 mr-2" alt="" /></A>
-                                            <A href="{{ asset('images/review2.jpg') }}" data-toggle="lightbox" data-gallery="example-gallery"><img src="{{ asset('images/review2.jpg') }}" class="img-fluid rounded w-25 mr-2" alt="" /></A>
-                                            <A href="{{ asset('images/review3.jpg') }}" data-toggle="lightbox" data-gallery="example-gallery"><img src="{{ asset('images/review3.jpg') }}" class="img-fluid rounded w-25 mr-2" alt="" /></A>
-                                        </div>
-                                        <ul class="list-inline mb-0 comment-info lis-f-14">
-                                            <li class="list-inline-item mr-4 lis-relative"><a href="#" class="lis-light"><i class="fa fa-thumbs-up pr-1"></i> 20 Likes</a></li>
-                                            <li class="list-inline-item  lis-relative"><a href="#" class="lis-light"><i class="fa fa-reply-all pr-1"></i> 20 Reply</a></li>
-                                        </ul>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="card lis-brd-light wow fadeInUp mb-2">
-                            <div class="card-body p-4">
-                                <div class="media d-block d-sm-flex text-center text-sm-left">
-                                    <a href="#"><img src="{{ asset('images/author6.jpg') }}" class="img-fluid d-md-flex mr-sm-4 rounded-circle" alt="" width="60" /></a>
+                                    <a href="#"><img src="{{vich_uploader_asset(x.iduser,'devisFile')}}" class="img-fluid d-md-flex mr-sm-4 rounded-circle" alt="" width="60" /></a>
                                     <div class="media-body align-self-center">
                                         <ul class="list-inline mb-0 lis-light-gold font-weight-normal h5 float-sm-right float-none my-md-0 my-3">
                                             <li class="list-inline-item"><i class="fa fa-star"></i></li>
@@ -214,45 +187,17 @@
                                             <li class="list-inline-item"><i class="fa fa-star"></i></li>
                                             <li class="list-inline-item"><i class="fa fa-star"></i></li>
                                         </ul>
-                                        <h6 class="mb-0"><a href="#" class="lis-dark">John Deo</a></h6>
-                                        <p>October 28, 2017</p>
-                                        <h6 class="lis-primary mb-2">Good Place</h6>
-                                        <p>Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Sed aliquam, nisi quis porttitor congue, elit erat euismod orci placerat dolor.</p>
-                                        <ul class="list-inline mb-0 comment-info lis-f-14">
-                                            <li class="list-inline-item mr-4 lis-relative"><a href="#" class="lis-light"><i class="fa fa-thumbs-up pr-1"></i> 20 Likes</a></li>
-                                            <li class="list-inline-item  lis-relative"><a href="#" class="lis-light"><i class="fa fa-reply-all pr-1"></i> 20 Reply</a></li>
-                                        </ul>
+                                        <h6 class="mb-0"><a href="#" class="lis-dark">{{ x.iduser.name }} {{ x.iduser.surname }}</a></h6>
+                                        <p>{{ x.date|date('d M, Y | H:i') }}</p>
+                                        <h6 class="lis-primary mb-2">{{ x.titre }}</h6>
+                                        <p>{{ x.commentaire }}</p>
+
                                     </div>
                                 </div>
                             </div>
                         </div>
-                        <div class="card lis-brd-light wow fadeInUp mb-2">
-                            <div class="card-body p-4">
-                                <div class="media d-block d-sm-flex text-center text-sm-left">
-                                    <a href="#"><img src="{{ asset('images/author7.jpg') }}" class="img-fluid d-md-flex mr-sm-4 rounded-circle" alt="" width="60" /></a>
-                                    <div class="media-body align-self-center">
-                                        <ul class="list-inline mb-0 lis-light-gold font-weight-normal h5 float-sm-right float-none my-md-0 my-3">
-                                            <li class="list-inline-item"><i class="fa fa-star"></i></li>
-                                            <li class="list-inline-item"><i class="fa fa-star"></i></li>
-                                            <li class="list-inline-item"><i class="fa fa-star"></i></li>
-                                            <li class="list-inline-item"><i class="fa fa-star"></i></li>
-                                            <li class="list-inline-item"><i class="fa fa-star-o"></i></li>
-                                        </ul>
-                                        <h6 class="mb-0"><a href="#" class="lis-dark">Jonathan</a></h6>
-                                        <p>October 25, 2017</p>
-                                        <h6 class="lis-primary mb-2">Delicious Food</h6>
-                                        <p>Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Sed aliquam, nisi quis porttitor congue, elit erat euismod orci placerat dolor.</p>
-                                        <div class="review-image my-3">
-                                            <A href="{{ asset('images/review4.jpg') }}" data-toggle="lightbox" data-gallery="example-gallery"><img src="{{ asset('images/review4.jpg') }}" class="img-fluid rounded w-25 mr-2" alt="" /></A>
-                                        </div>
-                                        <ul class="list-inline mb-0 comment-info lis-f-14">
-                                            <li class="list-inline-item mr-4 lis-relative"><a href="#" class="lis-light"><i class="fa fa-thumbs-up pr-1"></i> 20 Likes</a></li>
-                                            <li class="list-inline-item  lis-relative"><a href="#" class="lis-light"><i class="fa fa-reply-all pr-1"></i> 20 Reply</a></li>
-                                        </ul>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
+                        {% endfor %}
+
                         <ul class="pagination list-inline mb-0 text-center text-uppercase lis-f-14 justify-content-center my-4">
                             <li class="p-1 page-item"><a class="page-link lis-brd-light lis-light rounded" href="#"><i class="fa fa-angle-left pr-1"></i> Prev</a></li>
                             <li class="p-1 page-item d-none d-sm-inline-block"><a class="page-link lis-light rounded" href="#">1</a></li>
@@ -274,32 +219,39 @@
                                 <div class="row">
                                     <div class="col-12 col-sm-6">
                                         <div class="form-group lis-relative">
-                                            <input type="text" class="form-control border-top-0 border-left-0 border-right-0 rounded-0 pl-4" placeholder="Your Name">
+                                            {{ form_start(form) }}
+                                            {{ form_errors(form.qualite) }}
+                                            {{ form_widget(form.qualite, {'attr': {'class': 'form-control border-top-0 border-left-0 border-right-0 rounded-0 pl-4','placeholder':'Qualite '}}) }}
                                             <div class="lis-search"> <i class="fa fa-user lis-primary lis-left-0"></i> </div>
                                         </div>
                                     </div>
                                     <div class="col-12 col-sm-6">
                                         <div class="form-group lis-relative">
-                                            <input type="text" class="form-control border-top-0 border-left-0 border-right-0 rounded-0 pl-4" placeholder="Email address">
+                                            {{ form_errors(form.service) }}
+                                            {{ form_widget(form.service, {'attr': {'class': 'form-control border-top-0 border-left-0 border-right-0 rounded-0 pl-4','placeholder':'service '}}) }}
                                             <div class="lis-search"> <i class="fa fa-envelope lis-primary lis-left-0"></i> </div>
                                         </div>
                                     </div>
                                     <div class="col-12 col-sm-12">
                                         <div class="form-group lis-relative">
-                                            <input type="text" class="form-control border-top-0 border-left-0 border-right-0 rounded-0 pl-4" placeholder="Title of review">
+                                            {{ form_errors(form.titre) }}
+                                            {{ form_widget(form.titre, {'attr': {'class': 'form-control border-top-0 border-left-0 border-right-0 rounded-0 pl-4','placeholder':'titre'}}) }}
+
                                             <div class="lis-search"> <i class="fa fa-drivers-license-o lis-primary lis-left-0"></i> </div>
                                         </div>
                                     </div>
                                     <div class="col-12 col-sm-12">
                                         <div class="form-group lis-relative">
-                                            <textarea class="form-control border-top-0 border-left-0 border-right-0 rounded-0 pl-4" placeholder="Review"></textarea>
+                                            {{ form_errors(form.commentaire) }}
+                                            {{ form_widget(form.commentaire, {'attr': {'class': 'form-control border-top-0 border-left-0 border-right-0 rounded-0 pl-4','placeholder':'service '}}) }}
+                                            {{ form_end(form) }}
                                             <div class="lis-search"> <i class="fa fa-pencil lis-primary lis-left-0 lis-top-10"></i> </div>
                                         </div>
                                     </div>
                                     <div class="col-12 col-sm-12">
                                         <h6 class="lis-font-weight-500">  Add a photo</h6>
                                         <input type="file" class="d-block"> <small>Note: The image size should smaller than or equal to 20MB</small> </div>
-                                </div> <a href="#" class="btn btn-primary btn-default mt-3"> Submit Review</a> </div>
+                                </div> {{ form_widget(form.Valider, {'attr': {'class': 'btn btn-primary btn-default mt-3'}}) }} </div>
                         </div>
                     </div>
                     <div class="tab-pane fade" id="events" role="tabpanel" aria-labelledby="events">
@@ -444,15 +396,27 @@
             <div class="col-12 col-lg-4">
                 <h6 class="lis-font-weight-500"><i class="fa fa-star pr-2 lis-f-14"></i> Listing Ratings</h6>
                 <div class="card lis-brd-light wow fadeInUp mb-4">
+
                     <div class="card-body p-4">
-                        <ul class="list-inline mb-0 lis-light-gold font-weight-normal h4">
+                        <h8 class="lis-font-weight-500"><i class="fa fa-user pr-2 lis-f-14"></i> Moyenne de {{ nbruser }} votes </h8>
+                        <hr>
+                        <p>Qualite:</p> <ul class="list-inline mb-0 lis-light-gold font-weight-normal h4">
                             <li class="list-inline-item"><i class='fa fa-star'></i></li>
                             <li class="list-inline-item"><i class='fa fa-star'></i></li>
                             <li class="list-inline-item"><i class='fa fa-star'></i></li>
                             <li class="list-inline-item"><i class='fa fa-star-o'></i></li>
                             <li class="list-inline-item"><i class='fa fa-star-o'></i></li>
                             <li class="list-inline-item"> 3.0</li>
-                        </ul> <small>2.77 average based on 19184 ratings</small> </div>
+                        </ul> <small>{{ moyqualite|number_format(2, '.', ',') }} moyenne</small> </div>
+                    <div class="card-body p-4">
+                        <p>Service:</p> <ul class="list-inline mb-0 lis-light-gold font-weight-normal h4">
+                            <li class="list-inline-item"><i class='fa fa-star'></i></li>
+                            <li class="list-inline-item"><i class='fa fa-star'></i></li>
+                            <li class="list-inline-item"><i class='fa fa-star'></i></li>
+                            <li class="list-inline-item"><i class='fa fa-star-o'></i></li>
+                            <li class="list-inline-item"><i class='fa fa-star-o'></i></li>
+                            <li class="list-inline-item"> 3.0</li>
+                        </ul> <small>{{ moyservice|number_format(2, '.', ',') }} moyenne</small> </div>
                 </div>
                 <h6 class="lis-font-weight-500"><i class="fa fa-clock-o pr-2 lis-f-14"></i> Opening Hours</h6>
                 <div class="card lis-brd-light wow fadeInUp mb-4">
@@ -484,22 +448,7 @@
                         </ul>
                     </div>
                 </div>
-                <h6 class="lis-font-weight-500"><i class="fa fa-envelope pr-2 lis-f-14"></i>  Send Message</h6>
-                <div class="card lis-brd-light wow fadeInUp">
-                    <div class="card-body p-4">
-                        <div class="form-group lis-relative">
-                            <input type="text" class="form-control border-top-0 border-left-0 border-right-0 rounded-0 pl-4" placeholder="Qualité">
-                            <div class="lis-search"> <i class="fa fa-user lis-primary lis-left-0"></i> </div>
-                        </div>
-                        <div class="form-group lis-relative">
-                            <input type="text" class="form-control border-top-0 border-left-0 border-right-0 rounded-0 pl-4" placeholder="Service">
-                            <div class="lis-search"> <i class="fa fa-envelope lis-primary lis-left-0"></i> </div>
-                        </div>
-                        <div class="form-group lis-relative">
-                            <textarea class="form-control border-top-0 border-left-0 border-right-0 rounded-0 pl-4" placeholder="Message"></textarea>
-                            <div class="lis-search"> <i class   ="fa fa-pencil lis-primary lis-left-0 lis-top-10"></i> </div>
-                        </div> <a href="#" class="btn btn-primary btn-default"> Submit Message</a> </div>
-                </div>
+
             </div>
         </div>
     </div>

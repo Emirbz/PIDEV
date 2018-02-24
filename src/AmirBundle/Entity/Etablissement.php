@@ -1214,10 +1214,57 @@ class Etablissement
     {
         $this->longitude = $longitude;
     }
+
+    /**
+     * @return mixed
+     */
+    public function getMoyservice()
+    {
+        return $this->moyservice;
+    }
+
+    /**
+     * @param mixed $moyservice
+     */
+    public function setMoyservice($moyservice)
+    {
+        $this->moyservice = $moyservice;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getMoyqualite()
+    {
+        return $this->moyqualite;
+    }
+
+    /**
+     * @param mixed $moyqualite
+     */
+    public function setMoyqualite($moyqualite)
+    {
+        $this->moyqualite = $moyqualite;
+    }
     /**
      * @ORM\Column(type="float",nullable=true)
      */
     private $longitude;
+    /**
+     * @ORM\Column(type="float",nullable=true)
+     */
+    private $moyservice;
+    /**
+     * @ORM\Column(type="float",nullable=true)
+     */
+    private $moyqualite;
+
+
+
+
+
+
+
 
 }
 

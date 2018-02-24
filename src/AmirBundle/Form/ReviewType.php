@@ -4,6 +4,7 @@ namespace AmirBundle\Form;
 
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\Extension\Core\Type\SubmitType;
+use Symfony\Component\Form\Extension\Core\Type\TextareaType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
 
@@ -15,10 +16,11 @@ class ReviewType extends AbstractType
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $builder
-            ->add('commentaire')
+            ->add('commentaire',TextareaType::class)
+            ->add('titre')
             ->add('service')
-
-        ->add('Ajouter Review',SubmitType::class);
+            ->add('qualite')
+            ->add('Valider',SubmitType::class);
     }/**
      * {@inheritdoc}
      */
