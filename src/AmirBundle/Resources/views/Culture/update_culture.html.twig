@@ -1,5 +1,5 @@
 {% extends 'base.html.twig' %}
-{% block title %} Modifier Centre e beauté {% endblock %}
+{% block title %} Modifier Centre Culturel {% endblock %}
 {% block transparant %} {% endblock %}
 {% block body %}
 
@@ -12,7 +12,7 @@
             <div class="row wow fadeInUp">
                 <div class="col-12 col-sm-6">
                     <div class="page-title">
-                        <h2>Modifier  un Centre de Beaute</h2>
+                        <h2>Modifier un Centre Culturel</h2>
                         <p class="mb-0">Modifier votre Centre</p>
                     </div>
                 </div>
@@ -98,6 +98,23 @@
                                         {{ form_widget(form.DevisFile) }}
 
                                     </div>
+                                    <label for="example-text-input" class="col-12 col-md-3 col-form-label">Photo de couverture </label>
+                                    <div class="col-12 col-md-9">
+
+                                        {{ form_widget(form.img1) }}
+
+
+                                    </div>
+                                    <label for="example-text-input" class="col-12 col-md-3 col-form-label">Photo 1 </label>
+                                    <div class="col-12 col-md-9">
+                                        {{ form_widget(form.img2) }}
+
+                                    </div>
+                                    <label for="example-text-input" class="col-12 col-md-3 col-form-label">Photo 2</label>
+                                    <div class="col-12 col-md-9">
+                                        {{ form_widget(form.img3) }}
+
+                                    </div>
                                 </div>
 
 
@@ -105,6 +122,27 @@
 
                         </div>
                         <hr/>
+                        <div class="col-12 col-sm-12">
+                            <div class="form-group row">
+                                <label for="example-text-input" class="col-12 col-md-2 col-form-label">Lundi-Samedi</label>
+                                <div class="col-12 col-md-5">
+                                    {{ form_errors(form.lundisamedio) }}
+                                    {{ form_widget(form.lundisamedio, {'attr': {'class': 'form-control border-top-0 border-left-0 border-right-0 rounded-0'}}) }}
+                                </div>
+                                <div class="col-12 col-md-5">
+                                    {{ form_errors(form.lundisamedif) }}
+                                    {{ form_widget(form.lundisamedif, {'attr': {'class': 'form-control border-top-0 border-left-0 border-right-0 rounded-0'}}) }}
+                                </div>
+                                <label for="example-text-input" class="col-12 col-md-2 col-form-label">Lundi-Samedi</label>
+                                <div class="col-12 col-md-5">
+                                    {{ form_errors(form.dimancheo) }}
+                                    {{ form_widget(form.dimanchef, {'attr': {'class': 'form-control border-top-0 border-left-0 border-right-0 rounded-0'}}) }}
+                                </div>
+                                <div class="col-12 col-md-5">
+                                    {{ form_errors(form.dimancheo) }}
+                                    {{ form_widget(form.dimancheo, {'attr': {'class': 'form-control border-top-0 border-left-0 border-right-0 rounded-0'}}) }}
+                                </div>
+                            </div>
 
                         <div class="row p-4">
                             <div class="col-12 col-sm-12 mb-3">
@@ -131,7 +169,7 @@
                                     <label for="example-text-input" class="col-12 col-md-3 col-form-label">Facebook</label>
                                     <div class="col-12 col-md-9">
                                         {{ form_errors(form.facebook) }}
-                                        {{ form_widget(form.facebook, {'attr': {'class': 'form-control border-top-0 border-left-0 border-right-0 rounded-0','placeholder':'Facebook'}}) }}
+                                        {{ form_widget(form.facebook, {'attr': {'class': 'form-control border-top-0 border-left-0 border-right-0 rounded-0','placeholder':'https://www.facebook.com/Votre_profil'}}) }}
                                     </div>
                                 </div>
 
@@ -281,6 +319,16 @@
                                 <div class="col-12 col-md-10">
                                     {{ form_errors(form.address) }}
                                     {{ form_widget(form.address, {'attr': {'class': 'form-control border-top-0 border-left-0 border-right-0 rounded-0','placeholder':'Adresse !'}}) }}
+                                </div>
+                                <label for="example-text-input" class="col-12 col-md-2 col-form-label">Latitude</label>
+                                <div class="col-12 col-md-10">
+                                    {{ form_errors(form.latitude) }}
+                                    {{ form_widget(form.latitude, {'attr': {'class': 'form-control border-top-0 border-left-0 border-right-0 rounded-0','placeholder':'Latitude'}}) }}
+                                </div>
+                                <label for="example-text-input" class="col-12 col-md-2 col-form-label">Longitude</label>
+                                <div class="col-12 col-md-10">
+                                    {{ form_errors(form.longitude) }}
+                                    {{ form_widget(form.longitude, {'attr': {'class': 'form-control border-top-0 border-left-0 border-right-0 rounded-0','placeholder':'Longitude '}}) }}
                                 </div>
                             </div>
 

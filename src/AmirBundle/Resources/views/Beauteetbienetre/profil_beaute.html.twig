@@ -3,12 +3,89 @@
     {% block title %} {% for x in restaurants %} Profil de {{ x.name }} {% endfor %}{% endblock %}
 
     {% block body %}
+        <style type="text/css" >
+            @import url(//netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.css);
+
+            /****** Style Star Rating Widget *****/
+
+            .ratingqualite {
+                border: none;
+                float: left;
+            }
+
+            .ratingqualite > input { display: none; }
+            .ratingqualite > label:before {
+                margin: 5px;
+                font-size: 1.25em;
+                font-family: FontAwesome;
+                display: inline-block;
+                content: "\f005";
+            }
+
+            .ratingqualite > .halfq:before {
+                content: "\f089";
+                position: absolute;
+            }
+
+            .ratingqualite > label {
+                color: #ddd;
+                float: right;
+            }
+
+            /***** CSS Magic to Highlight Stars on Hover *****/
+
+            .ratingqualite > input:checked ~ label, /* show gold star when clicked */
+            .ratingqualite:not(:checked) > label:hover, /* hover current star */
+            .ratingqualite:not(:checked) > label:hover ~ label { color: #FFD700;  } /* hover previous stars in list */
+
+            .ratingqualite > input:checked + label:hover, /* hover current star when changing rating */
+            .ratingqualite > input:checked ~ label:hover,
+            .ratingqualite > label:hover ~ input:checked ~ label, /* lighten current selection */
+            .ratingqualite > input:checked ~ label:hover ~ label { color: #FFED85;  }
+
+            /****************/
+
+            .ratingservice {
+                border: none;
+                float: left;
+            }
+
+            .ratingservice > input { display: none; }
+            .ratingservice > label:before {
+                margin: 5px;
+                font-size: 1.25em;
+                font-family: FontAwesome;
+                display: inline-block;
+                content: "\f005";
+            }
+
+            .ratingservice > .halfs:before {
+                content: "\f089";
+                position: absolute;
+            }
+
+            .ratingservice > label {
+                color: #ddd;
+                float: right;
+            }
+
+            /***** CSS Magic to Highlight Stars on Hover *****/
+
+            .ratingservice > input:checked ~ label, /* show gold star when clicked */
+            .ratingservice:not(:checked) > label:hover, /* hover current star */
+            .ratingservice:not(:checked) > label:hover ~ label { color: #FFD700;  } /* hover previous stars in list */
+
+            .ratingservice > input:checked + label:hover, /* hover current star when changing rating */
+            .ratingservice > input:checked ~ label:hover,
+            .ratingservice > label:hover ~ input:checked ~ label, /* lighten current selection */
+            .ratingservice > input:checked ~ label:hover ~ label { color: #FFED85;  }
+        </style>
         <!--End header -->
         <!-- Profile Cover -->
         {% for x in restaurants %}
             <section class="image-bg lis-grediant grediant-bt-dark text-white pb-4 profile-inner">
                 <div class="background-image-maker"></div>
-                <div class="holder-image"> <img src="{{ asset('images/beaute.jpg') }}" alt="" class="img-fluid d-none"> </div>
+                <div class="holder-image"> <img src="{{ asset('uploads/images/' ~ x.img1) }}" alt="" class="img-fluid d-none"> </div>
                 <div class="container">
                     <div class="row justify-content-center wow fadeInUp">
                         <div class="col-12 col-md-8 mb-4 mb-lg-0">
@@ -44,7 +121,7 @@
                             <ul class="nav nav-pills flex-column flex-sm-row lis-font-poppins" id="myTab" role="tablist">
                                 <li class="nav-item ml-0"> <a class="nav-link lis-light py-4 lis-relative mr-3 active" data-toggle="tab" href="#profile" role="tab" aria-controls="profile" aria-expanded="true"> Profile</a> </li>
                                 <li class="nav-item ml-0"> <a class="nav-link lis-light py-4 lis-relative mr-3" data-toggle="tab" href="#reviews" role="tab" aria-controls="reviews"> Reviews</a> </li>
-
+                                <li class="nav-item ml-0"> <a class="nav-link lis-light py-4 lis-relative mr-3" data-toggle="tab" href="#events" role="tab" aria-controls="events">Events</a> </li>
                                 <li class="nav-item ml-0"> <a class="nav-link lis-light py-4 lis-relative" data-toggle="tab" href="#booking" role="tab" aria-controls="booking"> Booking</a> </li>
                             </ul>
                         </div>
@@ -67,382 +144,447 @@
             <!-- End header -->
             <!-- Profile Content -->
             <section class="lis-bg-light pt-5">
-            <div class="container">
-                <div class="row">
-                    <div class="col-12 col-lg-8 mb-5 mb-lg-0">
-                        <div class="tab-content" id="myTabContent">
-                            <div class="tab-pane fade show active" id="profile" role="tabpanel" aria-labelledby="profile">
-                                <h6 class="lis-font-weight-500"><i class="fa fa-align-right pr-2 lis-f-14"></i> Description</h6>
-                                <div class="card lis-brd-light wow fadeInUp mb-4">
-                                    <div class="card-body p-4">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-12 col-lg-8 mb-5 mb-lg-0">
+                            <div class="tab-content" id="myTabContent">
+                                <div class="tab-pane fade show active" id="profile" role="tabpanel" aria-labelledby="profile">
+                                    <h6 class="lis-font-weight-500"><i class="fa fa-align-right pr-2 lis-f-14"></i> Description</h6>
+                                    <div class="card lis-brd-light wow fadeInUp mb-4">
+                                        <div class="card-body p-4">
 
-                                        <p class="pt-3 mb-0">{{ x.description }}</p>
+                                            <p class="pt-3 mb-0">{{ x.description }}</p>
+                                        </div>
                                     </div>
-                                </div>
-                                <h6 class="lis-font-weight-500"><i class="fa fa-chain pr-2 lis-f-14"></i> Amenities</h6>
-                                <div class="card lis-brd-light wow fadeInUp mb-4">
-                                    <div class="card-body p-4">
-                                        <div class="row">
-                                            <div class="col-lg-4">
-                                                <ul class="list-unstyled lis-line-height-2 mb-0">
-                                                    {% if x.parking==1 %}  <li><i class="fa fa-check-square pr-2 lis-primary"></i>  Parking</li>{% endif %}
-                                                    {% if x.cartecredit==1 %}  <li><i class="fa fa-check-square pr-2 lis-primary"></i>  Accepte carte cerdit</li>{% endif %}
-                                                    {% if x.chaiseroulante==1 %}  <li><i class="fa fa-check-square pr-2 lis-primary"></i> Chaise Roulante</li>{% endif %}
-                                                    {% if x.fumer==1 %}  <li><i class="fa fa-check-square pr-2 lis-primary"></i>  Fumer</li>{% endif %}
-                                                </ul>
-                                            </div>
-                                            <div class="col-lg-4">
-                                                <ul class="list-unstyled lis-line-height-2 mb-0">
-                                                    {% if x.terasse==1 %}  <li><i class="fa fa-check-square pr-2 lis-primary"></i>  Terrase</li>{% endif %}
-                                                    {% if x.wifi==1 %}  <li><i class="fa fa-check-square pr-2 lis-primary"></i>  Wifi</li>{% endif %}
-                                                    {% if x.reservations==1 %}  <li><i class="fa fa-check-square pr-2 lis-primary"></i>  Reservation</li>{% endif %}
-                                                    {% if x.livraison==1 %}  <li><i class="fa fa-check-square pr-2 lis-primary"></i>  Livraison</li>{% endif %}
-                                                </ul>
-                                            </div>
-                                            <div class="col-lg-4">
-                                                <ul class="list-unstyled lis-line-height-2 mb-0">
-                                                    {% if x.alcool==1 %}  <li><i class="fa fa-check-square pr-2 lis-primary"></i>  Aclhool</li>{% endif %}
-                                                    {% if x.climatisation==1 %}  <li><i class="fa fa-check-square pr-2 lis-primary"></i>  Climatisation</li>{% endif %}
-                                                    {% if x.animaux==1 %}  <li><i class="fa fa-check-square pr-2 lis-primary"></i>  Accepte les animaux</li>{% endif %}
-                                                </ul>
+                                    <h6 class="lis-font-weight-500"><i class="fa fa-chain pr-2 lis-f-14"></i> Amenities</h6>
+                                    <div class="card lis-brd-light wow fadeInUp mb-4">
+                                        <div class="card-body p-4">
+                                            <div class="row">
+                                                <div class="col-lg-4">
+                                                    <ul class="list-unstyled lis-line-height-2 mb-0">
+                                                        {% if x.parking==1 %}  <li><i class="fa fa-check-square pr-2 lis-primary"></i>  Parking</li>{% endif %}
+                                                        {% if x.cartecredit==1 %}  <li><i class="fa fa-check-square pr-2 lis-primary"></i>  Accepte carte cerdit</li>{% endif %}
+                                                        {% if x.chaiseroulante==1 %}  <li><i class="fa fa-check-square pr-2 lis-primary"></i> Chaise Roulante</li>{% endif %}
+                                                        {% if x.fumer==1 %}  <li><i class="fa fa-check-square pr-2 lis-primary"></i>  Fumer</li>{% endif %}
+                                                    </ul>
+                                                </div>
+                                                <div class="col-lg-4">
+                                                    <ul class="list-unstyled lis-line-height-2 mb-0">
+                                                        {% if x.terasse==1 %}  <li><i class="fa fa-check-square pr-2 lis-primary"></i>  Terrase</li>{% endif %}
+                                                        {% if x.wifi==1 %}  <li><i class="fa fa-check-square pr-2 lis-primary"></i>  Wifi</li>{% endif %}
+                                                        {% if x.reservations==1 %}  <li><i class="fa fa-check-square pr-2 lis-primary"></i>  Reservation</li>{% endif %}
+                                                        {% if x.livraison==1 %}  <li><i class="fa fa-check-square pr-2 lis-primary"></i>  Livraison</li>{% endif %}
+                                                    </ul>
+                                                </div>
+                                                <div class="col-lg-4">
+                                                    <ul class="list-unstyled lis-line-height-2 mb-0">
+                                                        {% if x.alcool==1 %}  <li><i class="fa fa-check-square pr-2 lis-primary"></i>  Aclhool</li>{% endif %}
+                                                        {% if x.climatisation==1 %}  <li><i class="fa fa-check-square pr-2 lis-primary"></i>  Climatisation</li>{% endif %}
+                                                        {% if x.animaux==1 %}  <li><i class="fa fa-check-square pr-2 lis-primary"></i>  Accepte les animaux</li>{% endif %}
+                                                    </ul>
+                                                </div>
                                             </div>
                                         </div>
+                                    </div>
+
+                                    <h6 class="lis-font-weight-500"><i class="fa fa-map-o pr-2 lis-f-14"></i> Location</h6>
+                                    <div class="card lis-brd-light wow fadeInUp mb-4">
+                                        <div class="card-body p-4">
+                                            <div id="map-canvas" style='height: 350px;'></div>
+                                        </div>
+
+                                    </div>
+                                    <h6 class="lis-font-weight-500"><i class="fa fa-photo pr-2 lis-f-14"></i> Gallery</h6>
+                                    <div class="card lis-brd-light wow fadeInUp">
+                                        <div class="card-body py-4 px-0">
+                                            <div class="center3 slider">
+                                                <div>
+                                                    <div class="gallery text-center lis-relative"> <img src="{{ asset('uploads/images/' ~ x.img1) }}" alt="" class="img-fluid rounded" />
+                                                        <div class="gallery-fade fade w-100 h-100 rounded">
+                                                            <div class="d-table w-100 h-100">
+                                                                <div class="d-table-cell align-middle">
+                                                                    <div class="h4">
+                                                                        <a data-toggle="lightbox" data-gallery="example-gallery" href="{{ asset('uploads/images/' ~ x.img1) }}" class="text-white"> <i class="fa fa-search-plus"></i></a>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div>
+                                                    <div class="gallery text-center lis-relative"> <img src="{{ asset('uploads/images/' ~ x.img2) }}" alt="" class="img-fluid rounded" />
+                                                        <div class="gallery-fade fade w-100 h-100 rounded">
+                                                            <div class="d-table w-100 h-100">
+                                                                <div class="d-table-cell align-middle">
+                                                                    <div class="h4">
+                                                                        <a data-toggle="lightbox" data-gallery="example-gallery" href="{{ asset('uploads/images/' ~ x.img2) }}" class="text-white"> <i class="fa fa-search-plus"></i></a>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div>
+                                                    <div class="gallery text-center lis-relative"> <img src="{{ asset('uploads/images/' ~ x.img3) }}" alt="" class="img-fluid rounded" />
+                                                        <div class="gallery-fade fade w-100 h-100 rounded">
+                                                            <div class="d-table w-100 h-100">
+                                                                <div class="d-table-cell align-middle">
+                                                                    <div class="h4">
+                                                                        <a data-toggle="lightbox" data-gallery="example-gallery" href="{{ asset('uploads/images/' ~ x.img3) }}" class="text-white"> <i class="fa fa-search-plus"></i></a>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div>
+
+                                    </div>
+
+                                </div>
+
+
+                                <div class="tab-pane fade" id="reviews" role="tabpanel" aria-labelledby="reviews">
+                                    <h6 class="lis-font-weight-500"><i class="fa fa-signal pr-2 lis-f-14"></i> Reviews</h6>
+                                    {% for x in pagination %}
+                                        <div class="card lis-brd-light wow fadeInUp mb-2">
+                                            <div class="card-body p-4">
+                                                <div class="media d-block d-sm-flex text-center text-sm-left">
+                                                    <a href="#"><img src="{{vich_uploader_asset(x.iduser,'devisFile')}}" class="img-fluid d-md-flex mr-sm-4 rounded-circle" alt="" width="60" /></a>
+                                                    <div class="media-body align-self-center">
+                                                        <ul class="list-inline mb-0 lis-light-gold font-weight-normal h5 float-sm-right float-none my-md-0 my-3">
+                                                            <li class="list-inline-item"><i class="fa fa-star"></i></li>
+                                                            <li class="list-inline-item"><i class="fa fa-star"></i></li>
+                                                            <li class="list-inline-item"><i class="fa fa-star"></i></li>
+                                                            <li class="list-inline-item"><i class="fa fa-star"></i></li>
+                                                            <li class="list-inline-item"><i class="fa fa-star"></i></li>
+                                                        </ul>
+                                                        <h6 class="mb-0"><a href="#" class="lis-dark">{{ x.iduser.name }} {{ x.iduser.surname }}</a></h6>
+                                                        <p>{{ x.date|date('d M, Y | H:i') }}</p>
+                                                        <h6 class="lis-primary mb-2">{{ x.titre }}</h6>
+                                                        <p>{{ x.commentaire }}</p>
+
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    {% endfor %}
+
+                                    <div class="pagination list-inline mb-0 text-center text-uppercase lis-f-14 justify-content-center my-4">
+                                        {{ knp_pagination_render(pagination) }}
+                                        <script src="{{ asset('jquery-3.2.1.min.js') }}" TYPE="text/javascript">
+                                            $(function() {
+                                                var knp = new KnpPaginatorAjax();
+
+                                                knp.init({
+                                                    'loadMoreText': 'Load More', //load more text
+                                                    'loadingText': 'Loading..', //loading text
+                                                    'elementsSelector': '#elements', //this is where the script will append and search results
+                                                    'paginationSelector': 'ul.pagination', //pagination selector
+                                                });
+                                            });
+                                        </script>
+                                    </div>
+                                    <h6 class="lis-font-weight-500"><i class="fa fa-commenting pr-2 lis-f-14"></i>  Add Review</h6>
+                                    <div class="card lis-brd-light wow fadeInUp">
+                                        <div class="card-body p-4">
+
+                                            <div class="row">
+
+                                                <div class="col-12 col-sm-12">
+
+                                                    <form method="post">
+                                                        {{ form_start(form) }}
+                                                        <div class="col-12 col-sm-12">
+                                                            <h8 class="lis-font-weight-500"><i class="fa fa-star pr-2 lis-f-14"></i> Notez la qualite </h8>
+                                                            <div class="form-group lis-relative">
+
+                                                                <fieldset class="ratingqualite">
+                                                                    <input type="radio" id="star5q" name="ratingqualite" value="5" /><label class = "fullq" for="star5q" title="Awesome - 5 stars"></label>
+                                                                    <input type="radio" id="star4halfq" name="ratingqualite" value="4.5" /><label class="halfq" for="star4halfq" title="Pretty good - 4.5 stars"></label>
+                                                                    <input type="radio" id="star4q" name="ratingqualite" value="4" /><label class = "fullq" for="star4q" title="Pretty good - 4 stars"></label>
+                                                                    <input type="radio" id="star3halfq" name="ratingqualite" value="3.5" /><label class="halfq" for="star3halfq" title="Meh - 3.5 stars"></label>
+                                                                    <input type="radio" id="star3q" name="ratingqualite" value="3" /><label class = "fullq" for="star3q" title="Meh - 3 stars"></label>
+                                                                    <input type="radio" id="star2halfq" name="ratingqualite" value="2.5" /><label class="halfq" for="star2halfq" title="Kinda bad - 2.5 stars"></label>
+                                                                    <input type="radio" id="star2q" name="ratingqualite" value="2" /><label class = "fullq" for="star2q" title="Kinda bad - 2 stars"></label>
+                                                                    <input type="radio" id="star1halfq" name="ratingqualite" value="1.5" /><label class="halfq" for="star1halfq" title="Meh - 1.5 stars"></label>
+                                                                    <input type="radio" id="star1q" name="ratingqualite" value="1" /><label class = "fullq" for="star1q" title="Sucks big time - 1 star"></label>
+                                                                    <input type="radio" id="starhalfq" name="ratingqualite" value="0.5" /><label class="halfq" for="starhalfq" title="Sucks big time - 0.5 stars"></label>
+                                                                </fieldset>
+                                                            </div></div>
+                                                        <br><hr>
+                                                        <div class="col-12 col-sm-12">
+                                                            <h8 class="lis-font-weight-500"><i class="fa fa-star pr-2 lis-f-14"></i> Notez le service </h8>
+                                                            <div class="form-group lis-relative">
+
+                                                                <fieldset class="ratingservice">
+                                                                    <input type="radio" id="star5s" name="ratingservice" value="5" /><label class = "fulls" for="star5s" title="Awesome - 5 stars"></label>
+                                                                    <input type="radio" id="star4halfs" name="ratingservice" value="4.5" /><label class="halfs" for="star4halfs" title="Pretty good - 4.5 stars"></label>
+                                                                    <input type="radio" id="star4s" name="ratingservice" value="4" /><label class = "fulls" for="star4s" title="Pretty good - 4 stars"></label>
+                                                                    <input type="radio" id="star3halfs" name="ratingservice" value="3.5" /><label class="halfs" for="star3halfs" title="Meh - 3.5 stars"></label>
+                                                                    <input type="radio" id="star3s" name="ratingservice" value="3" /><label class = "fulls" for="star3s" title="Meh - 3 stars"></label>
+                                                                    <input type="radio" id="star2halfs" name="ratingservice" value="2.5" /><label class="halfs" for="star2halfs" title="Kinda bad - 2.5 stars"></label>
+                                                                    <input type="radio" id="star2s" name="ratingservice" value="2" /><label class = "fulls" for="star2s" title="Kinda bad - 2 stars"></label>
+                                                                    <input type="radio" id="star1halfs" name="ratingservice" value="1.5" /><label class="halfs" for="star1halfs" title="Meh - 1.5 stars"></label>
+                                                                    <input type="radio" id="star1s" name="ratingservice" value="1" /><label class = "fulls" for="star1s" title="Sucks big time - 1 star"></label>
+                                                                    <input type="radio" id="starhalfs" name="ratingservice" value="0.5" /><label class="halfs" for="starhalfs" title="Sucks big time - 0.5 stars"></label>
+                                                                </fieldset>
+                                                            </div></div>
+                                                        <br><hr>
+                                                        <div class="col-12 col-sm-12">
+                                                            <div class="form-group lis-relative">
+                                                                {{ form_errors(form.titre) }}
+                                                                {{ form_widget(form.titre, {'attr': {'class': 'form-control border-top-0 border-left-0 border-right-0 rounded-0 pl-4','placeholder':'Titre du review'}}) }}</div>
+
+                                                            <div class="lis-search"> <i class="fa fa-drivers-license-o lis-primary lis-left-0"></i>
+
+                                                            </div>
+                                                        </div>
+
+                                                        <div class="col-12 col-sm-12">
+                                                            <div class="form-group lis-relative">
+                                                                {{ form_errors(form.commentaire) }}
+                                                                {{ form_widget(form.commentaire, {'attr': {'class': 'form-control border-top-0 border-left-0 border-right-0 rounded-0 pl-4','placeholder':'Votre review '}}) }}
+
+
+                                                                <div class="lis-search"> <i class="fa fa-pencil lis-primary lis-left-0 lis-top-10"></i> </div>
+                                                            </div>
+                                                        </div>
+
+
+
+                                                        {{ form_widget(form.Valider, {'attr': {'class': 'btn btn-primary btn-default mt-3'}}) }}
+                                                        {{ form_end(form) }}
+                                                    </form>
+
+
+
+
+
+
+
+                                                </div>
+
+
+
+                                            </div>
+                                            {{ form_end(form) }}</div>
                                     </div>
                                 </div>
 
-                                <div class="card lis-brd-light wow fadeInUp mb-4">
-
-                                </div>
-                                <h6 class="lis-font-weight-500"><i class="fa fa-photo pr-2 lis-f-14"></i> Gallery</h6>
-                                <div class="card lis-brd-light wow fadeInUp">
-                                    <div class="card-body py-4 px-0">
-                                        <div class="center3 slider">
-                                            <div>
-                                                <div class="gallery text-center lis-relative"> <img src="{{vich_uploader_asset(x,'devisFile')}}" alt="" class="img-fluid rounded" />
-                                                    <div class="gallery-fade fade w-100 h-100 rounded">
-                                                        <div class="d-table w-100 h-100">
-                                                            <div class="d-table-cell align-middle">
-                                                                <div class="h4">
-                                                                    <a data-toggle="lightbox" data-gallery="example-gallery" href="" class="text-white"> <i class="fa fa-search-plus"></i></a>
-                                                                </div>
-                                                            </div>
-                                                        </div>
+                                <div class="tab-pane fade" id="booking" role="tabpanel" aria-labelledby="booking">
+                                    <h6 class="lis-font-weight-500"><i class="fa fa-signal pr-2 lis-f-14"></i> Book a Table 2</h6>
+                                    <div class="card lis-brd-light wow fadeInUp mb-2">
+                                        <div class="card-body p-4">
+                                            <div class="row">
+                                                <div class="col-12 col-sm-6">
+                                                    <div class="form-group">
+                                                        <select class="form-control border-top-0 border-left-0 border-right-0 rounded-0 pl-4">
+                                                            <option> Occation</option>
+                                                            <option>Birthday</option>
+                                                            <option>Event</option>
+                                                        </select>
+                                                        <div class="lis-search"> <i class="fa fa-tags lis-primary"></i> </div>
                                                     </div>
                                                 </div>
-                                            </div>
-                                            <div>
-                                                <div class="gallery text-center lis-relative"> <img src="{{vich_uploader_asset(x,'devisFile')}}" alt="" class="img-fluid rounded" />
-                                                    <div class="gallery-fade fade w-100 h-100 rounded">
-                                                        <div class="d-table w-100 h-100">
-                                                            <div class="d-table-cell align-middle">
-                                                                <div class="h4">
-                                                                    <a data-toggle="lightbox" data-gallery="example-gallery" href="{{vich_uploader_asset(x,'devisFile')}}" class="text-white"> <i class="fa fa-search-plus"></i></a>
-                                                                </div>
-                                                            </div>
-                                                        </div>
+                                                <div class="col-12 col-sm-6">
+                                                    <div class="form-group lis-relative">
+                                                        <input type="date" class="form-control border-top-0 border-left-0 border-right-0 rounded-0 pl-4">
+                                                        <div class="lis-search"> <i class="fa fa-calendar lis-primary lis-left-0"></i> </div>
                                                     </div>
                                                 </div>
-                                            </div>
-                                            <div>
-                                                <div class="gallery text-center lis-relative"> <img src="{{vich_uploader_asset(x,'devisFile')}}" alt="" class="img-fluid rounded" />
-                                                    <div class="gallery-fade fade w-100 h-100 rounded">
-                                                        <div class="d-table w-100 h-100">
-                                                            <div class="d-table-cell align-middle">
-                                                                <div class="h4">
-                                                                    <a data-toggle="lightbox" data-gallery="example-gallery" href="{{vich_uploader_asset(x,'devisFile')}}" class="text-white"> <i class="fa fa-search-plus"></i></a>
-                                                                </div>
-                                                            </div>
-                                                        </div>
+                                                <div class="col-12 col-sm-6">
+                                                    <div class="form-group">
+                                                        <input type="time" class="form-control border-top-0 border-left-0 border-right-0 rounded-0 pl-4">
+                                                        <div class="lis-search"> <i class="fa fa-clock-o lis-primary"></i> </div>
                                                     </div>
                                                 </div>
-                                            </div>
-                                            <div>
-                                                <div class="gallery text-center lis-relative"> <img src="{{vich_uploader_asset(x,'devisFile')}}" alt="" class="img-fluid rounded" />
-                                                    <div class="gallery-fade fade w-100 h-100 rounded">
-                                                        <div class="d-table w-100 h-100">
-                                                            <div class="d-table-cell align-middle">
-                                                                <div class="h4">
-                                                                    <a data-toggle="lightbox" data-gallery="example-gallery" href="{{vich_uploader_asset(x,'devisFile')}}" class="text-white"> <i class="fa fa-search-plus"></i></a>
-                                                                </div>
-                                                            </div>
-                                                        </div>
+                                                <div class="col-12 col-sm-6">
+                                                    <div class="form-group">
+                                                        <input type="text" class="form-control border-top-0 border-left-0 border-right-0 rounded-0 pl-4" placeholder="Memeber">
+                                                        <div class="lis-search"> <i class="fa fa-users lis-primary"></i> </div>
                                                     </div>
                                                 </div>
-                                            </div>
-                                            <div>
-                                                <div class="gallery text-center lis-relative"> <img src="{{vich_uploader_asset(x,'devisFile')}}" alt="" class="img-fluid rounded" />
-                                                    <div class="gallery-fade fade w-100 h-100 rounded">
-                                                        <div class="d-table w-100 h-100">
-                                                            <div class="d-table-cell align-middle">
-                                                                <div class="h4">
-                                                                    <a data-toggle="lightbox" data-gallery="example-gallery" href="" class="text-white"> <i class="fa fa-search-plus"></i></a>
-                                                                </div>
-                                                            </div>
-                                                        </div>
+                                                <div class="col-12 col-sm-12">
+                                                    <div class="form-group lis-relative">
+                                                        <textarea class="form-control border-top-0 border-left-0 border-right-0 rounded-0 pl-4" placeholder="Commentaire"></textarea>
+                                                        <div class="lis-search"> <i class="fa fa-pencil lis-primary lis-left-0 lis-top-10"></i> </div>
                                                     </div>
                                                 </div>
+                                                <div class="col-12 col-lg-4"> <a href="#" class="btn btn-primary btn-default"><i class="fa fa-search pr-1"></i> Book Now</a> </div>
                                             </div>
-                                            <div>
-                                                <div class="gallery text-center lis-relative"> <img src="{{vich_uploader_asset(x,'devisFile')}}" alt="" class="img-fluid rounded" />
-                                                    <div class="gallery-fade fade w-100 h-100 rounded">
-                                                        <div class="d-table w-100 h-100">
-                                                            <div class="d-table-cell align-middle">
-                                                                <div class="h4">
-                                                                    <a data-toggle="lightbox" data-gallery="example-gallery" href="{{vich_uploader_asset(x,'devisFile')}}" class="text-white"> <i class="fa fa-search-plus"></i></a>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <h6 class="lis-font-weight-500"><i class="fa fa-map-o pr-2 lis-f-14"></i> Location</h6>
-                                <div class="card lis-brd-light wow fadeInUp mb-4">
-                                    <div class="card-body p-4">
-                                        <div id="map-canvas" style='height: 350px;'></div>
-                                    </div>
-                            </div>
-                            <div class="tab-pane fade" id="reviews" role="tabpanel" aria-labelledby="reviews">
-                                <h6 class="lis-font-weight-500"><i class="fa fa-signal pr-2 lis-f-14"></i> Reviews</h6>
-                                <div class="card lis-brd-light wow fadeInUp mb-2">
-                                    <div class="card-body p-4">
-                                        <div class="media d-block d-sm-flex text-center text-sm-left">
-                                            <a href="#"><img src="{{ asset('images/author5.jpg') }}" class="img-fluid d-md-flex mr-sm-4 rounded-circle" alt="" width="60" /></a>
-                                            <div class="media-body align-self-center">
-                                                <ul class="list-inline mb-0 lis-light-gold font-weight-normal h5 float-sm-right float-none my-md-0 my-3">
-                                                    <li class="list-inline-item"><i class="fa fa-star"></i></li>
-                                                    <li class="list-inline-item"><i class="fa fa-star"></i></li>
-                                                    <li class="list-inline-item"><i class="fa fa-star"></i></li>
-                                                    <li class="list-inline-item"><i class="fa fa-star"></i></li>
-                                                    <li class="list-inline-item"><i class="fa fa-star-o"></i></li>
-                                                </ul>
-                                                <h6 class="mb-0"><a href="#" class="lis-dark"></a></h6>
-                                                <p>November 03, 2017</p>
-                                                <h6 class="lis-primary mb-2">Best Place To Eat Breakfast</h6>
-                                                <p>Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Sed aliquam, nisi quis porttitor congue, elit erat euismod orci placerat dolor.</p>
-                                                <div class="review-image my-3">
-                                                    <A href="{{ asset('images/review1.jpg') }}" data-toggle="lightbox" data-gallery="example-gallery"><img src="{{ asset('images/review1.jpg') }}" class="img-fluid rounded w-25 mr-2" alt="" /></A>
-                                                    <A href="{{ asset('images/review2.jpg') }}" data-toggle="lightbox" data-gallery="example-gallery"><img src="{{ asset('images/review2.jpg') }}" class="img-fluid rounded w-25 mr-2" alt="" /></A>
-                                                    <A href="{{ asset('images/review3.jpg') }}" data-toggle="lightbox" data-gallery="example-gallery"><img src="{{ asset('images/review3.jpg') }}" class="img-fluid rounded w-25 mr-2" alt="" /></A>
-                                                </div>
-                                                <ul class="list-inline mb-0 comment-info lis-f-14">
-                                                    <li class="list-inline-item mr-4 lis-relative"><a href="#" class="lis-light"><i class="fa fa-thumbs-up pr-1"></i> 20 Likes</a></li>
-                                                    <li class="list-inline-item  lis-relative"><a href="#" class="lis-light"><i class="fa fa-reply-all pr-1"></i> 20 Reply</a></li>
-                                                </ul>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="card lis-brd-light wow fadeInUp mb-2">
-                                    <div class="card-body p-4">
-                                        <div class="media d-block d-sm-flex text-center text-sm-left">
-                                            <a href="#"><img src="{{ asset('images/author6.jpg') }}" class="img-fluid d-md-flex mr-sm-4 rounded-circle" alt="" width="60" /></a>
-                                            <div class="media-body align-self-center">
-                                                <ul class="list-inline mb-0 lis-light-gold font-weight-normal h5 float-sm-right float-none my-md-0 my-3">
-                                                    <li class="list-inline-item"><i class="fa fa-star"></i></li>
-                                                    <li class="list-inline-item"><i class="fa fa-star"></i></li>
-                                                    <li class="list-inline-item"><i class="fa fa-star"></i></li>
-                                                    <li class="list-inline-item"><i class="fa fa-star"></i></li>
-                                                    <li class="list-inline-item"><i class="fa fa-star"></i></li>
-                                                </ul>
-                                                <h6 class="mb-0"><a href="#" class="lis-dark">John Deo</a></h6>
-                                                <p>October 28, 2017</p>
-                                                <h6 class="lis-primary mb-2">Good Place</h6>
-                                                <p>Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Sed aliquam, nisi quis porttitor congue, elit erat euismod orci placerat dolor.</p>
-                                                <ul class="list-inline mb-0 comment-info lis-f-14">
-                                                    <li class="list-inline-item mr-4 lis-relative"><a href="#" class="lis-light"><i class="fa fa-thumbs-up pr-1"></i> 20 Likes</a></li>
-                                                    <li class="list-inline-item  lis-relative"><a href="#" class="lis-light"><i class="fa fa-reply-all pr-1"></i> 20 Reply</a></li>
-                                                </ul>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="card lis-brd-light wow fadeInUp mb-2">
-                                    <div class="card-body p-4">
-                                        <div class="media d-block d-sm-flex text-center text-sm-left">
-                                            <a href="#"><img src="{{ asset('images/author7.jpg') }}" class="img-fluid d-md-flex mr-sm-4 rounded-circle" alt="" width="60" /></a>
-                                            <div class="media-body align-self-center">
-                                                <ul class="list-inline mb-0 lis-light-gold font-weight-normal h5 float-sm-right float-none my-md-0 my-3">
-                                                    <li class="list-inline-item"><i class="fa fa-star"></i></li>
-                                                    <li class="list-inline-item"><i class="fa fa-star"></i></li>
-                                                    <li class="list-inline-item"><i class="fa fa-star"></i></li>
-                                                    <li class="list-inline-item"><i class="fa fa-star"></i></li>
-                                                    <li class="list-inline-item"><i class="fa fa-star-o"></i></li>
-                                                </ul>
-                                                <h6 class="mb-0"><a href="#" class="lis-dark">Jonathan</a></h6>
-                                                <p>October 25, 2017</p>
-                                                <h6 class="lis-primary mb-2">Delicious Food</h6>
-                                                <p>Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Sed aliquam, nisi quis porttitor congue, elit erat euismod orci placerat dolor.</p>
-                                                <div class="review-image my-3">
-                                                    <A href="{{ asset('images/review4.jpg') }}" data-toggle="lightbox" data-gallery="example-gallery"><img src="{{ asset('images/review4.jpg') }}" class="img-fluid rounded w-25 mr-2" alt="" /></A>
-                                                </div>
-                                                <ul class="list-inline mb-0 comment-info lis-f-14">
-                                                    <li class="list-inline-item mr-4 lis-relative"><a href="#" class="lis-light"><i class="fa fa-thumbs-up pr-1"></i> 20 Likes</a></li>
-                                                    <li class="list-inline-item  lis-relative"><a href="#" class="lis-light"><i class="fa fa-reply-all pr-1"></i> 20 Reply</a></li>
-                                                </ul>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <ul class="pagination list-inline mb-0 text-center text-uppercase lis-f-14 justify-content-center my-4">
-                                    <li class="p-1 page-item"><a class="page-link lis-brd-light lis-light rounded" href="#"><i class="fa fa-angle-left pr-1"></i> Prev</a></li>
-                                    <li class="p-1 page-item d-none d-sm-inline-block"><a class="page-link lis-light rounded" href="#">1</a></li>
-                                    <li class="p-1 page-item d-none d-sm-inline-block"><a class="page-link lis-light rounded" href="#">2</a></li>
-                                    <li class="p-1 page-item d-none d-sm-inline-block"><a class="page-link lis-light rounded" href="#">3</a></li>
-                                    <li class="p-1 page-item"><a class="page-link lis-brd-light lis-light rounded" href="#"> Next <i class="fa fa-angle-right pl-1"></i></a></li>
-                                </ul>
-                                <h6 class="lis-font-weight-500"><i class="fa fa-commenting pr-2 lis-f-14"></i>  Add Review</h6>
-                                <div class="card lis-brd-light wow fadeInUp">
-                                    <div class="card-body p-4">
-                                        <p class="mb-2">Your rating for this listing</p>
-                                        <ul class="list-inline lis-light-gold font-weight-normal h5">
-                                            <li class="list-inline-item"><i class="fa fa-star-o"></i></li>
-                                            <li class="list-inline-item"><i class="fa fa-star-o"></i></li>
-                                            <li class="list-inline-item"><i class="fa fa-star-o"></i></li>
-                                            <li class="list-inline-item"><i class="fa fa-star-o"></i></li>
-                                            <li class="list-inline-item"><i class="fa fa-star-o"></i></li>
-                                        </ul>
-                                        <div class="row">
-                                            <div class="col-12 col-sm-6">
-                                                <div class="form-group lis-relative">
-                                                    <input type="text" class="form-control border-top-0 border-left-0 border-right-0 rounded-0 pl-4" placeholder="Your Name">
-                                                    <div class="lis-search"> <i class="fa fa-user lis-primary lis-left-0"></i> </div>
-                                                </div>
-                                            </div>
-                                            <div class="col-12 col-sm-6">
-                                                <div class="form-group lis-relative">
-                                                    <input type="text" class="form-control border-top-0 border-left-0 border-right-0 rounded-0 pl-4" placeholder="Email address">
-                                                    <div class="lis-search"> <i class="fa fa-envelope lis-primary lis-left-0"></i> </div>
-                                                </div>
-                                            </div>
-                                            <div class="col-12 col-sm-12">
-                                                <div class="form-group lis-relative">
-                                                    <input type="text" class="form-control border-top-0 border-left-0 border-right-0 rounded-0 pl-4" placeholder="Title of review">
-                                                    <div class="lis-search"> <i class="fa fa-drivers-license-o lis-primary lis-left-0"></i> </div>
-                                                </div>
-                                            </div>
-                                            <div class="col-12 col-sm-12">
-                                                <div class="form-group lis-relative">
-                                                    <textarea class="form-control border-top-0 border-left-0 border-right-0 rounded-0 pl-4" placeholder="Review"></textarea>
-                                                    <div class="lis-search"> <i class="fa fa-pencil lis-primary lis-left-0 lis-top-10"></i> </div>
-                                                </div>
-                                            </div>
-                                            <div class="col-12 col-sm-12">
-                                                <h6 class="lis-font-weight-500">  Add a photo</h6>
-                                                <input type="file" class="d-block"> <small>Note: The image size should smaller than or equal to 20MB</small> </div>
-                                        </div> <a href="#" class="btn btn-primary btn-default mt-3"> Submit Review</a> </div>
-                                </div>
-                            </div>
-
-                            <div class="tab-pane fade" id="booking" role="tabpanel" aria-labelledby="booking">
-                                <h6 class="lis-font-weight-500"><i class="fa fa-signal pr-2 lis-f-14"></i> Book a Table 2</h6>
-                                <div class="card lis-brd-light wow fadeInUp mb-2">
-                                    <div class="card-body p-4">
-                                        <div class="row">
-                                            <div class="col-12 col-sm-6">
-                                                <div class="form-group">
-                                                    <select class="form-control border-top-0 border-left-0 border-right-0 rounded-0 pl-4">
-                                                        <option> Occation</option>
-                                                        <option>Birthday</option>
-                                                        <option>Event</option>
-                                                    </select>
-                                                    <div class="lis-search"> <i class="fa fa-tags lis-primary"></i> </div>
-                                                </div>
-                                            </div>
-                                            <div class="col-12 col-sm-6">
-                                                <div class="form-group lis-relative">
-                                                    <input type="date" class="form-control border-top-0 border-left-0 border-right-0 rounded-0 pl-4">
-                                                    <div class="lis-search"> <i class="fa fa-calendar lis-primary lis-left-0"></i> </div>
-                                                </div>
-                                            </div>
-                                            <div class="col-12 col-sm-6">
-                                                <div class="form-group">
-                                                    <input type="time" class="form-control border-top-0 border-left-0 border-right-0 rounded-0 pl-4">
-                                                    <div class="lis-search"> <i class="fa fa-clock-o lis-primary"></i> </div>
-                                                </div>
-                                            </div>
-                                            <div class="col-12 col-sm-6">
-                                                <div class="form-group">
-                                                    <input type="text" class="form-control border-top-0 border-left-0 border-right-0 rounded-0 pl-4" placeholder="Memeber">
-                                                    <div class="lis-search"> <i class="fa fa-users lis-primary"></i> </div>
-                                                </div>
-                                            </div>
-                                            <div class="col-12 col-sm-12">
-                                                <div class="form-group lis-relative">
-                                                    <textarea class="form-control border-top-0 border-left-0 border-right-0 rounded-0 pl-4" placeholder="Message"></textarea>
-                                                    <div class="lis-search"> <i class="fa fa-pencil lis-primary lis-left-0 lis-top-10"></i> </div>
-                                                </div>
-                                            </div>
-                                            <div class="col-12 col-lg-4"> <a href="#" class="btn btn-primary btn-default"><i class="fa fa-search pr-1"></i> Book Now</a> </div>
                                         </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
-                    </div>
-                    <div class="col-12 col-lg-4">
-                        <h6 class="lis-font-weight-500"><i class="fa fa-star pr-2 lis-f-14"></i> Listing Ratings</h6>
-                        <div class="card lis-brd-light wow fadeInUp mb-4">
-                            <div class="card-body p-4">
-                                <ul class="list-inline mb-0 lis-light-gold font-weight-normal h4">
-                                    <li class="list-inline-item"><i class='fa fa-star'></i></li>
-                                    <li class="list-inline-item"><i class='fa fa-star'></i></li>
-                                    <li class="list-inline-item"><i class='fa fa-star'></i></li>
-                                    <li class="list-inline-item"><i class='fa fa-star-o'></i></li>
-                                    <li class="list-inline-item"><i class='fa fa-star-o'></i></li>
-                                    <li class="list-inline-item"> 3.0</li>
-                                </ul> <small>2.77 average based on 19184 ratings</small> </div>
-                        </div>
+                        <div class="col-12 col-lg-4">
+                            <h6 class="lis-font-weight-500"><i class="fa fa-star pr-2 lis-f-14"></i> Listing Ratings</h6>
+                            <div class="card lis-brd-light wow fadeInUp mb-4">
+
+                                <div class="card-body p-4">
+                                    <h8 class="lis-font-weight-500"><i class="fa fa-user pr-2 lis-f-14"></i> Moyenne de {{ nbruser }} votes </h8>
+                                    <hr>
+                                    <p>Qualite:</p> <ul class="list-inline mb-0 lis-light-gold font-weight-normal h4">
+                                        {% if    moyqualite <0.5 %} {% endif %}
+                                        {% if    (( moyqualite < 1) and ( moyqualite >=0.5)) %}
+                                            <li class="list-inline-item"><i class='fa fa-star-half-o'></i></li>
+                                        {% endif %}
+                                        {% if    (( moyqualite <1.5) and ( moyservice >=1)) %}
+                                            <li class="list-inline-item"><i class='fa fa-star'></i></li>
+                                        {% endif %}
+
+                                        {% if    (( moyqualite <2) and ( moyqualite >=1.5)) %}
+                                            <li class="list-inline-item"><i class='fa fa-star'></i></li>
+                                            <li class="list-inline-item"><i class='fa fa-star-half-o'></i></li>
+                                        {% endif %}
+                                        {% if    (( moyqualite < 2.5) and ( moyqualite >=2)) %}
+                                            <li class="list-inline-item"><i class='fa fa-star'></i></li>
+                                            <li class="list-inline-item"><i class='fa fa-star'></i></li>
+
+                                        {% endif %}
+                                        {% if    (( moyqualite < 3) and ( moyqualite >=2.5)) %}
+                                            <li class="list-inline-item"><i class='fa fa-star'></i></li>
+                                            <li class="list-inline-item"><i class='fa fa-star'></i></li>
+                                            <li class="list-inline-item"><i class='fa fa-star-half-o'></i></li>
+                                        {% endif %}
+                                        {% if    (( moyqualite < 3.5) and ( moyqualite >=3)) %}
+                                            <li class="list-inline-item"><i class='fa fa-star'></i></li>
+                                            <li class="list-inline-item"><i class='fa fa-star'></i></li>
+                                            <li class="list-inline-item"><i class='fa fa-star'></i></li>
+
+                                        {% endif %}
+                                        {% if    (( moyqualite < 4) and ( moyqualite >=3.5)) %}
+                                            <li class="list-inline-item"><i class='fa fa-star'></i></li>
+                                            <li class="list-inline-item"><i class='fa fa-star'></i></li>
+                                            <li class="list-inline-item"><i class='fa fa-star'></i></li>
+                                            <li class="list-inline-item"><i class='fa fa-star-half-o'></i></li>
+                                        {% endif %}
+                                        {% if    (( moyqualite < 4.5) and ( moyqualite >=4)) %}
+                                            <li class="list-inline-item"><i class='fa fa-star'></i></li>
+                                            <li class="list-inline-item"><i class='fa fa-star'></i></li>
+                                            <li class="list-inline-item"><i class='fa fa-star'></i></li>
+                                            <li class="list-inline-item"><i class='fa fa-star'></i></li>
+
+                                        {% endif %}
+                                        {% if    (( moyqualite < 5) and ( moyqualite >=4.5)) %}
+                                            <li class="list-inline-item"><i class='fa fa-star'></i></li>
+                                            <li class="list-inline-item"><i class='fa fa-star'></i></li>
+                                            <li class="list-inline-item"><i class='fa fa-star'></i></li>
+                                            <li class="list-inline-item"><i class='fa fa-star'></i></li>
+                                            <li class="list-inline-item"><i class='fa fa-star'></i></li>
+                                        {% endif %}
+                                        {% if moyqualite==5 %}
+                                            <li class="list-inline-item"><i class='fa fa-star'></i></li>
+                                            <li class="list-inline-item"><i class='fa fa-star'></i></li>
+                                            <li class="list-inline-item"><i class='fa fa-star'></i></li>
+                                            <li class="list-inline-item"><i class='fa fa-star'></i></li>
+                                            <li class="list-inline-item"><i class='fa fa-star'></i></li>
+                                        {% endif %}
 
 
 
-                        <h6 class="lis-font-weight-500"><i class="fa fa-user-secret pr-2 lis-f-14"></i>Proprietaire </h6>
-                        <div class="card lis-brd-light wow fadeInUp mb-4">
-                            <div class="card-body p-4">
-                                <div class="media d-md-flex">
-                                    <a href="#"><img src="{{ asset('images/author4.jpg') }}" class="img-fluid d-flex mr-4 rounded-circle" alt="" width="70" /></a>
-                                    <div class='media-body align-self-center'>
-                                        <h6 class="mb-0"><a href="#" class="lis-dark">{{ x.iduser.name }}</a></h6>
-                                        <p class='mb-0'>Membre depuis $DATE</p>
-                                    </div>
-                                </div>
-                                <ul class="list-unstyled my-4 lis-line-height-2">
-                                    <li><i class="fa fa-phone pr-2"></i> {{ app.user.phone }}</li>
-                                    <li><i class="fa fa-map-o pr-2"></i> {{ app.user.address }}</li>
-                                </ul>
-                                <ul class="list-inline my-0">
-                                    <li class="list-inline-item mr-0"><a href="#" class="lis-light lis-social border lis-brd-light text-center lis-line-height-2_3 rounded d-block"><i class="fa fa-facebook"></i></a></li>
-                                    <li class="list-inline-item mr-0"><a href="#" class="lis-light lis-social border lis-brd-light text-center lis-line-height-2_3 rounded d-block"><i class="fa fa-twitter"></i></a></li>
-                                    <li class="list-inline-item mr-0"><a href="#" class="lis-light lis-social border lis-brd-light text-center lis-line-height-2_3 rounded d-block"><i class="fa fa-linkedin"></i></a></li>
-                                    <li class="list-inline-item mr-0"><a href="#" class="lis-light lis-social border lis-brd-light text-center lis-line-height-2_3 rounded d-block"><i class="fa fa-tumblr"></i></a></li>
-                                    <li class="list-inline-item mr-0"><a href="#" class="lis-light lis-social border lis-brd-light text-center lis-line-height-2_3 rounded d-block"><i class="fa fa-pinterest-p"></i></a></li>
-                                </ul>
+                                    </ul> <small>{{ moyqualite|number_format(2, '.', ',') }} moyenne</small> </div>
+                                <div class="card-body p-4">
+                                    <p>Service:</p> <ul class="list-inline mb-0 lis-light-gold font-weight-normal h4">
+                                        {% if    moyservice <0.5 %} {% endif %}
+                                        {% if    (( moyservice < 1) and ( moyservice >=0.5)) %}
+                                            <li class="list-inline-item"><i class='fa fa-star-half-o'></i></li>
+                                        {% endif %}
+                                        {% if    (( moyservice <1.5) and ( moyservice >=1)) %}
+                                            <li class="list-inline-item"><i class='fa fa-star'></i></li>
+                                        {% endif %}
+
+                                        {% if    (( moyservice <2) and ( moyservice >=1.5)) %}
+                                            <li class="list-inline-item"><i class='fa fa-star'></i></li>
+                                            <li class="list-inline-item"><i class='fa fa-star-half-o'></i></li>
+                                        {% endif %}
+                                        {% if    (( moyservice < 2.5) and ( moyservice >=2)) %}
+                                            <li class="list-inline-item"><i class='fa fa-star'></i></li>
+                                            <li class="list-inline-item"><i class='fa fa-star'></i></li>
+
+                                        {% endif %}
+                                        {% if    (( moyservice < 3) and ( moyservice >=2.5)) %}
+                                            <li class="list-inline-item"><i class='fa fa-star'></i></li>
+                                            <li class="list-inline-item"><i class='fa fa-star'></i></li>
+                                            <li class="list-inline-item"><i class='fa fa-star-half-o'></i></li>
+                                        {% endif %}
+                                        {% if    (( moyservice < 3.5) and ( moyservice >=3)) %}
+                                            <li class="list-inline-item"><i class='fa fa-star'></i></li>
+                                            <li class="list-inline-item"><i class='fa fa-star'></i></li>
+                                            <li class="list-inline-item"><i class='fa fa-star'></i></li>
+
+                                        {% endif %}
+                                        {% if    (( moyservice < 4) and ( moyservice >=3.5)) %}
+                                            <li class="list-inline-item"><i class='fa fa-star'></i></li>
+                                            <li class="list-inline-item"><i class='fa fa-star'></i></li>
+                                            <li class="list-inline-item"><i class='fa fa-star'></i></li>
+                                            <li class="list-inline-item"><i class='fa fa-star-half-o'></i></li>
+                                        {% endif %}
+                                        {% if    (( moyservice < 4.5) and ( moyservice >=4)) %}
+                                            <li class="list-inline-item"><i class='fa fa-star'></i></li>
+                                            <li class="list-inline-item"><i class='fa fa-star'></i></li>
+                                            <li class="list-inline-item"><i class='fa fa-star'></i></li>
+                                            <li class="list-inline-item"><i class='fa fa-star'></i></li>
+
+                                        {% endif %}
+                                        {% if    (( moyservice < 5) and ( moyservice >=4.5)) %}
+                                            <li class="list-inline-item"><i class='fa fa-star'></i></li>
+                                            <li class="list-inline-item"><i class='fa fa-star'></i></li>
+                                            <li class="list-inline-item"><i class='fa fa-star'></i></li>
+                                            <li class="list-inline-item"><i class='fa fa-star'></i></li>
+                                            <li class="list-inline-item"><i class='fa fa-star'></i></li>
+                                        {% endif %}
+                                        {% if moyservice==5 %}
+                                            <li class="list-inline-item"><i class='fa fa-star'></i></li>
+                                            <li class="list-inline-item"><i class='fa fa-star'></i></li>
+                                            <li class="list-inline-item"><i class='fa fa-star'></i></li>
+                                            <li class="list-inline-item"><i class='fa fa-star'></i></li>
+                                            <li class="list-inline-item"><i class='fa fa-star'></i></li>
+                                        {% endif %}
+                                    </ul> <small>{{ moyservice|number_format(2, '.', ',') }} moyenne</small> </div>
                             </div>
-                        </div>
-                        <h6 class="lis-font-weight-500"><i class="fa fa-envelope pr-2 lis-f-14"></i>  Send Message</h6>
-                        <div class="card lis-brd-light wow fadeInUp">
-                            <div class="card-body p-4">
-                                <div class="form-group lis-relative">
-                                    <input type="text" class="form-control border-top-0 border-left-0 border-right-0 rounded-0 pl-4" placeholder="Your Name">
-                                    <div class="lis-search"> <i class="fa fa-user lis-primary lis-left-0"></i> </div>
+                            <h6 class="lis-font-weight-500"><i class="fa fa-clock-o pr-2 lis-f-14"></i> Opening Hours</h6>
+                            <div class="card lis-brd-light wow fadeInUp mb-4">
+                                <div class="card-body p-4">
+                                    <span class='lis-light-green font-weight-bold'>Lundi - Samedi</span> : {{ x.lundisamedio }}- {{ x.lundisamedif }}
+                                    <br>
+                                    <span class='lis-light-green font-weight-bold'>Dimanche</span> : {{ x.dimanchef }} - {{ x.dimanchef }}
                                 </div>
-                                <div class="form-group lis-relative">
-                                    <input type="text" class="form-control border-top-0 border-left-0 border-right-0 rounded-0 pl-4" placeholder="Email address">
-                                    <div class="lis-search"> <i class="fa fa-envelope lis-primary lis-left-0"></i> </div>
+                            </div>
+
+
+                            <h6 class="lis-font-weight-500"><i class="fa fa-user-secret pr-2 lis-f-14"></i>Proprietaire </h6>
+                            <div class="card lis-brd-light wow fadeInUp mb-4">
+                                <div class="card-body p-4">
+                                    <div class="media d-md-flex">
+                                        <a href="#"><img src="{{vich_uploader_asset(x.iduser,'devisFile')}}" class="img-fluid d-flex mr-4 rounded-circle" alt="" width="70" /></a>
+                                        <div class='media-body align-self-center'>
+                                            <h6 class="mb-0"><a href="#" class="lis-dark">{{ x.iduser.name }}</a></h6>
+                                            <p class='mb-0'>Membre depuis {{ x.iduser.date |date('M Y') }}</p>
+                                        </div>
+                                    </div>
+                                    <ul class="list-unstyled my-4 lis-line-height-2">
+                                        <li><i class="fa fa-phone pr-2"></i> {{ x.iduser.phone }}</li>
+                                        <li><i class="fa fa-map-o pr-2"></i> {{ x.iduser.address }}</li>
+                                    </ul>
+                                    <ul class="list-inline my-0">
+                                        <li class="list-inline-item mr-0"><a href="" class="lis-light lis-social border lis-brd-light text-center lis-line-height-2_3 rounded d-block"><i class="fa fa-facebook"></i></a></li>
+
+                                    </ul>
                                 </div>
-                                <div class="form-group lis-relative">
-                                    <textarea class="form-control border-top-0 border-left-0 border-right-0 rounded-0 pl-4" placeholder="Message"></textarea>
-                                    <div class="lis-search"> <i class   ="fa fa-pencil lis-primary lis-left-0 lis-top-10"></i> </div>
-                                </div> <a href="#" class="btn btn-primary btn-default"> Submit Message</a> </div>
+                            </div>
+
                         </div>
                     </div>
                 </div>
-            </div>
-            </div>
 
-        </section>
+            </section>
             <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAZL72zG-8qoQipgaQ97aC1rxYuxuyDYX0"
                     type="text/javascript"></script>
             <script>

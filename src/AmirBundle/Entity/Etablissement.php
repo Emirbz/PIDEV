@@ -1128,8 +1128,7 @@ class Etablissement
     private $souscat;
     /**
      * @ORM\Column(type="string",nullable=true)
-
-     * @Assert\File(mimeTypes={ "image/png","image/jpeg","image/jpg","image/gif" },maxSize="40000000"))
+     * @Assert\File(mimeTypes={ "image/png","image/jpeg","image/jpg","image/gif" },maxSize="400000000"))
      */
     private $img1;
 
@@ -1250,6 +1249,8 @@ class Etablissement
      * @ORM\Column(type="float",nullable=true)
      */
     private $longitude;
+
+
     /**
      * @ORM\Column(type="float",nullable=true)
      */
@@ -1258,6 +1259,47 @@ class Etablissement
      * @ORM\Column(type="float",nullable=true)
      */
     private $moyqualite;
+
+    /**
+     * @return mixed
+     */
+    public function getTotalqualite()
+    {
+        return $this->totalqualite;
+    }
+
+    /**
+     * @param mixed $totalqualite
+     */
+    public function setTotalqualite($totalqualite)
+    {
+        $this->totalqualite = $totalqualite;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getTotalservice()
+    {
+        return $this->totalservice;
+    }
+
+    /**
+     * @param mixed $totalservice
+     */
+    public function setTotalservice($totalservice)
+    {
+        $this->totalservice = $totalservice;
+    }
+    /**
+     * @ORM\Column(type="float",nullable=true)
+     */
+    private $totalqualite;
+    /**
+     * @ORM\Column(type="float",nullable=true)
+     */
+    private $totalservice;
+
 
 
 

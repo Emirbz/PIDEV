@@ -93,18 +93,59 @@
                             <div class="col-12 col-sm-12">
 
                                 <div class="form-group row">
-                                    <label for="example-text-input" class="col-12 col-md-3 col-form-label">Photo de couverture</label>
+                                    <label for="example-text-input" class="col-12 col-md-3 col-form-label">Photo de principale</label>
                                     <div class="col-12 col-md-9">
                                         {{ form_widget(form.DevisFile) }}
 
                                     </div>
+                                    <label for="example-text-input" class="col-12 col-md-3 col-form-label">Photo de couverture </label>
+                                    <div class="col-12 col-md-9">
+
+                                        {{ form_widget(form.img1) }}
+
+
+                                    </div>
+                                    <label for="example-text-input" class="col-12 col-md-3 col-form-label">Photo 1 </label>
+                                    <div class="col-12 col-md-9">
+                                        {{ form_widget(form.img2) }}
+
+                                    </div>
+                                    <label for="example-text-input" class="col-12 col-md-3 col-form-label">Photo 2</label>
+                                    <div class="col-12 col-md-9">
+                                        {{ form_widget(form.img3) }}
+
+                                    </div>
                                 </div>
+
 
 
                             </div>
 
                         </div>
                         <hr/>
+                        <div class="col-12 col-sm-12">
+                            <div class="form-group row">
+                                <label for="example-text-input" class="col-12 col-md-2 col-form-label">Lundi-Samedi</label>
+                                <div class="col-12 col-md-5">
+                                    {{ form_errors(form.lundisamedio) }}
+                                    {{ form_widget(form.lundisamedio, {'attr': {'class': 'form-control border-top-0 border-left-0 border-right-0 rounded-0'}}) }}
+                                </div>
+                                <div class="col-12 col-md-5">
+                                    {{ form_errors(form.lundisamedif) }}
+                                    {{ form_widget(form.lundisamedif, {'attr': {'class': 'form-control border-top-0 border-left-0 border-right-0 rounded-0'}}) }}
+                                </div>
+
+                                    <label for="example-text-input" class="col-12 col-md-2 col-form-label">Dimanche</label>
+                                    <div class="col-12 col-md-5">
+                                        {{ form_errors(form.dimancheo) }}
+                                        {{ form_widget(form.dimancheo, {'attr': {'class': 'form-control border-top-0 border-left-0 border-right-0 rounded-0'}}) }}
+                                    </div>
+                                    <div class="col-12 col-md-5">
+                                        {{ form_errors(form.dimancheo) }}
+                                        {{ form_widget(form.dimanchef, {'attr': {'class': 'form-control border-top-0 border-left-0 border-right-0 rounded-0'}}) }}
+                                    </div>
+
+                            </div>
 
                         <div class="row p-4">
                             <div class="col-12 col-sm-12 mb-3">

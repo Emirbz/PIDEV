@@ -120,6 +120,7 @@ class EtablissementController extends Controller
         $form = $this->createForm(RestaurantType::class, $restaurant);
 
 
+
         $form->handleRequest($request);
         if($form->isValid()){
             $file = $restaurant->getImg1();
@@ -173,7 +174,7 @@ class EtablissementController extends Controller
             ########
             $em->persist ($restaurant);
             $em->flush();
-            return $this->redirectToRoute('App_bon_plan_list_hotels');
+            return $this->redirectToRoute('App_bon_plan_profil_hotel',array('id'=>$id));
 
         }
         return $this->render("@Amir/Hotel/update_hotel.html.twig",array("form"=>$form->createView()));
@@ -204,25 +205,35 @@ class EtablissementController extends Controller
         $count=count($moy1);
         $moyqualite=$rest->getMoyqualite();
         $moyservice=$rest->getMoyservice();
-
+        $totalqualite=$rest->getTotalqualite();
+        $totalservice=$rest->getTotalservice();
         $review->setIdetab($rest);
         $review->setIduser($this->getUser());
         $review->setDate(new \DateTime('now'));
         $form = $this->createForm(ReviewType::class, $review);
         $form->handleRequest($request);
 
-        if ($form->isSubmitted() && ($form->isValid())) {
+        if ($form->isSubmitted() && ($form->isValid())&& ($request->isMethod('post'))) {
             $em = $this->getDoctrine()->getManager();
-            $qualite= $form->get('qualite')->getData();
-            $service= $form->get('service')->getData();
+        $service = $request->get('ratingservice');
+        $qualite = $request->get('ratingqualite');
+
             if ($count==0)
-            {$rest->setMoyservice($service);
-                $rest->setMoyqualite($qualite);}
+            {
+                $rest->setMoyservice($service);
+                $rest->setMoyqualite($qualite);
+            }
                 if ($count>0)
-                {$rest->setMoyservice(($service+$rest->getMoyservice())/2);
-            $rest->setMoyqualite(($qualite+$rest->getMoyqualite())/2);}
+                {
+                    $rest->setMoyservice(($service+$totalservice)/($count+1));
+                    $rest->setMoyqualite(($qualite+$totalqualite)/($count+1));
+                }
 
+                $review->setQualite($qualite);
+            $review->setService($service);
 
+            $rest->setTotalqualite($rest->getTotalqualite()+$qualite);
+            $rest->setTotalservice($rest->getTotalservice()+$service);
            $em->persist($review);
             $em->flush();
         return $this->redirectToRoute('App_bon_plan_profil_restaurant',array('id'=>$id));
@@ -230,6 +241,13 @@ class EtablissementController extends Controller
         }
         $comments = $em->CreateQuery("SELECT v  From AmirBundle:Review v where v.idetab=$id");
         $commentsresult = $comments->getResult();
+        $query = $em->createQuery("SELECT v  From AmirBundle:Review v where v.idetab=$id");
+        $paginator  = $this->get('knp_paginator');
+        $pagination = $paginator->paginate(
+            $query, /* query NOT result */
+            $request->query->getInt('page', 1)/*page number*/,
+            3/*limit per page*/
+        );
         $count2=count($commentsresult);
 
 
@@ -240,21 +258,86 @@ class EtablissementController extends Controller
                 'comments'=>$commentsresult,
                 'moyqualite'=>$moyqualite,
                 'moyservice'=>$moyservice,
-                'nbruser'=>$count2
+                'nbruser'=>$count2,
+                'pagination' => $pagination
             )
         );
     }
 
 
-    public function profil_hotelAction($id)
+    public function profil_hotelAction(Request $request,$id)
     {
 
 
         $em = $this->getDoctrine()->getManager();
         $restaurant = $em->getRepository("AmirBundle:Etablissement")->findBy(array('id' => $id));
+
+        $review = new Review();
+        $rest = $restaurant[0];
+        $moy = $em->CreateQuery("SELECT v  From AmirBundle:Review v where v.idetab=$id");
+        $moy1=$moy->getResult();
+        $count=count($moy1);
+        $moyqualite=$rest->getMoyqualite();
+        $moyservice=$rest->getMoyservice();
+        $totalqualite=$rest->getTotalqualite();
+        $totalservice=$rest->getTotalservice();
+        $review->setIdetab($rest);
+        $review->setIduser($this->getUser());
+        $review->setDate(new \DateTime('now'));
+        $form = $this->createForm(ReviewType::class, $review);
+        $form->handleRequest($request);
+
+        if ($form->isSubmitted() && ($form->isValid())&& ($request->isMethod('post'))) {
+            $em = $this->getDoctrine()->getManager();
+            $service = $request->get('ratingservice');
+            $qualite = $request->get('ratingqualite');
+
+            if ($count==0)
+            {
+                $rest->setMoyservice($service);
+                $rest->setMoyqualite($qualite);
+            }
+            if ($count>0)
+            {
+                $rest->setMoyservice(($service+$totalservice)/($count+1));
+                $rest->setMoyqualite(($qualite+$totalqualite)/($count+1));
+            }
+
+            $review->setQualite($qualite);
+            $review->setService($service);
+
+            $rest->setTotalqualite($rest->getTotalqualite()+$qualite);
+            $rest->setTotalservice($rest->getTotalservice()+$service);
+            $em->persist($review);
+            $em->flush();
+            return $this->redirectToRoute('App_bon_plan_profil_hotel',array('id'=>$id));
+
+        }
+        $comments = $em->CreateQuery("SELECT v  From AmirBundle:Review v where v.idetab=$id");
+        $commentsresult = $comments->getResult();
+        $query = $em->createQuery("SELECT v  From AmirBundle:Review v where v.idetab=$id");
+        $paginator  = $this->get('knp_paginator');
+        $pagination = $paginator->paginate(
+            $query, /* query NOT result */
+            $request->query->getInt('page', 1)/*page number*/,
+            3/*limit per page*/
+        );
+        $count2=count($commentsresult);
+
+
+
         return $this->render('@Amir/Hotel/profil_hotel.html.twig',
-            array('restaurants' => $restaurant));
+            array('restaurants' => $restaurant,
+                'form'=>$form->createView(),
+                'comments'=>$commentsresult,
+                'moyqualite'=>$moyqualite,
+                'moyservice'=>$moyservice,
+                'nbruser'=>$count2,
+                'pagination' => $pagination
+            )
+        );
     }
+
 
 
     public function list_hotelsAction(Request $request)
@@ -372,33 +455,113 @@ class EtablissementController extends Controller
             ));
     }
 
-    public function profil_beauteAction($id)
+    public function profil_beauteAction(Request $request,$id)
     {
-
-
         $em = $this->getDoctrine()->getManager();
         $restaurant = $em->getRepository("AmirBundle:Etablissement")->findBy(array('id' => $id));
-        return $this->render('AmirBundle:Beauteetbienetre:profil_beaute.html.twig',
-            array('restaurants' => $restaurant));
 
+        $review = new Review();
+        $rest = $restaurant[0];
+        $moy = $em->CreateQuery("SELECT v  From AmirBundle:Review v where v.idetab=$id");
+        $moy1=$moy->getResult();
+        $count=count($moy1);
+        $moyqualite=$rest->getMoyqualite();
+        $moyservice=$rest->getMoyservice();
+        $totalqualite=$rest->getTotalqualite();
+        $totalservice=$rest->getTotalservice();
+        $review->setIdetab($rest);
+        $review->setIduser($this->getUser());
+        $review->setDate(new \DateTime('now'));
+        $form = $this->createForm(ReviewType::class, $review);
+        $form->handleRequest($request);
+
+        if ($form->isSubmitted() && ($form->isValid())&& ($request->isMethod('post'))) {
+            $em = $this->getDoctrine()->getManager();
+            $service = $request->get('ratingservice');
+            $qualite = $request->get('ratingqualite');
+
+            if ($count==0)
+            {
+                $rest->setMoyservice($service);
+                $rest->setMoyqualite($qualite);
+            }
+            if ($count>0)
+            {
+                $rest->setMoyservice(($service+$totalservice)/($count+1));
+                $rest->setMoyqualite(($qualite+$totalqualite)/($count+1));
+            }
+
+            $review->setQualite($qualite);
+            $review->setService($service);
+
+            $rest->setTotalqualite($rest->getTotalqualite()+$qualite);
+            $rest->setTotalservice($rest->getTotalservice()+$service);
+            $em->persist($review);
+            $em->flush();
+            return $this->redirectToRoute('App_bon_plan_profil_beaute',array('id'=>$id));
+
+        }
+        $comments = $em->CreateQuery("SELECT v  From AmirBundle:Review v where v.idetab=$id");
+        $commentsresult = $comments->getResult();
+        $query = $em->createQuery("SELECT v  From AmirBundle:Review v where v.idetab=$id");
+        $paginator  = $this->get('knp_paginator');
+        $pagination = $paginator->paginate(
+            $query, /* query NOT result */
+            $request->query->getInt('page', 1)/*page number*/,
+            3/*limit per page*/
+        );
+        $count2=count($commentsresult);
+
+
+
+        return $this->render('AmirBundle:Beauteetbienetre:profil_beaute.html.twig',
+            array('restaurants' => $restaurant,
+                'form'=>$form->createView(),
+                'comments'=>$commentsresult,
+                'moyqualite'=>$moyqualite,
+                'moyservice'=>$moyservice,
+                'nbruser'=>$count2,
+                'pagination' => $pagination
+            )
+        );
     }
+
+
+
+
     public function updatebeauteAction(Request $request)
     {
         $id = $request->get('id');
         $em = $this->getDoctrine()->getManager();
         $restaurant = $em->getRepository("AmirBundle:Etablissement")
             ->find($id);
-
-
         $form = $this->createForm(BeauteType::class, $restaurant);
+
+
+
         $form->handleRequest($request);
-        if ($form->isValid()) {
-            $em->persist($restaurant);
+        if($form->isValid()){
+            $file = $restaurant->getImg1();
+            $fileName = $this->generateUniqueFileName() . '.' . $file->guessExtension();
+            $file->move($this->getParameter('brochures_directory'), $fileName);
+            $restaurant->setImg1($fileName);
+            ##############
+            $file2 = $restaurant->getimg2();
+            $fileName2 = $this->generateUniqueFileName() . '.' . $file2->guessExtension();
+            $file2->move($this->getParameter('brochures_directory'), $fileName2);
+            $restaurant->setimg2($fileName2);
+            #########
+            $file3 = $restaurant->getimg3();
+            $fileName3 = $this->generateUniqueFileName() . '.' . $file3->guessExtension();
+            $file3->move($this->getParameter('brochures_directory'), $fileName3);
+            $restaurant->setimg3($fileName3);
+            ########
+            $em->persist ($restaurant);
             $em->flush();
-            return $this->redirectToRoute('App_bon_plan_list_beaute_et_bien_etre');
+            return $this->redirectToRoute('App_bon_plan_profil_beaute',array('id'=>$id));
+
         }
-        return $this->render("@Amir/Beauteetbienetre/update_beaute.twig"
-            , array("form" => $form->createView()));
+        return $this->render("@Amir/Beauteetbienetre/update_beaute.twig",array("form"=>$form->createView()));
     }
     public function ajout_cultureAction(Request $request)
 
@@ -444,15 +607,76 @@ class EtablissementController extends Controller
             ));
     }
 
-    public function profil_cultureAction($id)
+    public function profil_cultureAction(Request $request,$id)
     {
-
 
         $em = $this->getDoctrine()->getManager();
         $restaurant = $em->getRepository("AmirBundle:Etablissement")->findBy(array('id' => $id));
-        return $this->render('@Amir/Culture/profil_culture.html.twig',
-            array('restaurants' => $restaurant));
 
+        $review = new Review();
+        $rest = $restaurant[0];
+        $moy = $em->CreateQuery("SELECT v  From AmirBundle:Review v where v.idetab=$id");
+        $moy1=$moy->getResult();
+        $count=count($moy1);
+        $moyqualite=$rest->getMoyqualite();
+        $moyservice=$rest->getMoyservice();
+        $totalqualite=$rest->getTotalqualite();
+        $totalservice=$rest->getTotalservice();
+        $review->setIdetab($rest);
+        $review->setIduser($this->getUser());
+        $review->setDate(new \DateTime('now'));
+        $form = $this->createForm(ReviewType::class, $review);
+        $form->handleRequest($request);
+
+        if ($form->isSubmitted() && ($form->isValid())&& ($request->isMethod('post'))) {
+            $em = $this->getDoctrine()->getManager();
+            $service = $request->get('ratingservice');
+            $qualite = $request->get('ratingqualite');
+
+            if ($count==0)
+            {
+                $rest->setMoyservice($service);
+                $rest->setMoyqualite($qualite);
+            }
+            if ($count>0)
+            {
+                $rest->setMoyservice(($service+$totalservice)/($count+1));
+                $rest->setMoyqualite(($qualite+$totalqualite)/($count+1));
+            }
+
+            $review->setQualite($qualite);
+            $review->setService($service);
+
+            $rest->setTotalqualite($rest->getTotalqualite()+$qualite);
+            $rest->setTotalservice($rest->getTotalservice()+$service);
+            $em->persist($review);
+            $em->flush();
+            return $this->redirectToRoute('App_bon_plan_profil_culture',array('id'=>$id));
+
+        }
+        $comments = $em->CreateQuery("SELECT v  From AmirBundle:Review v where v.idetab=$id");
+        $commentsresult = $comments->getResult();
+        $query = $em->createQuery("SELECT v  From AmirBundle:Review v where v.idetab=$id");
+        $paginator  = $this->get('knp_paginator');
+        $pagination = $paginator->paginate(
+            $query, /* query NOT result */
+            $request->query->getInt('page', 1)/*page number*/,
+            3/*limit per page*/
+        );
+        $count2=count($commentsresult);
+
+
+
+        return $this->render('@Amir/Culture/profil_culture.html.twig',
+            array('restaurants' => $restaurant,
+                'form'=>$form->createView(),
+                'comments'=>$commentsresult,
+                'moyqualite'=>$moyqualite,
+                'moyservice'=>$moyservice,
+                'nbruser'=>$count2,
+                'pagination' => $pagination
+            )
+        );
     }
     public function updatecultureAction(Request $request)
     {
@@ -460,16 +684,31 @@ class EtablissementController extends Controller
         $em = $this->getDoctrine()->getManager();
         $restaurant = $em->getRepository("AmirBundle:Etablissement")
             ->find($id);
-
-
         $form = $this->createForm(CultureType::class, $restaurant);
+
+
+
         $form->handleRequest($request);
-        if ($form->isValid()) {
-            $em->persist($restaurant);
+        if($form->isValid()){
+            $file = $restaurant->getImg1();
+            $fileName = $this->generateUniqueFileName() . '.' . $file->guessExtension();
+            $file->move($this->getParameter('brochures_directory'), $fileName);
+            $restaurant->setImg1($fileName);
+            ##############
+            $file2 = $restaurant->getimg2();
+            $fileName2 = $this->generateUniqueFileName() . '.' . $file2->guessExtension();
+            $file2->move($this->getParameter('brochures_directory'), $fileName2);
+            $restaurant->setimg2($fileName2);
+            #########
+            $file3 = $restaurant->getimg3();
+            $fileName3 = $this->generateUniqueFileName() . '.' . $file3->guessExtension();
+            $file3->move($this->getParameter('brochures_directory'), $fileName3);
+            $restaurant->setimg3($fileName3);
+            ########
+            $em->persist ($restaurant);
             $em->flush();
-            return $this->redirectToRoute('App_bon_plan_list_culture');
+            return $this->redirectToRoute('App_bon_plan_profil_culture',array('id'=>$id));
+
         }
-        return $this->render("@Amir/Culture/list_culture.html.twig"
-            , array("form" => $form->createView()));
-    }
-}
+        return $this->render("@Amir/Culture/update_culture.html.twig",array("form"=>$form->createView()));
+    }}

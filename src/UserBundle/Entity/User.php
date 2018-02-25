@@ -191,4 +191,26 @@ class User extends BaseUser implements ParticipantInterface
     {
         return $this->devisName;
     }
+
+    /**
+     * @return \DateTime
+     */
+    public function getDate()
+    {
+        return $this->date;
+    }
+
+    /**
+     * @param \DateTime $date
+     */
+    public function setDate($date)
+    {
+        $this->date = $date;
+    }
+    /**
+     * @var \DateTime
+     * @ORM\Column(name="date",type="datetime",nullable=true)
+     */
+
+    private $date;
 }

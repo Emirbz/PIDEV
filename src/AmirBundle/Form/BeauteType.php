@@ -26,6 +26,9 @@ class BeauteType extends AbstractType
     {
         $builder
             ->add('DevisFile',FileType::class)->add('DevisName',HiddenType::class)
+            ->add('img1', FileType::class,array('data_class' => null))
+            ->add('img2', FileType::class,array('data_class' => null))
+            ->add('img3', FileType::class,array('data_class' => null))
             ->add('name')
             ->add('address')
             ->add('description')
@@ -33,6 +36,56 @@ class BeauteType extends AbstractType
             ->add('email')
             ->add('longitude')
             ->add('latitude')
+            ->add('lundisamedio',ChoiceType::class,array('choices'=>array(
+                '10:00'=>'10:00',
+                '11:00'=>'11:00',
+                '12:00'=>'12:00',
+                '13:00'=>'13:00',
+                '14:00'=>'14:00',
+                '15:00'=>'15:00',
+                '16:00'=>'16:00',
+                '17:00'=>'17:00',
+
+
+            )))
+            ->add('lundisamedif',ChoiceType::class,array('choices'=>array(
+                '17:00'=>'17:00',
+                '18:00'=>'18:00',
+                '19:00'=>'19:00',
+                '20:00'=>'20:00',
+                '21:00'=>'21:00',
+                '22:00'=>'22:00',
+                '23:00'=>'23:00',
+                '00:00'=>'00:00',
+
+
+            )))
+            ->add('dimancheo',ChoiceType::class,array('choices'=>array(
+                '10:00'=>'10:00',
+                '11:00'=>'11:00',
+                '12:00'=>'12:00',
+                '13:00'=>'13:00',
+                '14:00'=>'14:00',
+                '15:00'=>'15:00',
+                '16:00'=>'16:00',
+                '17:00'=>'17:00',
+                'Fermé'=>'Fermé'
+
+
+            )))
+            ->add('dimanchef',ChoiceType::class,array('choices'=>array(
+                '17:00'=>'17:00',
+                '18:00'=>'18:00',
+                '19:00'=>'19:00',
+                '20:00'=>'20:00',
+                '21:00'=>'21:00',
+                '22:00'=>'22:00',
+                '23:00'=>'23:00',
+                '00:00'=>'00:00',
+                'Fermé'=>'Fermé'
+
+
+            )))
             ->add('website')
             ->add('longitude')
             ->add('latitude')

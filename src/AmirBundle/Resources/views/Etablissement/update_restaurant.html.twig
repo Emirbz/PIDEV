@@ -12,8 +12,8 @@
             <div class="row wow fadeInUp">
                 <div class="col-12 col-sm-6">
                     <div class="page-title">
-                        <h2>Modifier Restaurant</h2>
-                        <p class="mb-0">Modifier vos données</p>
+                        <h2>Modifier dun Restaurant</h2>
+                        <p class="mb-0">Modifier votre restaurant</p>
                     </div>
                 </div>
 
@@ -93,9 +93,10 @@
                             <div class="col-12 col-sm-12">
 
                                 <div class="form-group row">
-                                    <label for="example-text-input" class="col-12 col-md-3 col-form-label">Photo de couverture</label>
+                                    <label for="example-text-input" class="col-12 col-md-3 col-form-label">Photo Principale</label>
                                     <div class="col-12 col-md-9">
                                         {{ form_widget(form.DevisFile) }}
+
 
                                     </div>
                                     <label for="example-text-input" class="col-12 col-md-3 col-form-label">Photo </label>
@@ -335,7 +336,17 @@
                                 <label for="example-text-input" class="col-12 col-md-2 col-form-label">Addresse</label>
                                 <div class="col-12 col-md-10">
                                     {{ form_errors(form.address) }}
-                                    {{ form_widget(form.address, {'attr': {'class': 'form-control border-top-0 border-left-0 border-right-0 rounded-0','placeholder':'Adresse !'}}) }}
+                                    {{ form_widget(form.address, {'attr': {'class': 'form-control border-top-0 border-left-0 border-right-0 rounded-0','placeholder':'Adresse '}}) }}
+                                </div>
+                                <label for="example-text-input" class="col-12 col-md-2 col-form-label">Latitude</label>
+                                <div class="col-12 col-md-10">
+                                    {{ form_errors(form.latitude) }}
+                                    {{ form_widget(form.latitude, {'attr': {'class': 'form-control border-top-0 border-left-0 border-right-0 rounded-0','placeholder':'Latitude'}}) }}
+                                </div>
+                                <label for="example-text-input" class="col-12 col-md-2 col-form-label">Longitude</label>
+                                <div class="col-12 col-md-10">
+                                    {{ form_errors(form.longitude) }}
+                                    {{ form_widget(form.longitude, {'attr': {'class': 'form-control border-top-0 border-left-0 border-right-0 rounded-0','placeholder':'Longitude '}}) }}
                                 </div>
                             </div>
 
