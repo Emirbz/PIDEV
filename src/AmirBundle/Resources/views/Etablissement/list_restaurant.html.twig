@@ -4,151 +4,267 @@
     {% block body %}
 
 
-    <!--End header -->
-    <!-- Sidebar -->
-    <section class="">
+        <!--End header -->
+        <!-- Sidebar -->
+        <section class="">
 
-        <div class="container">
-            <div class="row pt-5">
-                <div class="row my-4" style="padding-left: 83%">
-                    <div class="col-12 col-md-12"> <a href="{{ path('App_bon_plan_ajout_etablissement') }}" class="btn btn-primary btn-default"> <i class="fa fa-plus-circle pr-2"></i>Add Etablissement   </a> </div>
-                </div>
+            <div class="container">
+                <div class="row pt-5">
+                    <div class="row my-4" style="padding-left: 83%">
+                        <div class="col-12 col-md-12"> <a href="{{ path('App_bon_plan_ajout_etablissement') }}" class="btn btn-primary btn-default"> <i class="fa fa-plus-circle pr-2"></i>Add Etablissement   </a> </div>
+                    </div>
 
-                <div class="col-12 col-md-12">
-
-                    <div class="lis-relative">
-                        <h5 class="mb-2">What are you looking for?</h5>
-                        <p>Search by Category</p>
-
-                        <div class="row">
-                            <div class="col-12 col-sm-6 col-lg-3">
-                                <div class="form-group lis-relative">
-                                    <input type="text" name="name" class="form-control border-top-0 border-left-0 border-right-0 rounded-0 pl-4" placeholder="What are you looking for?">
-                                    <div class="lis-search"> <i class="fa fa-search lis-primary lis-left-0"></i> </div>
-                                </div>
-                            </div>
-                            <div class="col-12 col-sm-6 col-lg-3">
-                                <div class="form-group lis-relative">
-                                    <input type="text" name="address" class="form-control border-top-0 border-left-0 border-right-0 rounded-0 pl-4" placeholder="Adresse">
-                                    <div class="lis-search"> <i class="fa fa-map-o lis-primary lis-left-0"></i> </div>
-                                    <div class="lis-search"> <a href="#" class="lis-light"><i class="fa fa-crosshairs lis-left-auto lis-right-0"></i></a> </div>
-                                </div>
-                            </div>
-                            <div class="col-12 col-sm-6 col-lg-3">
-                                <div class="form-group lis-relative">
-
-                                    <select name="SC" class="style-select form-control border-top-0 border-left-0 border-right-0 rounded-0 pl-4">
-                                    <option value="">All categories</option>
-                                        {%  for a in souscat %}
-                                        <option value="{{ a.id }}">{{ a.nom }} </option>
-                                        {% endfor %}
-
-
-                                    </select>
-                                    <div class="lis-search"> <i class="fa fa-tags lis-primary lis-left-0"></i> </div>
-                                </div>
-                            </div>
-
-                        </div>
-                        <button class="filter-btn bg-transparent border-0 lis-dark collapsed" data-toggle="collapse" data-target="#demo"> More Filters </button>
-                        <div id="demo" class="collapse p-3 mt-3 form-wrapper">
-                            <div class="row mt-3">
-                                <div class="col-12 col-sm-4 col-lg-3">
-                                    <label id="checkbox1" class="custom-control custom-checkbox d-block">
-                                        <input type="checkbox" class="custom-control-input"> <span class="custom-control-indicator"></span> <span class="custom-control-description">Care Parking</span> </label>
-                                </div>
-                                <div class="col-12 col-sm-4 col-lg-3">
-                                    <label id="checkbox5" class="custom-control custom-checkbox d-block">
-                                        <input type="checkbox" class="custom-control-input"> <span class="custom-control-indicator"></span> <span class="custom-control-description">Events</span> </label>
-                                </div>
-                                <div class="col-12 col-sm-4 col-lg-3">
-                                    <label id="checkbox3" class="custom-control custom-checkbox d-block">
-                                        <input type="checkbox" class="custom-control-input"> <span class="custom-control-indicator"></span> <span class="custom-control-description">Wireless Internet</span> </label>
-                                </div>
-                                <div class="col-12 col-sm-4 col-lg-3">
-                                    <label id="checkbox7" class="custom-control custom-checkbox d-block">
-                                        <input type="checkbox" class="custom-control-input"> <span class="custom-control-indicator"></span> <span class="custom-control-description">Friendly Workspace</span> </label>
-                                </div>
-                                <div class="col-12 col-sm-4 col-lg-3">
-                                    <label id="checkbox2" class="custom-control custom-checkbox d-block">
-                                        <input type="checkbox" class="custom-control-input"> <span class="custom-control-indicator"></span> <span class="custom-control-description">Smoking Allowed</span> </label>
-                                </div>
-                                <div class="col-12 col-sm-4 col-lg-3">
-                                    <label id="checkbox6" class="custom-control custom-checkbox d-block">
-                                        <input type="checkbox" class="custom-control-input"> <span class="custom-control-indicator"></span> <span class="custom-control-description">Acceted Bank Cards</span> </label>
-                                </div>
-                                <div class="col-12 col-sm-4 col-lg-3">
-                                    <label id="checkbox4" class="custom-control custom-checkbox d-block">
-                                        <input type="checkbox" class="custom-control-input"> <span class="custom-control-indicator"></span> <span class="custom-control-description">Elevator Building</span> </label>
-                                </div>
-                                <div class="col-12 col-sm-4 col-lg-3">
-                                    <label id="checkbox8" class="custom-control custom-checkbox d-block">
-                                        <input type="checkbox" class="custom-control-input"> <span class="custom-control-indicator"></span> <span class="custom-control-description">Street Parking</span> </label>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="row my-4">
-
-
-                            <div class="col-12 col-md-12">   <input value="Rechercher" class="btn btn-primary btn-default" type="submit" name="submit" > </div>
-                        </div>
-                        </div>
-                    </form>
+                    <div class="col-12 col-md-12">
+<form method="post">
+                        <div class="lis-relative">
+                            <h5 class="mb-2">What are you looking for?</h5>
+                            <p>Search by Category</p>
 
                             <div class="row">
+                                <div class="col-12 col-sm-6 col-lg-3">
+                                    <div class="form-group lis-relative">
+                                        <input type="text" name="name" class="form-control border-top-0 border-left-0 border-right-0 rounded-0 pl-4" placeholder="What are you looking for?">
+                                        <div class="lis-search"> <i class="fa fa-search lis-primary lis-left-0"></i> </div>
+                                    </div>
+                                </div>
+
+
+
+                            </div>
+                            <button class="filter-btn bg-transparent border-0 lis-dark collapsed" data-toggle="collapse" data-target="#demo"> More Filters </button>
+                            <div id="demo" class="collapse p-3 mt-3 form-wrapper">
+                                <div class="row mt-3">
+                                    <div class="col-12 col-sm-4 col-lg-3">
+                                        <label id="checkbox1" class="custom-control custom-checkbox d-block">
+                                            <input type="checkbox" class="custom-control-input"> <span class="custom-control-indicator"></span> <span class="custom-control-description">Care Parking</span> </label>
+                                    </div>
+                                    <div class="col-12 col-sm-4 col-lg-3">
+                                        <label id="checkbox5" class="custom-control custom-checkbox d-block">
+                                            <input type="checkbox" class="custom-control-input"> <span class="custom-control-indicator"></span> <span class="custom-control-description">Events</span> </label>
+                                    </div>
+                                    <div class="col-12 col-sm-4 col-lg-3">
+                                        <label id="checkbox3" class="custom-control custom-checkbox d-block">
+                                            <input type="checkbox" class="custom-control-input"> <span class="custom-control-indicator"></span> <span class="custom-control-description">Wireless Internet</span> </label>
+                                    </div>
+                                    <div class="col-12 col-sm-4 col-lg-3">
+                                        <label id="checkbox7" class="custom-control custom-checkbox d-block">
+                                            <input type="checkbox" class="custom-control-input"> <span class="custom-control-indicator"></span> <span class="custom-control-description">Friendly Workspace</span> </label>
+                                    </div>
+                                    <div class="col-12 col-sm-4 col-lg-3">
+                                        <label id="checkbox2" class="custom-control custom-checkbox d-block">
+                                            <input type="checkbox" class="custom-control-input"> <span class="custom-control-indicator"></span> <span class="custom-control-description">Smoking Allowed</span> </label>
+                                    </div>
+                                    <div class="col-12 col-sm-4 col-lg-3">
+                                        <label id="checkbox6" class="custom-control custom-checkbox d-block">
+                                            <input type="checkbox" class="custom-control-input"> <span class="custom-control-indicator"></span> <span class="custom-control-description">Acceted Bank Cards</span> </label>
+                                    </div>
+                                    <div class="col-12 col-sm-4 col-lg-3">
+                                        <label id="checkbox4" class="custom-control custom-checkbox d-block">
+                                            <input type="checkbox" class="custom-control-input"> <span class="custom-control-indicator"></span> <span class="custom-control-description">Elevator Building</span> </label>
+                                    </div>
+                                    <div class="col-12 col-sm-4 col-lg-3">
+                                        <label id="checkbox8" class="custom-control custom-checkbox d-block">
+                                            <input type="checkbox" class="custom-control-input"> <span class="custom-control-indicator"></span> <span class="custom-control-description">Street Parking</span> </label>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row my-4">
+
+
+                                <div class="col-12 col-md-12">   <input value="Rechercher" class="btn btn-primary btn-default" type="submit" name="submit" > </div>
+                            </div>
+                        </div>
+                        </form>
+
+                        <div class="row">
                             <div class="col-sm-6 align-self-center">
                                 <p>Resultats 1 - 6</p>
                             </div>
                             <div class="col-sm-6">
                                 <div class="float-sm-right shorting">
                                     <div class="form-group lis-relative">
-                                        <select class="form-control border-0 pl-4">
-                                            <option>Default Order</option>
-                                            <option>Newest First</option>
-                                            <option>Oldest First</option>
-                                            <option>Highest Rating</option>
-                                            <option>Lowest Rating</option>
-                                            <option>Random</option>
+                                        <form method="post" name="formtri" action="{{ path('App_bon_plan_list_restaurant') }}">
+                                        <select name="tri" onchange="this.parentNode.submit();" class="form-control border-0 pl-4">
+                                            <option>Trier la liste</option>
+                                            <option value="triq">Meilleur qualite</option>
+                                            <option value="tris">Meilleur Service</option>
+                                            <option value="trid">Default Order</option>
                                         </select>
+                                        </form>
+                                        <div class="lis-search"> <i class="fa fa-sliders lis-primary lis-left-0"></i> </div>
+                                    </div>
+                                </div>
+                                <div class="float-sm-right shorting">
+                                    <div class="form-group lis-relative">
+                                        <form method="post" action="{{ path('App_bon_plan_list_restaurant') }}">
+                                            <select name="tricat" onchange="this.parentNode.submit();" class="form-control border-0 pl-4">
+                                                <option value=""> Categorie ? </option>
+                                                {%  for a in souscat %}
+                                                    <option value="{{ a.id }}">{{ a.nom }} </option>
+                                                {% endfor %}
+                                            </select>
+                                        </form>
                                         <div class="lis-search"> <i class="fa fa-sliders lis-primary lis-left-0"></i> </div>
                                     </div>
                                 </div>
                             </div>
+
                         </div>
                         <div class="row">
                             <!-- affiche -->
-                                 {% for x in restaurants %}
+                            {% for x in restaurants %}
 
-                            <div class="col-12 col-md-6 col-lg-6 col-xl-4 mb-4 mb-md-0">
-                                <div class="card lis-brd-light wow fadeInUp text-center text-lg-left">
-                                    <a href="{{ path("App_bon_plan_profil_restaurant",{'id':x.id})  }}">
-                                        <div class="lis-grediant grediant-tb-light2 lis-relative modImage rounded-top"> <img src="{{vich_uploader_asset(x,'devisFile')}}" alt="" class="img-fluid rounded-top w-100" /> </div>
-                                        <div class="lis-absolute lis-left-20 lis-top-20">
-                                            <div  class="lis-post-meta border border-white text-white rounded lis-f-14"  ><a href="{{ path("App_bon_plan_delete_restaurant",{'id':x.id})  }}" class="text-white" > <i class="fa fa-trash text-white"></i> Delete </a></div>
+                                <div class="col-12 col-md-6 col-lg-6 col-xl-4 mb-4 mb-md-0">
+                                    <div class="card lis-brd-light wow fadeInUp text-center text-lg-left">
+                                        <a href="{{ path("App_bon_plan_profil_restaurant",{'id':x.id})  }}">
+                                            <div class="lis-grediant grediant-tb-light2 lis-relative modImage rounded-top"> <img src="{{vich_uploader_asset(x,'devisFile')}}" alt="" class="img-fluid rounded-top w-100" /> </div>
+                                            <div class="lis-absolute lis-left-20 lis-top-20">
+                                                <div  class="lis-post-meta border border-white text-white rounded lis-f-14"  ><a href="{{ path("App_bon_plan_delete_restaurant",{'id':x.id})  }}" class="text-white" > <i class="fa fa-trash text-white"></i> Delete </a></div>
 
+
+                                            </div>
+                                            <div class="lis-absolute lis-right-20 lis-top-20">
+                                                <div  class="lis-post-meta border border-white text-white rounded lis-f-14"  ><a href="{{ path("App_bon_plan_update_restaurant",{'id':x.id})  }}" class="text-white" > <i class="fa fa-pencil text-white"></i> Edit </a></div>
+
+
+                                            </div>
+                                        </a>
+                                        <div class="card-body pt-0">
+                                            <div class="media d-block d-lg-flex lis-relative"> <img src="{{vich_uploader_asset(x,'devisFile')}}" alt="" class="lis-mt-minus-15 img-fluid d-lg-flex mx-auto mr-lg-3 mb-4 mb-lg-0 border lis-border-width-2 rounded-circle border-white" width="80" />
+                                                <div class="media-body align-self-start mt-2">
+                                                    <h6 class="mb-0 lis-font-weight-600"><A href="#" class="lis-dark">{{ x.name }}</A></h6> </div>
+                                            </div>
+                                            <ul class="list-unstyled my-4 lis-line-height-2">
+                                                <li><i class="fa fa-phone pr-2"></i> {{ x.phone }}</li>
+                                                <li><i class="fa fa-map-o pr-2"></i> {{ x.address }}</li>
+                                                <li><i class="fa fa-home pr-2"></i> {{ x.souscat.nom }}</li>
+                                                <li>
+                                                    <p>Qualite:</p> <ul class="list-inline mb-0 lis-light-gold font-weight-normal h4">
+                                                        {% if    x.moyqualite <0.5 %} {% endif %}
+                                                        {% if    (( x.moyqualite < 1) and ( x.moyqualite >=0.5)) %}
+                                                            <li class="list-inline-item"><i class='fa fa-star-half-o'></i></li>
+                                                        {% endif %}
+                                                        {% if    (( x.moyqualite <1.5) and ( x.moyqualite >=1)) %}
+                                                            <li class="list-inline-item"><i class='fa fa-star'></i></li>
+                                                        {% endif %}
+
+                                                        {% if    (( x.moyqualite <2) and ( x.moyqualite >=1.5)) %}
+                                                            <li class="list-inline-item"><i class='fa fa-star'></i></li>
+                                                            <li class="list-inline-item"><i class='fa fa-star-half-o'></i></li>
+                                                        {% endif %}
+                                                        {% if    (( x.moyqualite < 2.5) and ( x.moyqualite >=2)) %}
+                                                            <li class="list-inline-item"><i class='fa fa-star'></i></li>
+                                                            <li class="list-inline-item"><i class='fa fa-star'></i></li>
+
+                                                        {% endif %}
+                                                        {% if    (( x.moyqualite < 3) and ( x.moyqualite >=2.5)) %}
+                                                            <li class="list-inline-item"><i class='fa fa-star'></i></li>
+                                                            <li class="list-inline-item"><i class='fa fa-star'></i></li>
+                                                            <li class="list-inline-item"><i class='fa fa-star-half-o'></i></li>
+                                                        {% endif %}
+                                                        {% if    (( x.moyqualite < 3.5) and ( x.moyqualite >=3)) %}
+                                                            <li class="list-inline-item"><i class='fa fa-star'></i></li>
+                                                            <li class="list-inline-item"><i class='fa fa-star'></i></li>
+                                                            <li class="list-inline-item"><i class='fa fa-star'></i></li>
+
+                                                        {% endif %}
+                                                        {% if    (( x.moyqualite < 4) and ( x.moyqualite >=3.5)) %}
+                                                            <li class="list-inline-item"><i class='fa fa-star'></i></li>
+                                                            <li class="list-inline-item"><i class='fa fa-star'></i></li>
+                                                            <li class="list-inline-item"><i class='fa fa-star'></i></li>
+                                                            <li class="list-inline-item"><i class='fa fa-star-half-o'></i></li>
+                                                        {% endif %}
+                                                        {% if    (( x.moyqualite < 4.5) and ( x.moyqualite >=4)) %}
+                                                            <li class="list-inline-item"><i class='fa fa-star'></i></li>
+                                                            <li class="list-inline-item"><i class='fa fa-star'></i></li>
+                                                            <li class="list-inline-item"><i class='fa fa-star'></i></li>
+                                                            <li class="list-inline-item"><i class='fa fa-star'></i></li>
+
+                                                        {% endif %}
+                                                        {% if    (( x.moyqualite < 5) and ( x.moyqualite >=4.5)) %}
+                                                            <li class="list-inline-item"><i class='fa fa-star'></i></li>
+                                                            <li class="list-inline-item"><i class='fa fa-star'></i></li>
+                                                            <li class="list-inline-item"><i class='fa fa-star'></i></li>
+                                                            <li class="list-inline-item"><i class='fa fa-star'></i></li>
+                                                            <li class="list-inline-item"><i class='fa fa-star'></i></li>
+                                                        {% endif %}
+                                                        {% if x.moyqualite==5 %}
+                                                            <li class="list-inline-item"><i class='fa fa-star'></i></li>
+                                                            <li class="list-inline-item"><i class='fa fa-star'></i></li>
+                                                            <li class="list-inline-item"><i class='fa fa-star'></i></li>
+                                                            <li class="list-inline-item"><i class='fa fa-star'></i></li>
+                                                            <li class="list-inline-item"><i class='fa fa-star'></i></li>
+                                                        {% endif %}
+                                                    </ul>
+                                                <li>
+                                                    <p>Serivce :</p> <ul class="list-inline mb-0 lis-light-gold font-weight-normal h4">
+                                                        {% if    x.moyservice <0.5 %} {% endif %}
+                                                        {% if    (( x.moyservice < 1) and ( x.moyservice >=0.5)) %}
+                                                            <li class="list-inline-item"><i class='fa fa-star-half-o'></i></li>
+                                                        {% endif %}
+                                                        {% if    (( x.moyservice <1.5) and ( x.moyservice >=1)) %}
+                                                            <li class="list-inline-item"><i class='fa fa-star'></i></li>
+                                                        {% endif %}
+
+                                                        {% if    (( x.moyservice <2) and ( x.moyservice >=1.5)) %}
+                                                            <li class="list-inline-item"><i class='fa fa-star'></i></li>
+                                                            <li class="list-inline-item"><i class='fa fa-star-half-o'></i></li>
+                                                        {% endif %}
+                                                        {% if    (( x.moyservice < 2.5) and ( x.moyservice >=2)) %}
+                                                            <li class="list-inline-item"><i class='fa fa-star'></i></li>
+                                                            <li class="list-inline-item"><i class='fa fa-star'></i></li>
+
+                                                        {% endif %}
+                                                        {% if    (( x.moyservice < 3) and ( x.moyservice >=2.5)) %}
+                                                            <li class="list-inline-item"><i class='fa fa-star'></i></li>
+                                                            <li class="list-inline-item"><i class='fa fa-star'></i></li>
+                                                            <li class="list-inline-item"><i class='fa fa-star-half-o'></i></li>
+                                                        {% endif %}
+                                                        {% if    (( x.moyservice < 3.5) and ( x.moyservice >=3)) %}
+                                                            <li class="list-inline-item"><i class='fa fa-star'></i></li>
+                                                            <li class="list-inline-item"><i class='fa fa-star'></i></li>
+                                                            <li class="list-inline-item"><i class='fa fa-star'></i></li>
+
+                                                        {% endif %}
+                                                        {% if    (( x.moyservice < 4) and ( x.moyservice >=3.5)) %}
+                                                            <li class="list-inline-item"><i class='fa fa-star'></i></li>
+                                                            <li class="list-inline-item"><i class='fa fa-star'></i></li>
+                                                            <li class="list-inline-item"><i class='fa fa-star'></i></li>
+                                                            <li class="list-inline-item"><i class='fa fa-star-half-o'></i></li>
+                                                        {% endif %}
+                                                        {% if    (( x.moyservice < 4.5) and ( x.moyservice >=4)) %}
+                                                            <li class="list-inline-item"><i class='fa fa-star'></i></li>
+                                                            <li class="list-inline-item"><i class='fa fa-star'></i></li>
+                                                            <li class="list-inline-item"><i class='fa fa-star'></i></li>
+                                                            <li class="list-inline-item"><i class='fa fa-star'></i></li>
+
+                                                        {% endif %}
+                                                        {% if    (( x.moyservice < 5) and ( x.moyservice >=4.5)) %}
+                                                            <li class="list-inline-item"><i class='fa fa-star'></i></li>
+                                                            <li class="list-inline-item"><i class='fa fa-star'></i></li>
+                                                            <li class="list-inline-item"><i class='fa fa-star'></i></li>
+                                                            <li class="list-inline-item"><i class='fa fa-star'></i></li>
+                                                            <li class="list-inline-item"><i class='fa fa-star'></i></li>
+                                                        {% endif %}
+                                                        {% if x.moyservice==5 %}
+                                                            <li class="list-inline-item"><i class='fa fa-star'></i></li>
+                                                            <li class="list-inline-item"><i class='fa fa-star'></i></li>
+                                                            <li class="list-inline-item"><i class='fa fa-star'></i></li>
+                                                            <li class="list-inline-item"><i class='fa fa-star'></i></li>
+                                                            <li class="list-inline-item"><i class='fa fa-star'></i></li>
+                                                        {% endif %}
+                                                    </ul>
+                                                    
+                                                    
+                                                    
+                                                    
+                                                </li>
+                                            </ul>
 
                                         </div>
-                                        <div class="lis-absolute lis-right-20 lis-top-20">
-                                            <div  class="lis-post-meta border border-white text-white rounded lis-f-14"  ><a href="{{ path("App_bon_plan_update_restaurant",{'id':x.id})  }}" class="text-white" > <i class="fa fa-pencil text-white"></i> Edit </a></div>
-
-
-                                        </div>
-                                    </a>
-                                    <div class="card-body pt-0">
-                                        <div class="media d-block d-lg-flex lis-relative"> <img src="{{vich_uploader_asset(x,'devisFile')}}" alt="" class="lis-mt-minus-15 img-fluid d-lg-flex mx-auto mr-lg-3 mb-4 mb-lg-0 border lis-border-width-2 rounded-circle border-white" width="80" />
-                                            <div class="media-body align-self-start mt-2">
-                                                <h6 class="mb-0 lis-font-weight-600"><A href="#" class="lis-dark">{{ x.name }}</A></h6> </div>
-                                        </div>
-                                        <ul class="list-unstyled my-4 lis-line-height-2">
-                                            <li><i class="fa fa-phone pr-2"></i> {{ x.phone }}</li>
-                                            <li><i class="fa fa-map-o pr-2"></i> {{ x.address }}</li>
-                                            <li><i class="fa fa-home pr-2"></i> {{ x.souscat.nom }}</li>
-                                        </ul>
-
                                     </div>
                                 </div>
-                            </div>
-                                     {% endfor %}
+                            {% endfor %}
 
                         </div>
 
@@ -156,10 +272,10 @@
 
                 </div>
             </div>
-        </div>
-    </section>
-    <!--End Sidebar -->
-    <!-- Footer-->
+            </div>
+        </section>
+        <!--End Sidebar -->
+        <!-- Footer-->
 
 
-{% endblock %}
+    {% endblock %}

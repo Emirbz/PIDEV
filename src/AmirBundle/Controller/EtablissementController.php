@@ -88,28 +88,72 @@ class EtablissementController extends Controller
         $restaurant = $em->getRepository("AmirBundle:Etablissement")->findBy(array('categorie' => 'Restaurant'));
         $souscat = $em->CreateQuery("SELECT v  From SlimBundle:sous_categorie v where v.idCategorie=4");
         $soucatresult = $souscat->getResult();
-        if ($request->isMethod('POST') and $request->get('name') == '') {
-            return $this->redirectToRoute('App_bon_plan_list_restaurant');
-        }$name = $request->get('name');
-        $address = $request->get('address');
-        $sc = $request->get('SC');
 
-        if ($request->isMethod('POST') and $name!='' and $address=='' and $sc=='') {
 
-            $this->redirectToRoute('App_bon_plan_list_restaurant',array('restaurant'));
-            $restaurant = $em->getRepository("AmirBundle:Etablissement")
-                ->findBy(array("name" => $name));
-        }
+
+
+        $tricat = $request->get('tricat');
+        $tri = $request->get('tri');
         if ($request->isMethod('POST')) {
+            ########tri cat #######
 
-            $this->redirectToRoute('App_bon_plan_list_restaurant');
-            $restaurant = $em->getRepository("AmirBundle:Etablissement")
-                ->findBy(array("name" => $name, "address" => $address,'souscat'=>$sc));
+            if ($tricat != '') {
+                $restaurant = $em->CreateQuery("SELECT v  From AmirBundle:Etablissement v where v.categorie='Restaurant' AND v.souscat=$tricat")->getResult();
+                return $this->render("AmirBundle:Etablissement:list_restaurant.html.twig",
+                    array('restaurants' => $restaurant, 'souscat' => $soucatresult
+                    ));
+            }
+            ######## tri cat ######
+            ###########tri######
+            if ($tri == 'triq') {
+                $restaurant = $em->CreateQuery("SELECT v  From AmirBundle:Etablissement v where v.categorie='Restaurant' ORDER BY v.moyqualite DESC")->getResult();
+                return $this->render("AmirBundle:Etablissement:list_restaurant.html.twig",
+                    array('restaurants' => $restaurant, 'souscat' => $soucatresult
+                    ));
+            }
+            if ($tri == 'tris') {
+                $restaurant = $em->CreateQuery("SELECT v  From AmirBundle:Etablissement v where v.categorie='Restaurant' ORDER BY v.moyservice DESC")->getResult();
+                return $this->render("AmirBundle:Etablissement:list_restaurant.html.twig",
+                    array('restaurants' => $restaurant, 'souscat' => $soucatresult
+                    ));
+            }
+            if ($tri == 'trid') {
+                $restaurant = $em->CreateQuery("SELECT v  From AmirBundle:Etablissement v where v.categorie='Restaurant'")->getResult();
+                return $this->render("AmirBundle:Etablissement:list_restaurant.html.twig",
+                    array('restaurants' => $restaurant, 'souscat' => $soucatresult
+                    ));
+            }
+
+            #############tri ###########
+
+            ##############recherche vide ###############
+            if ($request->get('name') == '') {
+                return $this->redirectToRoute('App_bon_plan_list_restaurant');
+            }
+
+
+
+            ########recherche vide #########
+
+            ###### recherche like nom #########
+            if  ($request->get('name')!='' )  {
+                $name = $request->get('name');
+                $restaurant = $em->CreateQuery("SELECT v  From AmirBundle:Etablissement v where v.categorie='Restaurant' AND (v.name LIKE '%$name%'  or v.address='$name' ) ")->getResult();
+                return $this->render("AmirBundle:Etablissement:list_restaurant.html.twig",
+                    array('restaurants' => $restaurant,'souscat' =>  $soucatresult
+                    ));
+            }
+            ########### recherche like nom ########
         }
+
+
+
+
         return $this->render("AmirBundle:Etablissement:list_restaurant.html.twig",
             array('restaurants' => $restaurant,'souscat' =>  $soucatresult
             ));
     }
+
 
     public function updateAction(Request $request)
     {
@@ -347,20 +391,79 @@ class EtablissementController extends Controller
         $souscat = $em->CreateQuery("SELECT v  From SlimBundle:sous_categorie v where v.idCategorie=3");
         $soucatresult = $souscat->getResult();
 
-        if ($request->isMethod('POST') and $request->get('name') == '') {
-            return $this->redirectToRoute('App_bon_plan_list_hotels');
+
+
+
+        $tricat = $request->get('tricat');
+        $tri = $request->get('tri');
+        if ($request->isMethod('POST')) {
+            ########tri cat #######
+
+            if ($tricat != '') {
+                $restaurant = $em->CreateQuery("SELECT v  From AmirBundle:Etablissement v where v.categorie='Hotel' AND v.souscat=$tricat")->getResult();
+                return $this->render("@Amir/Hotel/list_hotels.html.twig",
+                    array('restaurants' => $restaurant, 'souscat' => $soucatresult
+                    ));
+            }
+            ######## tri cat ######
+            ###########tri######
+            if ($tri == 'triq') {
+                $restaurant = $em->CreateQuery("SELECT v  From AmirBundle:Etablissement v where v.categorie='Hotel' ORDER BY v.moyqualite DESC")->getResult();
+                return $this->render("@Amir/Hotel/list_hotels.html.twig",
+                    array('restaurants' => $restaurant, 'souscat' => $soucatresult
+                    ));
+            }
+            if ($tri == 'tris') {
+                $restaurant = $em->CreateQuery("SELECT v  From AmirBundle:Etablissement v where v.categorie='Hotel' ORDER BY v.moyservice DESC")->getResult();
+                return $this->render("@Amir/Hotel/list_hotels.html.twig",
+                    array('restaurants' => $restaurant, 'souscat' => $soucatresult
+                    ));
+            }
+            if ($tri == 'trid') {
+                $restaurant = $em->CreateQuery("SELECT v  From AmirBundle:Etablissement v where v.categorie='Hotel'")->getResult();
+                return $this->render("@Amir/Hotel/list_hotels.html.twig",
+                    array('restaurants' => $restaurant, 'souscat' => $soucatresult
+                    ));
+            }
+
+            #############tri ###########
+
+            ##############recherche vide ###############
+            if  ($request->get('name') == '' and $request->get('etoile') == 0) {
+                return $this->redirectToRoute('App_bon_plan_list_hotels');
+            }
+
+
+
+            ########recherche vide #########
+
+            ###### recherche like nom #########
+            if  ($request->get('name')!='' and $request->get('etoile')!='' )  {
+                $etoile =$request->get('etoile');
+                $name = $request->get('name');
+                $restaurant = $em->CreateQuery("SELECT v  From AmirBundle:Etablissement v where v.categorie='Hotel' AND (v.name LIKE '%$name%'  or v.address='$name' ) AND v.etoile=$etoile ")->getResult();
+                return $this->render("@Amir/Hotel/list_hotels.html.twig",
+                    array('restaurants' => $restaurant,'souscat' =>  $soucatresult
+                    ));
+            }
+            if  ($request->get('name')=='' or  $request->get('etoile')=='' )  {
+                $etoile =$request->get('etoile');
+                $name = $request->get('name');
+                $restaurant = $em->CreateQuery("SELECT v  From AmirBundle:Etablissement v where v.categorie='Hotel' AND ((v.name LIKE '%$name%'  or v.address='$name' ) or v.etoile=$etoile )")->getResult();
+                return $this->render("@Amir/Hotel/list_hotels.html.twig",
+                    array('restaurants' => $restaurant,'souscat' =>  $soucatresult
+                    ));
+            }
+            ########### recherche like nom ########
         }
 
-        if ($request->isMethod('POST')) {
-            $name = $request->get('name');
-            $address = $request->get('address');
-            $this->redirectToRoute('App_bon_plan_list_hotels');
-            $restaurant = $em->getRepository("AmirBundle:Etablissement")
-                ->findBy(array("name" => $name, "address" => $address));
-        }
+
+
+
         return $this->render("@Amir/Hotel/list_hotels.html.twig",
-            array('restaurants' => $restaurant , 'souscat'=>  $soucatresult
+            array('restaurants' => $restaurant,'souscat' =>  $soucatresult
             ));
+
     }
 
     public function list_beaute_et_bien_etreAction()
@@ -438,20 +541,71 @@ class EtablissementController extends Controller
     {
         $em = $this->getDoctrine()->getManager();
         $restaurant = $em->getRepository("AmirBundle:Etablissement")->findBy(array('categorie' => 'Beauté et bien être'));
+        $souscat = $em->CreateQuery("SELECT v  From SlimBundle:sous_categorie v where v.idCategorie=4");
+        $soucatresult = $souscat->getResult();
 
-        if ($request->isMethod('POST') and $request->get('name') == '') {
-            return $this->redirectToRoute('App_bon_plan_list_beaute_et_bien_etre');
-        }
 
+
+
+        $tricat = $request->get('tricat');
+        $tri = $request->get('tri');
         if ($request->isMethod('POST')) {
-            $name = $request->get('name');
-            $address = $request->get('address');
-            $this->redirectToRoute('App_bon_plan_list_beaute_et_bien_etre');
-            $restaurant = $em->getRepository("AmirBundle:Etablissement")
-                ->findBy(array("name" => $name, "address" => $address));
+            ########tri cat #######
+
+            if ($tricat != '') {
+                $restaurant = $em->CreateQuery("SELECT v  From AmirBundle:Etablissement v where v.categorie='Beauté et bien être' AND v.souscat=$tricat")->getResult();
+                return $this->render("AmirBundle:Beauteetbienetre:list_beaute_et_bien_etre.html.twig",
+                    array('restaurants' => $restaurant, 'souscat' => $soucatresult
+                    ));
+            }
+            ######## tri cat ######
+            ###########tri######
+            if ($tri == 'triq') {
+                $restaurant = $em->CreateQuery("SELECT v  From AmirBundle:Etablissement v where v.categorie='Beauté et bien être' ORDER BY v.moyqualite DESC")->getResult();
+                return $this->render("AmirBundle:Beauteetbienetre:list_beaute_et_bien_etre.html.twig",
+                    array('restaurants' => $restaurant, 'souscat' => $soucatresult
+                    ));
+            }
+            if ($tri == 'tris') {
+                $restaurant = $em->CreateQuery("SELECT v  From AmirBundle:Etablissement v where v.categorie='Beauté et bien être' ORDER BY v.moyservice DESC")->getResult();
+                return $this->render("AmirBundle:Beauteetbienetre:list_beaute_et_bien_etre.html.twig",
+                    array('restaurants' => $restaurant, 'souscat' => $soucatresult
+                    ));
+            }
+            if ($tri == 'trid') {
+                $restaurant = $em->CreateQuery("SELECT v  From AmirBundle:Etablissement v where v.categorie='Beauté et bien être'")->getResult();
+                return $this->render("AmirBundle:Beauteetbienetre:list_beaute_et_bien_etre.html.twig",
+                    array('restaurants' => $restaurant, 'souscat' => $soucatresult
+                    ));
+            }
+
+            #############tri ###########
+
+            ##############recherche vide ###############
+            if ($request->get('name') == '') {
+                return $this->redirectToRoute('App_bon_plan_list_beaute_et_bien_etre');
+            }
+
+
+
+            ########recherche vide #########
+
+            ###### recherche like nom #########
+            if  ($request->get('name')!='' )  {
+                $name = $request->get('name');
+                $restaurant = $em->CreateQuery("SELECT v  From AmirBundle:Etablissement v where v.categorie='Beauté et bien être' AND (v.name LIKE '%$name%'  or v.address='$name' ) ")->getResult();
+                return $this->render("AmirBundle:Beauteetbienetre:list_beaute_et_bien_etre.html.twig",
+                    array('restaurants' => $restaurant,'souscat' =>  $soucatresult
+                    ));
+            }
+            ########### recherche like nom ########
         }
-        return $this->render("@Amir/Beauteetbienetre/list_beaute_et_bien_etre.html.twig",
-            array('restaurants' => $restaurant
+
+
+
+
+        return $this->render("AmirBundle:Beauteetbienetre:list_beaute_et_bien_etre.html.twig",
+            array('restaurants' => $restaurant,'souscat' =>  $soucatresult
             ));
     }
 
@@ -590,20 +744,71 @@ class EtablissementController extends Controller
     {
         $em = $this->getDoctrine()->getManager();
         $restaurant = $em->getRepository("AmirBundle:Etablissement")->findBy(array('categorie' => 'Espace Culturel'));
+        $souscat = $em->CreateQuery("SELECT v  From SlimBundle:sous_categorie v where v.idCategorie=2");
+        $soucatresult = $souscat->getResult();
 
-        if ($request->isMethod('POST') and $request->get('name') == '') {
-            return $this->redirectToRoute('');
-        }
 
+
+
+        $tricat = $request->get('tricat');
+        $tri = $request->get('tri');
         if ($request->isMethod('POST')) {
-            $name = $request->get('name');
-            $address = $request->get('address');
-            $this->redirectToRoute('App_bon_plan_list_culture');
-            $restaurant = $em->getRepository("AmirBundle:Etablissement")
-                ->findBy(array("name" => $name, "address" => $address));
+            ########tri cat #######
+
+            if ($tricat != '') {
+                $restaurant = $em->CreateQuery("SELECT v  From AmirBundle:Etablissement v where v.categorie='Espace Culturel' AND v.souscat=$tricat")->getResult();
+                return $this->render("@Amir/Culture/list_culture.html.twig",
+                    array('restaurants' => $restaurant, 'souscat' => $soucatresult
+                    ));
+            }
+            ######## tri cat ######
+            ###########tri######
+            if ($tri == 'triq') {
+                $restaurant = $em->CreateQuery("SELECT v  From AmirBundle:Etablissement v where v.categorie='Espace Culturel' ORDER BY v.moyqualite DESC")->getResult();
+                return $this->render("@Amir/Culture/list_culture.html.twig",
+                    array('restaurants' => $restaurant, 'souscat' => $soucatresult
+                    ));
+            }
+            if ($tri == 'tris') {
+                $restaurant = $em->CreateQuery("SELECT v  From AmirBundle:Etablissement v where v.categorie='Espace Culturel' ORDER BY v.moyservice DESC")->getResult();
+                return $this->render("@Amir/Culture/list_culture.html.twig",
+                    array('restaurants' => $restaurant, 'souscat' => $soucatresult
+                    ));
+            }
+            if ($tri == 'trid') {
+                $restaurant = $em->CreateQuery("SELECT v  From AmirBundle:Etablissement v where v.categorie='Espace Culturel'")->getResult();
+                return $this->render("@Amir/Culture/list_culture.html.twig",
+                    array('restaurants' => $restaurant, 'souscat' => $soucatresult
+                    ));
+            }
+
+            #############tri ###########
+
+            ##############recherche vide ###############
+            if ($request->get('name') == '') {
+                return $this->redirectToRoute('App_bon_plan_list_culture');
+            }
+
+
+
+            ########recherche vide #########
+
+            ###### recherche like nom #########
+            if  ($request->get('name')!='' )  {
+                $name = $request->get('name');
+                $restaurant = $em->CreateQuery("SELECT v  From AmirBundle:Etablissement v where v.categorie='Espace Culturel' AND (v.name LIKE '%$name%'  or v.address='$name' ) ")->getResult();
+                return $this->render("@Amir/Culture/list_culture.html.twig",
+                    array('restaurants' => $restaurant,'souscat' =>  $soucatresult
+                    ));
+            }
+            ########### recherche like nom ########
         }
+
+
+
+
         return $this->render("@Amir/Culture/list_culture.html.twig",
-            array('restaurants' => $restaurant
+            array('restaurants' => $restaurant,'souscat' =>  $soucatresult
             ));
     }
 

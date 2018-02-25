@@ -128,10 +128,11 @@
             <div class="col-12 col-xl-7 align-self-center order-xl-2 order-1 text-xl-right text-center ">
                 <div class="cover-btn mt-4 mt-xl-0 lis-f-14">
                     <ul class="list-inline mb-0">
-                        <li class="list-inline-item py-2 mr-0"><a href="#myTabContent" class="lis-light rounded-left"><i class="fa fa-envelope-o pr-1"></i> Add review</a> </li>
+                        <li class="list-inline-item py-2 mr-0"><a  class="lis-light rounded-left" data-toggle="tab" href="#reviews" role="tab" aria-controls="reviews"><i class="fa fa-envelope-o pr-1"></i> Add review</a> </li>
                         <li class="list-inline-item py-2 mr-0"><a href="#" class="lis-light"><i class="fa fa-heart-o pr-1"></i> Bookmark</a> </li>
 
                         <li class="list-inline-item py-2 mr-0"><a href="{{ path("App_bon_plan_update_restaurant",{'id':x.id})  }}" class="btn btn-primary btn-default"> Edit</a> </li>
+                        <li class="list-inline-item py-2 mr-0"><a href="{{ path("App_bon_plan_delete_restaurant",{'id':x.id})  }}" class="btn btn-primary btn-default"> Delete</a> </li>
 
 
                     </ul>
@@ -150,6 +151,10 @@
                 <div class="tab-content" id="myTabContent">
                     <div class="tab-pane fade show active" id="profile" role="tabpanel" aria-labelledby="profile">
                         <h6 class="lis-font-weight-500"><i class="fa fa-align-right pr-2 lis-f-14"></i> Description</h6>
+
+                        <li class="list-inline-item mr-0"><a href="https://www.facebook.com/{{ x.facebook }}" target = _blank class="lis-light lis-social border lis-brd-light text-center lis-line-height-2_3 rounded d-block"><i class="fa fa-facebook"></i></a></li>
+                        <li class="list-inline-item mr-0"><a href="http://{{ x.website }}" target = _blank class="lis-light lis-social border lis-brd-light text-center lis-line-height-2_3 rounded d-block"><i class="fa fa-globe"></i></a></li>
+
                         <div class="card lis-brd-light wow fadeInUp mb-4">
                             <div class="card-body p-4">
 
@@ -527,7 +532,7 @@
                             {% if    (( moyqualite < 1) and ( moyqualite >=0.5)) %}
                                 <li class="list-inline-item"><i class='fa fa-star-half-o'></i></li>
                             {% endif %}
-                            {% if    (( moyqualite <1.5) and ( moyservice >=1)) %}
+                            {% if    (( moyqualite <1.5) and ( moyqualite >=1)) %}
                                 <li class="list-inline-item"><i class='fa fa-star'></i></li>
                             {% endif %}
 

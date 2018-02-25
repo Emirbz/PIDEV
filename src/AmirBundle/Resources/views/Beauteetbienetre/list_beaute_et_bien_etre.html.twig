@@ -27,24 +27,8 @@
                                             <div class="lis-search"> <i class="fa fa-search lis-primary lis-left-0"></i> </div>
                                         </div>
                                     </div>
-                                    <div class="col-12 col-sm-6 col-lg-3">
-                                        <div class="form-group lis-relative">
-                                            <input type="text" name="address" class="form-control border-top-0 border-left-0 border-right-0 rounded-0 pl-4" placeholder="Adresse">
-                                            <div class="lis-search"> <i class="fa fa-map-o lis-primary lis-left-0"></i> </div>
-                                            <div class="lis-search"> <a href="#" class="lis-light"><i class="fa fa-crosshairs lis-left-auto lis-right-0"></i></a> </div>
-                                        </div>
-                                    </div>
-                                    <div class="col-12 col-sm-6 col-lg-3">
-                                        <div class="form-group lis-relative">
-                                            <select class="style-select form-control border-top-0 border-left-0 border-right-0 rounded-0 pl-4">
-                                                <option> All Categories</option>
-                                                <option>1</option>
-                                                <option>2</option>
-                                                <option>3</option>
-                                            </select>
-                                            <div class="lis-search"> <i class="fa fa-tags lis-primary lis-left-0"></i> </div>
-                                        </div>
-                                    </div>
+
+
 
                                 </div>
                                 <button class="filter-btn bg-transparent border-0 lis-dark collapsed" data-toggle="collapse" data-target="#demo"> More Filters </button>
@@ -99,14 +83,27 @@
                             <div class="col-sm-6">
                                 <div class="float-sm-right shorting">
                                     <div class="form-group lis-relative">
-                                        <select class="form-control border-0 pl-4">
-                                            <option>Default Order</option>
-                                            <option>Newest First</option>
-                                            <option>Oldest First</option>
-                                            <option>Highest Rating</option>
-                                            <option>Lowest Rating</option>
-                                            <option>Random</option>
-                                        </select>
+                                        <form method="post" action="{{ path('App_bon_plan_list_beaute_et_bien_etre') }}">
+                                            <select name="tri" onchange="this.parentNode.submit();" class="form-control border-0 pl-4">
+                                                <option>Trier la liste</option>
+                                                <option value="triq">Meilleur qualite</option>
+                                                <option value="tris">Meilleur Service</option>
+                                                <option value="trid">Default Order</option>
+                                            </select>
+                                        </form>
+                                        <div class="lis-search"> <i class="fa fa-sliders lis-primary lis-left-0"></i> </div>
+                                    </div>
+                                </div>
+                                <div class="float-sm-right shorting">
+                                    <div class="form-group lis-relative">
+                                        <form method="post" action="{{ path('App_bon_plan_list_beaute_et_bien_etre') }}">
+                                            <select name="tricat" onchange="this.parentNode.submit();" class="form-control border-0 pl-4">
+                                                <option> Categorie ? </option>
+                                                {%  for a in souscat %}
+                                                    <option value="{{ a.id }}">{{ a.nom }} </option>
+                                                {% endfor %}
+                                            </select>
+                                        </form>
                                         <div class="lis-search"> <i class="fa fa-sliders lis-primary lis-left-0"></i> </div>
                                     </div>
                                 </div>
@@ -139,6 +136,126 @@
                                             <ul class="list-unstyled my-4 lis-line-height-2">
                                                 <li><i class="fa fa-phone pr-2"></i> {{ x.phone }}</li>
                                                 <li><i class="fa fa-map-o pr-2"></i> {{ x.address }}</li>
+                                                <li>
+                                                    <p>Qualite:</p> <ul class="list-inline mb-0 lis-light-gold font-weight-normal h4">
+                                                        {% if    x.moyqualite <0.5 %} {% endif %}
+                                                        {% if    (( x.moyqualite < 1) and ( x.moyqualite >=0.5)) %}
+                                                            <li class="list-inline-item"><i class='fa fa-star-half-o'></i></li>
+                                                        {% endif %}
+                                                        {% if    (( x.moyqualite <1.5) and ( x.moyqualite >=1)) %}
+                                                            <li class="list-inline-item"><i class='fa fa-star'></i></li>
+                                                        {% endif %}
+
+                                                        {% if    (( x.moyqualite <2) and ( x.moyqualite >=1.5)) %}
+                                                            <li class="list-inline-item"><i class='fa fa-star'></i></li>
+                                                            <li class="list-inline-item"><i class='fa fa-star-half-o'></i></li>
+                                                        {% endif %}
+                                                        {% if    (( x.moyqualite < 2.5) and ( x.moyqualite >=2)) %}
+                                                            <li class="list-inline-item"><i class='fa fa-star'></i></li>
+                                                            <li class="list-inline-item"><i class='fa fa-star'></i></li>
+
+                                                        {% endif %}
+                                                        {% if    (( x.moyqualite < 3) and ( x.moyqualite >=2.5)) %}
+                                                            <li class="list-inline-item"><i class='fa fa-star'></i></li>
+                                                            <li class="list-inline-item"><i class='fa fa-star'></i></li>
+                                                            <li class="list-inline-item"><i class='fa fa-star-half-o'></i></li>
+                                                        {% endif %}
+                                                        {% if    (( x.moyqualite < 3.5) and ( x.moyqualite >=3)) %}
+                                                            <li class="list-inline-item"><i class='fa fa-star'></i></li>
+                                                            <li class="list-inline-item"><i class='fa fa-star'></i></li>
+                                                            <li class="list-inline-item"><i class='fa fa-star'></i></li>
+
+                                                        {% endif %}
+                                                        {% if    (( x.moyqualite < 4) and ( x.moyqualite >=3.5)) %}
+                                                            <li class="list-inline-item"><i class='fa fa-star'></i></li>
+                                                            <li class="list-inline-item"><i class='fa fa-star'></i></li>
+                                                            <li class="list-inline-item"><i class='fa fa-star'></i></li>
+                                                            <li class="list-inline-item"><i class='fa fa-star-half-o'></i></li>
+                                                        {% endif %}
+                                                        {% if    (( x.moyqualite < 4.5) and ( x.moyqualite >=4)) %}
+                                                            <li class="list-inline-item"><i class='fa fa-star'></i></li>
+                                                            <li class="list-inline-item"><i class='fa fa-star'></i></li>
+                                                            <li class="list-inline-item"><i class='fa fa-star'></i></li>
+                                                            <li class="list-inline-item"><i class='fa fa-star'></i></li>
+
+                                                        {% endif %}
+                                                        {% if    (( x.moyqualite < 5) and ( x.moyqualite >=4.5)) %}
+                                                            <li class="list-inline-item"><i class='fa fa-star'></i></li>
+                                                            <li class="list-inline-item"><i class='fa fa-star'></i></li>
+                                                            <li class="list-inline-item"><i class='fa fa-star'></i></li>
+                                                            <li class="list-inline-item"><i class='fa fa-star'></i></li>
+                                                            <li class="list-inline-item"><i class='fa fa-star'></i></li>
+                                                        {% endif %}
+                                                        {% if x.moyqualite==5 %}
+                                                            <li class="list-inline-item"><i class='fa fa-star'></i></li>
+                                                            <li class="list-inline-item"><i class='fa fa-star'></i></li>
+                                                            <li class="list-inline-item"><i class='fa fa-star'></i></li>
+                                                            <li class="list-inline-item"><i class='fa fa-star'></i></li>
+                                                            <li class="list-inline-item"><i class='fa fa-star'></i></li>
+                                                        {% endif %}
+                                                    </ul>
+                                                <li>
+                                                    <p>Serivce :</p> <ul class="list-inline mb-0 lis-light-gold font-weight-normal h4">
+                                                        {% if    x.moyservice <0.5 %} {% endif %}
+                                                        {% if    (( x.moyservice < 1) and ( x.moyservice >=0.5)) %}
+                                                            <li class="list-inline-item"><i class='fa fa-star-half-o'></i></li>
+                                                        {% endif %}
+                                                        {% if    (( x.moyservice <1.5) and ( x.moyservice >=1)) %}
+                                                            <li class="list-inline-item"><i class='fa fa-star'></i></li>
+                                                        {% endif %}
+
+                                                        {% if    (( x.moyservice <2) and ( x.moyservice >=1.5)) %}
+                                                            <li class="list-inline-item"><i class='fa fa-star'></i></li>
+                                                            <li class="list-inline-item"><i class='fa fa-star-half-o'></i></li>
+                                                        {% endif %}
+                                                        {% if    (( x.moyservice < 2.5) and ( x.moyservice >=2)) %}
+                                                            <li class="list-inline-item"><i class='fa fa-star'></i></li>
+                                                            <li class="list-inline-item"><i class='fa fa-star'></i></li>
+
+                                                        {% endif %}
+                                                        {% if    (( x.moyservice < 3) and ( x.moyservice >=2.5)) %}
+                                                            <li class="list-inline-item"><i class='fa fa-star'></i></li>
+                                                            <li class="list-inline-item"><i class='fa fa-star'></i></li>
+                                                            <li class="list-inline-item"><i class='fa fa-star-half-o'></i></li>
+                                                        {% endif %}
+                                                        {% if    (( x.moyservice < 3.5) and ( x.moyservice >=3)) %}
+                                                            <li class="list-inline-item"><i class='fa fa-star'></i></li>
+                                                            <li class="list-inline-item"><i class='fa fa-star'></i></li>
+                                                            <li class="list-inline-item"><i class='fa fa-star'></i></li>
+
+                                                        {% endif %}
+                                                        {% if    (( x.moyservice < 4) and ( x.moyservice >=3.5)) %}
+                                                            <li class="list-inline-item"><i class='fa fa-star'></i></li>
+                                                            <li class="list-inline-item"><i class='fa fa-star'></i></li>
+                                                            <li class="list-inline-item"><i class='fa fa-star'></i></li>
+                                                            <li class="list-inline-item"><i class='fa fa-star-half-o'></i></li>
+                                                        {% endif %}
+                                                        {% if    (( x.moyservice < 4.5) and ( x.moyservice >=4)) %}
+                                                            <li class="list-inline-item"><i class='fa fa-star'></i></li>
+                                                            <li class="list-inline-item"><i class='fa fa-star'></i></li>
+                                                            <li class="list-inline-item"><i class='fa fa-star'></i></li>
+                                                            <li class="list-inline-item"><i class='fa fa-star'></i></li>
+
+                                                        {% endif %}
+                                                        {% if    (( x.moyservice < 5) and ( x.moyservice >=4.5)) %}
+                                                            <li class="list-inline-item"><i class='fa fa-star'></i></li>
+                                                            <li class="list-inline-item"><i class='fa fa-star'></i></li>
+                                                            <li class="list-inline-item"><i class='fa fa-star'></i></li>
+                                                            <li class="list-inline-item"><i class='fa fa-star'></i></li>
+                                                            <li class="list-inline-item"><i class='fa fa-star'></i></li>
+                                                        {% endif %}
+                                                        {% if x.moyservice==5 %}
+                                                            <li class="list-inline-item"><i class='fa fa-star'></i></li>
+                                                            <li class="list-inline-item"><i class='fa fa-star'></i></li>
+                                                            <li class="list-inline-item"><i class='fa fa-star'></i></li>
+                                                            <li class="list-inline-item"><i class='fa fa-star'></i></li>
+                                                            <li class="list-inline-item"><i class='fa fa-star'></i></li>
+                                                        {% endif %}
+                                                    </ul>
+
+
+
+                                                </li>
                                             </ul>
 
                                         </div>
