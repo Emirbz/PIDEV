@@ -1254,11 +1254,11 @@ class Etablissement
     /**
      * @ORM\Column(type="float",nullable=true)
      */
-    private $moyservice;
+    private $moyservice=0;
     /**
      * @ORM\Column(type="float",nullable=true)
      */
-    private $moyqualite;
+    private $moyqualite=0;
 
     /**
      * @return mixed
@@ -1294,11 +1294,11 @@ class Etablissement
     /**
      * @ORM\Column(type="float",nullable=true)
      */
-    private $totalqualite;
+    private $totalqualite=0;
     /**
      * @ORM\Column(type="float",nullable=true)
      */
-    private $totalservice;
+    private $totalservice=0;
 
 
 

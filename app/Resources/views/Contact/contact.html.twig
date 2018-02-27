@@ -62,9 +62,15 @@
                 </div>
                 <div class="col-12 col-lg-4">
                     <h6 class="lis-font-weight-500"><i class="fa fa-map-o pr-2 lis-f-14"></i>  Find Us There</h6>
-                    <div id="map" class="w-100" style="height: 180px;"></div>
-                    <dl class="row mb-0 mt-4 lis-line-height-2"> <dt class="col-xl-3 col-sm-4 lis-font-weight-500 lis-dark">Address:</dt>
-                        <dd class="col-xl-9 col-sm-8">XXXXXXXXXXXXXXXX</dd> <dt class="col-xl-3 col-sm-4 lis-font-weight-500 lis-dark">Phone:</dt>
+                    <div class="card lis-brd-light wow fadeInUp mb-4">
+                        <div class="card-body p-4">
+                            <div id="map-canvas" style='height: 350px;'></div>
+                        </div>
+
+                    </div>
+                    <dl class="row mb-0 mt-4 lis-line-height-2"> <dt class="col-xl-3 col-sm-4 lis-font-weight-500 lis-dark">Address: </dt>
+                        <dd class="col-xl-9 col-sm-8">Z.I. Chotrana II B.P. 160
+                            Pôle Technologique El Ghazela - Ariana 2083</dd> <dt class="col-xl-3 col-sm-4 lis-font-weight-500 lis-dark">Phone:</dt>
                         <dd class="col-xl-9 col-sm-8">XXXXXXXXXXXXXXXX</dd> <dt class="col-xl-3 col-sm-4 lis-font-weight-500 lis-dark">Fax:</dt>
                         <dd class="col-xl-9 col-sm-8">XXXXXXXXXXXXXXXX</dd> <dt class="col-xl-3 col-sm-4 lis-font-weight-500 lis-dark">Timing:</dt>
                         <dd class="col-xl-9 col-sm-8">XXXXXXXXXXXXXXXX</dd>
@@ -73,6 +79,26 @@
             </div>
         </div>
     </section>
-    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAjsIpyXFoB7_5_E2DgO_-CTDMHKM0cW4I&amp;sensor=false&amp;callback=initialize"></script>
-    <script src="{{ asset('js/single-map.js') }}"></script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAZL72zG-8qoQipgaQ97aC1rxYuxuyDYX0"
+            type="text/javascript"></script>
+    <script>
+        var myCenter =new google.maps.LatLng(36.898392,10.189732000000049);
+        var marker;
+        function initialize() {
+            var mapProp= {
+                center: myCenter,
+                zoom: 15,
+                mapTypeId: google.maps.MapTypeId.ROADMAP
+            };
+
+            var map = new google.maps.Map(document.getElementById('map-canvas'),
+                mapProp);
+            var marker = new google.maps.Marker({
+                position: myCenter,
+                animation: google.maps.Animation.BOUNCE
+            });
+            marker.setMap(map);
+        }
+        google.maps.event.addDomListner(window,'load',initialize());
+    </script>
 {% endblock %}

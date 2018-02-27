@@ -98,6 +98,13 @@ class EtablissementController extends Controller
             ########tri cat #######
 
             if ($tricat != '') {
+                if ($tricat='tous')
+                {$restaurant = $em->getRepository("AmirBundle:Etablissement")->findBy(array('categorie' => 'Restaurant'));
+                    return $this->render("AmirBundle:Etablissement:list_restaurant.html.twig",
+                        array('restaurants' => $restaurant, 'souscat' => $soucatresult
+                        ));
+
+                }
                 $restaurant = $em->CreateQuery("SELECT v  From AmirBundle:Etablissement v where v.categorie='Restaurant' AND v.souscat=$tricat")->getResult();
                 return $this->render("AmirBundle:Etablissement:list_restaurant.html.twig",
                     array('restaurants' => $restaurant, 'souscat' => $soucatresult
@@ -190,7 +197,7 @@ class EtablissementController extends Controller
         return $this->render("@Amir/Etablissement/update_restaurant.html.twig",array("form"=>$form->createView()));
     }
 
-    public function updatehotelAction(Request $request)
+       public function updatehotelAction(Request $request)
     {
         $id = $request->get('id');
         $em = $this->getDoctrine()->getManager();
@@ -449,7 +456,7 @@ class EtablissementController extends Controller
             if  ($request->get('name')=='' or  $request->get('etoile')=='' )  {
                 $etoile =$request->get('etoile');
                 $name = $request->get('name');
-                $restaurant = $em->CreateQuery("SELECT v  From AmirBundle:Etablissement v where v.categorie='Hotel' AND ((v.name LIKE '%$name%'  or v.address='$name' ) or v.etoile=$etoile )")->getResult();
+                $restaurant = $em->CreateQuery("SELECT v  From AmirBundle:Etablissement v where v.categorie='Hotel' AND (v.name LIKE '%$name%'  or v.address='$name' ) AND v.etoile=$etoile ")->getResult();
                 return $this->render("@Amir/Hotel/list_hotels.html.twig",
                     array('restaurants' => $restaurant,'souscat' =>  $soucatresult
                     ));
@@ -526,6 +533,24 @@ class EtablissementController extends Controller
 
         $form->handleRequest($request);
         if ($form->isSubmitted() && ($form->isValid())) {
+            $file = $restaurant->getImg1();
+
+            $fileName = $this->generateUniqueFileName().'.'.$file->guessExtension();
+            $file->move(
+                $this->getParameter('brochures_directory'), $fileName);
+            $restaurant->setImg1($fileName);
+            $file2 = $restaurant->getimg2();
+
+            $fileName2 = $this->generateUniqueFileName().'.'.$file2->guessExtension();
+            $file2->move(
+                $this->getParameter('brochures_directory'), $fileName2);
+            $restaurant->setimg2($fileName2);
+
+            $file3 = $restaurant->getimg3();
+            $fileName3= $this->generateUniqueFileName().'.'.$file3->guessExtension();
+            $file3->move(
+                $this->getParameter('brochures_directory'), $fileName3);
+            $restaurant->setimg3($fileName3);
 
             $em = $this->getDoctrine()->getManager();
             $em->persist($restaurant);
@@ -729,6 +754,24 @@ class EtablissementController extends Controller
 
         $form->handleRequest($request);
         if ($form->isSubmitted() && ($form->isValid())) {
+            $file = $restaurant->getImg1();
+
+            $fileName = $this->generateUniqueFileName().'.'.$file->guessExtension();
+            $file->move(
+                $this->getParameter('brochures_directory'), $fileName);
+            $restaurant->setImg1($fileName);
+            $file2 = $restaurant->getimg2();
+
+            $fileName2 = $this->generateUniqueFileName().'.'.$file2->guessExtension();
+            $file2->move(
+                $this->getParameter('brochures_directory'), $fileName2);
+            $restaurant->setimg2($fileName2);
+
+            $file3 = $restaurant->getimg3();
+            $fileName3= $this->generateUniqueFileName().'.'.$file3->guessExtension();
+            $file3->move(
+                $this->getParameter('brochures_directory'), $fileName3);
+            $restaurant->setimg3($fileName3);
 
             $em = $this->getDoctrine()->getManager();
             $em->persist($restaurant);
@@ -796,7 +839,7 @@ class EtablissementController extends Controller
             ###### recherche like nom #########
             if  ($request->get('name')!='' )  {
                 $name = $request->get('name');
-                $restaurant = $em->CreateQuery("SELECT v  From AmirBundle:Etablissement v where v.categorie='Espace Culturel' AND (v.name LIKE '%$name%'  or v.address='$name' ) ")->getResult();
+                $restaurant = $em->CreateQuery("SELECT v  From AmirBundle:Etablissement v where v.categorie='Restaurant' AND (v.name LIKE '%$name%'  or v.address='$name' ) ")->getResult();
                 return $this->render("@Amir/Culture/list_culture.html.twig",
                     array('restaurants' => $restaurant,'souscat' =>  $soucatresult
                     ));

@@ -11,11 +11,42 @@
                     <h1 class="display-4">Explorer les bons plans</h1>
                     <h4 class="font-weight-normal mb-0">Les meilleurs adresses , évènements , Deals</h4> </div>
                 <ul class="nav nav-tabs flex-column flex-sm-row" id="myTab" role="tablist">
-                    <li class="nav-item mr-md-1"> <a class="nav-link active" id="home-tab" data-toggle="tab" href="#home" role="tab" aria-controls="home" aria-selected="true"><i class="fa fa-map-marker pr-1"></i> Restaurants</a> </li>
-                    <li class="nav-item mr-md-1"> <a class="nav-link" id="profile-tab" data-toggle="tab" href="#profile" role="tab" aria-controls="profile" aria-selected="false"><i class="fa fa-microphone pr-1"></i> Hôtels</a> </li>
+                    <li class="nav-item mr-md-1"> <a class="nav-link active" id="home-tab" data-toggle="tab" href="#home" role="tab" aria-controls="home" aria-selected="true"><i class="fa fa-home"></i> Etablissement</a> </li>
+                    <li class="nav-item mr-md-1"> <a class="nav-link" id="profile-tab" data-toggle="tab" href="#evenements" role="tab" aria-controls="profile" aria-selected="false"><i class="fa fa-hourglass"></i> Evenements</a> </li>
+                    <li class="nav-item mr-md-1"> <a class="nav-link" id="profile-tab" data-toggle="tab" href="#deals" role="tab" aria-controls="profile" aria-selected="false"><i class="fa fa-ticket"></i> Deals</a> </li>
+                    <li class="nav-item mr-md-1"> <a class="nav-link" id="profile-tab" data-toggle="tab" href="#article" role="tab" aria-controls="profile" aria-selected="false"><i class="fa fa-book"></i> Articles</a> </li>
                 </ul>
+
                 <div class="tab-content bg-white p-5 rounded-bottom rounded-right" id="myTabContent">
+                    <form method="POST">
                     <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
+                        <div class="row">
+                            <div class="col-12 col-md-12">
+                                <div class="form-group">
+
+                                    <input type="text" name="name" class="form-control border-top-0 border-left-0 border-right-0 rounded-0 pl-4" placeholder="What are you looking for?" />
+                                    <div class="lis-search"> <i class="fa fa-search lis-primary"></i> </div>
+                                </div>
+                            </div>
+
+
+                            <div class="col-12 col-sm-6 col-lg-4">
+                                <div class="form-group">
+                                    <select name ="sc" class="form-control border-top-0 border-left-0 border-right-0 rounded-0 pl-4">
+                                       {% for a in souscat %}
+                                           <option value="{{ a.nom }}">{{ a.nom }}</option>
+                                        {% endfor %}
+                                    </select>
+                                    <div class="lis-search"> <i class="fa fa-tags lis-primary"></i> </div>
+                                </div>
+                            </div>
+
+                            <div class="col-12 col-lg-4"> <input type="submit"  class="btn btn-primary btn-block btn-lg"> </div>
+                        </div>
+                    </div>
+                    </form>
+
+                    <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">
                         <div class="row">
                             <div class="col-12 col-md-12">
                                 <div class="form-group">
@@ -25,7 +56,7 @@
                             </div>
                             <div class="col-12 col-sm-6 col-lg-4">
                                 <div class="form-group">
-                                    <input type="text" class="form-control border-top-0 border-left-0 border-right-0 rounded-0 pl-4" placeholder="Région" />
+                                    <input type="text" class="form-control border-top-0 border-left-0 border-right-0 rounded-0 pl-4" placeholder="Location" />
                                     <div class="lis-search"> <i class="fa fa-map-o lis-primary"></i> </div>
                                 </div>
                             </div>
@@ -43,7 +74,63 @@
                             <div class="col-12 col-lg-4"> <a href="#" class="btn btn-primary btn-block btn-lg"><i class="fa fa-search pr-1"></i> Rechercher</a> </div>
                         </div>
                     </div>
-                    <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">
+                    <div class="tab-pane fade" id="deals" role="tabpanel" aria-labelledby="profile-tab">
+                        <div class="row">
+                            <div class="col-12 col-md-12">
+                                <div class="form-group">
+                                    <input type="text" class="form-control border-top-0 border-left-0 border-right-0 rounded-0 pl-4" placeholder="What are you looking for?" />
+                                    <div class="lis-search"> <i class="fa fa-search lis-primary"></i> </div>
+                                </div>
+                            </div>
+                            <div class="col-12 col-sm-6 col-lg-4">
+                                <div class="form-group">
+                                    <input type="text" class="form-control border-top-0 border-left-0 border-right-0 rounded-0 pl-4" placeholder="Location" />
+                                    <div class="lis-search"> <i class="fa fa-map-o lis-primary"></i> </div>
+                                </div>
+                            </div>
+                            <div class="col-12 col-sm-6 col-lg-4">
+                                <div class="form-group">
+                                    <select class="form-control border-top-0 border-left-0 border-right-0 rounded-0 pl-4">
+                                        <option> Tous les Catégories</option>
+                                        <option>1</option>
+                                        <option>2</option>
+                                        <option>3</option>
+                                    </select>
+                                    <div class="lis-search"> <i class="fa fa-tags lis-primary"></i> </div>
+                                </div>
+                            </div>
+                            <div class="col-12 col-lg-4"> <a href="#" class="btn btn-primary btn-block btn-lg"><i class="fa fa-search pr-1"></i> Rechercher</a> </div>
+                        </div>
+                    </div>
+                    <div class="tab-pane fade" id="article" role="tabpanel" aria-labelledby="profile-tab">
+                        <div class="row">
+                            <div class="col-12 col-md-12">
+                                <div class="form-group">
+                                    <input type="text" class="form-control border-top-0 border-left-0 border-right-0 rounded-0 pl-4" placeholder="What are you looking for?" />
+                                    <div class="lis-search"> <i class="fa fa-search lis-primary"></i> </div>
+                                </div>
+                            </div>
+                            <div class="col-12 col-sm-6 col-lg-4">
+                                <div class="form-group">
+                                    <input type="text" class="form-control border-top-0 border-left-0 border-right-0 rounded-0 pl-4" placeholder="Location" />
+                                    <div class="lis-search"> <i class="fa fa-map-o lis-primary"></i> </div>
+                                </div>
+                            </div>
+                            <div class="col-12 col-sm-6 col-lg-4">
+                                <div class="form-group">
+                                    <select class="form-control border-top-0 border-left-0 border-right-0 rounded-0 pl-4">
+                                        <option> Tous les Catégories</option>
+                                        <option>1</option>
+                                        <option>2</option>
+                                        <option>3</option>
+                                    </select>
+                                    <div class="lis-search"> <i class="fa fa-tags lis-primary"></i> </div>
+                                </div>
+                            </div>
+                            <div class="col-12 col-lg-4"> <a href="#" class="btn btn-primary btn-block btn-lg"><i class="fa fa-search pr-1"></i> Rechercher</a> </div>
+                        </div>
+                    </div>
+                    <div class="tab-pane fade" id="evenements" role="tabpanel" aria-labelledby="profile-tab">
                         <div class="row">
                             <div class="col-12 col-md-12">
                                 <div class="form-group">

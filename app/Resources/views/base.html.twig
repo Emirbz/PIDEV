@@ -119,6 +119,9 @@
                                 <a href="#modal" class="text-white login_form"><i class="fa fa-sign-in pr-2"></i> Inscription | Connexion</a>
                             {% else %}
                                 <ul class="navbar-nav">
+                                    {% if fos_message_nb_unread() >1  %}
+                                    <a href="{{ path('fos_message_inbox') }}" target=_blank class="text-white login_form"><i class="fa fa-envelope pr-4 p-3"> {{ fos_message_nb_unread() }} Messages</i></a>
+                                    {% endif %}
                                     <li class="nav-item dropdown"><img class="card"  src="{{vich_uploader_asset(app.user,'devisFile')}}" style="border-radius: 50%;width: 50px;height: 50px;">
                                         <ul class="dropdown-menu">
                                             <li><a href="{{ path('fos_user_profile_show') }}">Profil</a></li>
@@ -347,6 +350,9 @@
 <!-- jQuery -->
 <script src="{{asset('js/plugins.min.js')}}"></script>
 <script src="{{asset('js/common.js')}}"></script>
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAZL72zG-8qoQipgaQ97aC1rxYuxuyDYX0"
+        type="text/javascript"></script>
+
 
 </body>
 

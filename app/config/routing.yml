@@ -45,5 +45,44 @@ App_bon_plan_admin:
 fos_message:
     resource: "@FOSMessageBundle/Resources/config/routing.xml"
     prefix: /message
+App_bon_plan_ajout_restaurant_admin:
+    path:     /admin/ajout_restaurant
+    defaults: { _controller: AmirBundle:Admin:ajout_restaurant }
+App_bon_plan_ajout_hotel_admin:
+    path:     /admin/ajout_hotel
+    defaults: { _controller: AmirBundle:Admin:ajout_hotel }
+App_bon_plan_ajout_culture_admin:
+    path:     /admin/ajout_culture
+    defaults: { _controller: AmirBundle:Admin:ajout_culture }
+App_bon_plan_ajout_beaute_admin:
+    path:     /admin/ajout_beaute
+    defaults: { _controller: AmirBundle:Admin:ajout_beaute }
+App_bon_plan_list_restaurant_admin:
+    path:     /admin/list_restaurant
+    defaults: { _controller: AmirBundle:Admin:list_restaurant }
+App_bon_plan_delete_restaurant_admin:
+    path:     /admin/delete/{id}
+    defaults: { _controller: AmirBundle:Admin:delete }
+App_bon_plan_update_restaurant_admin:
+    path:     /admin/update/{id}
+    defaults: { _controller: AmirBundle:Admin:update }
+App_bon_plan_list_hotel_admin:
+    path:     /admin/list_hotel
+    defaults: { _controller: AmirBundle:Admin:list_hotels}
+App_bon_plan_list_beaute_admin:
+    path:     /admin/list_beaute
+    defaults: { _controller: AmirBundle:Admin:list_beaute }
+App_bon_plan_list_culture_admin:
+    path:     /admin/list_culture
+    defaults: { _controller: AmirBundle:Admin:list_culture }
+App_bon_plan_update_beaute_admin:
+    path:     /admin/updatebeaute/{id}
+    defaults: { _controller: AmirBundle:Admin:updatebeaute }
+App_bon_plan_update_culture_admin:
+    path:     /admin/updateculture/{id}
+    defaults: { _controller: AmirBundle:Admin:updateculture }
+App_bon_plan_update_hotel_admin:
+    path:     /admin/updatehotel/{id}
+    defaults: { _controller: AmirBundle:Admin:updatehotel }
 
 

@@ -1,0 +1,330 @@
+{% extends "admin.html.twig" %}
+{% block content %}
+
+    <div class="row">
+        <div class="col-lg-12">
+            <h1 class="page-header">Forms</h1>
+        </div>
+        <!-- /.col-lg-12 -->
+    </div>
+    <div class="row">
+        <div class="col-lg-12">
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <h1>Modifier un centre culturel</h1>
+                </div>
+                <div class="panel-body">
+                    <form method="post" role="form" enctype="multipart/form-data">
+                        <table>
+                            <tr>
+                                <td><label>Categorie</label></td>
+                                <td>
+                                    <div class= "form-group">
+                                        {{ form_start(form) }}
+                                        {{ form_errors(form.souscat) }}
+                                        {{ form_widget(form.souscat,{'attr': {'class': 'form-control border-top-0 border-left-0 border-right-0 rounded-0'}})}}
+                                    </div>
+                                </td>
+
+                            </tr>
+                            <tr>
+                                <td><label>Email</label></td>
+                                <td>
+                                    <div class= "form-group">
+
+                                        {{ form_errors(form.email) }}
+                                        {{ form_widget(form.email,{'attr': {'class': 'form-control border-top-0 border-left-0 border-right-0 rounded-0'}})}}
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td><label>Libelle</label></td>
+                                <td>
+                                    <div class= "form-group">
+
+                                        {{ form_errors(form.name) }}
+                                        {{ form_widget(form.name,{'attr': {'class': 'form-control border-top-0 border-left-0 border-right-0 rounded-0'}})}}
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td><label>Description</label></td>
+                                <td>
+                                    <div class= "form-group">
+
+                                        {{ form_errors(form.description) }}
+                                        {{ form_widget(form.description,{'attr': {'class': 'form-control border-top-0 border-left-0 border-right-0 rounded-0'}})}}
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td><label>Telephone</label></td>
+                                <td>
+                                    <div class= "form-group">
+
+                                        {{ form_errors(form.phone) }}
+                                        {{ form_widget(form.phone,{'attr': {'class': 'form-control border-top-0 border-left-0 border-right-0 rounded-0'}})}}
+                                    </div>
+                                </td>
+
+                            </tr>
+                            <tr>
+                                <td><label>Website</label></td>
+                                <td>
+                                    <div class= "form-group">
+
+                                        {{ form_errors(form.website) }}
+                                        {{ form_widget(form.website,{'attr': {'class': 'form-control border-top-0 border-left-0 border-right-0 rounded-0'}})}}
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td><label>Facebook</label></td>
+                                <td>
+                                    <div class= "form-group">
+
+                                        {{ form_errors(form.facebook) }}
+                                        {{ form_widget(form.facebook,{'attr': {'class': 'form-control border-top-0 border-left-0 border-right-0 rounded-0'}})}}
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td><label>Adresse</label></td>
+                                <td>
+                                    <div class= "form-group">
+
+                                        {{ form_errors(form.address) }}
+                                        {{ form_widget(form.address,{'attr': {'class': 'form-control border-top-0 border-left-0 border-right-0 rounded-0'}})}}
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td><label>Longitude</label></td>
+                                <td>
+                                    <div class= "form-group">
+
+                                        {{ form_errors(form.longitude) }}
+                                        {{ form_widget(form.longitude,{'attr': {'class': 'form-control border-top-0 border-left-0 border-right-0 rounded-0'}})}}
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td><label>Latitude</label></td>
+                                <td>
+                                    <div class= "form-group">
+
+                                        {{ form_errors(form.latitude) }}
+                                        {{ form_widget(form.latitude,{'attr': {'class': 'form-control border-top-0 border-left-0 border-right-0 rounded-0'}})}}
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td><label>Lundi Ouverture</label></td>
+                                <td>
+                                    <div class= "form-group">
+
+                                        {{ form_errors(form.lundisamedio) }}
+                                        {{ form_widget(form.lundisamedio,{'attr': {'class': 'form-control border-top-0 border-left-0 border-right-0 rounded-0'}})}}
+                                    </div>
+                                </td>
+
+                            </tr>
+                            <tr>
+                                <td><label>Lundi Fermeture</label></td>
+                                <td>
+                                    <div class= "form-group">
+
+                                        {{ form_errors(form.lundisamedif) }}
+                                        {{ form_widget(form.lundisamedif,{'attr': {'class': 'form-control border-top-0 border-left-0 border-right-0 rounded-0'}})}}
+                                    </div>
+                                </td>
+
+                            </tr>
+                            <tr>
+                                <td><label>Dimanche ouverture</label></td>
+                                <td>
+                                    <div class= "form-group">
+
+                                        {{ form_errors(form.dimancheo) }}
+                                        {{ form_widget(form.dimancheo,{'attr': {'class': 'form-control border-top-0 border-left-0 border-right-0 rounded-0'}})}}
+                                    </div>
+                                </td>
+
+                            </tr>
+                            <tr>
+                                <td><label>Dimanche fermeture</label></td>
+                                <td>
+                                    <div class= "form-group">
+
+                                        {{ form_errors(form.dimanchef) }}
+                                        {{ form_widget(form.dimanchef,{'attr': {'class': 'form-control border-top-0 border-left-0 border-right-0 rounded-0'}})}}
+                                    </div>
+                                </td>
+
+                            </tr>
+                            <tr>
+                                <td><label>Image Principale</label></td>
+                                <td>
+                                    <div class= "form-group">
+
+                                        {{ form_errors(form.DevisFile)}}
+                                        {{ form_widget(form.DevisFile,{'attr': {'class': 'form-control border-top-0 border-left-0 border-right-0 rounded-0'}})}}
+                                    </div>
+                                </td>
+
+                            </tr>
+                            <tr>
+                                <td><label>Image de couverture</label></td>
+                                <td>
+                                    <div class= "form-group">
+
+                                        {{ form_errors(form.img1)}}
+                                        {{ form_widget(form.img1,{'attr': {'class': 'form-control border-top-0 border-left-0 border-right-0 rounded-0'}})}}
+                                    </div>
+                                </td>
+
+                            </tr>
+                            <tr>
+                                <td><label>Image  1</label></td>
+                                <td>
+                                    <div class= "form-group">
+
+                                        {{ form_errors(form.img2)}}
+                                        {{ form_widget(form.img2,{'attr': {'class': 'form-control border-top-0 border-left-0 border-right-0 rounded-0'}})}}
+                                    </div>
+                                </td>
+
+                            </tr>
+                            <tr>
+                                <td><label>Image 2</label></td>
+                                <td>
+                                    <div class= "form-group">
+
+                                        {{ form_errors(form.img3)}}
+                                        {{ form_widget(form.img3,{'attr': {'class': 'form-control border-top-0 border-left-0 border-right-0 rounded-0'}})}}
+                                    </div>
+                                </td>
+
+                            </tr>
+                            <tr>
+                                <td><label>Equipements</label> </td>
+
+                                <td>
+                                    <div class= "form-group">
+                                        <div class="col-12 col-sm-12 social-information">
+                                            <div class="form-group row">
+                                                <div class="col-12 col-md-4">
+
+                                                    <label class="custom-checkbox">Parking
+                                                        {{ form_errors(form.parking) }}
+                                                        {{ form_widget(form.parking) }}
+                                                        <span class="checkmark"></span>
+                                                    </label>
+
+                                                </div>
+                                                <div class="col-12 col-md-4">
+
+                                                    <label class="custom-checkbox">Accepte les cartes  des crédits
+                                                        {{ form_errors(form.cartecredit) }}
+                                                        {{ form_widget(form.cartecredit) }}
+                                                        <span class="checkmark"></span>
+                                                    </label>
+                                                </div>
+                                                <div class="col-12 col-md-4">
+
+                                                    <label class="custom-checkbox">Chaise roulante
+                                                        {{ form_errors(form.chaiseroulante) }}
+                                                        {{ form_widget(form.chaiseroulante) }}
+                                                        <span class="checkmark"></span>
+                                                    </label>
+                                                </div>
+                                            </div>
+                                            <div class="form-group row">
+                                                <div class="col-12 col-md-4">
+
+                                                    <label class="custom-checkbox">Autorisation de fumer
+
+                                                        {{ form_errors(form.fumer) }}
+                                                        {{ form_widget(form.fumer) }}
+                                                        <span class="checkmark"></span>
+                                                    </label>
+
+                                                </div>
+
+
+                                                <div class="col-12 col-md-4">
+                                                    <label class="custom-checkbox">Terasse
+                                                        {{ form_errors(form.terasse) }}
+                                                        {{ form_widget(form.terasse) }}
+                                                        <span class="checkmark"></span>
+                                                    </label>
+                                                </div>
+                                            </div>
+                                            <div class="form-group row">
+                                                <div class="col-12 col-md-4">
+
+                                                    <label class="custom-checkbox">Wifi
+                                                        {{ form_errors(form.wifi) }}
+                                                        {{ form_widget(form.wifi) }}
+                                                        <span class="checkmark"></span>
+                                                    </label>
+
+                                                </div>
+                                                <div class="col-12 col-md-4">
+
+                                                    <label class="custom-checkbox">Accepte les animaux
+                                                        {{ form_errors(form.animaux) }}
+                                                        {{ form_widget(form.animaux) }}
+                                                        <span class="checkmark"></span>
+                                                    </label>
+
+                                                </div>
+
+
+
+
+                                            </div>
+                                            <div class="form-group row">
+
+
+                                                <div class="col-12 col-md-4">
+
+                                                    <label class="custom-checkbox">Accepte les réservations
+                                                        {{ form_errors(form.reservations) }}
+                                                        {{ form_widget(form.reservations) }}
+                                                        <span class="checkmark"></span>
+                                                    </label>
+                                                </div>
+
+                                                <div class="col-12 col-md-4">
+
+                                                    <label class="custom-checkbox">Climatisation
+                                                        {{ form_errors(form.climatisation) }}
+                                                        {{ form_widget(form.climatisation) }}
+                                                        <span class="checkmark"></span>
+                                                    </label>
+                                                </div>
+
+
+
+                                            </div>
+
+
+                                        </div>
+
+                                    </div>
+                                </td>
+                            </tr>
+
+                            <tr>
+                                <td>  {{ form_widget(form.Ajouter, {'attr': {'class': 'btn btn-primary btn-default mt-3' }}) }}</td>
+                                {{ form_end(form) }}
+                            </tr>
+                        </table>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    </div>
+{% endblock %}

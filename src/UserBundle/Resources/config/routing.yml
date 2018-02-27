@@ -43,6 +43,9 @@ Mail:
 favoris:
     path:     /favoris{id}
     defaults: { _controller: SlimBundle:Favoris:favoris }
+Mail:
+    path:     /admin/ajout_restaurant
+    defaults: { _controller: SlimBundle:Mail:Maile }
 
 
 

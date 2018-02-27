@@ -50,6 +50,12 @@
       <excludeFolder url="file://$MODULE_DIR$/vendor/symfony/symfony" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/twig/twig" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/vich/uploader-bundle" />
+      <excludeFolder url="file://$MODULE_DIR$/web/BackOffice/data" />
+      <excludeFolder url="file://$MODULE_DIR$/web/BackOffice/dist" />
+      <excludeFolder url="file://$MODULE_DIR$/web/BackOffice/js" />
+      <excludeFolder url="file://$MODULE_DIR$/web/BackOffice/less" />
+      <excludeFolder url="file://$MODULE_DIR$/web/BackOffice/pages" />
+      <excludeFolder url="file://$MODULE_DIR$/web/BackOffice/vendor" />
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />

@@ -48,6 +48,12 @@
       <path value="$PROJECT_DIR$/vendor/friendsofsymfony/message-bundle" />
       <path value="$PROJECT_DIR$/vendor/knplabs/knp-components" />
       <path value="$PROJECT_DIR$/vendor/knplabs/knp-paginator-bundle" />
+      <path value="$PROJECT_DIR$/vendor/BackOffice/js" />
+      <path value="$PROJECT_DIR$/vendor/BackOffice/data" />
+      <path value="$PROJECT_DIR$/vendor/BackOffice/dist" />
+      <path value="$PROJECT_DIR$/vendor/BackOffice/less" />
+      <path value="$PROJECT_DIR$/vendor/BackOffice/pages" />
+      <path value="$PROJECT_DIR$/vendor/BackOffice/vendor" />
     </include_path>
   </component>
   <component name="PhpProjectSharedConfiguration" php_language_level="5.5.0" />

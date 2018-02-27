@@ -10,8 +10,7 @@ namespace AppBundle\Controller;
 
 
 
-use AppBundle\Entity\Restaurant;
-use AppBundle\Form\RestaurantType;
+
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\Request;
 
